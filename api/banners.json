@@ -1,10 +1,10 @@
 [
     {
       "id": 1,
-      "title": "test1"
+      "image": "https://george-fx.github.io/spinride/banners/01.jpg"
     },
     {
       "id": 1,
-      "title": "test2"
+      "image": "https://george-fx.github.io/spinride/banners/02.jpg"
     }
   ]
