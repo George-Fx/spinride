@@ -1,10 +1,6 @@
 [
     {
         "id": 1,
-        "sizes": [
-            "39",
-            "42"
-        ],
         "tags": [
             "Comfortable"
         ],
@@ -20,9 +16,6 @@
             "https://george-fx.github.io/spinride/products/01.jpg"
         ],
         "image": "https://george-fx.github.io/spinride/products/01.jpg",
-        "audience": [
-            "Men"
-        ],
         "categories": [
             "Athletic Shoes"
         ],
