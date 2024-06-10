@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "code": "FootFlex Outlet",
+        "image": "https://stephub.rn-admin.site/storage/bkaWhfUuzuETY0Ak6BZel4snHdqb08JyxLOsUiIF.png",
+        "discount": 50,
+        "expires_at": "Aug 21, 2024"
+    },
+    {
+        "id": 2,
+        "code": "UrbanStride Showcase",
+        "image": "https://stephub.rn-admin.site/storage/50s7aYNRYr5vzcBN1IavQhU6lAfsRg6PKuNyYRL3.png",
+        "discount": 30,
+        "expires_at": "Aug 11, 2024"
+    },
+    {
+        "id": 3,
+        "code": "SneakPeak Plaza",
+        "image": "https://stephub.rn-admin.site/storage/wMrkmoXLrIMoIcfsT9tMEW9bHlVpaEFhN3wbX3YY.png",
+        "discount": 15,
+        "expires_at": "Oct 15, 2024"
+    }
+]
