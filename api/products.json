@@ -188,5 +188,44 @@
         "isFeatured": true,
         "isBestSeller": true,
         "oldPrice": null
+    },
+    {
+        "id": 6,
+        "sizes": [
+            "39",
+            "41",
+            "44"
+        ],
+        "tags": [
+            "Hiking Boots"
+        ],
+        "name": "Seeker Hiking Bootss",
+        "colors": [
+            "Champagne",
+            "Black"
+        ],
+        "images": [
+            "https://george-fx.github.io/spinride/products/06.jpg",
+            "https://george-fx.github.io/spinride/products/06.jpg",
+            "https://george-fx.github.io/spinride/products/06.jpg"
+        ],
+        "image": "https://george-fx.github.io/spinride/products/06.jpg",
+        "audience": [
+            "Men"
+        ],
+        "categories": [
+            "Specialty Shoes"
+        ],
+        "description": "Get ready to elevate your workout game with our FlexFit Training Shoes. Engineered for maximum performance and comfort, these shoes are designed to support you thro...",
+        "rating": 5,
+        "quantity": null,
+        "promotion": "Take 50% Off Now!",
+        "isNew": true,
+        "isTop": false,
+        "ratingCount": 2,
+        "price": "89.99",
+        "isFeatured": true,
+        "isBestSeller": true,
+        "oldPrice": null
     }
 ]
