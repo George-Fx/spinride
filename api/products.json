@@ -10,6 +10,7 @@
             "Champagne",
             "Delft blue"
         ],
+        "bikeType": ["Specialty Bikes", "Road Bikes"],
         "images": [
             "https://george-fx.github.io/spinride/products/01.jpg",
             "https://george-fx.github.io/spinride/products/01.jpg",
