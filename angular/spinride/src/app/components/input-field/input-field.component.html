@@ -2,94 +2,35 @@
   style="
     display: flex;
     width: 100%;
-    border-radius: 10px;
-    background-color: #e9f3f6;
+    border-radius: 50px;
+    background-color: #fff;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    border: 1px solid #eeeeee;
   "
   [ngStyle]="containerStyle"
+  (click)="setValue()"
 >
-  <img
-    alt="icon"
-    [src]="svg.search"
-    *ngIf="type === 'search'"
-    style="
-      margin-right: 14px;
-      margin-left: 5px;
-      margin-top: 5px;
-      margin-bottom: 5px;
-    "
-  />
-  <img
-    alt="icon"
-    [src]="svg.tag"
-    *ngIf="type === 'promocode-enter'"
-    style="
-      margin-right: 14px;
-      margin-left: 5px;
-      margin-top: 5px;
-      margin-bottom: 5px;
-    "
-  />
-  <img
-    alt="icon"
-    [src]="svg.inputMap"
-    *ngIf="type === 'location'"
-    style="
-      margin-right: 14px;
-      margin-left: 5px;
-      margin-top: 5px;
-      margin-bottom: 5px;
-    "
-  />
-  <img
-    alt="icon"
-    [src]="svg.inputPhone"
-    *ngIf="type === 'phone'"
-    style="
-      margin-right: 14px;
-      margin-left: 5px;
-      margin-top: 5px;
-      margin-bottom: 5px;
-    "
-  />
-  <img
-    alt="icon"
-    [src]="svg.inputUser"
-    *ngIf="type === 'username'"
-    style="
-      margin-right: 14px;
-      margin-left: 5px;
-      margin-top: 5px;
-      margin-bottom: 5px;
-    "
-  />
-  <img
-    alt="icon"
-    [src]="svg.mail"
-    *ngIf="type === 'email'"
-    style="
-      margin-right: 14px;
-      margin-left: 5px;
-      margin-top: 5px;
-      margin-bottom: 5px;
-    "
-  />
-  <img
-    alt="icon"
-    [src]="svg.key"
-    *ngIf="type === 'password'"
-    style="
-      margin-right: 14px;
-      margin-left: 5px;
-      margin-top: 5px;
-      margin-bottom: 5px;
-    "
-  />
-  <input
+  <div style="display: flex; flex: 1">
+    <span
+      style="
+        font-family: var(--mulish);
+        font-size: 16px;
+        color: var(--main-color);
+      "
+    >
+      {{ value }}
+    </span>
+  </div>
+  <!-- <input
     type="text"
     [value]="value"
     [placeholder]="placeholder"
     style="
       width: 100%;
+      height: 100%;
       padding-top: 11px;
       padding-bottom: 11px;
       border: none;
@@ -98,17 +39,17 @@
       display: flex;
       flex: 1;
       border-color: transparent;
-      font-size: 14px;
+      font-size: 16px;
       color: var(--main-color);
-      font-family: var(--dm-sans);
+      font-family: var(--mulish);
       background-color: transparent;
     "
-  />
+  /> -->
   <img
     *ngIf="eyeOff"
     alt="icon"
     [src]="svg.eyeOff"
-    style="margin-right: 20px; margin-left: 20px"
+    style="margin-right: 20px; margin-left: 20px; width: 16px; height: 16px"
   />
   <img
     *ngIf="check"

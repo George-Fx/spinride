@@ -1,4 +1,4 @@
-<app-header [showGoBack]="true" />
+<app-header [showGoBack]="true" [title]="'Sign in'" />
 
 <main
   style="
@@ -13,33 +13,37 @@
     style="
       height: 100%;
       display: flex;
-      padding-left: 20px;
-      padding-right: 20px;
       justify-content: center;
       flex-direction: column;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      background-color: var(--white-color);
     "
   >
-    <h1 style="margin-bottom: 14px">Welcome Back!</h1>
-    <p [className]="'t16'" style="margin-bottom: 30px">Sign in to continue</p>
+    <h1 style="margin-bottom: 14px; text-align: center">Welcome Back!</h1>
+    <span
+      style="
+        margin-bottom: 30px;
+        text-align: center;
+        font-family: var(--mulish);
+        font-weight: 400;
+        color: var(--text-color);
+        font-size: 16px;
+        line-height: 1.7;
+      "
+    >
+      Sign in to continue
+    </span>
     <app-input-field
       [check]="true"
       [type]="'email'"
+      [value]="'darronbanks@mail.com'"
       [placeholder]="'dominicparker@mail.com'"
-      [ngStyle]="{'margin-bottom': '16px'}"
+      [ngStyle]="{'margin-bottom': '14px'}"
     />
     <app-input-field
       [placeholder]="'••••••••'"
       [type]="'password'"
       [eyeOff]="true"
+      [value]="'••••••••'"
       [ngStyle]="{'margin-bottom': '16px'}"
-    />
-    <app-button
-      [text]="'Sign in'"
-      [routerLink]="'/home'"
-      [ngStyle]="{'margin-bottom': '24px'}"
     />
     <div
       style="
@@ -65,10 +69,11 @@
             height: 18px;
             background-color: var(--white-color);
             border-radius: 5px;
-            background-color: #e6eff8;
+            background-color: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
+            border: 1px solid #eeeeee;
           "
         >
           <img
@@ -78,65 +83,59 @@
             *ngIf="rememberMe"
           />
         </div>
-        <span class="t14">Remember me</span>
+        <span
+          style="
+            font-size: 16;
+            font-weight: 400;
+            font-family: var(--mulish);
+            color: var(--text-color);
+          "
+        >
+          Remember me
+        </span>
       </div>
 
       <a href="" [routerLink]="'/forgot-password'">
-        <span class="t14" style="color: var(--main-turquoise)">
+        <span
+          style="
+            font-size: 16;
+            font-family: var(--mulish);
+            font-weight: 400;
+            color: var(--main-color);
+          "
+        >
           Forgot password?
         </span>
       </a>
     </div>
-    <div style="display: flex; flex-direction: row; gap: 5px">
-      <span [className]="'t14'">Don’t have an account?</span>
+    <app-button
+      [text]="'Sign in'"
+      [routerLink]="'/home'"
+      [ngStyle]="{'margin-bottom': '20px'}"
+    />
+
+    <div
+      style="display: flex; flex-direction: row; gap: 5px; align-self: center"
+    >
+      <span
+        style="
+          font-family: var(--mulish);
+          font-size: 16;
+          color: var(--text-color);
+        "
+      >
+        Don’t have an account?
+      </span>
       <a
         [routerLink]="'/sign-up'"
-        [className]="'t14'"
-        [ngStyle]="{color: 'var(--main-turquoise)'}"
+        style="
+          font-family: var(--mulish);
+          font-size: 16;
+          color: var(--main-color);
+        "
       >
         Sign up.
       </a>
     </div>
   </section>
 </main>
-
-<footer
-  style="
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  "
->
-  <button
-    style="
-      background-color: var(--white-color);
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-      height: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    "
-    (click)="$event.preventDefault()"
-  >
-    <img alt="" [src]="svg.facebook" style="margin-right: 10px" />
-  </button>
-  <button
-    style="
-      background-color: var(--white-color);
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-      height: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    "
-    (click)="$event.preventDefault()"
-  >
-    <img alt="" [src]="svg.google" style="margin-right: 10px" />
-  </button>
-</footer>

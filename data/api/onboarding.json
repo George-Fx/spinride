@@ -1,0 +1,28 @@
+{
+  "onboarding": [
+    {
+      "id": 1,
+      "title1": "Embark On Culinary",
+      "title2": "Adventures",
+      "image": "https://dinehub-data.vercel.app/assets/images/05.jpg",
+      "description1": "Embark on an exciting culinary",
+      "description2": "journey with our app."
+    },
+    {
+      "id": 2,
+      "title1": "Craft Your",
+      "title2": "Perfect Order",
+      "image": "https://dinehub-data.vercel.app/assets/images/06.jpg",
+      "description1": "Customize your cravings and place",
+      "description2": "orders effortlessly."
+    },
+    {
+      "id": 3,
+      "title1": "Taste The",
+      "title2": "Delivered Magic",
+      "image": "https://dinehub-data.vercel.app/assets/images/07.jpg",
+      "description1": "Enjoy the convenience of doorstep",
+      "description2": "culinary delights."
+    }
+  ]
+}

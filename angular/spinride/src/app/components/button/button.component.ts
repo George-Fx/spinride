@@ -16,16 +16,14 @@ export class ButtonComponent {
   linkStyles(): {[key: string]: string} {
     return {
       'background-color':
-        this.colorScheme === 'primary'
-          ? 'var(--main-turquoise)'
-          : 'transparent',
+        this.colorScheme === 'primary' ? 'var(--main-orange)' : 'transparent',
 
       display: 'flex',
       'align-items': 'center',
       'justify-content': 'center',
       width: '100%',
       height: '50px',
-      'border-radius': '10px',
+      'border-radius': '50px',
       border:
         this.colorScheme === 'primary'
           ? 'none'
@@ -36,9 +34,9 @@ export class ButtonComponent {
 
   textStyles(): {[key: string]: string} {
     return {
-      fontFamily: 'DMSans',
-      fontSize: '14px',
-      fontWeight: '700',
+      fontFamily: 'Mulish',
+      fontSize: '16px',
+      fontWeight: '600',
       textTransform: 'capitalize',
       color: this.colorScheme === 'primary' ? '#fff' : 'var(--main-turquoise)',
     };

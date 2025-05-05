@@ -16,8 +16,8 @@ export class SignInComponent {
   constructor(private metaService: MetaService) {}
 
   ngOnInit(): void {
-    this.metaService.setThemeColor('#F6F9F9');
-    this.metaService.setBackgroundColor('#F6F9F9');
+    this.metaService.setThemeColor('#F3F3F3');
+    this.metaService.setBackgroundColor('#F3F3F3');
   }
 
   setRememberMe(): void {

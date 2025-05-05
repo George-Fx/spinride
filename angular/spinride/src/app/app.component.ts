@@ -12,7 +12,7 @@ import {swipeAnimation} from './app.animations';
   standalone: false,
 })
 export class AppComponent {
-  title = 'DineHub';
+  title = 'SpinRide';
 
   isMobile = isMobile;
 

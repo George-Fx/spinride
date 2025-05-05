@@ -10,13 +10,21 @@ import {svg} from '../../../../public/assets/svg';
 })
 export class InputFieldComponent {
   svg = svg;
+  // value: string = '';
 
   @Input() label: string = '';
   @Input() placeholder: string = '';
   @Input() type: string = 'text';
-  @Input() value: string = '';
   @Input() eyeOff: boolean = false;
   @Input() check: boolean = false;
+  @Input() value: string = '';
   @Input() containerStyle: {[key: string]: string} = {};
   @Input() onChange: ((value: string) => void) | undefined;
+
+  setValue(): void {
+    const result = prompt('Enter text:', this.value);
+    if (result !== null) {
+      this.value = result;
+    }
+  }
 }
