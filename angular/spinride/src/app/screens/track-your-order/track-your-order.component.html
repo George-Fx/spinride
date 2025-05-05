@@ -1,0 +1,114 @@
+<app-header [showGoBack]="true" [title]="'Track your order'" />
+<div style="height: 10px"></div>
+
+<main
+  style="margin-left: 20px; margin-right: 20px; overflow-y: auto; height: 100%"
+>
+  <!-- info -->
+  <section
+    style="
+      border: 1px solid var(--main-turquoise);
+      padding: 20px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+    "
+  >
+    <div
+      style="display: flex; gap: 14px; align-items: center; margin-bottom: 14px"
+    >
+      <span class="t14">Your order:</span>
+      <span
+        class="t14"
+        style="font-weight: 500; color: var(--main-turquoise)"
+        >{{ orderId }}</span
+      >
+    </div>
+    <div style="display: flex; gap: 14px; align-items: center">
+      <span class="t14">Date:</span>
+      <span class="t14" style="font-weight: 500; color: var(--main-turquoise)"
+        >Aug 31 at 8:32 pm</span
+      >
+    </div>
+  </section>
+
+  <!-- progress -->
+  <section>
+    <ul
+      style="
+        background-color: var(--white-color);
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      "
+    >
+      <li
+        style="display: flex; flex-direction: row; gap: 24px"
+        *ngFor="let status of statusData; let i = index; let last = last"
+      >
+        <!-- left block -->
+        <div
+          style="
+            display: flex;
+            gap: 7px;
+            width: 30px;
+            align-items: center;
+            flex-direction: column;
+          "
+        >
+          <div
+            style="
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              border: 1px solid var(--main-turquoise);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            "
+            [ngStyle]="{
+              backgroundColor: status.confirmed
+                ? 'var(--main-turquoise)'
+                : 'var(--white-color)',
+            }"
+          >
+            <img
+              src="{{ svg.statusCheck }}"
+              alt="Checkmark"
+              *ngIf="status.confirmed"
+            />
+          </div>
+          <div
+            style="
+              width: 2px;
+              height: 30px;
+              background-color: var(--main-turquoise);
+            "
+            *ngIf="!last"
+          ></div>
+        </div>
+        <!-- right block -->
+        <div style="display: flex; flex-direction: column">
+          <span
+            class="t14"
+            style="
+              margin-bottom: 5px;
+              color: var(--main-color);
+              font-weight: 500;
+            "
+          >
+            {{ status.title }}
+          </span>
+          <span class="t14"> {{ status.description }}</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<section style="padding: 20px">
+  <app-button [text]="'Chat support'" />
+</section>

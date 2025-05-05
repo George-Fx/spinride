@@ -1,0 +1,51 @@
+<li
+  *ngIf="promocode"
+  (click)="copyToClipboard(promocode.code || '')"
+  style="
+    background-color: var(--white-color);
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    user-select: none;
+  "
+>
+  <div
+    style="
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 7px;
+    "
+  >
+    <h3>{{ promocode.code }}</h3>
+    <img [src]="svg.copy" alt="copy" />
+  </div>
+  <div
+    style="
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    "
+  >
+    <div
+      [ngStyle]="{
+        padding: '3px 8px',
+        borderRadius: '5px',
+        backgroundColor:
+          promocode.discount > 0 && promocode.discount <= 15
+            ? '#15C7FF'
+            : promocode.discount > 35 && promocode.discount <= 50
+            ? '#FF4768'
+            : '#FCC55E'
+      }"
+    >
+      <span class="t12" style="color: var(--white-color); font-weight: 500"
+        >{{ promocode.discount }}% off discount</span
+      >
+    </div>
+    <span class="t12">Expire {{ promocode.expiry }}</span>
+  </div>
+</li>

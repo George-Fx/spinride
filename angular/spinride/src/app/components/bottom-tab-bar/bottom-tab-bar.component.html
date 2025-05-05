@@ -1,0 +1,183 @@
+<div
+  style="
+    padding: 20px;
+    background-color: #f6f9f9;
+    display: flex;
+    flex-direction: column;
+  "
+>
+  <footer
+    [ngStyle]="{'max-width': isMobile ? '100%' : 'var(--screen-width)'}"
+    style="
+      background-color: #fff;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-radius: 10px;
+    "
+  >
+    <!-- HOME -->
+    <a
+      [routerLink]="'/home'"
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      "
+    >
+      <img
+        alt=""
+        [src]="
+          activeRoute === 'home'
+            ? 'assets/svg/tabs/home-active.svg'
+            : 'assets/svg/tabs/home-inactive.svg'
+        "
+      />
+      <span
+        class="t10"
+        style="text-align: center; line-height: 1.7; text-transform: capitalize"
+        [style]="
+          activeRoute === 'home'
+            ? {color: 'var(--main-turquoise)'}
+            : {color: '#666E84'}
+        "
+      >
+        home
+      </span>
+    </a>
+
+    <!-- MENU -->
+    <a
+      [routerLink]="'/menu'"
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      "
+    >
+      <img
+        alt=""
+        [src]="
+          activeRoute === 'menu'
+            ? 'assets/svg/tabs/menu-active.svg'
+            : 'assets/svg/tabs/menu-inactive.svg'
+        "
+      />
+      <span
+        class="t10"
+        style="text-align: center; line-height: 1.7; text-transform: capitalize"
+        [style]="
+          activeRoute === 'menu'
+            ? {color: 'var(--main-turquoise)'}
+            : {color: '#666E84'}
+        "
+      >
+        menu
+      </span>
+    </a>
+
+    <!-- ORDER -->
+    <a
+      [routerLink]="list.length === 0 ? '/order-empty' : '/order'"
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      "
+    >
+      <img
+        alt=""
+        [src]="
+          activeRoute === 'order' || activeRoute === 'order-empty'
+            ? 'assets/svg/tabs/order-active.svg'
+            : 'assets/svg/tabs/order-inactive.svg'
+        "
+      />
+      <span
+        class="t10"
+        style="text-align: center; line-height: 1.7; text-transform: capitalize"
+        [style]="
+          activeRoute === 'order' || activeRoute === 'order-empty'
+            ? {color: 'var(--main-turquoise)'}
+            : {color: '#666E84'}
+        "
+      >
+        order
+      </span>
+    </a>
+
+    <!-- FAVORITE -->
+    <a
+      [routerLink]="wishlist.length === 0 ? '/favorite-empty' : '/favorite'"
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      "
+    >
+      <img
+        alt=""
+        [src]="
+          activeRoute === 'favorite' || activeRoute === 'favorite-empty'
+            ? 'assets/svg/tabs/favorite-active.svg'
+            : 'assets/svg/tabs/favorite-inactive.svg'
+        "
+      />
+      <span
+        class="t10"
+        style="text-align: center; line-height: 1.7; text-transform: capitalize"
+        [style]="
+          activeRoute === 'favorite' || activeRoute === 'favorite-empty'
+            ? {color: 'var(--main-turquoise)'}
+            : {color: '#666E84'}
+        "
+      >
+        Favorite
+      </span>
+    </a>
+
+    <!-- NOTIFICATION -->
+    <a
+      [routerLink]="'/notifications'"
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      "
+    >
+      <img
+        alt=""
+        [src]="
+          activeRoute === 'notifications'
+            ? 'assets/svg/tabs/notification-active.svg'
+            : 'assets/svg/tabs/notification-inactive.svg'
+        "
+      />
+      <span
+        class="t10"
+        style="text-align: center; line-height: 1.7; text-transform: capitalize"
+        [style]="
+          activeRoute === 'notifications'
+            ? {color: 'var(--main-turquoise)'}
+            : {color: '#666E84'}
+        "
+      >
+        Notification
+      </span>
+    </a>
+  </footer>
+</div>

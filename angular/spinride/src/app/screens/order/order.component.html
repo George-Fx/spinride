@@ -1,0 +1,113 @@
+<app-header
+  [title]="'Order'"
+  [showBasket]="true"
+  [showBurger]="true"
+  [showUser]="true"
+/>
+
+<main
+  style="margin-left: 20px; margin-right: 20px; height: 100%; overflow-y: auto"
+>
+  <!-- dishes -->
+  <section
+    style="
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 2%;
+      margin-bottom: 20px;
+    "
+  >
+    <app-order-item *ngFor="let dish of list" [dish]="dish" />
+  </section>
+
+  <!-- Apply promocode -->
+  <section style="margin-bottom: 16%" *ngIf="!promocodeApplied">
+    <button>
+      <img
+        src="{{ svg.applyPromocode }}"
+        alt="Apply promocode"
+        (click)="setPromocodeApplied($event)"
+      />
+    </button>
+  </section>
+
+  <!-- promocode applied -->
+  <section style="margin-bottom: 16%" *ngIf="promocodeApplied">
+    <button>
+      <img src="{{ svg.promocodeApplied }}" alt="Promocode applied" />
+    </button>
+  </section>
+
+  <!-- summary -->
+  <section style="margin-bottom: 20px">
+    <div
+      style="
+        border-radius: 20px;
+        padding: 20px;
+        border: 1px solid var(--main-turquoise);
+      "
+    >
+      <!-- subtotal -->
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          flex-direction: row;
+          margin-bottom: 10px;
+        "
+      >
+        <span class="t14" style="color: var(--main-color); font-weight: 500"
+          >Subtotal</span
+        >
+        <span class="t14" style="color: var(--main-color)"
+          >${{ subtotal.toFixed(2) }}</span
+        >
+      </div>
+      <!-- discount -->
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          flex-direction: row;
+          margin-bottom: 10px;
+        "
+      >
+        <span class="t14" style="color: var(--text-color)">Discount</span>
+        <span class="t14">${{ discount }}</span>
+      </div>
+      <!-- delivery -->
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          flex-direction: row;
+          padding-bottom: 14px;
+          border-bottom: 1px solid #dbe9f5;
+          margin-bottom: 20px;
+        "
+      >
+        <span class="t14">Delivery</span>
+        <span class="t14">${{ delivery }}</span>
+      </div>
+      <!-- total -->
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          flex-direction: row;
+        "
+      >
+        <h4>Total</h4>
+        <h4>${{ total.toFixed(2) }}</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- button -->
+  <section>
+    <app-button [text]="'Checkout'" [routerLink]="'/checkout'" />
+  </section>
+</main>
+
+<app-bottom-tab-bar />

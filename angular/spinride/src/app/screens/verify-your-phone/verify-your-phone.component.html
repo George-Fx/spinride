@@ -1,0 +1,28 @@
+<app-header [showGoBack]="true" [title]="'Verify your phone'" />
+
+<main
+  style="margin-left: 20px; margin-right: 20px; overflow-y: auto; height: 100%"
+>
+  <section
+    style="
+      margin-top: 10px;
+      border-radius: 20px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      padding-left: 20px;
+      padding-right: 20px;
+      background-color: var(--white-color);
+    "
+  >
+    <p class="t16" style="margin-bottom: 30px">
+      We have sent you an SMS with a code to number +17 0123456789.
+    </p>
+    <app-input-field
+      [check]="true"
+      [type]="'phone'"
+      [placeholder]="'+170123456789'"
+      [containerStyle]="{'margin-bottom': '20px'}"
+    />
+    <app-button [text]="'confirm'" [routerLink]="['/confirmation-code']" />
+  </section>
+</main>

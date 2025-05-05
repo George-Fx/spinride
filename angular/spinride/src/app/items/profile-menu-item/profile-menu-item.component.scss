@@ -1,0 +1,17 @@
+:host {
+  .profile-menu-item {
+    &__link {
+      gap: 16px;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      padding: 15px 16px;
+      border-radius: 20px;
+      background-color: var(--white-color);
+    }
+
+    h5 {
+      margin-right: auto;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+import {Component, Input, OnInit} from '@angular/core';
+
+import {svg} from '../../../../public/assets/svg';
+import {DishModel} from '../../models/dish.model';
+import {CartService} from '../../services/cart.service';
+
+@Component({
+  selector: 'app-order-item',
+  standalone: false,
+  templateUrl: './order-item.component.html',
+  styleUrl: './order-item.component.scss',
+})
+export class OrderItemComponent implements OnInit {
+  svg = svg;
+  appliedPromocode = false;
+
+  @Input() dish: DishModel | undefined;
+
+  constructor(private cartService: CartService) {}
+
+  addToCart(dish: DishModel, event: Event): void {
+    event.stopPropagation();
+    event.preventDefault();
+    this.cartService.addToCart(dish);
+  }
+
+  removeFromCart(dish: DishModel, event: Event): void {
+    event.stopPropagation();
+    event.preventDefault();
+    this.cartService.removeFromCart(dish);
+  }
+
+  ngOnInit(): void {}
+}

@@ -1,0 +1,86 @@
+<app-header [showGoBack]="true" [showBasket]="true" />
+
+<main
+  style="overflow-y: auto; height: 100%; background-color: var(--white-color)"
+  *ngIf="dish"
+>
+  <div style="display: flex; height: 100%; position: relative">
+    <img [src]="dish.image" style="width: 100%; object-fit: contain" />
+    <button
+      style="position: absolute; right: 25px; top: 23px"
+      (click)="addToWishlist(dish, $event)"
+      *ngIf="!ifInWishlist(dish.id)"
+    >
+      <img class="dish-svg" [src]="svg.dishHeart" />
+    </button>
+    <button
+      style="position: absolute; right: 25px; top: 23px"
+      *ngIf="ifInWishlist(dish.id)"
+    >
+      <img class="dish-svg" [src]="svg.dishHeartFill" />
+    </button>
+    <img
+      [src]="svg.newBig"
+      class="new-svg"
+      style="position: absolute; top: 21px; left: 20px"
+      *ngIf="dish?.isNew"
+    />
+  </div>
+</main>
+
+<section style="padding: 20px; margin-top: 10px">
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    "
+  >
+    <h3>{{ dish?.name }}</h3>
+    <span class="t16"> {{ dish?.kcal }} kcal - {{ dish?.weight }}g </span>
+  </div>
+  <p class="t16" style="margin-bottom: 20px">{{ dish?.description }}</p>
+  <div
+    style="
+      background-color: var(--white-color);
+      border-radius: 10px;
+      padding-left: 20px;
+      /* padding-right: 20px; */
+      height: 60px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    "
+  >
+    <!-- price -->
+    <span
+      style="
+        font-size: 20px;
+        font-family: var(--dm-sans);
+        font-weight: 700;
+        margin-right: auto;
+      "
+    >
+      ${{ dish?.price }}
+    </span>
+    <!-- counter -->
+    <button
+      style="padding: 20px"
+      (click)="dish ? removeFromCart(dish, $event) : null"
+    >
+      <img [src]="svg.counterMinus" />
+    </button>
+    <span class="t14" style="font-weight: 700">{{ qty }}</span>
+    <button
+      style="padding: 20px"
+      (click)="dish ? addToCart(dish, $event) : null"
+    >
+      <img [src]="svg.counterPlus" />
+    </button>
+  </div>
+  <app-button
+    [text]="'+ Add to cart'"
+    (click)="dish && addToCart(dish, $event)"
+  />
+</section>

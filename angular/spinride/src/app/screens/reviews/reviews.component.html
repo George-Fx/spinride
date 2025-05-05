@@ -1,0 +1,26 @@
+<app-loader *ngIf="isLoading" />
+
+<app-header [showGoBack]="true" [title]="'Reviews'" *ngIf="!isLoading" />
+
+<main
+  style="
+    margin-left: 20px;
+    margin-right: 20px;
+    overflow-y: auto;
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  "
+  *ngIf="!isLoading"
+>
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+    "
+  >
+    <app-review-item *ngFor="let review of reviews" [review]="review" />
+  </div>
+</main>

@@ -1,0 +1,71 @@
+<app-header [title]="'Notifications'" [showBasket]="true" [showUser]="true" />
+
+<main
+  style="
+    height: 100%;
+    overflow-y: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  "
+>
+  <ul style="display: flex; flex-direction: column; gap: 14px">
+    <li
+      *ngFor="let notification of notifications"
+      style="
+        background-color: var(--white-color);
+        border-radius: 10px;
+        padding: 20px;
+      "
+      class="clickable"
+      [ngStyle]="{
+        'opacity': isRead(notification.id.toString()) ? '0.5' : '1',
+      }"
+    >
+      <!-- top content -->
+      <div
+        style="
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          flex-direction: row;
+          margin-bottom: 14px;
+        "
+      >
+        <img
+          [src]="notification.icon"
+          alt="Notification Image"
+          style="width: 24px; height: 24px; border-radius: 10px"
+        />
+        <h5>{{ notification.title }}</h5>
+      </div>
+
+      <!-- bottom content -->
+      <p class="t14" style="margin-bottom: 14px">
+        {{ notification.description }}
+      </p>
+
+      <!-- time + link -->
+      <div
+        style="
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          justify-content: space-between;
+        "
+      >
+        <span class="t12">{{ notification.date }} </span>
+        <button
+          class="t12"
+          style="color: var(--main-turquoise)"
+          (click)="markAsRead(notification.id.toString())"
+        >
+          Mark as read
+        </button>
+      </div>
+    </li>
+  </ul>
+</main>
+
+<app-bottom-tab-bar />

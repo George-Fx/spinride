@@ -1,0 +1,9 @@
+<li class="profile-menu-item" [routerLink]="['/', 'profile']">
+  <a href="" class="profile-menu-item__link" [routerLink]="routerLink">
+    <img [src]="icon" alt="icon" />
+    <h5 [ngStyle]="titleStyle">
+      {{ title }}
+    </h5>
+    <img [src]="svg.rightArrow" alt="icon" *ngIf="routerLink !== '/sign-in'" />
+  </a>
+</li>

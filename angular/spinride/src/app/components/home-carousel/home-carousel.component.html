@@ -1,0 +1,52 @@
+<!-- CAROUSEL -->
+<section style="position: relative; margin-bottom: 30px">
+  <!-- images -->
+  <owl-carousel-o
+    [options]="customOptions"
+    (translated)="onSlideChange($event)"
+  >
+    <ng-template
+      carouselSlide
+      *ngFor="let item of carousel; let i = index"
+      class="item"
+    >
+      <a [routerLink]="['/dish', '1']">
+        <img [src]="item.banner" style="width: 100%; margin: 0 auto" />
+      </a>
+    </ng-template>
+  </owl-carousel-o>
+
+  <!-- dots -->
+  <section
+    style="
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      bottom: 0;
+      z-index: 1;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-bottom: 20px;
+    "
+  >
+    <ul
+      style="display: flex; gap: 8px; flex-direction: row; align-items: center"
+    >
+      <li
+        *ngFor="let item of carousel; let i = index"
+        [className]="i === 0 ? 'active' : ''"
+        style="
+          display: inline-block;
+          cursor: pointer;
+          background-color: #000;
+          border-radius: 10px;
+        "
+        [ngStyle]="{
+        width: '8px',
+        height: activeSlide === i ? '20px' : '8px',
+        backgroundColor: i === activeSlide ? 'var(--white-color)' : 'rgba(255, 255, 255, 0.5)',
+      }"
+      ></li>
+    </ul>
+  </section>
+</section>

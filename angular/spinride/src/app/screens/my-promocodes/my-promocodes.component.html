@@ -1,0 +1,51 @@
+<app-loader *ngIf="isLoading" [style]="'background-color: #F5FAFB;'" />
+
+<app-header
+  [title]="'Promocodes & gift cards'"
+  [showGoBack]="true"
+  *ngIf="!isLoading"
+/>
+
+<div style="height: 10px"></div>
+
+<main
+  *ngIf="!isLoading"
+  style="height: 100%; overflow-y: auto; margin-left: 20px; margin-right: 20px"
+>
+  <ul style="display: flex; flex-direction: column; gap: 14px">
+    <app-promocode-item
+      [promocode]="promocode"
+      *ngFor="let promocode of promocodes"
+    />
+  </ul>
+</main>
+
+<section style="padding: 20px">
+  <div
+    style="
+      display: grid;
+      grid-template-columns: 1fr 24%;
+      gap: 10px;
+      height: 50px;
+    "
+  >
+    <app-input-field
+      [type]="'promocode-enter'"
+      [placeholder]="'Enter promocode'"
+    />
+    <button
+      style="
+        background-color: var(--main-turquoise);
+        height: 100%;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <span class="t14" style="color: var(--white-color); font-weight: 700">
+        + Add
+      </span>
+    </button>
+  </div>
+</section>

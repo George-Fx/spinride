@@ -1,0 +1,22 @@
+<app-header
+  [showBurger]="true"
+  [showBasket]="true"
+  [title]="'Favorite'"
+  [showUser]="true"
+/>
+
+<main
+  style="
+    height: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+    overflow-y: auto;
+    padding-top: 10px;
+  "
+>
+  <ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px">
+    <app-wishlist-item *ngFor="let dish of wishlist" [dish]="dish" />
+  </ul>
+</main>
+
+<app-bottom-tab-bar />

@@ -1,0 +1,26 @@
+<app-loader *ngIf="isLoading" />
+
+<app-header
+  [showBurger]="true"
+  [showLogo]="true"
+  [showBasket]="true"
+  [showUser]="true"
+  [showUserName]="true"
+  *ngIf="!isLoading"
+/>
+
+<main style="overflow-y: auto; height: 100%" *ngIf="!isLoading">
+  <!-- CAROUSEL -->
+  <app-home-carousel [carousel]="carousel" />
+
+  <!-- CATEGORIES -->
+  <app-home-categories [categories]="categories" />
+
+  <!-- RECOMENDED -->
+  <app-recomended [dishes]="dishes" />
+
+  <!-- REVIEWS -->
+  <app-home-reviews [reviews]="reviews" />
+</main>
+
+<app-bottom-tab-bar *ngIf="!isLoading" />

@@ -1,0 +1,14 @@
+<div
+  style="
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 13px;
+    justify-content: space-between;
+  "
+>
+  <h4>{{ title }}</h4>
+  <a [routerLink]="routerLink" *ngIf="routerLink">
+    <img [src]="svg.viewAll" alt="View all" />
+  </a>
+</div>

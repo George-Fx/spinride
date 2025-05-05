@@ -1,0 +1,101 @@
+<div
+  style="
+    height: 100px;
+    display: grid;
+    grid-template-columns: 100px 1fr 50px;
+    justify-items: center;
+    column-gap: 4px;
+    background-color: var(--white-color);
+    border-radius: 20px;
+  "
+>
+  <a
+    href=""
+    style="flex: 1; display: flex; justify-content: center; align-items: center"
+  >
+    <a [routerLink]="['/dish', dish.id]">
+      <img
+        src="{{ dish.image }}"
+        alt="{{ dish.name }}"
+        style="display: flex; width: 80px; height: 80px; border-radius: 12px"
+      />
+    </a>
+  </a>
+  <div
+    style="
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-right: auto;
+    "
+  >
+    <h6 class="number-of-lines-1" style="margin-bottom: 4px">
+      {{ dish.name }}
+    </h6>
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 4px;
+        margin-bottom: 3px;
+      "
+    >
+      <!-- <span
+        class="t16"
+        *ngIf="dish?.oldPrice"
+        style="font-size: 12px; text-decoration: line-through"
+      >
+        ${{ dish.oldPrice }}</span
+      > -->
+      <span class="t16">${{ dish.price }}</span>
+    </div>
+    <app-rating [dish]="dish"></app-rating>
+  </div>
+  <!-- actions -->
+  <div
+    style="
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    "
+  >
+    <button
+      style="
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+      "
+      (click)="addToWishlist(dish, $event)"
+    >
+      <img
+        [src]="ifInWishlist(dish) ? svg.addedToWishlist : svg.addToWishlist"
+        alt="Add to wishlist"
+        style="border-radius: 15px"
+      />
+    </button>
+    <button
+      style="
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+      "
+      (click)="addToCart(dish, $event)"
+    >
+      <img
+        [src]="svg.addToCart"
+        alt="Add to cart"
+        style="border-radius: 15px"
+      />
+    </button>
+  </div>
+</div>

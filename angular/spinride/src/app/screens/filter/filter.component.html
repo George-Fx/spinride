@@ -1,0 +1,162 @@
+<app-header [showGoBack]="true" [title]="'Filter'" />
+
+<main
+  style="
+    height: 100%;
+    overflow-y: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 10px;
+  "
+>
+  <section>
+    <div
+      style="
+        display: flex;
+        padding-left: 20px;
+        padding-right: 20px;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 10px;
+        padding-top: 14%;
+        padding-bottom: 14%;
+        margin-bottom: 10%;
+        background-color: var(--white-color);
+      "
+    >
+      <section>
+        <ul
+          style="
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            margin-bottom: 30px;
+          "
+        >
+          <li
+            *ngFor="let item of status; let i = index"
+            style="
+              padding: 10px 20px;
+              background-color: red;
+              border-radius: 10px;
+              cursor: pointer;
+            "
+            (click)="selectStatus(item)"
+            [ngStyle]="{
+              backgroundColor: item === selectedStatus
+                ? 'var(--main-turquoise)'
+                : '#E9F3F6',
+            }"
+          >
+            <span
+              class="t14"
+              [ngStyle]="{
+                color: item === selectedStatus
+                  ? 'var(--white-color)'
+                  : 'var(--main-color)',
+              }"
+              style="font-weight: 500; text-transform: capitalize"
+            >
+              {{ item }}
+            </span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Categories -->
+      <section style="margin-bottom: 30px">
+        <span
+          class="t14"
+          style="
+            font-weight: 500;
+            color: var(--main-color);
+            margin-bottom: 14px;
+          "
+        >
+          Category
+        </span>
+        <ul
+          style="display: flex; flex-direction: row; gap: 8px; flex-wrap: wrap"
+        >
+          <li
+            *ngFor="let category of categories"
+            (click)="selectCategory(category)"
+            [ngStyle]="{
+            backgroundColor: category === selectedCategory
+              ? 'var(--main-turquoise)'
+              : '#E9F3F6',
+          }"
+            style="padding: 10px 20px; border-radius: 10px; cursor: pointer"
+          >
+            <span
+              class="t14"
+              [ngStyle]="{
+            color: category === selectedCategory
+              ? 'var(--white-color)'
+              : 'var(--main-color)',
+            }"
+              style="font-weight: 500; text-transform: capitalize"
+            >
+              {{ category }}
+            </span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Dietary Preferences -->
+      <section>
+        <span
+          class="t14"
+          style="
+            font-weight: 500;
+            color: var(--main-color);
+            margin-bottom: 14px;
+          "
+        >
+          Dietary Preferences
+        </span>
+        <ul
+          style="display: flex; flex-direction: row; gap: 8px; flex-wrap: wrap"
+        >
+          <li
+            *ngFor="let preferences of dietaryPreferences"
+            (click)="selectPreference(preferences)"
+            [ngStyle]="{
+              backgroundColor: preferences === selectedPreference
+                ? 'var(--main-turquoise)'
+                : '#E9F3F6',
+            }"
+            style="padding: 10px 20px; border-radius: 10px; cursor: pointer"
+          >
+            <span
+              class="t14"
+              [ngStyle]="{
+            color: preferences === selectedPreference
+              ? 'var(--white-color)'
+              : 'var(--main-color)',
+            }"
+              style="font-weight: 500; text-transform: capitalize"
+            >
+              {{ preferences }}
+            </span>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- buttons -->
+    <section style="margin-bottom: 20px">
+      <app-button
+        [text]="'apply filters'"
+        [containerStyle]="{'margin-bottom': '6px'}"
+        [routerLink]="'/menu'"
+      />
+      <app-button
+        [text]="'Reset filters'"
+        [colorScheme]="'secondary'"
+        [containerStyle]="{border: 'none'}"
+        (click)="resetFilters()"
+      />
+    </section>
+  </section>
+</main>

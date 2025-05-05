@@ -1,0 +1,52 @@
+<div
+  style="
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    background-color: var(--white-color);
+  "
+>
+  <div
+    style="
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      padding-bottom: 13px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      margin-bottom: 11px;
+    "
+  >
+    <img
+      [src]="review?.avatar"
+      style="width: 30px; height: 30px; margin-right: 14px"
+    />
+    <div style="width: 100%">
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          width: 100%;
+        "
+      >
+        <h5 style="margin-right: auto">{{ review?.name }}</h5>
+        <span class="t10">{{ review?.date }}</span>
+      </div>
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        "
+      >
+        <app-stars [rating]="3" />
+        <button>
+          <span class="t10" style="color: var(--main-turquoise)">Reply</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p class="t14">{{ review?.comment }}</p>
+</div>

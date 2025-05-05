@@ -1,0 +1,109 @@
+<section>
+  <div
+    style="
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 13px;
+      justify-content: space-between;
+      margin-left: 20px;
+      margin-right: 20px;
+    "
+  >
+    <h4>Our Happy clients say</h4>
+    <a [routerLink]="'/reviews'">
+      <img [src]="svg.viewAll" />
+    </a>
+  </div>
+  <swiper-container slides-per-view="auto" space-between="10">
+    <swiper-slide
+      class="swiper-slide"
+      style="width: auto"
+      *ngFor="let review of reviews"
+    >
+      <div
+        style="
+          padding: 20px;
+          border-radius: 10px;
+          width: 100%;
+          max-width: 320px;
+          background-color: var(--white-color);
+        "
+      >
+        <div
+          style="
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            padding-bottom: 13px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            margin-bottom: 11px;
+          "
+        >
+          <img
+            [src]="review?.avatar"
+            style="width: 30px; height: 30px; margin-right: 14px"
+          />
+          <div style="width: 100%">
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                width: 100%;
+              "
+            >
+              <h5 style="margin-right: auto">{{ review?.name }}</h5>
+              <span class="t10">{{ review?.date }}</span>
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+              "
+            >
+              <div style="display: flex; flex-direction: row; gap: 2px">
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  *ngFor="let star of [1, 2, 3, 4, 5]; let i = index"
+                >
+                  <g clip-path="url(#clip0_280_164)">
+                    <path
+                      d="M5.00004 0.833252L6.28754 3.44159L9.16671 3.86242L7.08337 5.89159L7.57504 8.75825L5.00004 7.40409L2.42504 8.75825L2.91671 5.89159L0.833374 3.86242L3.71254 3.44159L5.00004 0.833252Z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      [ngStyle]="{
+                        fill:
+                          (review?.rating ?? 0) >= i + 1 ? '#FFCA40' : 'none',
+                        stroke:
+                          (review?.rating ?? 0) >= i + 1 ? '#FFCA40' : '#FFCA40'
+                      }"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_280_164">
+                      <rect width="10" height="10" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <button>
+                <span class="t10" style="color: var(--main-turquoise)"
+                  >Reply</span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+        <p class="t14">{{ review?.comment }}</p>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+</section>

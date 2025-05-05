@@ -1,0 +1,89 @@
+<div
+  class="modal-backdrop"
+  *ngIf="isOpen"
+  (click)="closeModal()"
+  style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 8888;
+  "
+></div>
+
+<div
+  class="modal"
+  [@slideInOut]="isOpen ? 'in' : 'out'"
+  style="
+    background-color: var(--white-color);
+    transform: translateX(-100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    z-index: 999999;
+  "
+>
+  <div
+    style="
+      padding: 30px 20px 20px 20px;
+      border-bottom: 1px solid #dbe9f5;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    "
+  >
+    <img
+      alt="user"
+      [src]="URLS.MAIN_URL + '/assets/users/01.jpg'"
+      style="width: 20%; border-radius: 50%"
+    />
+    <div>
+      <span class="t14" style="color: var(--main-color); font-weight: 500">
+        Jordan Hebert
+      </span>
+      <span class="t14">{{ 'jordanhebert@mail.com' }}</span>
+    </div>
+  </div>
+
+  <div>
+    <a
+      *ngFor="let item of data"
+      style="
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      "
+      (click)="item.route && handleClick(item.route || '')"
+    >
+      <span
+        class="t14"
+        style="color: var(--main-color)"
+        [ngStyle]="{
+        'color': item.title === 'Sign out' ? '#FA5555' : 'var(--main-color)',
+      }"
+        >{{ item.title }}</span
+      >
+      <img
+        [src]="svg.rightArrow"
+        alt="right arrow"
+        *ngIf="
+          !item.hasSwitch &&
+          item.title !== 'Sign out' &&
+          item.title !== 'Support center'
+        "
+      />
+      <app-switcher *ngIf="item.hasSwitch" />
+    </a>
+  </div>
+</div>

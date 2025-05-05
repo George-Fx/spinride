@@ -1,0 +1,39 @@
+<app-header [showGoBack]="true" [title]="'Order history'" />
+<div style="height: 10px"></div>
+
+<main style="height: 100%; margin-left: 20px; margin-right: 20px">
+  <section
+    style="
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      border-radius: 10px;
+      background-color: var(--white-color);
+    "
+  >
+    <img
+      [className]="'status-image'"
+      [alt]="'no order history yet'"
+      [src]="URLS.MAIN_URL + '/assets/images/10.jpg'"
+    />
+    <h2
+      style="
+        text-align: center;
+        margin-bottom: 14px;
+        text-transform: capitalize;
+      "
+    >
+      No Order History Yet!
+    </h2>
+    <p [className]="'t16'" style="text-align: center">
+      It looks like your order history is empty. <br />
+      Place your order now to start building <br />
+      your history!
+    </p>
+  </section>
+</main>
+
+<section style="padding: 20px">
+  <app-button [text]="'Explore Our Menu'" [routerLink]="'/menu'" />
+</section>

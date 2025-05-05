@@ -1,0 +1,110 @@
+<app-header [title]="'Verify phone'" [showGoBack]="true" />
+
+<main
+  style="
+    height: 100%;
+    padding-top: 13px;
+    padding-bottom: 20px;
+    overflow-y: auto;
+  "
+>
+  <section
+    style="
+      background-color: var(--white-color);
+      border-radius: 10px;
+      margin-left: 20px;
+      margin-right: 20px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      padding-left: 20px;
+      padding-right: 20px;
+    "
+  >
+    <p class="t16" style="margin-bottom: 32px">Enter your OTP code here.</p>
+
+    <div
+      style="
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        margin-bottom: 28px;
+      "
+    >
+      <input
+        type="text"
+        maxlength="1"
+        style="
+          width: 100%;
+          height: 50px;
+          text-align: center;
+          font-size: 18px;
+          border: 1px solid var(--main-turquoise);
+          border-radius: 0px;
+        "
+      />
+      <input
+        type="text"
+        maxlength="1"
+        style="
+          width: 100%;
+          height: 50px;
+          text-align: center;
+          font-size: 18px;
+          border: 1px solid var(--main-turquoise);
+          border-radius: 0px;
+        "
+      />
+      <input
+        type="text"
+        maxlength="1"
+        style="
+          width: 100%;
+          height: 50px;
+          text-align: center;
+          font-size: 18px;
+          border: 1px solid var(--main-turquoise);
+          border-radius: 0px;
+        "
+      />
+      <input
+        type="text"
+        maxlength="1"
+        style="
+          width: 100%;
+          height: 50px;
+          text-align: center;
+          font-size: 18px;
+          border: 1px solid var(--main-turquoise);
+          border-radius: 0px;
+        "
+      />
+      <input
+        type="text"
+        maxlength="1"
+        style="
+          width: 100%;
+          height: 50px;
+          text-align: center;
+          font-size: 18px;
+          border: 1px solid var(--main-turquoise);
+          border-radius: 0px;
+        "
+      />
+    </div>
+    <div
+      style="
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+      "
+    >
+      <span class="t16">Didn’t receive the OTP?</span>
+      <button>
+        <span class="t16" style="color: var(--main-turquoise)"> Resend. </span>
+      </button>
+    </div>
+    <app-button [text]="'verify'" [routerLink]="['/sign-up-account-created']" />
+  </section>
+</main>

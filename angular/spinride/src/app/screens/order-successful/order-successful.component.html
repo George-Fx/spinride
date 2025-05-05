@@ -1,0 +1,44 @@
+<div style="height: 10px"></div>
+
+<main style="height: 100%; margin-left: 20px; margin-right: 20px">
+  <section
+    style="
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      background-color: var(--white-color);
+    "
+  >
+    <img
+      [alt]="'info saved'"
+      [className]="'status-image'"
+      [src]="URLS.MAIN_URL + '/assets/images/03.jpg'"
+    />
+    <h2
+      style="text-align: center; margin-bottom: 4%; text-transform: capitalize"
+    >
+      Thank you for <br />
+      your order!
+    </h2>
+    <p [className]="'t16'" style="text-align: center; margin-bottom: 8%">
+      Your order will be delivered on time. <br />
+      Thank you!
+    </p>
+  </section>
+</main>
+
+<section style="padding: 20px">
+  <app-button
+    [text]="'Continue Shopping'"
+    [routerLink]="'/home'"
+    [containerStyle]="{'margin-bottom': '14px'}"
+  />
+  <app-button
+    [text]="'View orders'"
+    [colorScheme]="'secondary'"
+    [routerLink]="'/order-history'"
+  />
+</section>

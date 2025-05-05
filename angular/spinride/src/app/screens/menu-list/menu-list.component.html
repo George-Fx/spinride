@@ -1,0 +1,89 @@
+<app-loader *ngIf="dishesIsLoading" />
+
+<app-header
+  [showGoBack]="true"
+  [title]="'Menu'"
+  [showBasket]="true"
+  *ngIf="!dishesIsLoading"
+/>
+
+<!-- search -->
+<section
+  style="margin-bottom: 20px; margin-left: 20px; margin-right: 20px"
+  *ngIf="!dishesIsLoading"
+>
+  <div
+    style="
+      display: grid;
+      grid-template-columns: 1fr 50px;
+      gap: 5px;
+      height: 50px;
+    "
+  >
+    <button
+      style="
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 14px;
+        background-color: var(--white-color);
+        border-radius: 10px;
+        padding-left: 5px;
+      "
+      (click)="openKeyboard()"
+    >
+      <img [src]="svg.search" />
+      <span class="t16">Search ...</span>
+    </button>
+    <a
+      style="
+        width: 100%;
+        background-color: var(--white-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+      "
+      [routerLink]="['/filter']"
+    >
+      <img [src]="svg.filter" />
+    </a>
+  </div>
+</section>
+
+<main
+  style="margin-left: 20px; margin-right: 20px; height: 100%; overflow-y: auto"
+  *ngIf="filteredDishes.length > 0 && !dishesIsLoading"
+>
+  <ul
+    style="
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 20px;
+    "
+  >
+    <app-menu-item
+      *ngFor="let dish of filteredDishes; let last = last"
+      [dish]="dish"
+    ></app-menu-item>
+  </ul>
+</main>
+
+<main
+  *ngIf="filteredDishes.length === 0 && !dishesIsLoading"
+  style="margin-left: 20px; margin-right: 20px; height: 100%; overflow-y: auto"
+>
+  <section
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    "
+  >
+    <span class="t14"> No dishes found </span>
+  </section>
+</main>

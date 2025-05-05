@@ -1,0 +1,79 @@
+<li
+  style="
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--white-color);
+    padding: 14px;
+    padding-top: 2px;
+    position: relative;
+  "
+>
+  <!-- image -->
+  <a
+    [routerLink]="['/dish', dish.id]"
+    style="
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      position: relative;
+      padding-bottom: 4px;
+      cursor: pointer;
+    "
+  >
+    <img
+      src="{{ dish.image }}"
+      alt="{{ dish.name }}"
+      class="order-item__image"
+      style="width: 100%; height: auto; border-radius: 12px; object-fit: cover"
+      [src]="dish.image"
+    />
+  </a>
+
+  <!-- remove btn -->
+  <button
+    (click)="removeFromWishlist(dish, $event)"
+    style="padding: 14px; position: absolute; bottom: 60px; right: 0px"
+  >
+    <img [src]="svg.menuListHeartFill" class="new-svg" />
+  </button>
+
+  <!-- new badge -->
+  <img
+    [src]="svg.new"
+    style="position: absolute; top: 14px; left: 14px"
+    *ngIf="dish?.isNew"
+  />
+
+  <!-- info -->
+  <div
+    style="display: flex; flex-direction: column; gap: 4px; margin-right: auto"
+  >
+    <span class="number-of-lines-1 t14" style="margin-bottom: 3px">{{
+      dish.name
+    }}</span>
+    <div
+      style="display: flex; flex-direction: row; align-items: center; gap: 6px"
+    >
+      <span class="t14" style="color: var(--main-color); font-weight: 500">
+        ${{ dish.price }}
+      </span>
+      <span class="t10">|</span>
+      <span class="t10" style="margin-right: auto">{{ dish.weight }}g</span>
+    </div>
+  </div>
+
+  <!-- add to cart -->
+  <button
+    style="position: absolute; padding: 14px; bottom: 0px; right: 0px"
+    (click)="addToCart(dish, $event)"
+  >
+    <img [src]="svg.addToCart" class="new-svg" />
+  </button>
+
+  <img
+    *ngIf="dish?.isHot"
+    src="./assets/other/12.png"
+    alt="Add to cart"
+    style="position: absolute; width: 13px; height: 24px; left: 14px; top: 14px"
+  />
+</li>

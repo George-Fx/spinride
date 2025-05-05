@@ -1,0 +1,142 @@
+<app-header [showGoBack]="true" />
+
+<main
+  style="
+    margin-left: 20px;
+    margin-right: 20px;
+    overflow-y: auto;
+    height: 100%;
+    margin-top: 10px;
+  "
+>
+  <section
+    style="
+      height: 100%;
+      display: flex;
+      padding-left: 20px;
+      padding-right: 20px;
+      justify-content: center;
+      flex-direction: column;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      background-color: var(--white-color);
+    "
+  >
+    <h1 style="margin-bottom: 14px">Welcome Back!</h1>
+    <p [className]="'t16'" style="margin-bottom: 30px">Sign in to continue</p>
+    <app-input-field
+      [check]="true"
+      [type]="'email'"
+      [placeholder]="'dominicparker@mail.com'"
+      [ngStyle]="{'margin-bottom': '16px'}"
+    />
+    <app-input-field
+      [placeholder]="'••••••••'"
+      [type]="'password'"
+      [eyeOff]="true"
+      [ngStyle]="{'margin-bottom': '16px'}"
+    />
+    <app-button
+      [text]="'Sign in'"
+      [routerLink]="'/home'"
+      [ngStyle]="{'margin-bottom': '24px'}"
+    />
+    <div
+      style="
+        margin-bottom: 32px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      "
+    >
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          align-items: center;
+          cursor: pointer;
+        "
+        (click)="rememberMe = !rememberMe"
+      >
+        <div
+          style="
+            width: 18px;
+            height: 18px;
+            background-color: var(--white-color);
+            border-radius: 5px;
+            background-color: #e6eff8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <img
+            [src]="svg.check"
+            alt=""
+            style="width: 10px"
+            *ngIf="rememberMe"
+          />
+        </div>
+        <span class="t14">Remember me</span>
+      </div>
+
+      <a href="" [routerLink]="'/forgot-password'">
+        <span class="t14" style="color: var(--main-turquoise)">
+          Forgot password?
+        </span>
+      </a>
+    </div>
+    <div style="display: flex; flex-direction: row; gap: 5px">
+      <span [className]="'t14'">Don’t have an account?</span>
+      <a
+        [routerLink]="'/sign-up'"
+        [className]="'t14'"
+        [ngStyle]="{color: 'var(--main-turquoise)'}"
+      >
+        Sign up.
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer
+  style="
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  "
+>
+  <button
+    style="
+      background-color: var(--white-color);
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    "
+    (click)="$event.preventDefault()"
+  >
+    <img alt="" [src]="svg.facebook" style="margin-right: 10px" />
+  </button>
+  <button
+    style="
+      background-color: var(--white-color);
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    "
+    (click)="$event.preventDefault()"
+  >
+    <img alt="" [src]="svg.google" style="margin-right: 10px" />
+  </button>
+</footer>

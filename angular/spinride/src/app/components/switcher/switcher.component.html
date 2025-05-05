@@ -1,0 +1,24 @@
+<button
+  style="
+    background-color: var(--main-turquoise);
+    width: 40px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    padding: 1.55px;
+  "
+  [ngStyle]="{ 
+    justifyContent: on ? 'flex-start' : 'flex-end',
+    backgroundColor: on ? '#DCE2E7' : 'var(--main-turquoise)',
+  }"
+  (click)="toggleSwitch($event)"
+>
+  <div
+    style="
+      background-color: var(--white-color);
+      height: 21px;
+      width: 21px;
+      border-radius: 50%;
+    "
+  ></div>
+</button>

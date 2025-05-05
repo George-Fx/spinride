@@ -1,0 +1,126 @@
+<header
+  [ngStyle]="combinedStyles"
+  style="
+    width: 100%;
+    z-index: 8;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: var(--header-height);
+    justify-content: space-between;
+  "
+  [ngStyle]="{
+    'width': isMobile ? '100%' : 'var(--screen-width)',
+  }"
+>
+  <!-- GO BACK -->
+  <button
+    (click)="goBack()"
+    *ngIf="showGoBack"
+    style="
+      padding-left: 20px;
+      padding-right: 20px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <img src="assets/svg/go-back.svg" alt="go back icon" />
+  </button>
+
+  <!-- USER -->
+  <button
+    style="
+      padding-left: 20px;
+      padding-right: 20px;
+      position: absolute;
+      height: 48px;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+    "
+    *ngIf="showUser"
+    (click)="openModal()"
+  >
+    <img
+      alt="user"
+      [src]="`${URLS.MAIN_URL}/assets/users/01.jpg`"
+      style="width: 22px; height: 22px; border-radius: 50%"
+    />
+    <h5 *ngIf="showUserName">Jordan Hebert</h5>
+  </button>
+
+  <!-- TITLE -->
+  <span
+    *ngIf="title"
+    class="header__title t16"
+    style="
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      text-transform: capitalize;
+      text-align: center;
+      color: var(--main-color);
+    "
+  >
+    {{ title }}
+  </span>
+
+  <!-- SEARCH -->
+  <button
+    *ngIf="showSearch"
+    style="position: absolute; right: 50%; transform: translateX(50%)"
+  >
+    <img [src]="svg.headerSearch" alt="logo" />
+  </button>
+
+  <!-- BASKET -->
+  <a
+    *ngIf="showBasket"
+    [routerLink]="['/order']"
+    style="
+      display: flex;
+      padding: 0 20px;
+      position: absolute;
+      right: 0;
+      align-items: center;
+      justify-content: center;
+      height: var(--header-height);
+    "
+  >
+    <div
+      style="
+        height: 22px;
+        border-radius: 30px;
+        padding: 5px 5px 3px 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--main-turquoise);
+      "
+    >
+      <span
+        style="
+          font-size: 10px;
+          line-height: 1;
+          font-weight: 400;
+          display: block;
+          color: var(--white-color);
+          font-weight: 700;
+          font-family: 'DMSans', sans-serif;
+        "
+      >
+        ${{
+          total.toFixed(2) === '0.00'
+            ? '0'
+            : total.toFixed(2) === '-0.00'
+            ? '0'
+            : total.toFixed(2)
+        }}
+      </span>
+    </div>
+    <img alt="basket" src="assets/svg/basket.svg" />
+  </a>
+</header>

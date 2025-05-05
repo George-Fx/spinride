@@ -1,0 +1,83 @@
+<app-loader *ngIf="onboardingIsLoading" />
+
+<!-- CAROUSEL -->
+<section
+  style="
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+    justify-content: center;
+  "
+  *ngIf="!onboardingIsLoading"
+>
+  <owl-carousel-o
+    [options]="customOptions"
+    (translated)="onSlideChange($event)"
+  >
+    <ng-template
+      carouselSlide
+      *ngFor="let item of onboardingData; let i = index"
+      class="item"
+    >
+      <img [src]="item.image" style="width: 50%; margin: 0 auto" />
+    </ng-template>
+  </owl-carousel-o>
+</section>
+
+<!-- DOTS -->
+<section
+  style="display: flex; justify-content: center; margin-bottom: 6%"
+  *ngIf="!onboardingIsLoading"
+>
+  <ul style="display: flex; gap: 8px; flex-direction: row; align-items: center">
+    <li
+      *ngFor="let item of onboardingData; let i = index"
+      [className]="i === 0 ? 'active' : ''"
+      style="
+        display: inline-block;
+        cursor: pointer;
+        background-color: #000;
+        border-radius: 10px;
+      "
+      [ngStyle]="{
+        width: '8px',
+        height: activeSlide === i ? '20px' : '8px',
+        backgroundColor: i === activeSlide ? 'var(--main-turquoise)' : 'rgba(0, 176, 185, 0.3)',
+      }"
+    ></li>
+  </ul>
+</section>
+
+<!-- DESCRIPTION -->
+<section
+  style="
+    margin-bottom: 5%;
+    background-color: var(--white-color);
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    padding-top: 10%;
+    padding-bottom: 10%;
+  "
+  *ngIf="!onboardingIsLoading"
+>
+  <h1 style="text-align: center; text-transform: capitalize">
+    {{ currentTitle1 }}
+  </h1>
+  <h1
+    style="text-align: center; text-transform: capitalize; margin-bottom: 20px"
+  >
+    {{ currentTitle2 }}
+  </h1>
+  <p style="text-align: center" class="t16">{{ descriptionLine1 }}</p>
+  <p style="text-align: center" class="t16">{{ descriptionLine2 }}</p>
+</section>
+
+<!-- button -->
+<section
+  style="margin-top: auto; padding: 20px; padding-top: 0px"
+  *ngIf="!onboardingIsLoading"
+>
+  <app-button [text]="'Get Started'" [routerLink]="'/sign-in'" />
+</section>
