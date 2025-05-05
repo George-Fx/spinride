@@ -7,6 +7,7 @@ import {DishModel} from '../../models/dish.model';
 import {MenuModel} from '../../models/menu.model';
 import {ApiService} from '../../services/api.service';
 import {ReviewModel} from '../../models/review.model';
+import {ProductModel} from '../../models/product.model';
 import {MetaService} from '../../services/meta.service';
 import {ModalService} from '../../services/modal.service';
 import {CarouselModel} from '../../models/carousel.model';
@@ -24,8 +25,12 @@ export class HomeComponent {
   carousel: CarouselModel[] = [];
   categories: MenuModel[] = [];
 
-  dishesIsLoading = true;
-  dishesError = '';
+  // dishesIsLoading = true;
+  // dishesError = '';
+
+  products: ProductModel[] = [];
+  productsIsLoading = true;
+  productsError = '';
 
   carouselIsLoading = true;
   carouselError = '';
@@ -46,12 +51,14 @@ export class HomeComponent {
   ) {}
 
   ngOnInit(): void {
-    this.initializeMeta();
-    this.modalSubscribe();
-    this.initializeDishes();
-    this.initializeReviews();
-    this.initializeCarousel();
-    this.initializeCategories();
+    this.setMeta();
+    this.fetchProducts();
+    // this.initializeMeta();
+    // this.modalSubscribe();
+    // this.initializeDishes();
+    // this.initializeReviews();
+    // this.initializeCarousel();
+    // this.initializeCategories();
   }
 
   private modalSubscribe(): void {
@@ -69,18 +76,26 @@ export class HomeComponent {
       });
   }
 
-  private initializeMeta(): void {
+  private setMeta(): void {
     this.metaService.setThemeColor('#F3F3F3');
     this.metaService.setBackgroundColor('#F3F3F3');
   }
 
-  private initializeDishes(): void {
-    this.apiService.getDishes().subscribe({
-      next: data => (this.dishes = data.dishes),
-      error: err => (this.dishesError = err),
-      complete: () => (this.dishesIsLoading = false),
+  private fetchProducts(): void {
+    this.apiService.fetchProducts().subscribe({
+      next: data => (this.products = data),
+      error: err => (this.productsError = err),
+      complete: () => (this.productsIsLoading = false),
     });
   }
+
+  // private initializeDishes(): void {
+  //   this.apiService.getDishes().subscribe({
+  //     next: data => (this.dishes = data.dishes),
+  //     error: err => (this.dishesError = err),
+  //     complete: () => (this.dishesIsLoading = false),
+  //   });
+  // }
 
   private initializeCarousel(): void {
     this.apiService.getCarousel().subscribe({
@@ -98,13 +113,13 @@ export class HomeComponent {
     });
   }
 
-  private initializeReviews(): void {
-    this.apiService.getReviews().subscribe({
-      next: data => (this.reviews = data.reviews),
-      error: err => (this.reviewsError = err),
-      complete: () => (this.reviewsIsLoading = false),
-    });
-  }
+  // private initializeReviews(): void {
+  //   this.apiService.getReviews().subscribe({
+  //     next: data => (this.reviews = data.reviews),
+  //     error: err => (this.reviewsError = err),
+  //     complete: () => (this.reviewsIsLoading = false),
+  //   });
+  // }
 
   ngOnDestroy(): void {
     this.destroy$.next();
@@ -112,6 +127,7 @@ export class HomeComponent {
   }
 
   get isLoading(): boolean {
-    return this.dishesIsLoading;
+    // return this.dishesIsLoading;
+    return false;
   }
 }

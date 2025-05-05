@@ -1,4 +1,5 @@
-[
+{
+  "bicycles": [
     {
       "id": 1,
       "image": "https://george-fx.github.io/spinride/banners/01.jpg"
@@ -8,3 +9,4 @@
       "image": "https://george-fx.github.io/spinride/banners/02.jpg"
     }
   ]
+}

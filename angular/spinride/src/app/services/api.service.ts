@@ -5,9 +5,10 @@ import {Observable} from 'rxjs';
 import {URLS} from '../config';
 import {DishesResponse} from '../models/dish.model';
 import {OrdersResponse} from '../models/order.model';
+import {ProductModel} from '../models/product.model';
 import {ReviewsResponse} from '../models/review.model';
-import {CarouselResponse} from '../models/carousel.model';
 import {CategoriesResponse} from '../models/menu.model';
+import {CarouselResponse} from '../models/carousel.model';
 import {PromocodesResponse} from '../models/promocode.model';
 import {OnboardingResponse} from '../models/onboarding.model';
 import {NotificationsResponse} from '../models/notification.model';
@@ -50,5 +51,9 @@ export class ApiService {
 
   getCarousel(): Observable<CarouselResponse> {
     return this.http.get<CarouselResponse>(this.URLS.GET_CAROUSEL);
+  }
+
+  fetchProducts(): Observable<ProductModel[]> {
+    return this.http.get<ProductModel[]>(this.URLS.FETCH_PRODUCTS);
   }
 }

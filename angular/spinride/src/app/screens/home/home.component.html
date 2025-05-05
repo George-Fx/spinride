@@ -1,4 +1,4 @@
-<app-loader *ngIf="isLoading" />
+<!-- <app-loader *ngIf="isLoading" /> -->
 
 <app-header
   [showBurger]="true"
@@ -31,13 +31,13 @@
   </section>
 
   <!-- BEST SELLERS -->
-  <app-best-sellers />
+  <app-best-sellers [products]="products" />
 
   <!-- RECOMENDED -->
-  <app-recomended [dishes]="dishes" />
+  <!-- <app-recomended [dishes]="dishes" /> -->
 
   <!-- REVIEWS -->
-  <app-home-reviews [reviews]="reviews" />
+  <!-- <app-home-reviews [reviews]="reviews" /> -->
 </main>
 
-<app-bottom-tab-bar *ngIf="!isLoading" />
+<!-- <app-bottom-tab-bar *ngIf="!isLoading" /> -->

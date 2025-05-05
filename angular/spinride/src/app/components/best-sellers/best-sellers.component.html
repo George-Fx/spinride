@@ -20,21 +20,20 @@
     <swiper-slide
       class="swiper-slide"
       style="width: auto"
-      *ngFor="let dish of dishes"
+      *ngFor="let product of products"
     >
-      <div
-        style="
-          background-color: var(--white-color);
-          border-radius: 10px;
-          overflow: hidden;
-          max-width: 200px;
-          width: 100%;
-        "
-      >
+      <div style="overflow: hidden; max-width: 200px; width: 100%">
         <!-- image -->
-        <a [routerLink]="['/dish', dish.id]">
+        <a
+          [routerLink]="['/dish', product.id]"
+          style="
+            background-color: var(--white-color);
+            border-radius: 10px;
+            overflow: hidden;
+          "
+        >
           <img
-            [src]="dish.image"
+            [src]="product.image"
             style="width: 100%; height: auto; margin-bottom: 0px"
           />
         </a>
@@ -45,7 +44,7 @@
         >
           <!-- name -->
           <span class="t14 number-of-lines-1" style="margin-bottom: 3px">
-            {{ dish.name }}
+            {{ product.name }}
           </span>
           <!-- description -->
           <div
@@ -60,12 +59,12 @@
               class="t14"
               style="color: var(--main-color); font-weight: 500"
             >
-              ${{ dish.price }}
+              ${{ product.price }}
             </span>
             <span class="t10">|</span>
-            <span class="t10" style="font-weight: 500">
+            <!-- <span class="t10" style="font-weight: 500">
               {{ dish.weight }}g
-            </span>
+            </span> -->
             <!-- <button style="margin-left: auto" (click)="addToCart(dish, $event)">
               <img [src]="svg.addToCart" alt="heart" />
             </button> -->
@@ -75,7 +74,7 @@
         <img
           [src]="svg.new"
           alt="new badge"
-          *ngIf="dish.isNew"
+          *ngIf="product.isNew"
           style="position: absolute; top: 14px; left: 14px"
         />
 
