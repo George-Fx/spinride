@@ -26,6 +26,7 @@ import {ServiceWorkerModule} from '@angular/service-worker';
 import {RecomendedComponent} from './components/recomended/recomended.component';
 import {HomeReviewsComponent} from './components/home-reviews/home-reviews.component';
 import {HomeCategoriesComponent} from './components/home-categories/home-categories.component';
+import {BestSellersComponent} from './components/best-sellers/best-sellers.component';
 
 @NgModule({
   declarations: [AppComponent, ...COMPONENTS],
@@ -43,6 +44,7 @@ import {HomeCategoriesComponent} from './components/home-categories/home-categor
     HomeCategoriesComponent,
     RecomendedComponent,
     HomeReviewsComponent,
+    BestSellersComponent,
   ],
   bootstrap: [AppComponent],
   providers: [provideHttpClient()],

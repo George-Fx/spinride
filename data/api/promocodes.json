@@ -1,22 +1,23 @@
-{
-    "promocodes": [
-        {
-            "id": 1,
-            "code": "cooktime2023",
-            "discount": 35,
-            "expiry": "Dec 31, 2023"
-        },
-        {
-            "id": 2,
-            "code": "SprngSale23",
-            "discount": 50,
-            "expiry": "Dec 31, 2023"
-        },
-        {
-            "id": 3,
-            "code": "disMond12",
-            "discount": 10,
-            "expiry": "Dec 31, 2023"
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "code": "Pedal Pulse Cycles",
+        "image": "https://george-fx.github.io/spinride/promocodes/01.jpg",
+        "discount": 50,
+        "expires_at": "Valid until June 30, 2024"
+    },
+    {
+        "id": 2,
+        "code": "Velocity Vibes Bikes",
+        "image": "https://george-fx.github.io/spinride/promocodes/02.jpg",
+        "discount": 30,
+        "expires_at": "Valid until June 30, 2024"
+    },
+    {
+        "id": 3,
+        "code": "Spoke & Wheel",
+        "image": "https://george-fx.github.io/spinride/promocodes/03.jpg",
+        "discount": 15,
+        "expires_at": "Valid until June 30, 2024"
+    }
+]

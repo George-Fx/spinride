@@ -11,23 +11,27 @@
 
 <main style="overflow-y: auto; height: 100%" *ngIf="!isLoading">
   <!-- BANNER -->
-  <app-home-carousel [carousel]="carousel" />
-  <img
-    *ngIf="carousel.length === 0"
-    src="https://spinride-data.vercel.app/assets/images/empty.png"
-    alt="empty"
+  <section
     style="
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      margin-left: 20px;
+      margin-right: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 40px;
+      margin-top: 4px;
     "
-  />
+  >
+    <a>
+      <img
+        alt="banner"
+        src="https://spinride-data.vercel.app/assets/banners/01.jpg"
+        style="width: 100%; height: auto; border-radius: 12px"
+      />
+    </a>
+  </section>
 
-  <!-- CATEGORIES -->
-  <app-home-categories [categories]="categories" />
+  <!-- BEST SELLERS -->
+  <app-best-sellers />
 
   <!-- RECOMENDED -->
   <app-recomended [dishes]="dishes" />

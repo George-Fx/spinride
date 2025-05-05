@@ -1,0 +1,231 @@
+[
+    {
+        "id": 1,
+        "name": "Specialized Allez Sprint",
+        "colors": [
+            "Maya Blue",
+            "Champagne",
+            "Delft blue"
+        ],
+        "bikeType": ["Specialty Bikes", "Road Bikes"],
+        "suspensionType": [],
+        "drivetrain": [],
+        "images": [
+            "https://george-fx.github.io/spinride/products/01.jpg",
+            "https://george-fx.github.io/spinride/products/01.jpg",
+            "https://george-fx.github.io/spinride/products/01.jpg"
+        ],
+        "image": "https://george-fx.github.io/spinride/products/01.jpg",
+        "categories": [
+            "Road Bikes",
+            "Specialty Bikes"
+        ],
+        "description": "Get ready to elevate your workout game with our FlexFit Training Shoes. Engineered for maximum performance and comfort, these shoes are designed to support you thro...",
+        "rating": 0,
+        "quantity": null,
+        "promotion": "Welcome To StepHub! 50% Off",
+        "isNew": true,
+        "isTop": false,
+        "ratingCount": 0,
+        "price": "2,200",
+        "isFeatured": true,
+        "isBestSeller": true
+    },
+    {
+        "id": 2,
+        "sizes": [
+            "39",
+            "41",
+            "43"
+        ],
+        "tags": [
+            "Hiking Boots"
+        ],
+        "name": "Santa Cruz Hightower",
+        "colors": [
+            "Maya Blue",
+            "Champagne",
+            "Black"
+        ],
+        "images": [
+            "https://george-fx.github.io/spinride/products/02.jpg",
+            "https://george-fx.github.io/spinride/products/02.jpg",
+            "https://george-fx.github.io/spinride/products/02.jpg"
+        ],
+        "image": "https://george-fx.github.io/spinride/products/02.jpg",
+        "audience": [
+            "Men"
+        ],
+        "categories": [
+            "Specialty Shoes"
+        ],
+        "description": "Get ready to elevate your workout game with our FlexFit Training Shoes. Engineered for maximum performance and comfort, these shoes are designed to support you thro...",
+        "rating": 0,
+        "quantity": null,
+        "promotion": "Take 50% Off Now!",
+        "isNew": true,
+        "isTop": false,
+        "ratingCount": 0,
+        "price": "89.99",
+        "isFeatured": true,
+        "isBestSeller": true,
+        "oldPrice": null
+    },
+    {
+        "id": 3,
+        "sizes": [
+            "40",
+            "41",
+            "42"
+        ],
+        "tags": [
+            "Dress Shoes"
+        ],
+        "name": "Recumbent trike",
+        "colors": [
+            "Champagne",
+            "Black"
+        ],
+        "images": [
+            "https://george-fx.github.io/spinride/products/03.jpg",
+            "https://george-fx.github.io/spinride/products/03.jpg",
+            "https://george-fx.github.io/spinride/products/03.jpg"
+        ],
+        "image": "https://george-fx.github.io/spinride/products/03.jpg",
+        "audience": [
+            "Men"
+        ],
+        "categories": [
+            "Formal Shoes"
+        ],
+        "description": "Get ready to elevate your workout game with our FlexFit Training Shoes. Engineered for maximum performance and comfort, these shoes are designed to support you thro...",
+        "rating": 0,
+        "quantity": null,
+        "promotion": "Welcome To StepHub! 50% Off",
+        "isNew": false,
+        "isTop": true,
+        "ratingCount": 0,
+        "price": "3,650",
+        "isFeatured": true,
+        "isBestSeller": true,
+        "oldPrice": "3,800"
+    },
+    {
+        "id": 4,
+        "sizes": [
+            "42",
+            "43",
+            "44"
+        ],
+        "tags": [
+            "Comfortable"
+        ],
+        "name": "Turbo Vado SL",
+        "colors": [
+            "Pastel Red",
+            "Maya Blue",
+            "Delft blue"
+        ],
+        "images": [
+            "https://george-fx.github.io/spinride/products/04.jpg",
+            "https://george-fx.github.io/spinride/products/04.jpg",
+            "https://george-fx.github.io/spinride/products/04.jpg"
+        ],
+        "image": "https://george-fx.github.io/spinride/products/04.jpg",
+        "audience": [
+            "Women"
+        ],
+        "categories": [
+            "Urban Shoes"
+        ],
+        "description": "Get ready to elevate your workout game with our FlexFit Training Shoes. Engineered for maximum performance and comfort, these shoes are designed to support you thro...",
+        "rating": 0,
+        "quantity": null,
+        "promotion": "Take 50% Off Now!",
+        "isNew": true,
+        "isTop": false,
+        "ratingCount": 0,
+        "price": "54.99",
+        "isFeatured": true,
+        "isBestSeller": true,
+        "oldPrice": null
+    },
+    {
+        "id": 5,
+        "sizes": [
+            "39",
+            "41",
+            "44"
+        ],
+        "tags": [
+            "Hiking Boots"
+        ],
+        "name": "Seeker Hiking Bootss",
+        "colors": [
+            "Champagne",
+            "Black"
+        ],
+        "images": [
+            "https://george-fx.github.io/spinride/products/05.jpg",
+            "https://george-fx.github.io/spinride/products/05.jpg",
+            "https://george-fx.github.io/spinride/products/05.jpg"
+        ],
+        "image": "https://george-fx.github.io/spinride/products/05.jpg",
+        "audience": [
+            "Men"
+        ],
+        "categories": [
+            "Specialty Shoes"
+        ],
+        "description": "Get ready to elevate your workout game with our FlexFit Training Shoes. Engineered for maximum performance and comfort, these shoes are designed to support you thro...",
+        "rating": 5,
+        "quantity": null,
+        "promotion": "Take 50% Off Now!",
+        "isNew": true,
+        "isTop": false,
+        "ratingCount": 2,
+        "price": "89.99",
+        "isFeatured": true,
+        "isBestSeller": true,
+        "oldPrice": null
+    },
+    {
+        "id": 6,
+        "sizes": [
+            "39",
+            "41",
+            "44"
+        ],
+        "tags": [
+            "Hiking Boots"
+        ],
+        "name": "Giant Escape",
+        "colors": [
+            "Champagne",
+            "Black"
+        ],
+        "images": [
+            "https://george-fx.github.io/spinride/products/06.jpg",
+            "https://george-fx.github.io/spinride/products/06.jpg",
+            "https://george-fx.github.io/spinride/products/06.jpg"
+        ],
+        "image": "https://george-fx.github.io/spinride/products/06.jpg",
+        "audience": [
+            "Men"
+        ],
+        "categories": [
+            "Specialty Shoes"
+        ],
+        "description": "Get ready to elevate your workout game with our FlexFit Training Shoes. Engineered for maximum performance and comfort, these shoes are designed to support you thro...",
+        "rating": 5,
+        "quantity": null,
+        "promotion": "Take 50% Off Now!",
+        "isNew": true,
+        "isTop": false,
+        "ratingCount": 2,
+        "price": "89.99",
+        "isFeatured": true,
+        "isBestSeller": true,
+        "oldPrice": null
+    }
+]
