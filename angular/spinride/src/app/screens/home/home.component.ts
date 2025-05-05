@@ -9,6 +9,7 @@ import {ApiService} from '../../services/api.service';
 import {ReviewModel} from '../../models/review.model';
 import {ProductModel} from '../../models/product.model';
 import {MetaService} from '../../services/meta.service';
+import {BicycleModel} from '../../models/bicycles.model';
 import {ModalService} from '../../services/modal.service';
 import {CarouselModel} from '../../models/carousel.model';
 
@@ -28,9 +29,9 @@ export class HomeComponent {
   // dishesIsLoading = true;
   // dishesError = '';
 
-  products: ProductModel[] = [];
-  productsIsLoading = true;
-  productsError = '';
+  bicycles: BicycleModel[] = [];
+  bicyclesIsLoading = true;
+  bicyclesError = '';
 
   carouselIsLoading = true;
   carouselError = '';
@@ -82,10 +83,10 @@ export class HomeComponent {
   }
 
   private fetchProducts(): void {
-    this.apiService.fetchProducts().subscribe({
-      next: data => (this.products = data),
-      error: err => (this.productsError = err),
-      complete: () => (this.productsIsLoading = false),
+    this.apiService.fetchBicycles().subscribe({
+      next: data => (this.bicycles = data.bicycles),
+      error: err => (this.bicyclesError = err),
+      complete: () => (this.bicyclesIsLoading = false),
     });
   }
 

@@ -10,7 +10,7 @@ const GET_PROMOCODES = `${MAIN_URL}/api/promocodes.json`;
 const GET_ONBOARDING = `${MAIN_URL}/api/onboarding.json`;
 const GET_NOTIFICATIONS = `${MAIN_URL}/api/notifications.json`;
 
-const FETCH_PRODUCTS = `${MAIN_URL}/api/products.json`;
+const FETCH_BICYCLES = `${MAIN_URL}/api/bicycles.json`;
 
 export const URLS = {
   MAIN_URL,
@@ -19,7 +19,7 @@ export const URLS = {
   GET_BANNERS,
   GET_REVIEWS,
   GET_CAROUSEL,
-  FETCH_PRODUCTS,
+  FETCH_BICYCLES,
   GET_ONBOARDING,
   GET_CATEGORIES,
   GET_PROMOCODES,
