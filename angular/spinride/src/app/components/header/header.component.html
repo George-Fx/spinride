@@ -29,27 +29,21 @@
     <img src="assets/svg/go-back.svg" alt="go back icon" />
   </button>
 
-  <!-- USER -->
-  <button
-    style="
-      padding-left: 20px;
-      padding-right: 20px;
-      position: absolute;
-      height: 48px;
-      display: flex;
-      flex-direction: row;
-      gap: 10px;
-      align-items: center;
-    "
-    *ngIf="showUser"
-    (click)="openModal()"
-  >
+  <!-- BURGER -->
+  <button>
     <img
-      alt="user"
-      [src]="`${URLS.MAIN_URL}/assets/users/01.jpg`"
-      style="width: 22px; height: 22px; border-radius: 50%"
+      *ngIf="showBurger"
+      [src]="svg.burger"
+      alt="burger icon"
+      style="
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
     />
-    <h5 *ngIf="showUserName">Jordan Hebert</h5>
   </button>
 
   <!-- TITLE -->
@@ -87,28 +81,36 @@
       align-items: center;
       justify-content: center;
       height: var(--header-height);
+      position: absolute;
     "
   >
     <div
       style="
-        height: 22px;
+        /* height: 20px; */
         border-radius: 30px;
-        padding: 5px 5px 3px 5px;
+        padding: 5px 4px 3px 4px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: var(--main-turquoise);
+        position: absolute;
+        right: 34px;
+        bottom: 8px;
+        background-color: var(--main-orange);
+        display: flex;
+        justify-content: center;
+        align-items: center;
       "
     >
       <span
         style="
           font-size: 10px;
-          line-height: 1;
           font-weight: 400;
           display: block;
+          margin-bottom: 2px;
+          line-height: 1;
           color: var(--white-color);
           font-weight: 700;
-          font-family: 'DMSans', sans-serif;
+          font-family: var(--mulish);
         "
       >
         ${{

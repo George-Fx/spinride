@@ -11,6 +11,7 @@ export const svg = {
   ticket: 'assets/svg/ticket.svg',
   google: 'assets/svg/google.svg',
   delete: 'assets/svg/delete.svg',
+  burger: 'assets/svg/burger.svg',
   filter: 'assets/svg/filter.svg',
   search: 'assets/svg/search.svg',
   camera: 'assets/svg/camera.svg',
