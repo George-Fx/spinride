@@ -10,8 +10,21 @@
 />
 
 <main style="overflow-y: auto; height: 100%" *ngIf="!isLoading">
-  <!-- CAROUSEL -->
+  <!-- BANNER -->
   <app-home-carousel [carousel]="carousel" />
+  <img
+    *ngIf="carousel.length === 0"
+    src="https://spinride-data.vercel.app/assets/images/empty.png"
+    alt="empty"
+    style="
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    "
+  />
 
   <!-- CATEGORIES -->
   <app-home-categories [categories]="categories" />
