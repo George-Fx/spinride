@@ -10,12 +10,14 @@
         {
           "id": 1,
           "name": "Turbo Vado SL 4.0",
-          "quantity": 1
+          "quantity": 1,
+          "price": 354.32
         },
         {
           "id": 2,
           "name": "Trek Powerfly 4",
-          "quantity": 1
+          "quantity": 1,
+          "price": 129.97
         }
       ]
     },
@@ -29,12 +31,14 @@
         {
           "id": 1,
           "name": "Turbo Vado SL 4.0",
-          "quantity": 1
+          "quantity": 1,
+          "price": 354.32
         },
         {
           "id": 2,
           "name": "Trek Powerfly 4",
-          "quantity": 1
+          "quantity": 1,
+          "price": 129.97
         }
       ]
     },
@@ -48,12 +52,14 @@
         {
           "id": 1,
           "name": "Turbo Vado SL 4.0",
-          "quantity": 1
+          "quantity": 1,
+          "price": 354.32
         },
         {
           "id": 2,
           "name": "Trek Powerfly 4",
-          "quantity": 1
+          "quantity": 1,
+          "price": 129.97
         }
       ]
     }
