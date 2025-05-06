@@ -29,6 +29,7 @@ export const svg = {
   signOut: 'assets/svg/sign-out.svg',
   viewAll: 'assets/svg/view-all.svg',
   calendar: 'assets/svg/calendar.svg',
+  shipping: 'assets/svg/shipping.svg',
   canceled: 'assets/svg/canceled.svg',
   facebook: 'assets/svg/facebook.svg',
   inputMap: 'assets/svg/input-map.svg',

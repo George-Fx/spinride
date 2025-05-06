@@ -23,19 +23,19 @@
       <details
         [open]="openAccordions.has(order.id)"
         (toggle)="toggleAccordion(order.id)"
-        style="border-radius: 10px"
+        style="border-radius: 12px"
       >
         <!-- header -->
         <summary
           style="
             padding: 20px;
             background-color: var(--white-color);
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
           "
           [ngStyle]="{
             'border-bottom': openAccordions.has(order.id)
-              ? '1px solid #DBE9F5'
+              ? '1px solid #EEEEEE'
               : 'none',
               'border-bottom-left-radius': openAccordions.has(order.id)
                 ? '0px'
@@ -47,22 +47,31 @@
         >
           <section
             style="
-              margin-bottom: 5px;
+              margin-bottom: 7px;
               display: flex;
               flex-direction: row;
               align-items: center;
               justify-content: space-between;
             "
           >
-            <span
-              class="t14"
-              style="color: var(--main-color); font-weight: 500"
-            >
-              {{ order.date }} <span class="t10">at {{ order.time }}</span>
-            </span>
-            <span class="t14" style="font-weight: 500; color: var(--main-color)"
-              >${{ order.total }}</span
-            >
+            <h5 style="color: var(--main-color); font-weight: 500">
+              #{{ order.id }}
+            </h5>
+            <img
+              alt="delivered"
+              [src]="svg.delivered"
+              *ngIf="order.status === 'delivered'"
+            />
+            <img
+              alt="delivered"
+              [src]="svg.shipping"
+              *ngIf="order.status === 'shipping'"
+            />
+            <img
+              alt="delivered"
+              [src]="svg.canceled"
+              *ngIf="order.status === 'canceled'"
+            />
           </section>
           <section
             style="
@@ -71,39 +80,27 @@
               align-items: center;
             "
           >
-            <span class="t12"> Order ID: {{ order.id }} </span>
-            <div
+            <span
               style="
-                padding-left: 8px;
-                padding-right: 8px;
-                border-radius: 5px;
-                height: 22px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                font-size: 12px;
+                color: var(--text-color);
+                font-family: var(--mulish);
+                line-height: 1.5;
               "
-              [ngStyle]="{
-              'background-color':
-                order.status === 'delivered'
-                  ? '#00B0B9'
-                  : order.status === 'shipping'
-                  ? '#FFA462'
-                  : order.status === 'canceled'
-                  ? '#FA5555'
-                  : '',
-            }"
             >
-              <span
-                class="t10"
-                style="
-                  font-weight: 500;
-                  color: var(--white-color);
-                  line-height: 1.2;
-                "
-              >
-                {{ order.status }}
-              </span>
-            </div>
+              {{ order.date }} at {{ order.time.toUpperCase() }}
+            </span>
+            <span
+              style="
+                font-weight: 500;
+                color: var(--main-color);
+                line-height: 1.2;
+                font-family: var(--mulish);
+                font-weight: 700;
+              "
+            >
+              ${{ order.total }}
+            </span>
           </section>
         </summary>
         <!-- Order details -->
@@ -130,89 +127,7 @@
                 {{ bicycle.quantity }} x ${{ bicycle.price }}
               </span>
             </li>
-            <li
-              style="
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-              "
-            >
-              <span class="t14">Discount</span>
-              <span class="t14">- ${{ order.discount }}</span>
-            </li>
-            <li
-              style="
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-              "
-            >
-              <span class="t14">Delivery</span>
-              <span class="t14">- ${{ order.delivery }}</span>
-            </li>
           </ul>
-        </section>
-        <!-- track order -->
-        <app-button
-          [text]="'track order'"
-          *ngIf="order.status === 'shipping'"
-          [routerLink]="['/track-your-order', order.id.toString()]"
-        />
-        <!-- buttons -->
-        <section *ngIf="order.status === 'delivered'">
-          <div
-            style="
-              display: grid;
-              grid-template-columns: repeat(2, 1fr);
-              gap: 15px;
-            "
-          >
-            <a
-              style="
-                height: 50px;
-                border-radius: 10px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border: 1px solid var(--main-turquoise);
-              "
-              [routerLink]="['/order']"
-            >
-              <span
-                class="t14"
-                style="
-                  font-weight: 700;
-                  color: var(--main-turquoise);
-                  text-transform: capitalize;
-                "
-                >repeat order</span
-              >
-            </a>
-            <a
-              style="
-                height: 50px;
-                border-radius: 10px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border: 1px solid var(--main-turquoise);
-                background-color: var(--main-turquoise);
-              "
-              [routerLink]="['/leave-a-review']"
-            >
-              <span
-                class="t14"
-                style="
-                  font-weight: 700;
-                  color: var(--white-color);
-                  text-transform: capitalize;
-                "
-                >Leave review</span
-              >
-            </a>
-          </div>
         </section>
       </details>
     </li>

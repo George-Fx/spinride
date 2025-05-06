@@ -38,10 +38,10 @@ export class MenuComponent implements OnInit {
 
         if (this.isOpen) {
           this.metaService.setThemeColor('#fff');
-          this.metaService.setBackgroundColor('#F5FAFB');
+          this.metaService.setBackgroundColor('#F3F3F3');
         } else {
-          this.metaService.setThemeColor('#F5FAFB');
-          this.metaService.setBackgroundColor('#F5FAFB');
+          this.metaService.setThemeColor('#F3F3F3');
+          this.metaService.setBackgroundColor('#F3F3F3');
         }
       });
   }

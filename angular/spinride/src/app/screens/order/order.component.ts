@@ -47,8 +47,8 @@ export class OrderComponent implements OnInit {
 
   private setMeta(): void {
     if (this.isOpen) {
-      this.metaService.setThemeColor('#F5FAFB');
-      this.metaService.setBackgroundColor('#F5FAFB');
+      this.metaService.setThemeColor('#F3F3F3');
+      this.metaService.setBackgroundColor('#F3F3F3');
     }
   }
 
