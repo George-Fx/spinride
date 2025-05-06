@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 
 import {URLS} from '../../config';
+import {svg} from '../../../../public/assets/svg';
 import {MetaService} from '../../services/meta.service';
 
 @Component({
@@ -10,6 +11,7 @@ import {MetaService} from '../../services/meta.service';
   standalone: false,
 })
 export class InfoSavedComponent {
+  svg = svg;
   URLS = URLS;
 
   constructor(private metaService: MetaService) {}
@@ -19,7 +21,7 @@ export class InfoSavedComponent {
   }
 
   private setMeta(): void {
-    this.metaService.setThemeColor('#F6F9F9');
-    this.metaService.setBackgroundColor('#F6F9F9');
+    this.metaService.setThemeColor('#161E2F');
+    this.metaService.setBackgroundColor('#161E2F');
   }
 }

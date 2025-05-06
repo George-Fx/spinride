@@ -1,34 +1,49 @@
 <app-header />
 
-<main style="height: 100%; margin-left: 20px; margin-right: 20px">
+<img
+  src="./assets/bg/01.png"
+  alt="Add to cart"
+  style="position: absolute; width: 100%; height: auto; z-index: -1"
+/>
+
+<main
+  style="height: 100%; overflow-y: auto; margin-left: 20px; margin-right: 20px"
+>
   <section
     style="
       height: 100%;
       display: flex;
       justify-content: center;
       flex-direction: column;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      background-color: var(--white-color);
+      padding-bottom: 20%;
     "
   >
     <img
       [alt]="'info saved'"
       [className]="'status-image'"
-      [src]="URLS.MAIN_URL + '/assets/images/12.jpg'"
+      [src]="svg.pocket"
+      style="width: 180px"
     />
     <h2
-      style="text-align: center; margin-bottom: 4%; text-transform: capitalize"
+      style="
+        text-align: center;
+        margin-bottom: 14px;
+        text-transform: capitalize;
+        color: var(--white-color);
+        text-transform: capitalize;
+      "
     >
       Info Saved!
     </h2>
-    <p [className]="'t16'" style="text-align: center; margin-bottom: 8%">
-      Your information has been <br />
-      saved successfully.
+    <p
+      class="t16"
+      style="text-align: center; color: #c3cde0; margin-bottom: 30px"
+    >
+      Your personal information has been <br />
+      securely stored.
     </p>
+    <div style="max-width: 170px; margin: 0 auto; width: 100%">
+      <app-button [text]="'Done'" [routerLink]="'/profile'" />
+    </div>
   </section>
 </main>
-
-<section style="padding: 20px">
-  <app-button [text]="'Get started'" [routerLink]="'/home'" />
-</section>

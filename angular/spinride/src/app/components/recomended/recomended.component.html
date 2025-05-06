@@ -17,7 +17,7 @@
     <swiper-slide
       class="swiper-slide"
       style="width: auto"
-      *ngFor="let dish of dishes"
+      *ngFor="let bicycle of bicycles"
     >
       <div
         style="
@@ -29,9 +29,9 @@
         "
       >
         <!-- image -->
-        <a [routerLink]="['/dish', dish.id]">
+        <a [routerLink]="['/bicycle', bicycle.id]">
           <img
-            [src]="dish.image"
+            [src]="bicycle.image"
             style="width: 100%; height: auto; margin-bottom: 0px"
           />
         </a>
@@ -42,7 +42,7 @@
         >
           <!-- name -->
           <span class="t14 number-of-lines-1" style="margin-bottom: 3px">
-            {{ dish.name }}
+            {{ bicycle.name }}
           </span>
           <!-- description -->
           <div
@@ -57,13 +57,13 @@
               class="t14"
               style="color: var(--main-color); font-weight: 500"
             >
-              ${{ dish.price }}
+              ${{ bicycle.price }}
             </span>
             <span class="t10">|</span>
-            <span class="t10" style="font-weight: 500">
-              {{ dish.weight }}g
-            </span>
-            <button style="margin-left: auto" (click)="addToCart(dish, $event)">
+            <button
+              style="margin-left: auto"
+              (click)="addToCart(bicycle, $event)"
+            >
               <img [src]="svg.addToCart" alt="heart" />
             </button>
           </div>
@@ -72,21 +72,21 @@
         <img
           [src]="svg.new"
           alt="new badge"
-          *ngIf="dish.isNew"
+          *ngIf="bicycle.isNew"
           style="position: absolute; top: 14px; left: 14px"
         />
 
         <!-- add btn -->
         <button
           style="padding: 14px; position: absolute; bottom: 54px; right: 0px"
-          (click)="addToWishlist(dish, $event)"
-          *ngIf="!ifInWishlist(dish)"
+          (click)="addToWishlist(bicycle, $event)"
+          *ngIf="!ifInWishlist(bicycle)"
         >
           <img [src]="svg.menuListHeart" class="new-svg" />
         </button>
         <button
           style="padding: 14px; position: absolute; bottom: 54px; right: 0px"
-          *ngIf="ifInWishlist(dish)"
+          *ngIf="ifInWishlist(bicycle)"
         >
           <img [src]="svg.menuListHeartFill" class="new-svg" />
         </button>

@@ -4,7 +4,7 @@ import {isMobile} from 'react-device-detect';
 import {Component, OnInit, OnDestroy} from '@angular/core';
 
 import {URLS} from '../../config';
-import {DishModel} from '../../models/dish.model';
+import {BicycleModel} from '../../models/bicycles.model';
 import {MetaService} from '../../services/meta.service';
 import {ModalService} from '../../services/modal.service';
 
@@ -17,7 +17,7 @@ import {ModalService} from '../../services/modal.service';
 export class OrderEmptyComponent implements OnInit, OnDestroy {
   URLS = URLS;
   isMobile = isMobile;
-  wishlist: DishModel[] = [];
+  wishlist: BicycleModel[] = [];
   isOpen = false;
   private destroy$ = new Subject<void>();
 

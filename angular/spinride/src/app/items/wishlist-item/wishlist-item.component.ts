@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 
 import {svg} from '../../../../public/assets/svg';
-import {DishModel} from '../../models/dish.model';
+import {BicycleModel} from '../../models/bicycles.model';
 import {CartService} from '../../services/cart.service';
 import {WishlistService} from '../../services/wishlist.service';
 
@@ -12,7 +12,7 @@ import {WishlistService} from '../../services/wishlist.service';
   styleUrl: './wishlist-item.component.scss',
 })
 export class WishlistItemComponent {
-  @Input() dish!: DishModel;
+  @Input() bicycle!: BicycleModel;
 
   svg = svg;
 
@@ -21,15 +21,15 @@ export class WishlistItemComponent {
     private wishlistService: WishlistService,
   ) {}
 
-  addToCart(dish: DishModel, event: Event): void {
+  addToCart(bicycle: BicycleModel, event: Event): void {
     event.stopPropagation();
     event.preventDefault();
-    this.cartService.addToCart(dish);
+    this.cartService.addToCart(bicycle);
   }
 
-  removeFromWishlist(dish: DishModel, event: Event): void {
+  removeFromWishlist(bicycle: BicycleModel, event: Event): void {
     event.stopPropagation();
     event.preventDefault();
-    this.wishlistService.removeFromWishlist(dish);
+    this.wishlistService.removeFromWishlist(bicycle);
   }
 }

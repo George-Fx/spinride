@@ -4,7 +4,7 @@ import {RouterModule} from '@angular/router';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 import {svg} from '../../../../public/assets/svg';
-import {ProductModel} from '../../models/product.model';
+import {BicycleModel} from '../../models/bicycles.model';
 
 @Component({
   selector: 'app-best-sellers',
@@ -16,5 +16,5 @@ import {ProductModel} from '../../models/product.model';
 export class BestSellersComponent {
   svg = svg;
 
-  @Input() products: ProductModel[] = [];
+  @Input() bicycles: BicycleModel[] = [];
 }

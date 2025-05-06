@@ -46,16 +46,7 @@ export class MenuComponent implements OnInit {
       });
   }
 
-  private fetchMenu(): void {
-    this.apiService.getMenu().subscribe({
-      next: data => (this.menu = data.menu),
-      error: err => (this.menuError = err),
-      complete: () => (this.menuIsLoading = false),
-    });
-  }
-
   ngOnInit(): void {
-    this.fetchMenu();
     this.initializeMeta();
   }
 

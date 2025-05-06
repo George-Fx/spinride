@@ -118,16 +118,16 @@
         >
           <ul style="display: flex; flex-direction: column; gap: 8px">
             <li
-              *ngFor="let dish of order.products"
+              *ngFor="let bicycle of order.products"
               style="
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
               "
             >
-              <span class="t14">{{ dish.name }}</span>
+              <span class="t14">{{ bicycle.name }}</span>
               <span style="margin-left: auto" class="t14">
-                {{ dish.quantity }} x ${{ dish.price }}
+                {{ bicycle.quantity }} x ${{ bicycle.price }}
               </span>
             </li>
             <li

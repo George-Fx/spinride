@@ -1,0 +1,50 @@
+<img
+  src="./assets/bg/01.png"
+  alt="Add to cart"
+  style="position: absolute; width: 100%; height: auto; z-index: -1"
+/>
+
+<main
+  style="height: 100%; overflow-y: auto; margin-left: 20px; margin-right: 20px"
+>
+  <section
+    style="
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    "
+  >
+    <img
+      [alt]="'info saved'"
+      [src]="svg.emptyHeart"
+      style="width: 180px; margin: 0 auto; margin-bottom: 20px"
+    />
+    <h2
+      style="
+        text-align: center;
+        margin-bottom: 14px;
+        text-transform: capitalize;
+        color: var(--white-color);
+        text-transform: capitalize;
+      "
+    >
+      Your Wishlist is empty!
+    </h2>
+    <p
+      class="t16"
+      style="text-align: center; color: #c3cde0; margin-bottom: 30px"
+    >
+      Looks like you haven't chosen the <br />
+      items you like.
+    </p>
+    <div style="max-width: 170px; margin: 0 auto; width: 100%">
+      <app-button [text]="'shop now'" [routerLink]="'/shop'" />
+    </div>
+  </section>
+</main>
+
+<app-bottom-tab-bar
+  [style]="{backgroundColor: 'transparent', paddingTop: '0px'}"
+  [footerStyle]="{border: '1px solid #555C6A'}"
+/>

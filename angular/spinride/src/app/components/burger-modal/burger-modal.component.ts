@@ -57,11 +57,6 @@ export class BurgerModalComponent {
       route: '/',
     },
     {
-      id: 7,
-      title: 'Notifications',
-      hasSwitch: true,
-    },
-    {
       id: 8,
       title: 'Face ID',
       hasSwitch: true,

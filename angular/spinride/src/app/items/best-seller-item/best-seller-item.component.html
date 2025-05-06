@@ -13,10 +13,10 @@
     href=""
     style="flex: 1; display: flex; justify-content: center; align-items: center"
   >
-    <a [routerLink]="['/dish', dish.id]">
+    <a [routerLink]="['/bicycle', bicycle.id]">
       <img
-        src="{{ dish.image }}"
-        alt="{{ dish.name }}"
+        src="{{ bicycle.image }}"
+        alt="{{ bicycle.name }}"
         style="display: flex; width: 80px; height: 80px; border-radius: 12px"
       />
     </a>
@@ -31,7 +31,7 @@
     "
   >
     <h6 class="number-of-lines-1" style="margin-bottom: 4px">
-      {{ dish.name }}
+      {{ bicycle.name }}
     </h6>
     <div
       style="
@@ -44,14 +44,14 @@
     >
       <!-- <span
         class="t16"
-        *ngIf="dish?.oldPrice"
+        *ngIf="bicycle?.oldPrice"
         style="font-size: 12px; text-decoration: line-through"
       >
-        ${{ dish.oldPrice }}</span
+        ${{ bicycle.oldPrice }}</span
       > -->
-      <span class="t16">${{ dish.price }}</span>
+      <span class="t16">${{ bicycle.price }}</span>
     </div>
-    <app-rating [dish]="dish"></app-rating>
+    <app-rating [bicycle]="bicycle"></app-rating>
   </div>
   <!-- actions -->
   <div
@@ -72,10 +72,10 @@
         align-items: center;
         margin: 10px;
       "
-      (click)="addToWishlist(dish, $event)"
+      (click)="addToWishlist(bicycle, $event)"
     >
       <img
-        [src]="ifInWishlist(dish) ? svg.addedToWishlist : svg.addToWishlist"
+        [src]="ifInWishlist(bicycle) ? svg.addedToWishlist : svg.addToWishlist"
         alt="Add to wishlist"
         style="border-radius: 15px"
       />
@@ -89,7 +89,7 @@
         align-items: center;
         margin: 10px;
       "
-      (click)="addToCart(dish, $event)"
+      (click)="addToCart(bicycle, $event)"
     >
       <img
         [src]="svg.addToCart"

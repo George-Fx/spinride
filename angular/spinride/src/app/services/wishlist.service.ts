@@ -1,37 +1,39 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
 
-import {DishModel} from '../models/dish.model';
+import {BicycleModel} from '../models/bicycles.model';
 
 export interface WishlistState {
-  list: DishModel[];
+  list: BicycleModel[];
 }
 
 @Injectable({
   providedIn: 'root',
 })
 export class WishlistService {
-  private initialState: DishModel[] = [];
+  private initialState: BicycleModel[] = [];
 
-  private wishlistState = new BehaviorSubject<DishModel[]>(this.initialState);
+  private wishlistState = new BehaviorSubject<BicycleModel[]>(
+    this.initialState,
+  );
   wishlistState$ = this.wishlistState.asObservable();
 
-  addToWishlist(dish: DishModel): void {
+  addToWishlist(bicycle: BicycleModel): void {
     const currentState = this.wishlistState.value;
-    const inWishlist = currentState.find(item => item.id === dish.id);
+    const inWishlist = currentState.find(item => item.id === bicycle.id);
 
     if (!inWishlist) {
-      this.wishlistState.next([...currentState, dish]);
+      this.wishlistState.next([...currentState, bicycle]);
     }
   }
 
-  removeFromWishlist(dish: DishModel): void {
+  removeFromWishlist(bicycle: BicycleModel): void {
     const currentState = this.wishlistState.value;
-    const updatedState = currentState.filter(item => item.id !== dish.id);
+    const updatedState = currentState.filter(item => item.id !== bicycle.id);
     this.wishlistState.next(updatedState);
   }
 
-  getWishlist(): DishModel[] {
+  getWishlist(): BicycleModel[] {
     return this.wishlistState.value;
   }
 }

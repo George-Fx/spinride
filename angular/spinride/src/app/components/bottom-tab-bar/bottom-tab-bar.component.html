@@ -1,19 +1,14 @@
-<div
-  style="
-    padding: 20px;
-    background-color: #f6f9f9;
-    display: flex;
-    flex-direction: column;
-  "
->
+<div [style]="containerStyle">
   <footer
     [ngStyle]="{'max-width': isMobile ? '100%' : 'var(--screen-width)'}"
     style="
-      background-color: #fff;
+      background-color: var(--main-color);
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      border-radius: 10px;
+      border-radius: 70px;
+      height: var(--tab-bar-height);
     "
+    [style]="footerStyle"
   >
     <!-- HOME -->
     <a
@@ -35,17 +30,6 @@
             : 'assets/svg/tabs/home-inactive.svg'
         "
       />
-      <span
-        class="t10"
-        style="text-align: center; line-height: 1.7; text-transform: capitalize"
-        [style]="
-          activeRoute === 'home'
-            ? {color: 'var(--main-turquoise)'}
-            : {color: '#666E84'}
-        "
-      >
-        home
-      </span>
     </a>
 
     <!-- MENU -->
@@ -64,21 +48,10 @@
         alt=""
         [src]="
           activeRoute === 'menu'
-            ? 'assets/svg/tabs/menu-active.svg'
-            : 'assets/svg/tabs/menu-inactive.svg'
+            ? 'assets/svg/tabs/category-active.svg'
+            : 'assets/svg/tabs/category-inactive.svg'
         "
       />
-      <span
-        class="t10"
-        style="text-align: center; line-height: 1.7; text-transform: capitalize"
-        [style]="
-          activeRoute === 'menu'
-            ? {color: 'var(--main-turquoise)'}
-            : {color: '#666E84'}
-        "
-      >
-        menu
-      </span>
     </a>
 
     <!-- ORDER -->
@@ -101,22 +74,11 @@
             : 'assets/svg/tabs/order-inactive.svg'
         "
       />
-      <span
-        class="t10"
-        style="text-align: center; line-height: 1.7; text-transform: capitalize"
-        [style]="
-          activeRoute === 'order' || activeRoute === 'order-empty'
-            ? {color: 'var(--main-turquoise)'}
-            : {color: '#666E84'}
-        "
-      >
-        order
-      </span>
     </a>
 
     <!-- FAVORITE -->
     <a
-      [routerLink]="wishlist.length === 0 ? '/favorite-empty' : '/favorite'"
+      [routerLink]="wishlist.length === 0 ? '/wishlist-empty' : '/wishlist'"
       style="
         display: flex;
         flex-direction: column;
@@ -129,27 +91,16 @@
       <img
         alt=""
         [src]="
-          activeRoute === 'favorite' || activeRoute === 'favorite-empty'
-            ? 'assets/svg/tabs/favorite-active.svg'
-            : 'assets/svg/tabs/favorite-inactive.svg'
+          activeRoute === 'wishlist' || activeRoute === 'wishlist-empty'
+            ? 'assets/svg/tabs/wishlist-active.svg'
+            : 'assets/svg/tabs/wishlist-inactive.svg'
         "
       />
-      <span
-        class="t10"
-        style="text-align: center; line-height: 1.7; text-transform: capitalize"
-        [style]="
-          activeRoute === 'favorite' || activeRoute === 'favorite-empty'
-            ? {color: 'var(--main-turquoise)'}
-            : {color: '#666E84'}
-        "
-      >
-        Favorite
-      </span>
     </a>
 
-    <!-- NOTIFICATION -->
+    <!-- PROFILE -->
     <a
-      [routerLink]="'/notifications'"
+      [routerLink]="'/profile'"
       style="
         display: flex;
         flex-direction: column;
@@ -162,22 +113,11 @@
       <img
         alt=""
         [src]="
-          activeRoute === 'notifications'
-            ? 'assets/svg/tabs/notification-active.svg'
-            : 'assets/svg/tabs/notification-inactive.svg'
+          activeRoute === 'profile'
+            ? 'assets/svg/tabs/profile-active.svg'
+            : 'assets/svg/tabs/profile-inactive.svg'
         "
       />
-      <span
-        class="t10"
-        style="text-align: center; line-height: 1.7; text-transform: capitalize"
-        [style]="
-          activeRoute === 'notifications'
-            ? {color: 'var(--main-turquoise)'}
-            : {color: '#666E84'}
-        "
-      >
-        Notification
-      </span>
     </a>
   </footer>
 </div>

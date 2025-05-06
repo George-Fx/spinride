@@ -1,13 +1,15 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-import {DishComponent} from './screens/dish/dish.component';
+import {ShopComponent} from './screens/shop/shop.component';
 import {FilterComponent} from './screens/filter/filter.component';
 import {SignInComponent} from './screens/sign-in/sign-in.component';
 import {SignUpComponent} from './screens/sign-up/sign-up.component';
+import {ProfileComponent} from './screens/profile/profile.component';
 import {ReviewsComponent} from './screens/reviews/reviews.component';
+import {BicycleComponent} from './screens/bicycle/bicycle.component';
+import {SignOutComponent} from './screens/sign-out/sign-out.component';
 import {CheckoutComponent} from './screens/checkout/checkout.component';
-import {MenuListComponent} from './screens/menu-list/menu-list.component';
 import {InfoSavedComponent} from './screens/info-saved/info-saved.component';
 import {OnboardingComponent} from './screens/onboarding/onboarding.component';
 import {NewPasswordComponent} from './screens/new-password/new-password.component';
@@ -15,8 +17,8 @@ import {OrderFailedComponent} from './screens/order-failed/order-failed.componen
 import {EditProfileComponent} from './screens/edit-profile/edit-profile.component';
 import {OrderHistoryComponent} from './screens/order-history/order-history.component';
 import {MyPromocodesComponent} from './screens/my-promocodes/my-promocodes.component';
-import {NotificationsComponent} from './screens/notifications/notifications.component';
 import {LeaveAReviewComponent} from './screens/leave-a-review/leave-a-review.component';
+import {WishlistEmptyComponent} from './screens/wishlist-empty/wishlist-empty.component';
 import {ForgotPasswordComponent} from './screens/forgot-password/forgot-password.component';
 import {OrderSuccessfulComponent} from './screens/order-successful/order-successful.component';
 import {VerifyYourPhoneComponent} from './screens/verify-your-phone/verify-your-phone.component';
@@ -31,10 +33,7 @@ import {HomeComponent} from './screens/home/home.component';
 import {MenuComponent} from './screens/menu/menu.component';
 import {OrderComponent} from './screens/order/order.component';
 import {WishlistComponent} from './screens/wishlist/wishlist.component';
-import {FavoriteComponent} from './screens/favorite/favorite.component';
 import {OrderEmptyComponent} from './screens/order-empty/order-empty.component';
-import {FavoriteEmptyComponent} from './screens/favorite-empty/favorite-empty.component';
-import {TrackYourOrderComponent} from './screens/track-your-order/track-your-order.component';
 
 export const routes: Routes = [
   {
@@ -50,14 +49,13 @@ export const routes: Routes = [
     component: MenuComponent,
   },
   {
-    path: 'dish/:id',
-    component: DishComponent,
-    data: {animation: 'DishPage'},
+    path: 'shop',
+    component: ShopComponent,
+    data: {animation: 'ShopPage'},
   },
   {
-    path: 'menu-list',
-    component: MenuListComponent,
-    data: {animation: 'ShippingAndPaymentInfoPage'},
+    path: 'profile',
+    component: ProfileComponent,
   },
   {
     path: 'new-password',
@@ -65,9 +63,23 @@ export const routes: Routes = [
     data: {animation: 'NewPasswordPage'},
   },
   {
+    path: 'wishlist-empty',
+    component: WishlistEmptyComponent,
+  },
+  {
     path: 'verify-your-phone',
     component: VerifyYourPhoneComponent,
     data: {animation: 'VerifyYourPhonePage'},
+  },
+  {
+    path: 'sign-out',
+    component: SignOutComponent,
+    data: {animation: 'SignOutPage'},
+  },
+  {
+    path: 'bicycle/:id',
+    component: BicycleComponent,
+    data: {animation: 'BicyclePage'},
   },
   {
     path: 'wishlist',
@@ -78,10 +90,6 @@ export const routes: Routes = [
     component: OrderEmptyComponent,
   },
   {
-    path: 'notifications',
-    component: NotificationsComponent,
-  },
-  {
     path: '',
     component: OnboardingComponent,
     data: {animation: 'OnboardingPage'},
@@ -90,11 +98,6 @@ export const routes: Routes = [
     path: 'sign-in',
     component: SignInComponent,
     data: {animation: 'SignInPage'},
-  },
-  {
-    path: 'track-your-order/:id',
-    component: TrackYourOrderComponent,
-    data: {animation: 'TrackYourOrderPage'},
   },
   {
     path: 'reviews',
@@ -115,14 +118,6 @@ export const routes: Routes = [
     path: 'confirmation-code',
     component: ConfirmationCodeComponent,
     data: {animation: 'ConfirmationCodePage'},
-  },
-  {
-    path: 'favorite',
-    component: FavoriteComponent,
-  },
-  {
-    path: 'favorite-empty',
-    component: FavoriteEmptyComponent,
   },
   {
     path: 'order-successful',

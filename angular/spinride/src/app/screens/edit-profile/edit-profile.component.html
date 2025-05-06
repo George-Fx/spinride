@@ -6,76 +6,42 @@
     margin-right: 20px;
     height: 100%;
     overflow-y: auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 30px;
+    padding-bottom: 20px;
   "
 >
   <section
     style="
-      background-color: var(--white-color);
-      padding-bottom: 30px;
-      padding-top: 50px;
-      padding-left: 20px;
-      padding-right: 20px;
-      border-radius: 10px;
-      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 14px;
     "
   >
-    <div
-      style="width: 100%; position: relative; margin-bottom: 30px"
-      class="clickable"
-    >
-      <img
-        alt="user"
-        [src]="URLS.MAIN_URL + '/assets/users/01.jpg'"
-        style="width: 28%; border-radius: 50%; margin: 0 auto"
-      />
-      <div
-        style="
-          background-color: rgba(0, 0, 0, 0.3);
-          position: absolute;
-          inset: 0;
-          z-index: 1;
-          width: 28%;
-          border-radius: 50%;
-          margin: 0 auto;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        "
-      >
-        <img [src]="svg.camera" />
-      </div>
-    </div>
-    <ul
-      style="
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        margin-bottom: 20px;
-      "
-    >
-      <app-input-field
-        [label]="'Name'"
-        [type]="'username'"
-        [placeholder]="'Dominic Parker'"
-      />
-      <app-input-field
-        [label]="'Name'"
-        [type]="'email'"
-        [placeholder]="'dominicparker@mail.com'"
-      />
-      <app-input-field
-        [label]="'Name'"
-        [type]="'phone'"
-        [placeholder]="'+17123456789'"
-      />
-      <app-input-field
-        [label]="'Name'"
-        [type]="'location'"
-        [placeholder]="'New York, USA'"
-      />
-    </ul>
-    <app-button [text]="'save changes'" [routerLink]="'/info-saved'" />
+    <app-input-field
+      [label]="'Name'"
+      [type]="'username'"
+      [value]="'Darron Banks'"
+      [placeholder]="'Dominic Parker'"
+    />
+    <app-input-field
+      [label]="'Name'"
+      [type]="'email'"
+      [value]="'darronbanks@mail.com'"
+      [placeholder]="'dominicparker@mail.com'"
+    />
+    <app-input-field
+      [label]="'Name'"
+      [type]="'phone'"
+      [value]="'+17123456789'"
+      [placeholder]="'+17123456789'"
+    />
+    <app-input-field
+      [label]="'Name'"
+      [type]="'location'"
+      [value]="'Chicago, USA'"
+      [placeholder]="'New York, USA'"
+    />
   </section>
+  <app-button [text]="'save changes'" [routerLink]="'/info-saved'" />
 </main>

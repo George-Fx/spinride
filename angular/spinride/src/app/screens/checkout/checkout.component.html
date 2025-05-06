@@ -28,10 +28,10 @@
       <h4 style="text-transform: capitalize">My order</h4>
       <h4>${{ total.toFixed(2) }}</h4>
     </div>
-    <!-- dishes -->
+    <!-- bicycles -->
     <ul style="margin-bottom: 6px">
       <li
-        *ngFor="let dish of list; let i = index; let last = last"
+        *ngFor="let bicycle of list; let i = index; let last = last"
         style="
           display: flex;
           flex-direction: row;
@@ -42,8 +42,8 @@
           marginBottom: last ? '0px' : '10px',
         }"
       >
-        <span class="t14">{{ dish.name }}</span>
-        <span class="t14">{{ dish.quantity }} x ${{ dish.price }}</span>
+        <span class="t14">{{ bicycle.name }}</span>
+        <span class="t14">{{ bicycle.quantity }} x ${{ bicycle.price }}</span>
       </li>
     </ul>
     <!-- discount & delivery -->

@@ -4,7 +4,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      margin-bottom: 13px;
+      margin-bottom: 12px;
       justify-content: space-between;
       margin-left: 20px;
       margin-right: 20px;
@@ -15,26 +15,33 @@
       <img [src]="svg.viewAll" alt="line" />
     </a>
   </div>
-  <swiper-container slides-per-view="auto" space-between="10">
+  <swiper-container slides-per-view="auto" space-between="14">
     <!-- item -->
     <swiper-slide
       class="swiper-slide"
       style="width: auto"
-      *ngFor="let product of products"
+      *ngFor="let bicycle of bicycles"
     >
       <div style="overflow: hidden; max-width: 200px; width: 100%">
         <!-- image -->
         <a
-          [routerLink]="['/dish', product.id]"
+          [routerLink]="['/bicycle', bicycle.id]"
           style="
             background-color: var(--white-color);
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
+            margin-bottom: 6px;
+            display: flex;
           "
         >
           <img
-            [src]="product.image"
-            style="width: 100%; height: auto; margin-bottom: 0px"
+            [src]="bicycle.image"
+            style="
+              width: 100%;
+              height: auto;
+              margin-bottom: 0px;
+              border-radius: 12px;
+            "
           />
         </a>
 
@@ -44,7 +51,7 @@
         >
           <!-- name -->
           <span class="t14 number-of-lines-1" style="margin-bottom: 3px">
-            {{ product.name }}
+            {{ bicycle.name }}
           </span>
           <!-- description -->
           <div
@@ -59,36 +66,29 @@
               class="t14"
               style="color: var(--main-color); font-weight: 500"
             >
-              ${{ product.price }}
+              ${{ bicycle.price }}
             </span>
-            <span class="t10">|</span>
-            <!-- <span class="t10" style="font-weight: 500">
-              {{ dish.weight }}g
-            </span> -->
-            <!-- <button style="margin-left: auto" (click)="addToCart(dish, $event)">
-              <img [src]="svg.addToCart" alt="heart" />
-            </button> -->
           </div>
         </div>
         <!-- new badge -->
         <img
           [src]="svg.new"
           alt="new badge"
-          *ngIf="product.isNew"
+          *ngIf="bicycle.isNew"
           style="position: absolute; top: 14px; left: 14px"
         />
 
         <!-- add btn -->
         <!-- <button
           style="padding: 14px; position: absolute; bottom: 54px; right: 0px"
-          (click)="addToWishlist(dish, $event)"
-          *ngIf="!ifInWishlist(dish)"
+          (click)="addToWishlist(bicycle, $event)"
+          *ngIf="!ifInWishlist(bicycle)"
         >
           <img [src]="svg.menuListHeart" class="new-svg" />
         </button>
         <button
           style="padding: 14px; position: absolute; bottom: 54px; right: 0px"
-          *ngIf="ifInWishlist(dish)"
+          *ngIf="ifInWishlist(bicycle)"
         >
           <img [src]="svg.menuListHeartFill" class="new-svg" />
         </button> -->

@@ -6,11 +6,11 @@ import {map} from 'rxjs/operators';
 import {isMobile} from 'react-device-detect';
 import {ActivatedRoute} from '@angular/router';
 
-import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Component, OnInit, OnDestroy, Input} from '@angular/core';
 
-import {DishModel} from '../../models/dish.model';
 import {CartState} from '../../services/cart.service';
 import {CartService} from '../../services/cart.service';
+import {BicycleModel} from '../../models/bicycles.model';
 import {WishlistState} from '../../services/wishlist.service';
 import {WishlistService} from '../../services/wishlist.service';
 
@@ -23,8 +23,29 @@ import {WishlistService} from '../../services/wishlist.service';
 export class BottomTabBarComponent implements OnInit, OnDestroy {
   isMobile = isMobile;
 
-  list: DishModel[] = [];
-  wishlist: DishModel[] = [];
+  @Input() style: {[key: string]: string} = {};
+  @Input() footerStyle: {[key: string]: string} = {};
+
+  get containerStyle() {
+    return {
+      padding: '20px',
+      backgroundColor: '#F3F3F3',
+      display: 'flex',
+      flexDirection: 'column',
+      ...this.style,
+    };
+  }
+
+  // get footerStyle() {
+  //   return {
+  //     ...this.footerStyle,
+  //   };
+  // }
+
+  // @Input() containerStyle: string = '';
+
+  list: BicycleModel[] = [];
+  wishlist: BicycleModel[] = [];
   activeRoute: string = '';
   private destroy$ = new Subject<void>();
 
@@ -44,8 +65,8 @@ export class BottomTabBarComponent implements OnInit, OnDestroy {
     this.initializeCart();
 
     this.wishlistState$ = this.wishlistService.wishlistState$.pipe(
-      map((dishes: DishModel[]) => ({
-        list: dishes,
+      map((bicycles: BicycleModel[]) => ({
+        list: bicycles,
       })),
     );
     this.wishlistState$.subscribe(state => {

@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 
-import {DishModel} from '../../models/dish.model';
+import {BicycleModel} from '../../models/bicycles.model';
 
 @Component({
   selector: 'app-rating',
@@ -10,5 +10,5 @@ import {DishModel} from '../../models/dish.model';
 })
 export class RatingComponent {
   @Input() style?: string;
-  @Input() dish?: DishModel;
+  @Input() bicycle?: BicycleModel;
 }

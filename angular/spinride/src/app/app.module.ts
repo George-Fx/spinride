@@ -27,9 +27,15 @@ import {RecomendedComponent} from './components/recomended/recomended.component'
 import {HomeReviewsComponent} from './components/home-reviews/home-reviews.component';
 import {HomeCategoriesComponent} from './components/home-categories/home-categories.component';
 import {BestSellersComponent} from './components/best-sellers/best-sellers.component';
+import {HomeFeaturedComponent} from './components/home-featured/home-featured.component';
+import { ProfileComponent } from './screens/profile/profile.component';
+import { BicycleComponent } from './screens/bicycle/bicycle.component';
+import { WishlistEmptyComponent } from './screens/wishlist-empty/wishlist-empty.component';
+import { ShopComponent } from './screens/shop/shop.component';
+import { SignOutComponent } from './screens/sign-out/sign-out.component';
 
 @NgModule({
-  declarations: [AppComponent, ...COMPONENTS],
+  declarations: [AppComponent, ...COMPONENTS, ProfileComponent, BicycleComponent, WishlistEmptyComponent, ShopComponent, SignOutComponent],
   imports: [
     BrowserModule,
     CarouselModule,
@@ -45,6 +51,7 @@ import {BestSellersComponent} from './components/best-sellers/best-sellers.compo
     RecomendedComponent,
     HomeReviewsComponent,
     BestSellersComponent,
+    HomeFeaturedComponent,
   ],
   bootstrap: [AppComponent],
   providers: [provideHttpClient()],

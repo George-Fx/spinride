@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
-import {DishModel} from '../models/dish.model';
+import {BicycleModel} from '../models/bicycles.model';
 
 export interface CartState {
   total: number;
@@ -8,7 +8,7 @@ export interface CartState {
   discount: number;
   subtotal: number;
   promoCode: string;
-  list: DishModel[];
+  list: BicycleModel[];
   discountAmount: number;
 }
 
@@ -29,17 +29,19 @@ export class CartService {
   private cartState = new BehaviorSubject<CartState>(this.initialState);
   cartState$ = this.cartState.asObservable();
 
-  addToCart(dish: DishModel): void {
+  addToCart(bicycle: BicycleModel): void {
     const currentState = this.cartState.value;
-    const existingDish = currentState.list.find(item => item.id === dish.id);
+    const existingBicycle = currentState.list.find(
+      item => item.id === bicycle.id,
+    );
 
-    if (existingDish) {
-      existingDish.quantity = (existingDish.quantity || 0) + 1;
+    if (existingBicycle) {
+      existingBicycle.quantity = (existingBicycle.quantity || 0) + 1;
     } else {
-      currentState.list.push({...dish, quantity: 1});
+      currentState.list.push({...bicycle, quantity: 1});
     }
 
-    currentState.subtotal += Number(dish.price);
+    currentState.subtotal += Number(bicycle.price);
     currentState.total =
       currentState.subtotal * (1 - currentState.discount / 100);
     currentState.discountAmount = currentState.subtotal - currentState.total;
@@ -47,20 +49,22 @@ export class CartService {
     this.cartState.next({...currentState});
   }
 
-  removeFromCart(dish: DishModel): void {
+  removeFromCart(bicycle: BicycleModel): void {
     const currentState = this.cartState.value;
-    const existingDish = currentState.list.find(item => item.id === dish.id);
+    const existingBicycle = currentState.list.find(
+      item => item.id === bicycle.id,
+    );
 
-    if (existingDish) {
-      if (existingDish.quantity && existingDish.quantity > 1) {
-        existingDish.quantity -= 1;
+    if (existingBicycle) {
+      if (existingBicycle.quantity && existingBicycle.quantity > 1) {
+        existingBicycle.quantity -= 1;
       } else {
         currentState.list = currentState.list.filter(
-          item => item.id !== dish.id,
+          item => item.id !== bicycle.id,
         );
       }
 
-      currentState.subtotal -= Number(dish.price);
+      currentState.subtotal -= Number(bicycle.price);
       currentState.total =
         currentState.subtotal * (1 - currentState.discount / 100);
       currentState.discountAmount = currentState.subtotal - currentState.total;
@@ -94,7 +98,7 @@ export class CartService {
     this.cartState.next({...this.initialState});
   }
 
-  getCartList(): DishModel[] {
+  getCartList(): BicycleModel[] {
     return this.cartState.value.list;
   }
 }

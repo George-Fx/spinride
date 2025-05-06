@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 import {svg} from '../../../../public/assets/svg';
-import {DishModel} from '../../models/dish.model';
+import {BicycleModel} from '../../models/bicycles.model';
 import {CartService} from '../../services/cart.service';
 import {WishlistService} from '../../services/wishlist.service';
 
@@ -13,9 +13,9 @@ import {WishlistService} from '../../services/wishlist.service';
 })
 export class BestSellerItemComponent implements OnInit {
   svg = svg;
-  wishlist: DishModel[] = [];
+  wishlist: BicycleModel[] = [];
 
-  @Input() dish!: DishModel;
+  @Input() bicycle!: BicycleModel;
   @Input() routerLink: string | undefined;
 
   constructor(
@@ -23,25 +23,25 @@ export class BestSellerItemComponent implements OnInit {
     private wishlistService: WishlistService,
   ) {}
 
-  ifInWishlist(dishes: DishModel): boolean {
-    return this.wishlist.some(item => item.id === dishes.id);
+  ifInWishlist(bicycles: BicycleModel): boolean {
+    return this.wishlist.some(item => item.id === bicycles.id);
   }
 
-  addToWishlist(dishes: DishModel, event: Event): void {
+  addToWishlist(bicycles: BicycleModel, event: Event): void {
     event.preventDefault();
     event.stopPropagation();
-    this.wishlistService.addToWishlist(dishes);
+    this.wishlistService.addToWishlist(bicycles);
   }
 
-  addToCart(dishes: DishModel, event: Event): void {
+  addToCart(bicycles: BicycleModel, event: Event): void {
     event.preventDefault();
     event.stopPropagation();
-    this.cartService.addToCart(dishes);
+    this.cartService.addToCart(bicycles);
   }
 
   ngOnInit(): void {
-    this.wishlistService.wishlistState$.subscribe(dishes => {
-      this.wishlist = dishes;
+    this.wishlistService.wishlistState$.subscribe(bicycles => {
+      this.wishlist = bicycles;
     });
   }
 }

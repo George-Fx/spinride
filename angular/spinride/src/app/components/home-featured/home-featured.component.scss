@@ -1,0 +1,13 @@
+:host {
+  .swiper-slide {
+    width: auto;
+
+    &:first-child {
+      margin-left: 20px;
+    }
+
+    &:last-child {
+      margin-right: 20px;
+    }
+  }
+}

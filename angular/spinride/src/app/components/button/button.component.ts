@@ -16,7 +16,9 @@ export class ButtonComponent {
   linkStyles(): {[key: string]: string} {
     return {
       'background-color':
-        this.colorScheme === 'primary' ? 'var(--main-orange)' : 'transparent',
+        this.colorScheme === 'primary'
+          ? 'var(--main-orange)'
+          : 'var(--white-color)',
 
       display: 'flex',
       'align-items': 'center',
@@ -24,10 +26,6 @@ export class ButtonComponent {
       width: '100%',
       height: '50px',
       'border-radius': '50px',
-      border:
-        this.colorScheme === 'primary'
-          ? 'none'
-          : '1px solid var(--main-turquoise)',
       ...this.containerStyle,
     };
   }
@@ -38,7 +36,7 @@ export class ButtonComponent {
       fontSize: '16px',
       fontWeight: '600',
       textTransform: 'capitalize',
-      color: this.colorScheme === 'primary' ? '#fff' : 'var(--main-turquoise)',
+      color: this.colorScheme === 'primary' ? '#fff' : 'var(--main-color)',
     };
   }
 }

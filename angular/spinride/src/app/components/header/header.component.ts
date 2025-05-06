@@ -25,6 +25,7 @@ export class HeaderComponent implements OnInit {
   @Input() showBasket: Boolean = false;
   @Input() showGoBack: Boolean = false;
   @Input() showBurger: Boolean = false;
+  @Input() showBorder: Boolean = false;
   @Input() showUserName: Boolean = false;
   @Input() headerStyle: {[key: string]: string} = {};
 
@@ -67,6 +68,7 @@ export class HeaderComponent implements OnInit {
     return {
       ...this.headerStyle,
       'max-width': this.isMobile ? '100%' : 'var(--screen-width)',
+      'border-bottom': this.showBorder ? '1px solid #E2E2E2' : 'none',
     };
   }
 }

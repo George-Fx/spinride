@@ -31,13 +31,30 @@
   </section>
 
   <!-- BEST SELLERS -->
-  <app-best-sellers [products]="bicycles" />
+  <app-best-sellers [bicycles]="bicycles" />
 
-  <!-- RECOMENDED -->
-  <!-- <app-recomended [dishes]="dishes" /> -->
+  <!-- BANNER -->
+  <section
+    style="
+      margin-left: 20px;
+      margin-right: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 40px;
+      margin-top: 4px;
+    "
+  >
+    <a>
+      <img
+        alt="banner"
+        src="https://spinride-data.vercel.app/assets/banners/02.jpg"
+        style="width: 100%; height: auto; border-radius: 12px"
+      />
+    </a>
+  </section>
 
-  <!-- REVIEWS -->
-  <!-- <app-home-reviews [reviews]="reviews" /> -->
+  <!-- FEATURED -->
+  <app-home-featured [bicycles]="bicycles" />
 </main>
 
-<!-- <app-bottom-tab-bar *ngIf="!isLoading" /> -->
+<app-bottom-tab-bar *ngIf="!isLoading" />

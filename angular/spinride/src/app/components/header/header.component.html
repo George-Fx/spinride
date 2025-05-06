@@ -8,10 +8,8 @@
     flex-direction: row;
     height: var(--header-height);
     justify-content: space-between;
+    /* border: 1px solid red; */
   "
-  [ngStyle]="{
-    'width': isMobile ? '100%' : 'var(--screen-width)',
-  }"
 >
   <!-- GO BACK -->
   <button
@@ -53,7 +51,6 @@
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      text-transform: capitalize;
       text-align: center;
       color: var(--main-color);
     "

@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 import {Component, OnInit} from '@angular/core';
 
 import {svg} from '../../../../public/assets/svg';
-import {DishModel} from '../../models/dish.model';
+import {BicycleModel} from '../../models/bicycles.model';
 import {CartState} from '../../services/cart.service';
 import {MetaService} from '../../services/meta.service';
 import {CartService} from '../../services/cart.service';
@@ -17,7 +17,7 @@ import {ModalService} from '../../services/modal.service';
 })
 export class OrderComponent implements OnInit {
   svg = svg;
-  list: DishModel[] = [];
+  list: BicycleModel[] = [];
   subtotal = 0;
   total = 0;
   discount = 0;

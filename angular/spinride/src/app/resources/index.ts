@@ -1,13 +1,10 @@
 // Screens
-import {DishComponent} from '../screens/dish/dish.component';
 import {MenuComponent} from '../screens/menu/menu.component';
 import {FilterComponent} from '../screens/filter/filter.component';
 import {SignInComponent} from '../screens/sign-in/sign-in.component';
 import {SignUpComponent} from '../screens/sign-up/sign-up.component';
 import {ReviewsComponent} from '../screens/reviews/reviews.component';
 import {CheckoutComponent} from '../screens/checkout/checkout.component';
-import {FavoriteComponent} from '../screens/favorite/favorite.component';
-import {MenuListComponent} from '../screens/menu-list/menu-list.component';
 import {InfoSavedComponent} from '../screens/info-saved/info-saved.component';
 import {OnboardingComponent} from '../screens/onboarding/onboarding.component';
 import {EditProfileComponent} from '../screens/edit-profile/edit-profile.component';
@@ -15,9 +12,7 @@ import {NewPasswordComponent} from '../screens/new-password/new-password.compone
 import {OrderFailedComponent} from '../screens/order-failed/order-failed.component';
 import {MyPromocodesComponent} from '../screens/my-promocodes/my-promocodes.component';
 import {OrderHistoryComponent} from '../screens/order-history/order-history.component';
-import {NotificationsComponent} from '../screens/notifications/notifications.component';
 import {LeaveAReviewComponent} from '../screens/leave-a-review/leave-a-review.component';
-import {FavoriteEmptyComponent} from '../screens/favorite-empty/favorite-empty.component';
 import {ForgotPasswordComponent} from '../screens/forgot-password/forgot-password.component';
 import {OrderSuccessfulComponent} from '../screens/order-successful/order-successful.component';
 import {VerifyYourPhoneComponent} from '../screens/verify-your-phone/verify-your-phone.component';
@@ -49,7 +44,6 @@ import {HeaderComponent} from '../components/header/header.component';
 import {ButtonComponent} from '../components/button/button.component';
 import {LoaderComponent} from '../components/loader/loader.component';
 import {SwitcherComponent} from '../components/switcher/switcher.component';
-import {MenuItemComponent} from '../components/menu-item/menu-item.component';
 import {SaleBadgeComponent} from '../components/sale-badge/sale-badge.component';
 import {InputFieldComponent} from '../components/input-field/input-field.component';
 import {RatingStarsComponent} from '../components/rating-stars/rating-stars.component';
@@ -57,10 +51,8 @@ import {BurgerModalComponent} from '../components/burger-modal/burger-modal.comp
 import {BlockHeadingComponent} from '../components/block-heading/block-heading.component';
 import {HomeCarouselComponent} from '../components/home-carousel/home-carousel.component';
 import {BottomTabBarComponent} from '../components/bottom-tab-bar/bottom-tab-bar.component';
-import {TrackYourOrderComponent} from '../screens/track-your-order/track-your-order.component';
 
 export const SCREEN_COMPONENTS = [
-  DishComponent,
   MenuComponent,
   StarComponent,
   StarsComponent,
@@ -68,9 +60,7 @@ export const SCREEN_COMPONENTS = [
   FilterComponent,
   SignUpComponent,
   ReviewsComponent,
-  FavoriteComponent,
   CheckoutComponent,
-  MenuListComponent,
   InfoSavedComponent,
   OnboardingComponent,
   OrderFailedComponent,
@@ -80,10 +70,7 @@ export const SCREEN_COMPONENTS = [
   OrderHistoryComponent,
   HomeCarouselComponent,
   LeaveAReviewComponent,
-  NotificationsComponent,
-  FavoriteEmptyComponent,
   ForgotPasswordComponent,
-  TrackYourOrderComponent,
   OrderSuccessfulComponent,
   VerifyYourPhoneComponent,
   ConfirmationCodeComponent,
@@ -115,7 +102,6 @@ export const APP_COMPONENTS = [
   LoaderComponent,
   RatingComponent,
   SwitcherComponent,
-  MenuItemComponent,
   SaleBadgeComponent,
   InputFieldComponent,
   RatingStarsComponent,

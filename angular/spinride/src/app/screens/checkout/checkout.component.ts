@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import {svg} from '../../../../public/assets/svg';
-import {DishModel} from '../../models/dish.model';
+import {BicycleModel} from '../../models/bicycles.model';
 import {CartService} from '../../services/cart.service';
 import {MetaService} from '../../services/meta.service';
 
@@ -13,7 +13,7 @@ import {MetaService} from '../../services/meta.service';
 })
 export class CheckoutComponent implements OnInit {
   svg = svg;
-  list: DishModel[] = [];
+  list: BicycleModel[] = [];
   total: number = 0;
   discount: number = 0;
   delivery: number = 0;
