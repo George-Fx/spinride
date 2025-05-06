@@ -29,9 +29,9 @@ export class ProfileComponent implements OnInit {
     },
     {
       id: 3,
-      title: 'My Wishlist',
+      title: 'My promocodes',
       icon: svg.gift,
-      route: '/profile/wishlist',
+      route: '/my-promocodes',
     },
     {
       id: 4,
