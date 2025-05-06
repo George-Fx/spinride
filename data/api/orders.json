@@ -5,9 +5,7 @@
       "date": "Aug 31, 2023",
       "time": "8:32 pm",
       "status": "shipping",
-      "total": 25.83,
-      "discount": 2.65,
-      "delivery": 2,
+      "total": 354.32,
       "products": [
         {
           "id": 1,
@@ -26,9 +24,7 @@
       "date": "Jul 28, 2023",
       "time": "8:32 pm",
       "status": "delivered",
-      "total": 25.83,
-      "discount": 2.65,
-      "delivery": 2,
+      "total": 129.97,
       "products": [
         {
           "id": 1,
@@ -47,9 +43,7 @@
       "date": "Jun 11, 2023",
       "time": "8:32 pm",
       "status": "canceled",
-      "total": 25.83,
-      "discount": 2.65,
-      "delivery": 2,
+      "total": 354.32,
       "products": [
         {
           "id": 1,
