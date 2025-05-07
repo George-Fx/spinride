@@ -27,6 +27,8 @@ export class HeaderComponent implements OnInit {
   @Input() showBurger: Boolean = false;
   @Input() showBorder: Boolean = false;
   @Input() showUserName: Boolean = false;
+  @Input() burgerColor: string = 'main' || 'white';
+  @Input() titleStyle: {[key: string]: string} = {};
   @Input() headerStyle: {[key: string]: string} = {};
 
   cartState$: Observable<CartState>;
@@ -66,9 +68,9 @@ export class HeaderComponent implements OnInit {
 
   get combinedStyles(): {[key: string]: string} {
     return {
-      ...this.headerStyle,
       'max-width': this.isMobile ? '100%' : 'var(--screen-width)',
       'border-bottom': this.showBorder ? '1px solid #E2E2E2' : 'none',
+      ...this.headerStyle,
     };
   }
 }

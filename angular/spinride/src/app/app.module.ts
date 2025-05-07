@@ -28,14 +28,26 @@ import {HomeReviewsComponent} from './components/home-reviews/home-reviews.compo
 import {HomeCategoriesComponent} from './components/home-categories/home-categories.component';
 import {BestSellersComponent} from './components/best-sellers/best-sellers.component';
 import {HomeFeaturedComponent} from './components/home-featured/home-featured.component';
-import { ProfileComponent } from './screens/profile/profile.component';
-import { BicycleComponent } from './screens/bicycle/bicycle.component';
-import { WishlistEmptyComponent } from './screens/wishlist-empty/wishlist-empty.component';
-import { ShopComponent } from './screens/shop/shop.component';
-import { SignOutComponent } from './screens/sign-out/sign-out.component';
+import {ProfileComponent} from './screens/profile/profile.component';
+import {BicycleComponent} from './screens/bicycle/bicycle.component';
+import {WishlistEmptyComponent} from './screens/wishlist-empty/wishlist-empty.component';
+import {ShopComponent} from './screens/shop/shop.component';
+import {SignOutComponent} from './screens/sign-out/sign-out.component';
+import { StarComponent } from './components/star/star.component';
+import { SingleStarComponent } from './components/single-star/single-star.component';
 
 @NgModule({
-  declarations: [AppComponent, ...COMPONENTS, ProfileComponent, BicycleComponent, WishlistEmptyComponent, ShopComponent, SignOutComponent],
+  declarations: [
+    AppComponent,
+    ...COMPONENTS,
+    ProfileComponent,
+    BicycleComponent,
+    WishlistEmptyComponent,
+    ShopComponent,
+    SignOutComponent,
+    StarComponent,
+    SingleStarComponent,
+  ],
   imports: [
     BrowserModule,
     CarouselModule,

@@ -27,7 +27,6 @@ import {ReviewItemComponent} from '../items/review-item/review-item.component';
 import {OrderItemComponent} from '../components/order-item/order-item.component';
 import {WishlistItemComponent} from '../items/wishlist-item/wishlist-item.component';
 import {PromocodeItemComponent} from '../items/promocode-item/promocode-item.component';
-import {BestSellerItemComponent} from '../items/best-seller-item/best-seller-item.component';
 import {ProfileMenuItemComponent} from '../items/profile-menu-item/profile-menu-item.component';
 
 // Tabs
@@ -37,7 +36,6 @@ import {WishlistComponent} from '../screens/wishlist/wishlist.component';
 import {OrderEmptyComponent} from '../screens/order-empty/order-empty.component';
 
 // App Components
-import {StarComponent} from '../components/star/star.component';
 import {StarsComponent} from '../components/stars/stars.component';
 import {RatingComponent} from '../components/rating/rating.component';
 import {HeaderComponent} from '../components/header/header.component';
@@ -54,7 +52,6 @@ import {BottomTabBarComponent} from '../components/bottom-tab-bar/bottom-tab-bar
 
 export const SCREEN_COMPONENTS = [
   MenuComponent,
-  StarComponent,
   StarsComponent,
   SignInComponent,
   FilterComponent,
@@ -85,7 +82,6 @@ export const ITEM_COMPONENTS = [
   ReviewItemComponent,
   WishlistItemComponent,
   PromocodeItemComponent,
-  BestSellerItemComponent,
   ProfileMenuItemComponent,
 ];
 

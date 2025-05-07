@@ -3,8 +3,13 @@
     [ngStyle]="{'max-width': isMobile ? '100%' : 'var(--screen-width)'}"
     style="
       background-color: var(--main-color);
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 10px;
+      padding-right: 10px;
+      /* grid-template-columns: repeat(5, 1fr); */
       border-radius: 70px;
       height: var(--tab-bar-height);
     "
@@ -15,6 +20,7 @@
       [routerLink]="'/home'"
       style="
         display: flex;
+        flex: 1;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -37,6 +43,7 @@
       [routerLink]="'/menu'"
       style="
         display: flex;
+        flex: 1;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -59,6 +66,7 @@
       [routerLink]="list.length === 0 ? '/order-empty' : '/order'"
       style="
         display: flex;
+        flex: 1;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -81,6 +89,7 @@
       [routerLink]="wishlist.length === 0 ? '/wishlist-empty' : '/wishlist'"
       style="
         display: flex;
+        flex: 1;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -103,6 +112,7 @@
       [routerLink]="'/profile'"
       style="
         display: flex;
+        flex: 1;
         flex-direction: column;
         justify-content: center;
         align-items: center;

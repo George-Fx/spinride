@@ -43,12 +43,71 @@
               border-radius: 12px;
             "
           />
+          <button
+            style="padding: 10px; position: absolute; right: 0; top: 0"
+            (click)="
+              $event.stopPropagation();
+              $event.preventDefault();
+              addToWishlist(bicycle)
+            "
+            *ngIf="!ifInWishlist(bicycle)"
+          >
+            <img [src]="svg.adToWl" alt="right arrow" />
+          </button>
+          <button
+            style="padding: 10px; position: absolute; right: 0; top: 0"
+            (click)="
+              $event.stopPropagation();
+              $event.preventDefault();
+              addToWishlist(bicycle)
+            "
+            *ngIf="ifInWishlist(bicycle)"
+          >
+            <img [src]="svg.addedToWLHeart" alt="right arrow" />
+          </button>
+          <button
+            style="padding: 10px; position: absolute; right: 0; top: 40px"
+            (click)="
+              $event.stopPropagation();
+              $event.preventDefault();
+              addToCart(bicycle)
+            "
+          >
+            <img [src]="svg.bag" alt="right arrow" />
+          </button>
         </a>
 
         <!-- content -->
-        <div
-          style="padding-left: 14px; padding-right: 14px; padding-bottom: 14px"
-        >
+        <div style="padding-right: 14px; padding-bottom: 14px">
+          <ul style="display: flex; list-style: none; padding: 0">
+            <li *ngFor="let item of [1, 2, 3, 4, 5]" style="margin-right: 4px">
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_3517_673)">
+                  <path
+                    d="M6 1L7.545 4.13L11 4.635L8.5 7.07L9.09 10.51L6 8.885L2.91 10.51L3.5 7.07L1 4.635L4.455 4.13L6 1Z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    [ngStyle]="{
+                      fill: bicycle.rating >= item ? '#E5C44E' : 'transparent',
+                      stroke: bicycle.rating >= item ? '#E5C44E' : '#E5C44E'
+                    }"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_3517_673">
+                    <rect width="12" height="12" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </li>
+          </ul>
+
           <!-- name -->
           <span class="t14 number-of-lines-1" style="margin-bottom: 3px">
             {{ bicycle.name }}
@@ -70,28 +129,6 @@
             </span>
           </div>
         </div>
-        <!-- new badge -->
-        <img
-          [src]="svg.new"
-          alt="new badge"
-          *ngIf="bicycle.isNew"
-          style="position: absolute; top: 14px; left: 14px"
-        />
-
-        <!-- add btn -->
-        <!-- <button
-          style="padding: 14px; position: absolute; bottom: 54px; right: 0px"
-          (click)="addToWishlist(bicycle, $event)"
-          *ngIf="!ifInWishlist(bicycle)"
-        >
-          <img [src]="svg.menuListHeart" class="new-svg" />
-        </button>
-        <button
-          style="padding: 14px; position: absolute; bottom: 54px; right: 0px"
-          *ngIf="ifInWishlist(bicycle)"
-        >
-          <img [src]="svg.menuListHeartFill" class="new-svg" />
-        </button> -->
       </div>
     </swiper-slide>
   </swiper-container>

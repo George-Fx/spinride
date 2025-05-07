@@ -28,10 +28,9 @@
   </button>
 
   <!-- BURGER -->
-  <button>
+  <button *ngIf="showBurger">
     <img
-      *ngIf="showBurger"
-      [src]="svg.burger"
+      [src]="burgerColor === 'white' ? svg.burgerWhite : svg.burger"
       alt="burger icon"
       style="
         padding-left: 20px;
@@ -54,6 +53,7 @@
       text-align: center;
       color: var(--main-color);
     "
+    [ngStyle]="titleStyle"
   >
     {{ title }}
   </h4>
