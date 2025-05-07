@@ -3,54 +3,43 @@
   (click)="copyToClipboard(promocode.code || '')"
   style="
     background-color: var(--white-color);
+    border-radius: 12px;
     width: 100%;
-    border-radius: 10px;
-    padding: 20px;
-    cursor: pointer;
-    user-select: none;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 17px;
+    position: relative;
+  "
+  (click)="
+    $event.stopPropagation();
+    $event.preventDefault();
+    copyToClipboard(promocode.code || '')
   "
 >
   <img
     [src]="promocode.image"
     alt="promocode"
-    style="width: 80px; height: 90px"
+    style="width: 80px; height: 90px; border-radius: 12px"
   />
-  <div
-    style="
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 7px;
-    "
-  >
-    <h3>{{ promocode.code }}</h3>
-    <img [src]="svg.copy" alt="copy" />
-  </div>
-  <div
-    style="
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-    "
-  >
-    <div
+  <div style="display: flex; flex-direction: column">
+    <h5 style="margin-bottom: 3px">{{ promocode.code }}</h5>
+    <span
+      style="font-family: var(--mulish); font-weight: 600; font-size: 16px"
       [ngStyle]="{
-        padding: '3px 8px',
-        borderRadius: '5px',
-        backgroundColor:
-          promocode.discount > 0 && promocode.discount <= 15
-            ? '#15C7FF'
-            : promocode.discount > 35 && promocode.discount <= 50
-            ? '#FF4768'
-            : '#FCC55E'
+        color:
+          promocode.discount >= 50
+            ? '#FF4365'
+            : promocode.discount >= 30
+            ? '#FF7557'
+            : '#51BA74'
       }"
-    >
-      <span class="t12" style="color: var(--white-color); font-weight: 500"
-        >{{ promocode.discount }}% off discount</span
-      >
-    </div>
-    <span class="t12">Expire {{ promocode.expiry }}</span>
+      >{{ promocode.discount }}% off
+    </span>
+    <span class="t14" style="margin-top: 3px">{{ promocode.expires_at }}</span>
+  </div>
+  <div style="padding: 20px; position: absolute; right: 0; top: 0">
+    <img [src]="svg.copy" />
   </div>
 </li>

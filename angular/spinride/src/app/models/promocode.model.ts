@@ -4,7 +4,7 @@ export interface Promocode {
   name: string;
   image: string;
   discount: number;
-  expiry: string;
+  expires_at: string;
 }
 
 export interface PromocodesResponse {
