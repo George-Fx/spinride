@@ -28,7 +28,7 @@
   </button>
 
   <!-- BURGER -->
-  <button *ngIf="showBurger">
+  <button *ngIf="showBurger" (click)="openModal()">
     <img
       [src]="burgerColor === 'white' ? svg.burgerWhite : svg.burger"
       alt="burger icon"

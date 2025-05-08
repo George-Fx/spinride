@@ -36,6 +36,8 @@ import {SignOutComponent} from './screens/sign-out/sign-out.component';
 import { StarComponent } from './components/star/star.component';
 import { SingleStarComponent } from './components/single-star/single-star.component';
 import { CategoriesComponent } from './screens/categories/categories.component';
+import { ShopItemComponent } from './items/shop-item/shop-item.component';
+import { BikeComponent } from './screens/bike/bike.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { CategoriesComponent } from './screens/categories/categories.component';
     StarComponent,
     SingleStarComponent,
     CategoriesComponent,
+    ShopItemComponent,
+    BikeComponent,
   ],
   imports: [
     BrowserModule,

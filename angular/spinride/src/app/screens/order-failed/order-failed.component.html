@@ -1,44 +1,52 @@
-<div style="height: 10px"></div>
+<img
+  alt="bg"
+  src="./assets/bg/01.png"
+  style="position: absolute; width: 100%; height: auto; z-index: -1"
+/>
 
-<main style="height: 100%; margin-left: 20px; margin-right: 20px">
+<main style="height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch">
   <section
     style="
-      height: 100%;
       display: flex;
       justify-content: center;
       flex-direction: column;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      background-color: var(--white-color);
+      height: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
     "
   >
     <img
       [alt]="'info saved'"
       [className]="'status-image'"
-      [src]="URLS.MAIN_URL + '/assets/images/11.jpg'"
+      [src]="svg.checkCircle"
+      style="width: 180px"
     />
     <h2
       style="text-align: center; margin-bottom: 4%; text-transform: capitalize"
     >
-      Sorry! Your order <br />
-      has failed!
+      Your order has failed!
     </h2>
-    <p [className]="'t16'" style="text-align: center; margin-bottom: 8%">
+    <p
+      style="
+        text-align: center;
+        margin-bottom: 30px;
+        color: #c3cde0;
+        font-size: 16px;
+        line-height: 1.7;
+      "
+    >
       Something went wrong. Please try <br />
       again to continue your order.
     </p>
+    <div
+      style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px"
+    >
+      <app-button
+        [text]="'my profile'"
+        [colorScheme]="'secondary'"
+        [routerLink]="['/profile']"
+      />
+      <app-button [text]="'try again'" [routerLink]="['/order']" />
+    </div>
   </section>
 </main>
-
-<section style="padding: 20px">
-  <app-button
-    [text]="'Try again'"
-    [routerLink]="'/order'"
-    [containerStyle]="{'margin-bottom': '14px'}"
-  />
-  <app-button
-    [text]="'Go back to the order'"
-    [colorScheme]="'secondary'"
-    [routerLink]="'/order'"
-  />
-</section>

@@ -35,6 +35,7 @@ import {MenuComponent} from './screens/menu/menu.component';
 import {OrderComponent} from './screens/order/order.component';
 import {WishlistComponent} from './screens/wishlist/wishlist.component';
 import {OrderEmptyComponent} from './screens/order-empty/order-empty.component';
+import {BikeComponent} from './screens/bike/bike.component';
 
 export const routes: Routes = [
   {
@@ -75,6 +76,11 @@ export const routes: Routes = [
     path: 'verify-your-phone',
     component: VerifyYourPhoneComponent,
     data: {animation: 'VerifyYourPhonePage'},
+  },
+  {
+    path: 'bike/:id',
+    component: BikeComponent,
+    data: {animation: 'BikePage'},
   },
   {
     path: 'sign-out',

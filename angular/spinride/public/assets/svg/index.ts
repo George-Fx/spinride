@@ -54,6 +54,7 @@ export const svg = {
   counterPlus: 'assets/svg/counter-plus.svg',
   burgerPhone: 'assets/svg/burger-phone.svg',
   profileUser: 'assets/svg/profile-user.svg',
+  addedToCart: 'assets/svg/added-to-cart.svg',
   bicycleHeart: 'assets/svg/bicycle-heart.svg',
   minusProduct: 'assets/svg/minus-product.svg',
   counterMinus: 'assets/svg/counter-minus.svg',

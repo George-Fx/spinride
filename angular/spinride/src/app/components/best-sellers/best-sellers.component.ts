@@ -6,7 +6,7 @@ import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 import {svg} from '../../../../public/assets/svg';
 import {CartService} from '../../services/cart.service';
-import {BicycleModel} from '../../models/bicycles.model';
+import {BikeModel} from '../../models/bike.model';
 import {WishlistService} from '../../services/wishlist.service';
 
 @Component({
@@ -18,9 +18,10 @@ import {WishlistService} from '../../services/wishlist.service';
 })
 export class BestSellersComponent {
   svg = svg;
-  @Input() bicycles: BicycleModel[] = [];
+  @Input() bicycles: BikeModel[] = [];
 
-  wishlist: BicycleModel[] = [];
+  cart: BikeModel[] = [];
+  wishlist: BikeModel[] = [];
 
   constructor(
     private wishlistService: WishlistService,
@@ -28,6 +29,7 @@ export class BestSellersComponent {
   ) {}
 
   ngOnInit(): void {
+    this.setCart();
     this.setWishlist();
   }
 
@@ -37,19 +39,29 @@ export class BestSellersComponent {
     });
   }
 
-  addToWishlist(bicycle: BicycleModel): void {
+  setCart(): void {
+    this.cartService.cartState$.subscribe(bikes => {
+      this.cart = bikes.list;
+    });
+  }
+
+  addToWishlist(bicycle: BikeModel): void {
     this.wishlistService.addToWishlist(bicycle);
   }
 
-  addToCart(bicycle: BicycleModel): void {
+  addToCart(bicycle: BikeModel): void {
     this.cartService.addToCart(bicycle);
   }
 
-  removeFromWishlist(bicycle: BicycleModel): void {
+  removeFromWishlist(bicycle: BikeModel): void {
     this.wishlistService.removeFromWishlist(bicycle);
   }
 
-  ifInWishlist(bicycle: BicycleModel): boolean {
+  ifInWishlist(bicycle: BikeModel): boolean {
     return this.wishlist.some(item => item.id === bicycle.id);
+  }
+
+  ifInCart(bicycle: BikeModel): boolean {
+    return this.cart.some(item => item.id === bicycle.id);
   }
 }

@@ -48,6 +48,7 @@ export const svg = {
   rightArrow: 'assets/svg/right-arrow.svg',
   addToWishlist: 'assets/svg/add-to-wl.svg',
   plusProduct: 'assets/svg/plus-product.svg',
+  checkCircle: 'assets/svg/check-circle.svg',
   burgerWhite: 'assets/svg/burger-white.svg',
   shoppingBag: 'assets/svg/shopping-bag.svg',
   statusCheck: 'assets/svg/status-check.svg',

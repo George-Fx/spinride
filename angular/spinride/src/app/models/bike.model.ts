@@ -14,6 +14,7 @@ export interface BikeModel {
   promotion: string;
   isNew: boolean;
   isTop: boolean;
+  color?: string;
   ratingCount: number;
   price: string;
   isFeatured: boolean;

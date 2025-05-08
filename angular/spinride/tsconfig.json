@@ -22,10 +22,11 @@
     "module": "ES2022",
     "lib": ["ES2022", "dom"],
     "paths": {
-      "@components/*": ["app/components/*"],
-      "@services/*": ["app/services/*"],
+      "@svg/*": ["app/svg/index.ts"],
       "@models/*": ["app/models/*"],
-      "@svg/*": ["app/svg/*"]
+      "@services/*": ["app/services/*"],
+      "@config/*": ["app/config/index.ts"],
+      "@components/*": ["app/components/*"]
     }
   },
   "angularCompilerOptions": {

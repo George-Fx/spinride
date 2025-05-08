@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
-import {BicycleModel} from '../models/bicycles.model';
+import {BikeModel} from '../models/bike.model';
 
 export interface CartState {
   total: number;
@@ -8,7 +8,7 @@ export interface CartState {
   discount: number;
   subtotal: number;
   promoCode: string;
-  list: BicycleModel[];
+  list: BikeModel[];
   discountAmount: number;
 }
 
@@ -29,7 +29,7 @@ export class CartService {
   private cartState = new BehaviorSubject<CartState>(this.initialState);
   cartState$ = this.cartState.asObservable();
 
-  addToCart(bicycle: BicycleModel): void {
+  addToCart(bicycle: BikeModel): void {
     const currentState = this.cartState.value;
     const existingBicycle = currentState.list.find(
       item => item.id === bicycle.id,
@@ -49,7 +49,7 @@ export class CartService {
     this.cartState.next({...currentState});
   }
 
-  removeFromCart(bicycle: BicycleModel): void {
+  removeFromCart(bicycle: BikeModel): void {
     const currentState = this.cartState.value;
     const existingBicycle = currentState.list.find(
       item => item.id === bicycle.id,
@@ -98,7 +98,7 @@ export class CartService {
     this.cartState.next({...this.initialState});
   }
 
-  getCartList(): BicycleModel[] {
+  getCartList(): BikeModel[] {
     return this.cartState.value.list;
   }
 }

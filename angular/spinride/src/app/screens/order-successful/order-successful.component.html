@@ -1,44 +1,52 @@
-<div style="height: 10px"></div>
+<img
+  alt="bg"
+  src="./assets/bg/01.png"
+  style="position: absolute; width: 100%; height: auto; z-index: -1"
+/>
 
-<main style="height: 100%; margin-left: 20px; margin-right: 20px">
+<main style="height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch">
   <section
     style="
-      height: 100%;
       display: flex;
       justify-content: center;
       flex-direction: column;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      background-color: var(--white-color);
+      height: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
     "
   >
     <img
       [alt]="'info saved'"
       [className]="'status-image'"
-      [src]="URLS.MAIN_URL + '/assets/images/03.jpg'"
+      [src]="svg.checkCircle"
+      style="width: 180px"
     />
     <h2
       style="text-align: center; margin-bottom: 4%; text-transform: capitalize"
     >
-      Thank you for <br />
-      your order!
+      Thank you for your order!
     </h2>
-    <p [className]="'t16'" style="text-align: center; margin-bottom: 8%">
+    <p
+      style="
+        text-align: center;
+        margin-bottom: 30px;
+        color: #c3cde0;
+        font-size: 16px;
+        line-height: 1.7;
+      "
+    >
       Your order will be delivered on time. <br />
       Thank you!
     </p>
+    <div
+      style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px"
+    >
+      <app-button
+        [text]="'Go Shopping'"
+        [colorScheme]="'secondary'"
+        [routerLink]="['/shop']"
+      />
+      <app-button [text]="'View orders'" [routerLink]="['/order-history']" />
+    </div>
   </section>
 </main>
-
-<section style="padding: 20px">
-  <app-button
-    [text]="'Continue Shopping'"
-    [routerLink]="'/home'"
-    [containerStyle]="{'margin-bottom': '14px'}"
-  />
-  <app-button
-    [text]="'View orders'"
-    [colorScheme]="'secondary'"
-    [routerLink]="'/order-history'"
-  />
-</section>

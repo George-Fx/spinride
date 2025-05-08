@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 import {svg} from '../../../../public/assets/svg';
-import {BicycleModel} from '../../models/bicycles.model';
+import {BikeModel} from '../../models/bike.model';
 import {CartService} from '../../services/cart.service';
 
 @Component({
@@ -14,17 +14,17 @@ export class OrderItemComponent implements OnInit {
   svg = svg;
   appliedPromocode = false;
 
-  @Input() bicycle: BicycleModel | undefined;
+  @Input() bike: BikeModel | undefined;
 
   constructor(private cartService: CartService) {}
 
-  addToCart(bicycle: BicycleModel, event: Event): void {
+  addToCart(bicycle: BikeModel, event: Event): void {
     event.stopPropagation();
     event.preventDefault();
     this.cartService.addToCart(bicycle);
   }
 
-  removeFromCart(bicycle: BicycleModel, event: Event): void {
+  removeFromCart(bicycle: BikeModel, event: Event): void {
     event.stopPropagation();
     event.preventDefault();
     this.cartService.removeFromCart(bicycle);

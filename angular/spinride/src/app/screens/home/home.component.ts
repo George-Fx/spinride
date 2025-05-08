@@ -78,14 +78,6 @@ export class HomeComponent {
     });
   }
 
-  private initializeCarousel(): void {
-    this.apiService.getCarousel().subscribe({
-      next: data => (this.carousel = data.carousel),
-      error: err => (this.carouselError = err),
-      complete: () => (this.carouselIsLoading = false),
-    });
-  }
-
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
@@ -94,4 +86,9 @@ export class HomeComponent {
   get isLoading(): boolean {
     return this.bicyclesIsLoading;
   }
+
+  // async loadData(): Promise<void> {
+  //   // Загрузка данных
+  //   this.bicycles = await this.dataService.getBicycles();
+  // }
 }

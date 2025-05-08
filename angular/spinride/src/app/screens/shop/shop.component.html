@@ -7,14 +7,90 @@
     <button>
       <img [src]="svg.filter" alt="filter" class="filter" />
     </button>
-    <button>
+    <button (click)="openSortingPopup($event)">
       <img [src]="svg.sortingBy" alt="filter" class="filter" />
     </button>
   </div>
 </section>
 
-<main>
-  <ul>
-    <li *ngFor="let bike of bikes; let i = index">1</li>
+<main
+  style="
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 20px;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    user-select: none;
+  "
+>
+  <ul style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px">
+    <app-shop-item *ngFor="let bike of bikes; let i = index" [bike]="bike" />
   </ul>
 </main>
+
+<!-- Sorting Popup -->
+<div
+  class="sorting-popup-backdrop"
+  *ngIf="isSortingPopupOpen"
+  (click)="closeSortingPopup()"
+></div>
+
+<ul
+  class="sorting-popup"
+  *ngIf="isSortingPopupOpen"
+  [@fadeInOut]
+  style="
+    width: 90%;
+    background-color: var(--white-color);
+    border-radius: 20px;
+    padding-top: 16px;
+    padding-left: 20px;
+    z-index: 1001;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 40%;
+  "
+>
+  <li
+    *ngFor="let item of modalData; let i = index; let last = last"
+    [ngStyle]="{'border-bottom': !last ? '1px solid #C8CDD9' : ''}"
+    (click)="selectCategory(item)"
+    class="clickable"
+    style="
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 20px;
+    "
+  >
+    <span class="t18">{{ item }}</span>
+    <div
+      style="
+        width: 16px;
+        height: 16px;
+        border: 1px solid #c8cdd9;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div
+        *ngIf="selectedCategory === item"
+        style="
+          width: 10px;
+          height: 10px;
+          background-color: var(--main-color);
+          border-radius: 50%;
+        "
+      ></div>
+    </div>
+  </li>
+</ul>

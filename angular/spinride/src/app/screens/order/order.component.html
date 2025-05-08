@@ -3,22 +3,34 @@
   [showBasket]="true"
   [showBurger]="true"
   [showUser]="true"
+  [showBorder]="true"
 />
 
 <main
-  style="margin-left: 20px; margin-right: 20px; height: 100%; overflow-y: auto"
+  style="
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 100%;
+    overflow-y: auto;
+    padding-top: 20px;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    user-select: none;
+  "
 >
   <!-- bicycles -->
-  <section
-    style="
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 2%;
-      margin-bottom: 20px;
-    "
-  >
-    <app-order-item *ngFor="let bicycle of list" [bicycle]="bicycle" />
+  <section>
+    <ul
+      style="
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e2e2e2;
+      "
+    >
+      <app-order-item *ngFor="let bike of list" [bike]="bike" />
+    </ul>
   </section>
 
   <!-- Apply promocode -->
