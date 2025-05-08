@@ -68,6 +68,7 @@ export const svg = {
   menuListHeart: 'assets/svg/menu-list-heart.svg',
   categoryActive: 'assets/svg/category-active.svg',
   applyPromocode: 'assets/svg/apply-promocode.svg',
+  categorySearch: 'assets/svg/category-search.svg',
   addedToWLHeart: 'assets/svg/added-to-wl-heart.svg',
   addedToWishlistPr: 'assets/svg/added-to-wl-pr.svg',
   mailNotVerified: 'assets/svg/mail-not-verified.svg',

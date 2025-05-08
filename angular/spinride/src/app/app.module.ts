@@ -35,6 +35,7 @@ import {ShopComponent} from './screens/shop/shop.component';
 import {SignOutComponent} from './screens/sign-out/sign-out.component';
 import { StarComponent } from './components/star/star.component';
 import { SingleStarComponent } from './components/single-star/single-star.component';
+import { CategoriesComponent } from './screens/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { SingleStarComponent } from './components/single-star/single-star.compon
     SignOutComponent,
     StarComponent,
     SingleStarComponent,
+    CategoriesComponent,
   ],
   imports: [
     BrowserModule,

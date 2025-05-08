@@ -5,6 +5,8 @@ import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 import {svg} from '../../../../public/assets/svg';
 import {BicycleModel} from '../../models/bicycles.model';
+import {CartService} from '../../services/cart.service';
+import {WishlistService} from '../../services/wishlist.service';
 
 @Component({
   selector: 'app-home-featured',
@@ -17,4 +19,37 @@ export class HomeFeaturedComponent {
   svg = svg;
 
   @Input() bicycles: BicycleModel[] = [];
+
+  wishlist: BicycleModel[] = [];
+
+  constructor(
+    private wishlistService: WishlistService,
+    private cartService: CartService,
+  ) {}
+
+  ngOnInit(): void {
+    this.setWishlist();
+  }
+
+  setWishlist(): void {
+    this.wishlistService.wishlistState$.subscribe(bicycles => {
+      this.wishlist = bicycles;
+    });
+  }
+
+  addToWishlist(bicycle: BicycleModel): void {
+    this.wishlistService.addToWishlist(bicycle);
+  }
+
+  addToCart(bicycle: BicycleModel): void {
+    this.cartService.addToCart(bicycle);
+  }
+
+  removeFromWishlist(bicycle: BicycleModel): void {
+    this.wishlistService.removeFromWishlist(bicycle);
+  }
+
+  ifInWishlist(bicycle: BicycleModel): boolean {
+    return this.wishlist.some(item => item.id === bicycle.id);
+  }
 }

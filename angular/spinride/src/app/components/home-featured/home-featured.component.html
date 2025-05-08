@@ -32,23 +32,84 @@
             overflow: hidden;
             margin-bottom: 6px;
             display: flex;
+            position: relative;
           "
         >
           <img
             [src]="bicycle.image"
             style="
               width: 100%;
-              height: auto;
+              height: 170px;
               margin-bottom: 0px;
               border-radius: 12px;
+              object-fit: contain;
             "
           />
+          <div
+            style="
+              position: absolute;
+              top: 10px;
+              left: 10px;
+              background-color: #66a97d;
+              border-radius: 6px;
+              height: 16px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding-left: 6px;
+              padding-right: 6px;
+            "
+            *ngIf="bicycle?.oldPrice"
+          >
+            <span
+              style="
+                font-size: 8px;
+                text-transform: uppercase;
+                font-family: var(--mulish);
+                font-weight: 700;
+                color: var(--white-color);
+                line-height: 1;
+              "
+            >
+              sale
+            </span>
+          </div>
+          <button
+            style="padding: 10px; position: absolute; right: 0; top: 0"
+            (click)="
+              $event.stopPropagation();
+              $event.preventDefault();
+              addToWishlist(bicycle)
+            "
+            *ngIf="!ifInWishlist(bicycle)"
+          >
+            <img [src]="svg.adToWl" alt="right arrow" />
+          </button>
+          <button
+            style="padding: 10px; position: absolute; right: 0; top: 0"
+            (click)="
+              $event.stopPropagation();
+              $event.preventDefault();
+              addToWishlist(bicycle)
+            "
+            *ngIf="ifInWishlist(bicycle)"
+          >
+            <img [src]="svg.addedToWLHeart" alt="right arrow" />
+          </button>
+          <button
+            style="padding: 10px; position: absolute; right: 0; top: 36px"
+            (click)="
+              $event.stopPropagation();
+              $event.preventDefault();
+              addToCart(bicycle)
+            "
+          >
+            <img [src]="svg.bag" alt="right arrow" />
+          </button>
         </a>
 
         <!-- content -->
-        <div
-          style="padding-left: 14px; padding-right: 14px; padding-bottom: 14px"
-        >
+        <div style="padding-right: 14px; padding-bottom: 14px">
           <!-- name -->
           <span class="t14 number-of-lines-1" style="margin-bottom: 3px">
             {{ bicycle.name }}
@@ -59,39 +120,35 @@
               display: flex;
               flex-direction: row;
               align-items: center;
-              gap: 8px;
+              gap: 4px;
             "
           >
             <span
+              *ngIf="bicycle?.oldPrice"
+              style="
+                color: var(--text-color);
+                font-weight: 500;
+                font-size: 12px;
+                font-family: var(--mulish);
+                text-decoration: line-through;
+                text-decoration-color: var(--text-color);
+              "
+            >
+              ${{ bicycle?.oldPrice }}
+            </span>
+            <span
               class="t14"
               style="color: var(--main-color); font-weight: 500"
+              [ngStyle]="
+                bicycle?.oldPrice
+                  ? {color: 'var(--main-orange)'}
+                  : {color: 'var(--main-color)'}
+              "
             >
               ${{ bicycle.price }}
             </span>
           </div>
         </div>
-        <!-- new badge -->
-        <img
-          [src]="svg.new"
-          alt="new badge"
-          *ngIf="bicycle.isNew"
-          style="position: absolute; top: 14px; left: 14px"
-        />
-
-        <!-- add btn -->
-        <!-- <button
-          style="padding: 14px; position: absolute; bottom: 54px; right: 0px"
-          (click)="addToWishlist(bicycle, $event)"
-          *ngIf="!ifInWishlist(bicycle)"
-        >
-          <img [src]="svg.menuListHeart" class="new-svg" />
-        </button>
-        <button
-          style="padding: 14px; position: absolute; bottom: 54px; right: 0px"
-          *ngIf="ifInWishlist(bicycle)"
-        >
-          <img [src]="svg.menuListHeartFill" class="new-svg" />
-        </button> -->
       </div>
     </swiper-slide>
   </swiper-container>

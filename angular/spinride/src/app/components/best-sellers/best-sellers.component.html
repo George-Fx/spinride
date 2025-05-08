@@ -43,6 +43,35 @@
               border-radius: 12px;
             "
           />
+          <div
+            style="
+              position: absolute;
+              top: 10px;
+              left: 10px;
+              background-color: #66a97d;
+              border-radius: 6px;
+              height: 16px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding-left: 6px;
+              padding-right: 6px;
+            "
+            *ngIf="bicycle?.oldPrice"
+          >
+            <span
+              style="
+                font-size: 8px;
+                text-transform: uppercase;
+                font-family: var(--mulish);
+                font-weight: 700;
+                color: var(--white-color);
+                line-height: 1;
+              "
+            >
+              sale
+            </span>
+          </div>
           <button
             style="padding: 10px; position: absolute; right: 0; top: 0"
             (click)="
@@ -78,8 +107,15 @@
         </a>
 
         <!-- content -->
-        <div style="padding-right: 14px; padding-bottom: 14px">
-          <ul style="display: flex; list-style: none; padding: 0">
+        <div style="padding-bottom: 14px">
+          <ul
+            style="
+              display: flex;
+              list-style: none;
+              padding: 0;
+              margin-bottom: 7px;
+            "
+          >
             <li *ngFor="let item of [1, 2, 3, 4, 5]" style="margin-right: 4px">
               <svg
                 width="12"
@@ -122,8 +158,26 @@
             "
           >
             <span
+              *ngIf="bicycle?.oldPrice"
+              style="
+                color: var(--text-color);
+                font-weight: 500;
+                font-size: 12px;
+                font-family: var(--mulish);
+                text-decoration: line-through;
+                text-decoration-color: var(--text-color);
+              "
+            >
+              ${{ bicycle?.oldPrice }}
+            </span>
+            <span
               class="t14"
-              style="color: var(--main-color); font-weight: 500"
+              style="color: var(--main-color); font-weight: 600"
+              [ngStyle]="
+                bicycle?.oldPrice
+                  ? {color: 'var(--main-orange)'}
+                  : {color: 'var(--main-color)'}
+              "
             >
               ${{ bicycle.price }}
             </span>

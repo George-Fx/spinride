@@ -22,7 +22,10 @@ export class BestSellersComponent {
 
   wishlist: BicycleModel[] = [];
 
-  constructor(private wishlistService: WishlistService) {}
+  constructor(
+    private wishlistService: WishlistService,
+    private cartService: CartService,
+  ) {}
 
   ngOnInit(): void {
     this.setWishlist();
@@ -39,7 +42,7 @@ export class BestSellersComponent {
   }
 
   addToCart(bicycle: BicycleModel): void {
-    // this.wishlistService.addToCart(bicycle);
+    this.cartService.addToCart(bicycle);
   }
 
   removeFromWishlist(bicycle: BicycleModel): void {

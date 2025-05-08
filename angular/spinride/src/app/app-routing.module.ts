@@ -11,6 +11,7 @@ import {BicycleComponent} from './screens/bicycle/bicycle.component';
 import {SignOutComponent} from './screens/sign-out/sign-out.component';
 import {CheckoutComponent} from './screens/checkout/checkout.component';
 import {InfoSavedComponent} from './screens/info-saved/info-saved.component';
+import {CategoriesComponent} from './screens/categories/categories.component';
 import {OnboardingComponent} from './screens/onboarding/onboarding.component';
 import {NewPasswordComponent} from './screens/new-password/new-password.component';
 import {OrderFailedComponent} from './screens/order-failed/order-failed.component';
@@ -61,6 +62,10 @@ export const routes: Routes = [
     path: 'new-password',
     component: NewPasswordComponent,
     data: {animation: 'NewPasswordPage'},
+  },
+  {
+    path: 'categories',
+    component: CategoriesComponent,
   },
   {
     path: 'wishlist-empty',

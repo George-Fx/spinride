@@ -18,6 +18,7 @@ export interface BicycleModel {
   price: string;
   isFeatured: boolean;
   isBestSeller: boolean;
+  oldPrice: string;
 }
 
 export interface BicyclesResponse {
