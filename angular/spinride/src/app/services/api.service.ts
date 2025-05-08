@@ -6,9 +6,9 @@ import {URLS} from '../config';
 import {OrdersResponse} from '../models/order.model';
 import {ProductModel} from '../models/product.model';
 import {ReviewsResponse} from '../models/review.model';
-import {CategoriesResponse} from '../models/menu.model';
 import {BicyclesResponse} from '../models/bicycles.model';
 import {CarouselResponse} from '../models/carousel.model';
+import {CategoriesResponse} from '../models/category.model';
 import {PromocodesResponse} from '../models/promocode.model';
 import {OnboardingResponse} from '../models/onboarding.model';
 
@@ -44,5 +44,7 @@ export class ApiService {
     return this.http.get<BicyclesResponse>(this.URLS.FETCH_BICYCLES);
   }
 
-  // getCategories(): Observable<CategoriesResponse> {}
+  getCategories(): Observable<CategoriesResponse> {
+    return this.http.get<CategoriesResponse>(this.URLS.GET_CATEGORIES);
+  }
 }

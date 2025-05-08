@@ -1,8 +1,9 @@
-export interface CarouselModel {
+export interface CategoryModel {
   id: number;
-  banner: string;
+  image: string;
+  category: string;
 }
 
-export interface CarouselResponse {
-  carousel: CarouselModel[];
+export interface CategoriesResponse {
+  categories: CategoryModel[];
 }
