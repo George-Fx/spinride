@@ -12,6 +12,7 @@ import {CheckoutComponent} from './screens/checkout/checkout.component';
 import {InfoSavedComponent} from './screens/info-saved/info-saved.component';
 import {CategoriesComponent} from './screens/categories/categories.component';
 import {OnboardingComponent} from './screens/onboarding/onboarding.component';
+import {DescriptionComponent} from './screens/description/description.component';
 import {NewPasswordComponent} from './screens/new-password/new-password.component';
 import {OrderFailedComponent} from './screens/order-failed/order-failed.component';
 import {EditProfileComponent} from './screens/edit-profile/edit-profile.component';
@@ -62,6 +63,11 @@ export const routes: Routes = [
     path: 'new-password',
     component: NewPasswordComponent,
     data: {animation: 'NewPasswordPage'},
+  },
+  {
+    path: 'description/:id',
+    component: DescriptionComponent,
+    data: {animation: 'DescriptionPage'},
   },
   {
     path: 'categories',

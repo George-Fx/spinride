@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 
-import {svg} from '../../../../public/assets/svg';
+import {svg} from '@svg/index';
 
 @Component({
   selector: 'app-block-heading',

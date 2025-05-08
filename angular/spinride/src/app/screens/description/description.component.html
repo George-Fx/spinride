@@ -1,0 +1,25 @@
+<app-header [showGoBack]="true" [title]="'Description'" />
+
+<main
+  style="
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    user-select: none;
+  "
+>
+  <section
+    style="
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    "
+  >
+    <h3 style="margin-bottom: 14px">{{ bike?.name }}</h3>
+    <p style="color: var(--text-color); font-size: 16px; line-height: 1.7">
+      {{ bike?.description }}
+    </p>
+  </section>
+</main>

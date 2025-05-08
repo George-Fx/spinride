@@ -2,7 +2,7 @@ import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import {Component, OnInit} from '@angular/core';
 
-import {svg} from '../../../../public/assets/svg';
+import {svg} from '@svg/index';
 import {MenuModel} from '../../models/menu.model';
 import {ApiService} from '../../services/api.service';
 import {MetaService} from '../../services/meta.service';

@@ -3,7 +3,7 @@ import {Component, ChangeDetectorRef} from '@angular/core';
 import {trigger, state, style, transition, animate} from '@angular/animations';
 
 import {URLS} from '../../config';
-import {svg} from '../../../../public/assets/svg';
+import {svg} from '@svg/index';
 import {ModalService} from '../../services/modal.service';
 
 @Component({

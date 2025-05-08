@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 import {URLS} from '../../config';
-import {svg} from '../../../../public/assets/svg';
+import {svg} from '@svg/index';
 import {MetaService} from '../../services/meta.service';
 
 @Component({

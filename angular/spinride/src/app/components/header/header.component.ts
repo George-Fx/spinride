@@ -4,7 +4,7 @@ import {isMobile} from 'react-device-detect';
 import {Component, Input, OnInit} from '@angular/core';
 
 import {URLS} from '../../config';
-import {svg} from '../../../../public/assets/svg';
+import {svg} from '@svg/index';
 import {CartState} from '../../services/cart.service';
 import {CartService} from '../../services/cart.service';
 import {ModalService} from '../../services/modal.service';

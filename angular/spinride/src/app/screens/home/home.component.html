@@ -9,7 +9,16 @@
   *ngIf="!isLoading"
 />
 
-<main style="overflow-y: auto; height: 100%" *ngIf="!isLoading">
+<main
+  style="
+    overflow-y: auto;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    user-select: none;
+  "
+  *ngIf="!isLoading"
+>
   <!-- BANNER -->
   <section
     style="

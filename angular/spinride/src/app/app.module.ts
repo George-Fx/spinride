@@ -36,6 +36,7 @@ import {SingleStarComponent} from './components/single-star/single-star.componen
 import {CategoriesComponent} from './screens/categories/categories.component';
 import {ShopItemComponent} from './items/shop-item/shop-item.component';
 import {BikeComponent} from './screens/bike/bike.component';
+import { DescriptionComponent } from './screens/description/description.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import {BikeComponent} from './screens/bike/bike.component';
     CategoriesComponent,
     ShopItemComponent,
     BikeComponent,
+    DescriptionComponent,
   ],
   imports: [
     BrowserModule,

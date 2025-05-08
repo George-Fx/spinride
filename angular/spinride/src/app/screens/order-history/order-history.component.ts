@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 
-import {svg} from '../../../../public/assets/svg';
+import {svg} from '@svg/index';
 import {OrderModel} from '../../models/order.model';
 import {ApiService} from '../../services/api.service';
 import {MetaService} from '../../services/meta.service';

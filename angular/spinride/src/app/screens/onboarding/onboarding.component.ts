@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {OwlOptions} from 'ngx-owl-carousel-o';
 
-import {svg} from '../../../../public/assets/svg';
+import {svg} from '@svg/index';
 import {ApiService} from '../../services/api.service';
 import {MetaService} from '../../services/meta.service';
 import {OnboardingModel} from '../../models/onboarding.model';

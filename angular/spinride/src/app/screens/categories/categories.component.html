@@ -7,7 +7,16 @@
 
 <app-loader *ngIf="isLoading" />
 
-<main style="height: 100%; overflow-y: auto" *ngIf="!isLoading">
+<main
+  style="
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    user-select: none;
+  "
+  *ngIf="!isLoading"
+>
   <ul
     style="
       display: flex;

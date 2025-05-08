@@ -1,6 +1,15 @@
 <app-header [showGoBack]="true" [showBasket]="true" />
 
-<main *ngIf="bike" style="height: 100%; overflow-y: auto">
+<main
+  *ngIf="bike"
+  style="
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    user-select: none;
+  "
+>
   <!-- CAROUSEL -->
   <section style="position: relative; margin-bottom: 20px">
     <owl-carousel-o
@@ -182,23 +191,56 @@
   </section>
 
   <!-- COLOR -->
-  <section style="margin-left: 20px; margin-right: 20px">
+  <section style="margin-left: 20px; margin-right: 20px; margin-bottom: 34px">
     <h5 style="margin-bottom: 14px">Color</h5>
-    <ul>
+    <ul style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 14px">
       <li
         *ngFor="let color of bike.colors"
         style="
           display: inline-block;
-          width: 20px;
-          height: 20px;
+          width: 30px;
+          height: 30px;
           border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+        (click)="
+          $event.stopPropagation();
+          $event.preventDefault();
+          selectColor(color.code)
         "
         [ngStyle]="{
           backgroundColor: color.code,
         }"
       >
-        1
+        <img
+          *ngIf="selectedColor() === color.code"
+          [src]="svg.colorSelect"
+          style="width: 16px; height: 16px"
+        />
       </li>
     </ul>
+  </section>
+
+  <!-- DESCRIPTION -->
+  <section style="margin-left: 20px; margin-right: 20px; margin-bottom: 30px">
+    <h5 style="margin-bottom: 14px">Color</h5>
+    <p
+      style="
+        margin-bottom: 20px;
+        font-size: 16px;
+        color: var(--text-color);
+        line-height: 1.7;
+      "
+    >
+      {{ bike.description }}
+    </p>
+    <a [routerLink]="['/description', bike.id]"><img [src]="svg.readMore" /></a>
+  </section>
+
+  <!-- REVIEWS -->
+  <section>
+    <h3>Reviews (23)</h3>
   </section>
 </main>

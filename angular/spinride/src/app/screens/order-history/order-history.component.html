@@ -8,7 +8,14 @@
 <app-loader *ngIf="ordersIsLoading" />
 
 <main
-  style="margin-left: 20px; margin-right: 20px; overflow-y: auto"
+  style="
+    margin-left: 20px;
+    margin-right: 20px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    user-select: none;
+  "
   *ngIf="!ordersIsLoading"
 >
   <ul style="margin-bottom: 20px">

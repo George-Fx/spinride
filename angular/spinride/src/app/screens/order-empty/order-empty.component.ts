@@ -4,7 +4,7 @@ import {isMobile} from 'react-device-detect';
 import {Component, OnInit, OnDestroy} from '@angular/core';
 
 import {URLS} from '../../config';
-import {svg} from '../../../../public/assets/svg';
+import {svg} from '@svg/index';
 import {BikeModel} from '../../models/bike.model';
 import {MetaService} from '../../services/meta.service';
 import {ModalService} from '../../services/modal.service';

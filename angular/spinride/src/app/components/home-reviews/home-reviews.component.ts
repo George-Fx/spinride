@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
-import {svg} from '../../../../public/assets/svg';
+import {svg} from '@svg/index';
 import {ReviewModel} from '../../models/review.model';
 
 @Component({
