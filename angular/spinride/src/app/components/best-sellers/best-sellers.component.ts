@@ -18,7 +18,7 @@ import {WishlistService} from '../../services/wishlist.service';
 })
 export class BestSellersComponent {
   svg = svg;
-  @Input() bicycles: BikeModel[] = [];
+  @Input() bikes: BikeModel[] = [];
 
   cart: BikeModel[] = [];
   wishlist: BikeModel[] = [];
@@ -34,8 +34,8 @@ export class BestSellersComponent {
   }
 
   setWishlist(): void {
-    this.wishlistService.wishlistState$.subscribe(bicycles => {
-      this.wishlist = bicycles;
+    this.wishlistService.wishlistState$.subscribe(bikes => {
+      this.wishlist = bikes;
     });
   }
 
@@ -45,23 +45,23 @@ export class BestSellersComponent {
     });
   }
 
-  addToWishlist(bicycle: BikeModel): void {
-    this.wishlistService.addToWishlist(bicycle);
+  addToWishlist(bike: BikeModel): void {
+    this.wishlistService.addToWishlist(bike);
   }
 
-  addToCart(bicycle: BikeModel): void {
-    this.cartService.addToCart(bicycle);
+  addToCart(bike: BikeModel): void {
+    this.cartService.addToCart(bike);
   }
 
-  removeFromWishlist(bicycle: BikeModel): void {
-    this.wishlistService.removeFromWishlist(bicycle);
+  removeFromWishlist(bike: BikeModel): void {
+    this.wishlistService.removeFromWishlist(bike);
   }
 
-  ifInWishlist(bicycle: BikeModel): boolean {
-    return this.wishlist.some(item => item.id === bicycle.id);
+  ifInWishlist(bike: BikeModel): boolean {
+    return this.wishlist.some(item => item.id === bike.id);
   }
 
-  ifInCart(bicycle: BikeModel): boolean {
-    return this.cart.some(item => item.id === bicycle.id);
+  ifInCart(bike: BikeModel): boolean {
+    return this.cart.some(item => item.id === bike.id);
   }
 }

@@ -18,16 +18,16 @@ export class OrderItemComponent implements OnInit {
 
   constructor(private cartService: CartService) {}
 
-  addToCart(bicycle: BikeModel, event: Event): void {
+  addToCart(bike: BikeModel, event: Event): void {
     event.stopPropagation();
     event.preventDefault();
-    this.cartService.addToCart(bicycle);
+    this.cartService.addToCart(bike);
   }
 
-  removeFromCart(bicycle: BikeModel, event: Event): void {
+  removeFromCart(bike: BikeModel, event: Event): void {
     event.stopPropagation();
     event.preventDefault();
-    this.cartService.removeFromCart(bicycle);
+    this.cartService.removeFromCart(bike);
   }
 
   ngOnInit(): void {}

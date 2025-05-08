@@ -10,7 +10,7 @@
 >
   <!-- image -->
   <a
-    [routerLink]="['/bicycle', bicycle.id]"
+    [routerLink]="['/bike', bike.id]"
     style="
       border-radius: 12px;
       overflow: hidden;
@@ -21,17 +21,17 @@
     "
   >
     <img
-      src="{{ bicycle.image }}"
-      alt="{{ bicycle.name }}"
+      src="{{ bike.image }}"
+      alt="{{ bike.name }}"
       class="order-item__image"
       style="width: 100%; height: auto; border-radius: 12px; object-fit: cover"
-      [src]="bicycle.image"
+      [src]="bike.image"
     />
   </a>
 
   <!-- remove btn -->
   <button
-    (click)="removeFromWishlist(bicycle, $event)"
+    (click)="removeFromWishlist(bike, $event)"
     style="padding: 14px; position: absolute; bottom: 60px; right: 0px"
   >
     <img [src]="svg.menuListHeartFill" class="new-svg" />
@@ -41,7 +41,7 @@
   <img
     [src]="svg.new"
     style="position: absolute; top: 14px; left: 14px"
-    *ngIf="bicycle?.isNew"
+    *ngIf="bike?.isNew"
   />
 
   <!-- info -->
@@ -49,13 +49,13 @@
     style="display: flex; flex-direction: column; gap: 4px; margin-right: auto"
   >
     <span class="number-of-lines-1 t14" style="margin-bottom: 3px">{{
-      bicycle.name
+      bike.name
     }}</span>
     <div
       style="display: flex; flex-direction: row; align-items: center; gap: 6px"
     >
       <span class="t14" style="color: var(--main-color); font-weight: 500">
-        ${{ bicycle.price }}
+        ${{ bike.price }}
       </span>
       <span class="t10">|</span>
     </div>
@@ -64,7 +64,7 @@
   <!-- add to cart -->
   <button
     style="position: absolute; padding: 14px; bottom: 0px; right: 0px"
-    (click)="addToCart(bicycle, $event)"
+    (click)="addToCart(bike, $event)"
   >
     <img [src]="svg.addToCart" class="new-svg" />
   </button>

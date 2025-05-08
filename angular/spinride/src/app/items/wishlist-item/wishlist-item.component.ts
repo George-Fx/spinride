@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 
 import {svg} from '../../../../public/assets/svg';
-import {BicycleModel} from '../../models/bicycles.model';
+import {BikeModel} from '../../models/bike.model';
 import {CartService} from '../../services/cart.service';
 import {WishlistService} from '../../services/wishlist.service';
 
@@ -12,7 +12,7 @@ import {WishlistService} from '../../services/wishlist.service';
   styleUrl: './wishlist-item.component.scss',
 })
 export class WishlistItemComponent {
-  @Input() bicycle!: BicycleModel;
+  @Input() bike!: BikeModel;
 
   svg = svg;
 
@@ -21,15 +21,15 @@ export class WishlistItemComponent {
     private wishlistService: WishlistService,
   ) {}
 
-  addToCart(bicycle: BicycleModel, event: Event): void {
+  addToCart(bike: BikeModel, event: Event): void {
     event.stopPropagation();
     event.preventDefault();
-    this.cartService.addToCart(bicycle);
+    this.cartService.addToCart(bike);
   }
 
-  removeFromWishlist(bicycle: BicycleModel, event: Event): void {
+  removeFromWishlist(bike: BikeModel, event: Event): void {
     event.stopPropagation();
     event.preventDefault();
-    this.wishlistService.removeFromWishlist(bicycle);
+    this.wishlistService.removeFromWishlist(bike);
   }
 }

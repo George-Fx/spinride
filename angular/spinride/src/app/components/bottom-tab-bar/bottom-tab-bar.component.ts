@@ -10,7 +10,7 @@ import {Component, OnInit, OnDestroy, Input} from '@angular/core';
 
 import {CartState} from '../../services/cart.service';
 import {CartService} from '../../services/cart.service';
-import {BicycleModel} from '../../models/bicycles.model';
+import {BikeModel} from '../../models/bike.model';
 import {WishlistState} from '../../services/wishlist.service';
 import {WishlistService} from '../../services/wishlist.service';
 
@@ -44,8 +44,8 @@ export class BottomTabBarComponent implements OnInit, OnDestroy {
 
   // @Input() containerStyle: string = '';
 
-  list: BicycleModel[] = [];
-  wishlist: BicycleModel[] = [];
+  list: BikeModel[] = [];
+  wishlist: BikeModel[] = [];
   activeRoute: string = '';
   private destroy$ = new Subject<void>();
 
@@ -65,8 +65,8 @@ export class BottomTabBarComponent implements OnInit, OnDestroy {
     this.initializeCart();
 
     this.wishlistState$ = this.wishlistService.wishlistState$.pipe(
-      map((bicycles: BicycleModel[]) => ({
-        list: bicycles,
+      map((bikes: BikeModel[]) => ({
+        list: bikes,
       })),
     );
     this.wishlistState$.subscribe(state => {

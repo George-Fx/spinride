@@ -5,7 +5,7 @@ import {Component, OnInit, OnDestroy} from '@angular/core';
 
 import {URLS} from '../../config';
 import {svg} from '../../../../public/assets/svg';
-import {BicycleModel} from '../../models/bicycles.model';
+import {BikeModel} from '../../models/bike.model';
 import {MetaService} from '../../services/meta.service';
 import {ModalService} from '../../services/modal.service';
 
@@ -19,7 +19,7 @@ export class OrderEmptyComponent implements OnInit, OnDestroy {
   svg = svg;
   URLS = URLS;
   isMobile = isMobile;
-  wishlist: BicycleModel[] = [];
+  wishlist: BikeModel[] = [];
   isOpen = false;
   private destroy$ = new Subject<void>();
 

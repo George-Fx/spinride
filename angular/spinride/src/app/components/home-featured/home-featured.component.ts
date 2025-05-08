@@ -4,7 +4,7 @@ import {RouterModule} from '@angular/router';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 import {svg} from '../../../../public/assets/svg';
-import {BicycleModel} from '../../models/bicycles.model';
+import {BikeModel} from '../../models/bike.model';
 import {CartService} from '../../services/cart.service';
 import {WishlistService} from '../../services/wishlist.service';
 
@@ -18,9 +18,9 @@ import {WishlistService} from '../../services/wishlist.service';
 export class HomeFeaturedComponent {
   svg = svg;
 
-  @Input() bicycles: BicycleModel[] = [];
+  @Input() bikes: BikeModel[] = [];
 
-  wishlist: BicycleModel[] = [];
+  wishlist: BikeModel[] = [];
 
   constructor(
     private wishlistService: WishlistService,
@@ -32,24 +32,24 @@ export class HomeFeaturedComponent {
   }
 
   setWishlist(): void {
-    this.wishlistService.wishlistState$.subscribe(bicycles => {
-      this.wishlist = bicycles;
+    this.wishlistService.wishlistState$.subscribe(bikes => {
+      this.wishlist = bikes;
     });
   }
 
-  addToWishlist(bicycle: BicycleModel): void {
-    this.wishlistService.addToWishlist(bicycle);
+  addToWishlist(bike: BikeModel): void {
+    this.wishlistService.addToWishlist(bike);
   }
 
-  addToCart(bicycle: BicycleModel): void {
-    this.cartService.addToCart(bicycle);
+  addToCart(bike: BikeModel): void {
+    this.cartService.addToCart(bike);
   }
 
-  removeFromWishlist(bicycle: BicycleModel): void {
-    this.wishlistService.removeFromWishlist(bicycle);
+  removeFromWishlist(bike: BikeModel): void {
+    this.wishlistService.removeFromWishlist(bike);
   }
 
-  ifInWishlist(bicycle: BicycleModel): boolean {
-    return this.wishlist.some(item => item.id === bicycle.id);
+  ifInWishlist(bike: BikeModel): boolean {
+    return this.wishlist.some(item => item.id === bike.id);
   }
 }

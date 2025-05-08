@@ -20,12 +20,12 @@
     <swiper-slide
       class="swiper-slide"
       style="width: auto"
-      *ngFor="let bicycle of bicycles"
+      *ngFor="let bike of bikes"
     >
       <div style="overflow: hidden; max-width: 138px; width: 100%">
         <!-- image -->
         <a
-          [routerLink]="['/bicycle', bicycle.id]"
+          [routerLink]="['/bike', bike.id]"
           style="
             background-color: var(--white-color);
             border-radius: 12px;
@@ -36,7 +36,7 @@
           "
         >
           <img
-            [src]="bicycle.image"
+            [src]="bike.image"
             style="
               width: 100%;
               height: 170px;
@@ -59,7 +59,7 @@
               padding-left: 6px;
               padding-right: 6px;
             "
-            *ngIf="bicycle?.oldPrice"
+            *ngIf="bike?.oldPrice"
           >
             <span
               style="
@@ -79,9 +79,9 @@
             (click)="
               $event.stopPropagation();
               $event.preventDefault();
-              addToWishlist(bicycle)
+              addToWishlist(bike)
             "
-            *ngIf="!ifInWishlist(bicycle)"
+            *ngIf="!ifInWishlist(bike)"
           >
             <img [src]="svg.adToWl" alt="right arrow" />
           </button>
@@ -90,18 +90,16 @@
             (click)="
               $event.stopPropagation();
               $event.preventDefault();
-              addToWishlist(bicycle)
+              addToWishlist(bike)
             "
-            *ngIf="ifInWishlist(bicycle)"
+            *ngIf="ifInWishlist(bike)"
           >
             <img [src]="svg.addedToWLHeart" alt="right arrow" />
           </button>
           <button
             style="padding: 10px; position: absolute; right: 0; top: 36px"
             (click)="
-              $event.stopPropagation();
-              $event.preventDefault();
-              addToCart(bicycle)
+              $event.stopPropagation(); $event.preventDefault(); addToCart(bike)
             "
           >
             <img [src]="svg.bag" alt="right arrow" />
@@ -112,7 +110,7 @@
         <div style="padding-right: 14px; padding-bottom: 14px">
           <!-- name -->
           <span class="t14 number-of-lines-1" style="margin-bottom: 3px">
-            {{ bicycle.name }}
+            {{ bike.name }}
           </span>
           <!-- description -->
           <div
@@ -124,7 +122,7 @@
             "
           >
             <span
-              *ngIf="bicycle?.oldPrice"
+              *ngIf="bike?.oldPrice"
               style="
                 color: var(--text-color);
                 font-weight: 500;
@@ -134,18 +132,18 @@
                 text-decoration-color: var(--text-color);
               "
             >
-              ${{ bicycle?.oldPrice }}
+              ${{ bike?.oldPrice }}
             </span>
             <span
               class="t14"
               style="color: var(--main-color); font-weight: 500"
               [ngStyle]="
-                bicycle?.oldPrice
+                bike?.oldPrice
                   ? {color: 'var(--main-orange)'}
                   : {color: 'var(--main-color)'}
               "
             >
-              ${{ bicycle.price }}
+              ${{ bike.price }}
             </span>
           </div>
         </div>

@@ -29,19 +29,17 @@ export class CartService {
   private cartState = new BehaviorSubject<CartState>(this.initialState);
   cartState$ = this.cartState.asObservable();
 
-  addToCart(bicycle: BikeModel): void {
+  addToCart(bike: BikeModel): void {
     const currentState = this.cartState.value;
-    const existingBicycle = currentState.list.find(
-      item => item.id === bicycle.id,
-    );
+    const existingBike = currentState.list.find(item => item.id === bike.id);
 
-    if (existingBicycle) {
-      existingBicycle.quantity = (existingBicycle.quantity || 0) + 1;
+    if (existingBike) {
+      existingBike.quantity = (existingBike.quantity || 0) + 1;
     } else {
-      currentState.list.push({...bicycle, quantity: 1});
+      currentState.list.push({...bike, quantity: 1});
     }
 
-    currentState.subtotal += Number(bicycle.price);
+    currentState.subtotal += Number(bike.price);
     currentState.total =
       currentState.subtotal * (1 - currentState.discount / 100);
     currentState.discountAmount = currentState.subtotal - currentState.total;
@@ -49,22 +47,20 @@ export class CartService {
     this.cartState.next({...currentState});
   }
 
-  removeFromCart(bicycle: BikeModel): void {
+  removeFromCart(bike: BikeModel): void {
     const currentState = this.cartState.value;
-    const existingBicycle = currentState.list.find(
-      item => item.id === bicycle.id,
-    );
+    const existingBike = currentState.list.find(item => item.id === bike.id);
 
-    if (existingBicycle) {
-      if (existingBicycle.quantity && existingBicycle.quantity > 1) {
-        existingBicycle.quantity -= 1;
+    if (existingBike) {
+      if (existingBike.quantity && existingBike.quantity > 1) {
+        existingBike.quantity -= 1;
       } else {
         currentState.list = currentState.list.filter(
-          item => item.id !== bicycle.id,
+          item => item.id !== bike.id,
         );
       }
 
-      currentState.subtotal -= Number(bicycle.price);
+      currentState.subtotal -= Number(bike.price);
       currentState.total =
         currentState.subtotal * (1 - currentState.discount / 100);
       currentState.discountAmount = currentState.subtotal - currentState.total;

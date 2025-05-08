@@ -7,7 +7,7 @@ import {MenuModel} from '../../models/menu.model';
 import {ApiService} from '../../services/api.service';
 import {ReviewModel} from '../../models/review.model';
 import {MetaService} from '../../services/meta.service';
-import {BicycleModel} from '../../models/bicycles.model';
+import {BikeModel} from '../../models/bike.model';
 import {ModalService} from '../../services/modal.service';
 import {CarouselModel} from '../../models/carousel.model';
 
@@ -23,9 +23,9 @@ export class HomeComponent {
   carousel: CarouselModel[] = [];
   categories: MenuModel[] = [];
 
-  bicycles: BicycleModel[] = [];
-  bicyclesIsLoading = true;
-  bicyclesError = '';
+  bikes: BikeModel[] = [];
+  bikesIsLoading = true;
+  bikesError = '';
 
   carouselIsLoading = true;
   carouselError = '';
@@ -47,7 +47,7 @@ export class HomeComponent {
 
   ngOnInit(): void {
     this.setMeta();
-    this.fetchProducts();
+    this.getBikes();
   }
 
   private modalSubscribe(): void {
@@ -70,11 +70,11 @@ export class HomeComponent {
     this.metaService.setBackgroundColor('#F3F3F3');
   }
 
-  private fetchProducts(): void {
-    this.apiService.fetchBicycles().subscribe({
-      next: data => (this.bicycles = data.bicycles),
-      error: err => (this.bicyclesError = err),
-      complete: () => (this.bicyclesIsLoading = false),
+  private getBikes(): void {
+    this.apiService.getBikes().subscribe({
+      next: data => (this.bikes = data.bikes),
+      error: err => (this.bikesError = err),
+      complete: () => (this.bikesIsLoading = false),
     });
   }
 
@@ -84,11 +84,6 @@ export class HomeComponent {
   }
 
   get isLoading(): boolean {
-    return this.bicyclesIsLoading;
+    return this.bikesIsLoading;
   }
-
-  // async loadData(): Promise<void> {
-  //   // Загрузка данных
-  //   this.bicycles = await this.dataService.getBicycles();
-  // }
 }

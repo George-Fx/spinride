@@ -7,7 +7,6 @@ import {BikesResponse} from '../models/bike.model';
 import {OrdersResponse} from '../models/order.model';
 import {ProductModel} from '../models/product.model';
 import {ReviewsResponse} from '../models/review.model';
-import {BicyclesResponse} from '../models/bicycles.model';
 import {CarouselResponse} from '../models/carousel.model';
 import {CategoriesResponse} from '../models/category.model';
 import {PromocodesResponse} from '../models/promocode.model';
@@ -39,10 +38,6 @@ export class ApiService {
 
   getCarousel(): Observable<CarouselResponse> {
     return this.http.get<CarouselResponse>(this.URLS.GET_CAROUSEL);
-  }
-
-  fetchBicycles(): Observable<BicyclesResponse> {
-    return this.http.get<BicyclesResponse>(this.URLS.FETCH_BICYCLES);
   }
 
   getBikes(): Observable<BikesResponse> {

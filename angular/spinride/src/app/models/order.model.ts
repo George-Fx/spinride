@@ -1,4 +1,4 @@
-import {BicycleModel} from '../models/bicycles.model';
+import {BikeModel} from '../models/bike.model';
 
 export interface OrderModel {
   id: number;
@@ -6,9 +6,9 @@ export interface OrderModel {
   status: string;
   total: number;
   discount: number;
-  bicycles: BicycleModel[];
+  bikes: BikeModel[];
   time: string;
-  products: BicycleModel[];
+  products: BikeModel[];
   delivery: number;
 }
 

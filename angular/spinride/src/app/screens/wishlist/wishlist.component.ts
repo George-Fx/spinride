@@ -2,7 +2,7 @@ import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
 import {Component, OnInit} from '@angular/core';
 
-import {BicycleModel} from '../../models/bicycles.model';
+import {BikeModel} from '../../models/bike.model';
 import {MetaService} from '../../services/meta.service';
 import {WishlistState} from '../../services/wishlist.service';
 import {WishlistService} from '../../services/wishlist.service';
@@ -14,7 +14,7 @@ import {WishlistService} from '../../services/wishlist.service';
   styleUrl: './wishlist.component.scss',
 })
 export class WishlistComponent implements OnInit {
-  wishlist: BicycleModel[] = [];
+  wishlist: BikeModel[] = [];
   wishlistState$!: Observable<WishlistState>;
 
   constructor(
@@ -32,8 +32,8 @@ export class WishlistComponent implements OnInit {
     const message =
       'Wishlist is empty. Redirecting to empty-wishlist screen...';
 
-    this.wishlistService.wishlistState$.subscribe(bicycles => {
-      this.wishlist = bicycles;
+    this.wishlistService.wishlistState$.subscribe(bikes => {
+      this.wishlist = bikes;
       if (this.wishlist.length === 0) {
         console.warn(message);
         this.router.navigate(['/wishlist-empty']);

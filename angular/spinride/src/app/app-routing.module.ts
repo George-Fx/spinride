@@ -7,7 +7,6 @@ import {SignInComponent} from './screens/sign-in/sign-in.component';
 import {SignUpComponent} from './screens/sign-up/sign-up.component';
 import {ProfileComponent} from './screens/profile/profile.component';
 import {ReviewsComponent} from './screens/reviews/reviews.component';
-import {BicycleComponent} from './screens/bicycle/bicycle.component';
 import {SignOutComponent} from './screens/sign-out/sign-out.component';
 import {CheckoutComponent} from './screens/checkout/checkout.component';
 import {InfoSavedComponent} from './screens/info-saved/info-saved.component';
@@ -86,11 +85,6 @@ export const routes: Routes = [
     path: 'sign-out',
     component: SignOutComponent,
     data: {animation: 'SignOutPage'},
-  },
-  {
-    path: 'bicycle/:id',
-    component: BicycleComponent,
-    data: {animation: 'BicyclePage'},
   },
   {
     path: 'wishlist',

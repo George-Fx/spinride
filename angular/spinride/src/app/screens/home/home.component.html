@@ -21,7 +21,7 @@
       margin-top: 4px;
     "
   >
-    <a [routerLink]="['/bicycle', '1']">
+    <a [routerLink]="['/bike', '1']">
       <img
         alt="banner"
         src="https://spinride-data.vercel.app/assets/banners/01.jpg"
@@ -31,7 +31,7 @@
   </section>
 
   <!-- BEST SELLERS -->
-  <app-best-sellers [bicycles]="bicycles" />
+  <app-best-sellers [bikes]="bikes" />
 
   <!-- BANNER -->
   <section
@@ -44,7 +44,7 @@
       margin-top: 4px;
     "
   >
-    <a [routerLink]="['/bicycle', '1']">
+    <a [routerLink]="['/bike', '1']">
       <img
         alt="banner"
         src="https://spinride-data.vercel.app/assets/banners/02.jpg"
@@ -54,7 +54,7 @@
   </section>
 
   <!-- FEATURED -->
-  <app-home-featured [bicycles]="bicycles" />
+  <app-home-featured [bikes]="bikes" />
 </main>
 
 <app-bottom-tab-bar *ngIf="!isLoading" />

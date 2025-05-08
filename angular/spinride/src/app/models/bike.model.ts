@@ -1,7 +1,7 @@
 export interface BikeModel {
   id: number;
   name: string;
-  colors: string[];
+  colors: {id: number; name: string; code: string}[];
   bikeType: string[];
   suspensionType: string[];
   drivetrain: string[];
