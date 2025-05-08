@@ -3,7 +3,7 @@ export interface ReviewModel {
   name: string;
   rating: number;
   date: string;
-  avatar: string;
+  photo: string;
   comment: string;
 }
 

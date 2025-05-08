@@ -1,9 +1,22 @@
-<app-header [showGoBack]="true" [title]="'Order history'" />
-<div style="height: 10px"></div>
+<app-header
+  [showGoBack]="true"
+  [titleStyle]="{
+    color: 'var(--white-color)',
+  }"
+  [title]="'Order history'"
+  [goBackColor]="'white'"
+/>
+
+<img
+  src="./assets/bg/01.png"
+  alt="Add to cart"
+  style="position: absolute; width: 100%; height: auto; z-index: -1"
+/>
 
 <main
   style="
     height: 100%;
+    overflow-y: auto;
     margin-left: 20px;
     margin-right: 20px;
     -webkit-overflow-scrolling: touch;
@@ -17,32 +30,36 @@
       display: flex;
       justify-content: center;
       flex-direction: column;
-      border-radius: 10px;
-      background-color: var(--white-color);
+      padding-bottom: 20%;
     "
   >
     <img
+      [alt]="'info saved'"
       [className]="'status-image'"
-      [alt]="'no order history yet'"
-      [src]="URLS.MAIN_URL + '/assets/images/10.jpg'"
+      [src]="svg.list"
+      style="width: 180px"
     />
     <h2
       style="
         text-align: center;
         margin-bottom: 14px;
         text-transform: capitalize;
+        color: var(--white-color);
+        text-transform: capitalize;
       "
     >
-      No Order History Yet!
+      Your order history is <br />
+      currently empty!
     </h2>
-    <p [className]="'t16'" style="text-align: center">
-      It looks like your order history is empty. <br />
-      Place your order now to start building <br />
-      your history!
+    <p
+      class="t16"
+      style="text-align: center; color: #c3cde0; margin-bottom: 30px"
+    >
+      Start shopping now and fill your <br />
+      order history with amazing products!<br />
     </p>
+    <div style="max-width: 170px; margin: 0 auto; width: 100%">
+      <app-button [text]="'shop now'" [routerLink]="'/shop'" />
+    </div>
   </section>
 </main>
-
-<section style="padding: 20px">
-  <app-button [text]="'Explore Our Menu'" [routerLink]="'/menu'" />
-</section>

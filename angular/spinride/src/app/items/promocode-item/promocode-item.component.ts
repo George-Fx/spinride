@@ -18,11 +18,10 @@ export class PromocodeItemComponent {
   copyToClipboard(text: string): void {
     navigator.clipboard.writeText(text).then(
       () => {
-        this.copied.emit(`Promocode ${text} has been copied.`);
+        alert(`${text} code copied to clipboard`);
       },
       err => {
-        console.error('Ошибка при копировании:', err);
-        this.copied.emit('Ошибка при копировании промокода.');
+        console.error('Could not copy text: ', err);
       },
     );
   }

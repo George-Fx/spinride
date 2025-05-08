@@ -4,12 +4,13 @@ import {ActivatedRoute} from '@angular/router';
 import {Component, OnInit, signal} from '@angular/core';
 
 import {svg} from '@svg/index';
-import {ApiService} from '../../services/api.service';
-import {MetaService} from '../../services/meta.service';
+import {ReviewModel} from '@models/review.model';
+import {ApiService} from '@services/api.service';
+import {MetaService} from '@services/meta.service';
 import {BikeModel} from '../../models/bike.model';
 import {CartState} from '../../services/cart.service';
 import {CartService} from '../../services/cart.service';
-import {WishlistService} from '../../services/wishlist.service';
+import {WishlistService} from '@services/wishlist.service';
 
 @Component({
   selector: 'app-bike',
@@ -38,6 +39,8 @@ export class BikeComponent {
   wishlist: BikeModel[] = [];
 
   activeSlide = 0;
+
+  reviews: ReviewModel[] = [];
 
   bikes: BikeModel[] = [];
   isLoading = true;
@@ -79,6 +82,14 @@ export class BikeComponent {
     return this.wishlist.some(item => item.id === bike.id);
   }
 
+  addToWishlist(bike: BikeModel): void {
+    if (this.ifInWishlist(bike)) {
+      this.wishlistService.removeFromWishlist(bike);
+    } else {
+      this.wishlistService.addToWishlist(bike);
+    }
+  }
+
   onSlideChange(e: any): void {
     const activeIndex = e?.startPosition;
     if (activeIndex !== undefined && activeIndex !== null) {
@@ -90,6 +101,8 @@ export class BikeComponent {
     this.setMeta();
     this.getBikes();
     this.initializeCart();
+    this.getReviews();
+    this.setWishlist();
   }
 
   setMeta() {
@@ -100,6 +113,19 @@ export class BikeComponent {
   setWishlist(): void {
     this.wishlistService.wishlistState$.subscribe(bikes => {
       this.wishlist = bikes;
+    });
+  }
+
+  getReviews(): void {
+    this.apiService.getReviews().subscribe({
+      next: data => {
+        this.reviews = data.reviews;
+      },
+      error: error => {
+        console.error('Error fetching reviews:', error);
+        this.isLoading = false;
+      },
+      complete: () => (this.isLoading = false),
     });
   }
 

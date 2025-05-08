@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 
 import {svg} from '@svg/index';
 import {OrderModel} from '../../models/order.model';
-import {ApiService} from '../../services/api.service';
-import {MetaService} from '../../services/meta.service';
+import {ApiService} from '@services/api.service';
+import {MetaService} from '@services/meta.service';
 
 @Component({
   selector: 'app-order-history',

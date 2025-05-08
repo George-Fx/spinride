@@ -4,8 +4,8 @@ import {Component, OnInit} from '@angular/core';
 
 import {svg} from '@svg/index';
 import {MenuModel} from '../../models/menu.model';
-import {ApiService} from '../../services/api.service';
-import {MetaService} from '../../services/meta.service';
+import {ApiService} from '@services/api.service';
+import {MetaService} from '@services/meta.service';
 import {ModalService} from '../../services/modal.service';
 
 @Component({

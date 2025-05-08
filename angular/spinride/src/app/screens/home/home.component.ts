@@ -4,9 +4,9 @@ import {takeUntil} from 'rxjs/operators';
 
 import {Banner} from '../../models/banner.model';
 import {MenuModel} from '../../models/menu.model';
-import {ApiService} from '../../services/api.service';
+import {ApiService} from '@services/api.service';
 import {ReviewModel} from '../../models/review.model';
-import {MetaService} from '../../services/meta.service';
+import {MetaService} from '@services/meta.service';
 import {BikeModel} from '../../models/bike.model';
 import {ModalService} from '../../services/modal.service';
 import {CarouselModel} from '../../models/carousel.model';

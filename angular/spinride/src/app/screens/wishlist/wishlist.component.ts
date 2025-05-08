@@ -3,9 +3,9 @@ import {Router} from '@angular/router';
 import {Component, OnInit} from '@angular/core';
 
 import {BikeModel} from '../../models/bike.model';
-import {MetaService} from '../../services/meta.service';
+import {MetaService} from '@services/meta.service';
 import {WishlistState} from '../../services/wishlist.service';
-import {WishlistService} from '../../services/wishlist.service';
+import {WishlistService} from '@services/wishlist.service';
 
 @Component({
   selector: 'app-wishlist',

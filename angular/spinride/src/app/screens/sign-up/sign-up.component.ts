@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import {svg} from '@svg/index';
-import {MetaService} from '../../services/meta.service';
+import {MetaService} from '@services/meta.service';
 
 @Component({
   selector: 'app-sign-up',

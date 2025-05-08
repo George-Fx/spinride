@@ -1,13 +1,14 @@
 <app-header
   [showBurger]="true"
   [showBasket]="true"
-  [title]="'Favorite'"
+  [title]="'Wishlist'"
   [showUser]="true"
 />
 
 <main
   style="
     height: 100%;
+    overflow-y: auto;
     margin-left: 20px;
     margin-right: 20px;
     padding-top: 16px;
@@ -17,9 +18,9 @@
     user-select: none;
   "
 >
-  <div style="display: flex; flex-direction: column; gap: 8px">
+  <ul style="display: flex; flex-direction: column; gap: 14px">
     <app-wishlist-item *ngFor="let bike of wishlist" [bike]="bike" />
-  </div>
+  </ul>
 </main>
 
 <app-bottom-tab-bar />

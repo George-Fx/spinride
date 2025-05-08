@@ -7,7 +7,7 @@ import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {svg} from '@svg/index';
 import {CartService} from '../../services/cart.service';
 import {BikeModel} from '../../models/bike.model';
-import {WishlistService} from '../../services/wishlist.service';
+import {WishlistService} from '@services/wishlist.service';
 
 @Component({
   selector: 'app-best-sellers',

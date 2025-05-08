@@ -11,7 +11,7 @@
     "
   >
     <h3>Best sellers</h3>
-    <a [routerLink]="['/menu']">
+    <a [routerLink]="['/shop']">
       <img [src]="svg.viewAll" alt="line" />
     </a>
   </div>
@@ -110,7 +110,7 @@
             "
             *ngIf="ifInCart(bike)"
           >
-            <!-- <img [src]="svg.addedToCart" alt="right arrow" /> -->
+            <img [src]="svg.addedToCart" alt="right arrow" />
           </button>
         </a>
 

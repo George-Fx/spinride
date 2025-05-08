@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 
-import {ReviewModel} from '../../models/review.model';
+import {BikeModel} from '@models/bike.model';
+import {ReviewModel} from '@models/review.model';
 
 @Component({
   selector: 'app-review-item',

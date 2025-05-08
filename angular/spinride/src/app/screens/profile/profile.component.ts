@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import {svg} from '@svg/index';
-import {MetaService} from '../../services/meta.service';
+import {MetaService} from '@services/meta.service';
 
 @Component({
   selector: 'app-profile',
@@ -29,30 +29,42 @@ export class ProfileComponent implements OnInit {
     },
     {
       id: 3,
+      title: 'Order history empty',
+      icon: svg.calendar,
+      route: '/order-history-empty',
+    },
+    {
+      id: 4,
       title: 'My promocodes',
       icon: svg.gift,
       route: '/my-promocodes',
     },
     {
-      id: 4,
+      id: 5,
+      title: 'My promocodes empty',
+      icon: svg.gift,
+      route: '/my-promocodes-empty',
+    },
+    {
+      id: 6,
       title: 'My Reviews',
       icon: svg.smartphone,
       route: '/profile/reviews',
     },
     {
-      id: 5,
+      id: 7,
       title: 'Sign out',
       icon: svg.mail,
       route: '/sign-out',
     },
     {
-      id: 6,
+      id: 8,
       title: 'Sign out',
       icon: svg.profileLogOut,
       route: '/sign-out',
     },
     {
-      id: 7,
+      id: 9,
       title: 'Sign out',
       icon: svg.cross,
       route: '/sign-out',

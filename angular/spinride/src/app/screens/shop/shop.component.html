@@ -1,10 +1,14 @@
 <app-header [showGoBack]="true" [showBasket]="true" [title]="'Shop'" />
 
+<!-- Filters and Sorting -->
 <section style="margin-left: 20px; margin-right: 20px; margin-bottom: 20px">
   <div
     style="display: flex; flex-direction: row; justify-content: space-between"
   >
-    <button>
+    <button
+      [routerLink]="['/filter']"
+      (click)="$event.stopPropagation(); $event.preventDefault()"
+    >
       <img [src]="svg.filter" alt="filter" class="filter" />
     </button>
     <button (click)="openSortingPopup($event)">

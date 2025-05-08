@@ -24,7 +24,12 @@
       align-items: center;
     "
   >
-    <img src="assets/svg/go-back.svg" alt="go back icon" />
+    <img [src]="svg.goBack" alt="go back icon" *ngIf="goBackColor === 'main'" />
+    <img
+      [src]="svg.goBackWhite"
+      alt="go back icon"
+      *ngIf="goBackColor === 'white'"
+    />
   </button>
 
   <!-- BURGER -->

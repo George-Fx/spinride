@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 
 import {ReviewModel} from '../../models/review.model';
-import {ApiService} from '../../services/api.service';
-import {MetaService} from '../../services/meta.service';
+import {ApiService} from '@services/api.service';
+import {MetaService} from '@services/meta.service';
 
 @Component({
   selector: 'app-reviews',

@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, signal} from '@angular/core';
 
 import {svg} from '@svg/index';
-import {MetaService} from '../../services/meta.service';
+import {MetaService} from '@services/meta.service';
 
 @Component({
   selector: 'app-filter',
@@ -14,16 +14,25 @@ export class FilterComponent implements OnInit {
 
   constructor(private metaService: MetaService) {}
 
-  status = ['New', 'spicy'];
-  categories = [
-    'Salads',
-    'Meat',
-    'Pasta',
-    'First courses',
-    'Hot meals',
-    'Sea food',
-    'snacks',
+  status = ['sale', 'new', 'top'];
+
+  colors = [
+    {id: 1, code: '#FF6262', name: 'Pastel Red'},
+    {id: 2, code: '#63C7FF', name: 'Maya Blue'},
+    {id: 3, code: '#F8E7CD', name: 'Champagne'},
+    {id: 4, code: '#161E2F', name: 'Eigengrau'},
+    {id: 5, code: '#000000', name: 'Black'},
   ];
+
+  categories = [
+    'Road Bikes',
+    'Electric Bikes',
+    'Hybrid Bikes',
+    'Mountain Bikes',
+    'Specialty Bikes',
+  ];
+
+  suspensionType = ['No Suspension', 'Front Suspension', 'Full Suspension'];
 
   dietaryPreferences = [
     'Vegetarian',
@@ -39,6 +48,12 @@ export class FilterComponent implements OnInit {
   selectedCategory: string = this.categories[1];
   selectedPreference: string = this.dietaryPreferences[1];
 
+  selectedColor = signal<string | null>(null);
+
+  selectColor(color: string): void {
+    this.selectedColor.set(color);
+  }
+
   selectCategory(category: string): void {
     this.selectedCategory = category;
   }
@@ -52,17 +67,17 @@ export class FilterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.initializeMeta();
+    this.setMeta();
   }
 
-  private initializeMeta(): void {
+  private setMeta(): void {
     this.metaService.setThemeColor('#F3F3F3');
     this.metaService.setBackgroundColor('#F3F3F3');
   }
 
   resetFilters(): void {
     this.selectedStatus = this.status[0];
-    this.selectedCategory = this.categories[0];
+    // this.selectedCategory = this.categories[0];
     this.selectedPreference = this.dietaryPreferences[0];
   }
 }

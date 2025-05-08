@@ -14,37 +14,41 @@
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     user-select: none;
+    padding-bottom: 20px;
   "
 >
-  <ul style="display: flex; flex-direction: column; gap: 8px">
+  <ul
+    style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px"
+  >
     <app-promocode-item
       [promocode]="promocode"
       *ngFor="let promocode of promocodes"
     />
   </ul>
-</main>
-
-<section style="padding: 20px">
   <div
     style="
       display: grid;
-      grid-template-columns: 1fr 24%;
-      gap: 10px;
+      grid-template-columns: 1fr 30%;
+      gap: 14px;
       height: 50px;
     "
   >
     <app-input-field
+      [value]="'Add promocode'"
       [type]="'promocode-enter'"
       [placeholder]="'Enter promocode'"
     />
     <button
       style="
-        background-color: var(--main-turquoise);
+        background-color: var(--main-orange);
         height: 100%;
-        border-radius: 10px;
+        border-radius: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
+      "
+      (click)="
+        $event.stopPropagation(); $event.preventDefault(); addPromocode()
       "
     >
       <span class="t14" style="color: var(--white-color); font-weight: 700">
@@ -52,4 +56,4 @@
       </span>
     </button>
   </div>
-</section>
+</main>

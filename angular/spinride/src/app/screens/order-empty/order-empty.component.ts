@@ -3,10 +3,10 @@ import {takeUntil} from 'rxjs/operators';
 import {isMobile} from 'react-device-detect';
 import {Component, OnInit, OnDestroy} from '@angular/core';
 
-import {URLS} from '../../config';
+import {URLS} from '@config/index';
 import {svg} from '@svg/index';
 import {BikeModel} from '../../models/bike.model';
-import {MetaService} from '../../services/meta.service';
+import {MetaService} from '@services/meta.service';
 import {ModalService} from '../../services/modal.service';
 
 @Component({

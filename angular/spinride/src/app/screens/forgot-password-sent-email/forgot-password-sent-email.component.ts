@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 
-import {URLS} from '../../config';
+import {URLS} from '@config/index';
 import {svg} from '@svg/index';
-import {MetaService} from '../../services/meta.service';
+import {MetaService} from '@services/meta.service';
 
 @Component({
   selector: 'app-forgot-password-sent-email',

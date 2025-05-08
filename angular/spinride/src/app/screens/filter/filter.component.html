@@ -12,154 +12,155 @@
     user-select: none;
   "
 >
-  <section>
-    <div
-      style="
-        display: flex;
-        padding-left: 20px;
-        padding-right: 20px;
-        justify-content: center;
-        flex-direction: column;
-        border-radius: 10px;
-        padding-top: 14%;
-        padding-bottom: 14%;
-        margin-bottom: 10%;
-        background-color: var(--white-color);
-      "
-    >
-      <section>
-        <ul
+  <!-- STATUS -->
+  <section style="margin-bottom: 30px">
+    <ul style="display: grid; grid-template-columns: repeat(3, 1fr)">
+      <li *ngFor="let item of status; let i = index">
+        <div
           style="
             display: flex;
             flex-direction: row;
             gap: 8px;
-            margin-bottom: 30px;
+            user-select: none;
+            cursor: pointer;
+          "
+          (click)="
+            $event.stopPropagation();
+            $event.preventDefault();
+            selectStatus(item)
           "
         >
-          <li
-            *ngFor="let item of status; let i = index"
+          <div
             style="
-              padding: 10px 20px;
-              background-color: red;
-              border-radius: 10px;
-              cursor: pointer;
+              width: 18px;
+              height: 18px;
+              border: 1px solid #eeeeee;
+              border-radius: 5px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: var(--white-color);
             "
             (click)="selectStatus(item)"
+          >
+            <img [src]="svg.statusSelect" *ngIf="selectedStatus === item" />
+          </div>
+          <div
             [ngStyle]="{
-              backgroundColor: item === selectedStatus
-                ? 'var(--main-turquoise)'
-                : '#E9F3F6',
+              backgroundColor:
+                item === 'sale'
+                  ? '#66A97D'
+                  : item === 'new'
+                  ? '#FF7557'
+                  : '#FF6262'
             }"
+            style="
+              height: 19px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 1px 6px;
+              border-radius: 6px;
+            "
           >
             <span
-              class="t14"
-              [ngStyle]="{
-                color: item === selectedStatus
-                  ? 'var(--white-color)'
-                  : 'var(--main-color)',
-              }"
-              style="font-weight: 500; text-transform: capitalize"
+              style="
+                text-transform: capitalize;
+                font-size: 10px;
+                text-transform: uppercase;
+                color: var(--white-color);
+                font-weight: 700;
+              "
             >
               {{ item }}
             </span>
-          </li>
-        </ul>
-      </section>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
 
-      <!-- Categories -->
-      <section style="margin-bottom: 30px">
+  <!-- COLOR -->
+  <section style="margin-bottom: 34px">
+    <h5 style="margin-bottom: 14px">Color</h5>
+    <ul style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 14px">
+      <li
+        *ngFor="let color of colors"
+        style="
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+        (click)="
+          $event.stopPropagation();
+          $event.preventDefault();
+          selectColor(color.code)
+        "
+        [ngStyle]="{
+          backgroundColor: color.code,
+        }"
+      >
+        <img
+          *ngIf="selectedColor() === color.code"
+          [src]="svg.colorSelect"
+          style="width: 16px; height: 16px"
+        />
+      </li>
+    </ul>
+  </section>
+
+  <!-- BIKE TYPE -->
+  <section>
+    <h5 style="margin-bottom: 14px">Bike Type</h5>
+    <ul style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px">
+      <li
+        *ngFor="let item of categories"
+        style="
+          display: flex;
+          flex-direction: row;
+          gap: 8px;
+          user-select: none;
+          cursor: pointer;
+          border: 1px solid #eeeeee;
+          background-color: var(--white-color);
+          padding: 5px 20px 7px 20px;
+          border-radius: 30px;
+        "
+        [ngStyle]="{
+          backgroundColor:
+            selectedCategory === item
+              ? 'var(--main-orange)'
+              : 'var(--white-color)',
+          
+        }"
+        (click)="
+          $event.stopPropagation();
+          $event.preventDefault();
+          selectCategory(item)
+        "
+      >
         <span
-          class="t14"
-          style="
-            font-weight: 500;
-            color: var(--main-color);
-            margin-bottom: 14px;
-          "
-        >
-          Category
-        </span>
-        <ul
-          style="display: flex; flex-direction: row; gap: 8px; flex-wrap: wrap"
-        >
-          <li
-            *ngFor="let category of categories"
-            (click)="selectCategory(category)"
-            [ngStyle]="{
-            backgroundColor: category === selectedCategory
-              ? 'var(--main-turquoise)'
-              : '#E9F3F6',
+          style="font-family: var(--mulish); font-weight: 700"
+          [ngStyle]="{
+            color: selectedCategory === item ? 'var(--white-color)' : 'var(--main-color)',
           }"
-            style="padding: 10px 20px; border-radius: 10px; cursor: pointer"
-          >
-            <span
-              class="t14"
-              [ngStyle]="{
-            color: category === selectedCategory
-              ? 'var(--white-color)'
-              : 'var(--main-color)',
-            }"
-              style="font-weight: 500; text-transform: capitalize"
-            >
-              {{ category }}
-            </span>
-          </li>
-        </ul>
-      </section>
-
-      <!-- Dietary Preferences -->
-      <section>
-        <span
-          class="t14"
-          style="
-            font-weight: 500;
-            color: var(--main-color);
-            margin-bottom: 14px;
-          "
         >
-          Dietary Preferences
+          {{ item }}
         </span>
-        <ul
-          style="display: flex; flex-direction: row; gap: 8px; flex-wrap: wrap"
-        >
-          <li
-            *ngFor="let preferences of dietaryPreferences"
-            (click)="selectPreference(preferences)"
-            [ngStyle]="{
-              backgroundColor: preferences === selectedPreference
-                ? 'var(--main-turquoise)'
-                : '#E9F3F6',
-            }"
-            style="padding: 10px 20px; border-radius: 10px; cursor: pointer"
-          >
-            <span
-              class="t14"
-              [ngStyle]="{
-            color: preferences === selectedPreference
-              ? 'var(--white-color)'
-              : 'var(--main-color)',
-            }"
-              style="font-weight: 500; text-transform: capitalize"
-            >
-              {{ preferences }}
-            </span>
-          </li>
-        </ul>
-      </section>
-    </div>
-
-    <!-- buttons -->
-    <section style="margin-bottom: 20px">
-      <app-button
-        [text]="'apply filters'"
-        [containerStyle]="{'margin-bottom': '6px'}"
-        [routerLink]="'/menu'"
-      />
-      <app-button
-        [text]="'Reset filters'"
-        [colorScheme]="'secondary'"
-        [containerStyle]="{border: 'none'}"
-        (click)="resetFilters()"
-      />
-    </section>
+      </li>
+    </ul>
   </section>
 </main>
+
+<!-- buttons -->
+<section style="padding: 20px">
+  <app-button
+    [text]="'apply filters'"
+    [containerStyle]="{'margin-bottom': '6px'}"
+    [routerLink]="'/shop'"
+  />
+</section>

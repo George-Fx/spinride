@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 
 import {svg} from '@svg/index';
-import {URLS} from '../../config';
-import {MetaService} from '../../services/meta.service';
+import {URLS} from '@config/index';
+import {MetaService} from '@services/meta.service';
 
 @Component({
   selector: 'app-order-failed',

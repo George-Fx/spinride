@@ -1,71 +1,149 @@
-<li
-  style="
-    width: 100%;
-    border-radius: 10px;
-    background-color: var(--white-color);
-    padding: 14px;
-    padding-top: 2px;
-    position: relative;
-  "
->
-  <!-- image -->
-  <a
-    [routerLink]="['/bike', bike.id]"
+<li style="width: 100%; padding-bottom: 14px; border-bottom: 1px solid #e2e2e2">
+  <div
     style="
-      border-radius: 12px;
-      overflow: hidden;
-      display: flex;
+      width: 100%;
+      height: 100px;
+      display: grid;
+      grid-template-columns: 100px 1fr 33px;
+      /* flex-direction: row; */
+      gap: 14px;
       position: relative;
-      padding-bottom: 4px;
-      cursor: pointer;
+      /* background-color: red; */
     "
   >
-    <img
-      src="{{ bike.image }}"
-      alt="{{ bike.name }}"
-      class="order-item__image"
-      style="width: 100%; height: auto; border-radius: 12px; object-fit: cover"
-      [src]="bike.image"
-    />
-  </a>
-
-  <!-- remove btn -->
-  <button
-    (click)="removeFromWishlist(bike, $event)"
-    style="padding: 14px; position: absolute; bottom: 60px; right: 0px"
-  >
-    <img [src]="svg.menuListHeartFill" class="new-svg" />
-  </button>
-
-  <!-- new badge -->
-  <img
-    [src]="svg.new"
-    style="position: absolute; top: 14px; left: 14px"
-    *ngIf="bike?.isNew"
-  />
-
-  <!-- info -->
-  <div
-    style="display: flex; flex-direction: column; gap: 4px; margin-right: auto"
-  >
-    <span class="number-of-lines-1 t14" style="margin-bottom: 3px">{{
-      bike.name
-    }}</span>
-    <div
-      style="display: flex; flex-direction: row; align-items: center; gap: 6px"
+    <!-- image -->
+    <a
+      [routerLink]="['/bike', bike.id]"
+      style="
+        width: 100px;
+        height: 100px;
+        border-radius: 12px;
+        overflow: hidden;
+        display: flex;
+        position: relative;
+        cursor: pointer;
+        background-color: var(--white-color);
+      "
     >
-      <span class="t14" style="color: var(--main-color); font-weight: 500">
-        ${{ bike.price }}
-      </span>
-      <span class="t10">|</span>
-    </div>
-  </div>
+      <img
+        src="{{ bike.image }}"
+        alt="{{ bike.name }}"
+        class="order-item__image"
+        style="
+          width: 100%;
+          height: auto;
+          border-radius: 12px;
+          object-fit: contain;
+        "
+        [src]="bike.image"
+      />
+    </a>
 
-  <!-- add to cart -->
-  <button
-    style="position: absolute; padding: 14px; bottom: 0px; right: 0px"
-    (click)="addToCart(bike, $event)"
-  >
-    <img [src]="svg.addToCart" class="new-svg" />
-  </button>
+    <!-- info -->
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin-right: auto;
+      "
+    >
+      <span class="number-of-lines-1 t14" style="margin-bottom: 3px">
+        {{ bike.name }}
+      </span>
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 6px;
+          margin-bottom: 9px;
+        "
+      >
+        <span
+          *ngIf="bike?.oldPrice"
+          style="
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 12px;
+            font-family: var(--mulish);
+            text-decoration: line-through;
+            text-decoration-color: var(--text-color);
+          "
+        >
+          ${{ bike.oldPrice }}
+        </span>
+        <span
+          class="t14"
+          style="color: var(--main-color); font-weight: 600"
+          [style]="{
+            color: bike.oldPrice ? 'var(--main-orange)' : 'var(--main-color)'
+          }"
+        >
+          ${{ bike.price }}
+        </span>
+      </div>
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 4px;
+        "
+      >
+        <ul
+          style="
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 4px;
+            margin-top: 3px;
+          "
+        >
+          <li *ngFor="let item of [1, 2, 3, 4, 5]">
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_3517_673)">
+                <path
+                  d="M6 1L7.545 4.13L11 4.635L8.5 7.07L9.09 10.51L6 8.885L2.91 10.51L3.5 7.07L1 4.635L4.455 4.13L6 1Z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  [ngStyle]="{
+                    fill: bike.rating >= item ? '#E5C44E' : 'transparent',
+                    stroke: bike.rating >= item ? '#E5C44E' : '#E5C44E'
+                  }"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_3517_673">
+                  <rect width="12" height="12" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </li>
+        </ul>
+        <span style="font-size: 12px; color: var(--text-color)">(3)</span>
+      </div>
+    </div>
+
+    <!-- remove btn -->
+    <button
+      (click)="removeFromWishlist(bike, $event)"
+      style="position: absolute; right: 0px; top: 0px"
+    >
+      <img [src]="svg.ifInWishlist" />
+    </button>
+    <!-- add to cart -->
+    <button
+      style="position: absolute; bottom: 0px; right: 0px"
+      (click)="addToCart(bike, $event)"
+    >
+      <img [src]="svg.addToCartBig" class="new-svg" />
+    </button>
+  </div>
 </li>

@@ -1,7 +1,8 @@
 import {Component} from '@angular/core';
 
-import {URLS} from '../../config';
-import {MetaService} from '../../services/meta.service';
+import {URLS} from '@config/index';
+import {svg} from '@svg/index';
+import {MetaService} from '@services/meta.service';
 
 @Component({
   selector: 'app-leave-a-review',
@@ -10,7 +11,9 @@ import {MetaService} from '../../services/meta.service';
   styleUrl: './leave-a-review.component.scss',
 })
 export class LeaveAReviewComponent {
+  svg = svg;
   URLS = URLS;
+  value: string = 'Enter your review here...';
   constructor(private metaService: MetaService) {}
 
   ngOnInit(): void {
@@ -18,7 +21,14 @@ export class LeaveAReviewComponent {
   }
 
   setMeta(): void {
-    this.metaService.setThemeColor('#F3F3F3');
-    this.metaService.setBackgroundColor('#F3F3F3');
+    this.metaService.setThemeColor('#161E2F');
+    this.metaService.setBackgroundColor('#161E2F');
+  }
+
+  openKeyboard() {
+    const result = prompt('Enter text:', this.value);
+    if (result !== null) {
+      this.value = result;
+    }
   }
 }

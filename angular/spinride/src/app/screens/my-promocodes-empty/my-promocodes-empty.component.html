@@ -1,12 +1,22 @@
-<app-header [title]="'Promocodes & gift cards'" [showGoBack]="true" />
-<div style="height: 10px"></div>
+<img
+  src="./assets/bg/01.png"
+  alt="Add to cart"
+  style="position: absolute; width: 100%; height: auto; z-index: -1"
+/>
+
+<app-header
+  [title]="'My promocodes'"
+  [showGoBack]="true"
+  [goBackColor]="'white'"
+  [titleStyle]="{color: 'var(--white-color)'}"
+/>
 
 <main
   style="
     height: 100%;
+    overflow-y: auto;
     margin-left: 20px;
     margin-right: 20px;
-    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     user-select: none;
@@ -18,42 +28,51 @@
       display: flex;
       justify-content: center;
       flex-direction: column;
-      border-radius: 10px;
-      padding-left: 20px;
-      padding-right: 20px;
-      background-color: var(--white-color);
+      padding-bottom: 20%;
     "
   >
     <img
       [alt]="'info saved'"
       [className]="'status-image'"
-      [src]="URLS.MAIN_URL + '/assets/images/04.jpg'"
+      [src]="svg.promocodeGift"
+      style="width: 180px"
     />
     <h2
       style="
         text-align: center;
-        text-transform: capitalize;
         margin-bottom: 14px;
+        text-transform: capitalize;
+        color: var(--white-color);
+        text-transform: capitalize;
       "
     >
       Your don’t have <br />
       promocodes yet!
     </h2>
     <p
-      [className]="'t16'"
-      style="text-align: center"
-      style="margin-bottom: 30px; text-align: center"
+      class="t16"
+      style="text-align: center; color: #c3cde0; margin-bottom: 30px"
     >
-      Stay tuned for and discounts to <br />
-      enhance your dining experience.
+      Start using the app and <br />
+      get your first promocode!
     </p>
-    <app-input-field
-      [placeholder]="'Enter promocode'"
-      [type]="'promocode-enter'"
-      [containerStyle]="{'margin-bottom': '20px'}"
-    />
-    <app-button [text]="'add promocode'" [routerLink]="'/my-promocodes'" />
+    <div style="margin: 0 auto; width: 100%">
+      <div
+        style="
+          background-color: var(--white-color);
+          height: 50px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          border-radius: 50px;
+          padding-left: 20px;
+          padding-right: 20px;
+          margin-bottom: 14px;
+        "
+      >
+        <span>Promocode2024</span>
+      </div>
+      <app-button [text]="'done'" [routerLink]="'/sign-in'" />
+    </div>
   </section>
 </main>
-
-<div style="height: 20px"></div>

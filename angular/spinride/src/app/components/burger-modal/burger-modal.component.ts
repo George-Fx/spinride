@@ -2,7 +2,7 @@ import {Router} from '@angular/router';
 import {Component, ChangeDetectorRef} from '@angular/core';
 import {trigger, state, style, transition, animate} from '@angular/animations';
 
-import {URLS} from '../../config';
+import {URLS} from '@config/index';
 import {svg} from '@svg/index';
 import {ModalService} from '../../services/modal.service';
 

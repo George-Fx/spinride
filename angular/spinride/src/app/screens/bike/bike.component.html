@@ -80,9 +80,19 @@
         justify-content: center;
         align-items: center;
       "
+      (click)="
+        $event.stopPropagation(); $event.preventDefault(); addToWishlist(bike)
+      "
     >
       <img
+        *ngIf="!ifInWishlist(bike)"
         [src]="svg.bicycleHeart"
+        alt="heart"
+        style="width: 20px; height: 20px"
+      />
+      <img
+        *ngIf="ifInWishlist(bike)"
+        [src]="svg.bikeAddedToWl"
         alt="heart"
         style="width: 20px; height: 20px"
       />
@@ -240,7 +250,40 @@
   </section>
 
   <!-- REVIEWS -->
-  <section>
-    <h3>Reviews (23)</h3>
+  <section style="margin-left: 20px; margin-right: 20px; margin-bottom: 20px">
+    <div
+      style="
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        margin-bottom: 18px;
+        align-items: flex-end;
+      "
+    >
+      <h3>Reviews ({{ reviews.length }})</h3>
+      <a [routerLink]="['/reviews']">
+        <img [src]="svg.viewAll" />
+      </a>
+    </div>
+    <ul style="display: flex; flex-direction: column; gap: 8px">
+      <app-review-item *ngFor="let item of reviews" [review]="item" />
+    </ul>
+  </section>
+
+  <!-- BUTTONS -->
+  <section style="padding: 20px; padding-top: 0">
+    <app-button
+      [text]="'+ Add to cart'"
+      [containerStyle]="{
+        marginBottom: '14px',
+      }"
+    />
+    <app-button
+      [text]="'Leave a Review'"
+      [containerStyle]="{
+        backgroundColor: 'var(--main-color)',
+      }"
+      [routerLink]="['/leave-a-review']"
+    />
   </section>
 </main>

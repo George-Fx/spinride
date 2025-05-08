@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
-import {URLS} from '../../config';
-import {MetaService} from '../../services/meta.service';
+import {URLS} from '@config/index';
+import {MetaService} from '@services/meta.service';
 
 @Component({
   selector: 'app-sign-up-account-createdd',

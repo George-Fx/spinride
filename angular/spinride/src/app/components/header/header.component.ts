@@ -3,7 +3,7 @@ import {Location} from '@angular/common';
 import {isMobile} from 'react-device-detect';
 import {Component, Input, OnInit} from '@angular/core';
 
-import {URLS} from '../../config';
+import {URLS} from '@config/index';
 import {svg} from '@svg/index';
 import {CartState} from '../../services/cart.service';
 import {CartService} from '../../services/cart.service';
@@ -27,6 +27,7 @@ export class HeaderComponent implements OnInit {
   @Input() showBurger: Boolean = false;
   @Input() showBorder: Boolean = false;
   @Input() showUserName: Boolean = false;
+  @Input() goBackColor: string = 'main' || 'white';
   @Input() burgerColor: string = 'main' || 'white';
   @Input() titleStyle: {[key: string]: string} = {};
   @Input() headerStyle: {[key: string]: string} = {};

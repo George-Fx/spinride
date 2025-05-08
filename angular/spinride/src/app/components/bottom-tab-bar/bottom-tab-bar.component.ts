@@ -12,7 +12,7 @@ import {CartState} from '../../services/cart.service';
 import {CartService} from '../../services/cart.service';
 import {BikeModel} from '../../models/bike.model';
 import {WishlistState} from '../../services/wishlist.service';
-import {WishlistService} from '../../services/wishlist.service';
+import {WishlistService} from '@services/wishlist.service';
 
 @Component({
   selector: 'app-bottom-tab-bar',

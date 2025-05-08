@@ -3,8 +3,8 @@ import {takeUntil} from 'rxjs/operators';
 import {Component, OnInit} from '@angular/core';
 
 import {ModalService} from '@services/modal.service';
-import {ApiService} from '../../services/api.service';
-import {MetaService} from '../../services/meta.service';
+import {ApiService} from '@services/api.service';
+import {MetaService} from '@services/meta.service';
 import {CategoryModel} from '../../models/category.model';
 
 @Component({

@@ -1,52 +1,59 @@
-<div
+<li
   style="
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
     background-color: var(--white-color);
   "
+  *ngIf="review"
 >
-  <div
-    style="
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      width: 100%;
-      padding-bottom: 13px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-      margin-bottom: 11px;
-    "
-  >
-    <img
-      [src]="review?.avatar"
-      style="width: 30px; height: 30px; margin-right: 14px"
-    />
-    <div style="width: 100%">
-      <div
-        style="
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          width: 100%;
-        "
-      >
-        <h5 style="margin-right: auto">{{ review?.name }}</h5>
-        <span class="t10">{{ review?.date }}</span>
-      </div>
-      <div
-        style="
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-        "
-      >
-        <app-stars [rating]="3" />
-        <button>
-          <span class="t10" style="color: var(--main-turquoise)">Reply</span>
-        </button>
-      </div>
+  <img
+    [src]="review.photo"
+    style="width: 30px; height: 30px; border-radius: 50%"
+  />
+  <div style="width: 100%">
+    <div
+      style="display: flex; flex-direction: row; justify-content: space-between"
+    >
+      <h5>{{ review.name }}</h5>
+      <ul style="display: flex; flex-direction: row; gap: 4px; margin-top: 3px">
+        <li *ngFor="let item of [1, 2, 3, 4, 5]">
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_3517_673)">
+              <path
+                d="M6 1L7.545 4.13L11 4.635L8.5 7.07L9.09 10.51L6 8.885L2.91 10.51L3.5 7.07L1 4.635L4.455 4.13L6 1Z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                [ngStyle]="{
+                  fill: review.rating >= item ? '#E5C44E' : 'transparent',
+                  stroke: review.rating >= item ? '#E5C44E' : '#E5C44E'
+                }"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_3517_673">
+                <rect width="12" height="12" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </li>
+      </ul>
     </div>
+    <span
+      style="font-size: 10px; color: var(--text-color); margin-bottom: 10px"
+      >{{ review.date }}</span
+    >
+    <p class="t14">
+      {{ review.comment }}
+    </p>
   </div>
-  <p class="t14">{{ review?.comment }}</p>
-</div>
+</li>
