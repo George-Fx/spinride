@@ -2,7 +2,7 @@
   "reviews": [
     {
       "id": 1,
-      "name": "Olivia Taylor",
+      "name": "Winthrop Sharp",
       "rating": 3,
       "date": "Jul 23, 2022",
       "photo": "https://brainnest-data.vercel.app/assets/users/01.jpg",
@@ -10,7 +10,7 @@
     },
     {
       "id": 2,
-      "name": "William Anderson",
+      "name": "Webster Peters",
       "rating": 3,
       "date": "Jul 23, 2022",
       "photo": "https://brainnest-data.vercel.app/assets/users/02.jpg",
@@ -18,7 +18,7 @@
     },
     {
       "id": 3,
-      "name": "Alexander Johnson",
+      "name": "Bobby Skinner",
       "rating": 3,
       "date": "Jul 23, 2022",
       "photo": "https://brainnest-data.vercel.app/assets/users/03.jpg",
@@ -26,7 +26,7 @@
     },
     {
       "id": 4,
-      "name": "Mia Miller",
+      "name": "Maxine Joseph",
       "rating": 3,
       "date": "Jul 23, 2022",
       "photo": "https://brainnest-data.vercel.app/assets/users/04.jpg",
