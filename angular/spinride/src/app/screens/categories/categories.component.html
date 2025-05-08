@@ -5,7 +5,9 @@
   [showSearch]="true"
 />
 
-<main style="height: 100%; overflow-y: auto">
+<app-loader *ngIf="isLoading" />
+
+<main style="height: 100%; overflow-y: auto" *ngIf="!isLoading">
   <ul
     style="
       display: flex;

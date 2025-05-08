@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 import {URLS} from '../config';
+import {BikesResponse} from '../models/bike.model';
 import {OrdersResponse} from '../models/order.model';
 import {ProductModel} from '../models/product.model';
 import {ReviewsResponse} from '../models/review.model';
@@ -42,6 +43,10 @@ export class ApiService {
 
   fetchBicycles(): Observable<BicyclesResponse> {
     return this.http.get<BicyclesResponse>(this.URLS.FETCH_BICYCLES);
+  }
+
+  getBikes(): Observable<BikesResponse> {
+    return this.http.get<BikesResponse>(this.URLS.GET_BIKES);
   }
 
   getCategories(): Observable<CategoriesResponse> {

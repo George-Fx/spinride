@@ -1,1 +1,20 @@
-<p>shop works!</p>
+<app-header [showGoBack]="true" [showBasket]="true" [title]="'Shop'" />
+
+<section style="margin-left: 20px; margin-right: 20px; margin-bottom: 20px">
+  <div
+    style="display: flex; flex-direction: row; justify-content: space-between"
+  >
+    <button>
+      <img [src]="svg.filter" alt="filter" class="filter" />
+    </button>
+    <button>
+      <img [src]="svg.sortingBy" alt="filter" class="filter" />
+    </button>
+  </div>
+</section>
+
+<main>
+  <ul>
+    <li *ngFor="let bike of bikes; let i = index">1</li>
+  </ul>
+</main>
