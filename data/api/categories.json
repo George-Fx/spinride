@@ -3,37 +3,27 @@
     {
       "id": 1,
       "code": "Road Bikes",
-      "image": "https://spinride-data.vercel.app/assets/categories/01.jpg",
-      "discount": 50,
-      "expires_at": "Valid until June 30, 2024"
+      "image": "https://spinride-data.vercel.app/assets/categories/01.jpg"
     },
     {
       "id": 2,
       "code": "Electric Bikes",
-      "image": "https://spinride-data.vercel.app/assets/categories/02.jpg",
-      "discount": 30,
-      "expires_at": "Valid until June 30, 2024"
+      "image": "https://spinride-data.vercel.app/assets/categories/02.jpg"
     },
     {
       "id": 3,
       "code": "Mountain Bikes",
-      "image": "https://spinride-data.vercel.app/assets/categories/03.jpg",
-      "discount": 15,
-      "expires_at": "Valid until June 30, 2024"
+      "image": "https://spinride-data.vercel.app/assets/categories/03.jpg"
     },
     {
       "id": 4,
       "code": "Hybrid Bikes",
-      "image": "https://spinride-data.vercel.app/assets/categories/04.jpg",
-      "discount": 15,
-      "expires_at": "Valid until June 30, 2024"
+      "image": "https://spinride-data.vercel.app/assets/categories/04.jpg"
     },
     {
       "id": 5,
       "code": "Specialty Bikes",
-      "image": "https://spinride-data.vercel.app/assets/categories/05.jpg",
-      "discount": 15,
-      "expires_at": "Valid until June 30, 2024"
+      "image": "https://spinride-data.vercel.app/assets/categories/05.jpg"
     }
   ]
 }
