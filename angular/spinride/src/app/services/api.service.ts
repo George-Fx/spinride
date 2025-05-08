@@ -43,4 +43,6 @@ export class ApiService {
   fetchBicycles(): Observable<BicyclesResponse> {
     return this.http.get<BicyclesResponse>(this.URLS.FETCH_BICYCLES);
   }
+
+  // getCategories(): Observable<CategoriesResponse> {}
 }

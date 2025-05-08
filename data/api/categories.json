@@ -2,27 +2,27 @@
   "categories": [
     {
       "id": 1,
-      "code": "Road Bikes",
+      "category": "Road Bikes",
       "image": "https://spinride-data.vercel.app/assets/categories/01.jpg"
     },
     {
       "id": 2,
-      "code": "Electric Bikes",
+      "category": "Electric Bikes",
       "image": "https://spinride-data.vercel.app/assets/categories/02.jpg"
     },
     {
       "id": 3,
-      "code": "Mountain Bikes",
+      "category": "Mountain Bikes",
       "image": "https://spinride-data.vercel.app/assets/categories/03.jpg"
     },
     {
       "id": 4,
-      "code": "Hybrid Bikes",
+      "category": "Hybrid Bikes",
       "image": "https://spinride-data.vercel.app/assets/categories/04.jpg"
     },
     {
       "id": 5,
-      "code": "Specialty Bikes",
+      "category": "Specialty Bikes",
       "image": "https://spinride-data.vercel.app/assets/categories/05.jpg"
     }
   ]
