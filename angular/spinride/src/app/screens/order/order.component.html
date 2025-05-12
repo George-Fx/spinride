@@ -99,7 +99,8 @@
         "
       >
         <span class="t14">Delivery</span>
-        <span class="t14">${{ delivery }}</span>
+        <span *ngIf="delivery === 0">Free</span>
+        <span *ngIf="delivery !== 0">${{ delivery }}</span>
       </div>
       <!-- total -->
       <div
