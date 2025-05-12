@@ -15,8 +15,8 @@ import {OrderHistoryComponent} from '../screens/order-history/order-history.comp
 import {LeaveAReviewComponent} from '../screens/leave-a-review/leave-a-review.component';
 import {ForgotPasswordComponent} from '../screens/forgot-password/forgot-password.component';
 import {OrderSuccessfulComponent} from '../screens/order-successful/order-successful.component';
-import {VerifyYourPhoneComponent} from '../screens/verify-your-phone/verify-your-phone.component';
-import {ConfirmationCodeComponent} from '../screens/confirmation-code/confirmation-code.component';
+import {VerificationPhoneComponent} from '../screens/verification-phone/verification-phone.component';
+import {VerificationEmailComponent} from '../screens/verification-email/verification-email.component';
 import {OrderHistoryEmptyComponent} from '../screens/order-history-empty/order-history-empty.component';
 import {MyPromocodesEmptyComponent} from '../screens/my-promocodes-empty/my-promocodes-empty.component';
 import {SignUpAccountCreateddComponent} from '../screens/sign-up-account-createdd/sign-up-account-createdd.component';
@@ -69,8 +69,8 @@ export const SCREEN_COMPONENTS = [
   LeaveAReviewComponent,
   ForgotPasswordComponent,
   OrderSuccessfulComponent,
-  VerifyYourPhoneComponent,
-  ConfirmationCodeComponent,
+  VerificationEmailComponent,
+  VerificationPhoneComponent,
   OrderHistoryEmptyComponent,
   MyPromocodesEmptyComponent,
   SignUpAccountCreateddComponent,

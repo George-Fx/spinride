@@ -27,6 +27,7 @@
         gap: 14px;
         padding-bottom: 20px;
         border-bottom: 1px solid #e2e2e2;
+        margin-bottom: 20px;
       "
     >
       <app-order-item *ngFor="let bike of list" [bike]="bike" />
@@ -55,9 +56,9 @@
   <section style="margin-bottom: 20px">
     <div
       style="
-        border-radius: 20px;
+        border-radius: 12px;
         padding: 20px;
-        border: 1px solid var(--main-turquoise);
+        background-color: var(--white-color);
       "
     >
       <!-- subtotal -->
@@ -69,12 +70,10 @@
           margin-bottom: 10px;
         "
       >
-        <span class="t14" style="color: var(--main-color); font-weight: 500"
-          >Subtotal</span
-        >
-        <span class="t14" style="color: var(--main-color)"
-          >${{ subtotal.toFixed(2) }}</span
-        >
+        <h5 style="color: var(--main-color); font-weight: 500">Subtotal</h5>
+        <h5 style="color: var(--main-color)">
+          ${{ subtotal.toFixed(2).replace('.', ',') }}
+        </h5>
       </div>
       <!-- discount -->
       <div
@@ -118,7 +117,7 @@
 
   <!-- button -->
   <section>
-    <app-button [text]="'Checkout'" [routerLink]="'/checkout'" />
+    <app-button [text]="'Shipping & Payment info'" [routerLink]="'/checkout'" />
   </section>
 </main>
 

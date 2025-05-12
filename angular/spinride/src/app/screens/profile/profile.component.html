@@ -21,30 +21,60 @@
     <h3 style="margin-bottom: 4px">Darron Banks</h3>
     <span class="t14">{{ 'darronbanks@mail.com' }}</span>
   </div>
+
   <ul>
-    <li
-      *ngFor="let item of profileMenuItems"
-      style="border-top: 1px solid #e2e2e2"
-    >
-      <a
-        href=""
-        style="
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          gap: 14px;
-          padding-top: 10px;
-          padding-bottom: 10px;
-        "
-        [routerLink]="item.route"
-      >
-        <img [src]="item.icon" />
-        <h5 style="margin-right: auto">
-          {{ item.title }}
-        </h5>
-        <img [src]="svg.rightArrow" />
-      </a>
-    </li>
+    <app-profile-menu-item
+      [title]="'Personal info'"
+      [icon]="svg.profileUser"
+      [routerLink]="'/edit-profile'"
+    />
+    <app-profile-menu-item
+      [icon]="svg.calendar"
+      [title]="'Order history'"
+      [routerLink]="'/order-history'"
+    />
+    <app-profile-menu-item
+      [icon]="svg.calendar"
+      [title]="'Order history empty'"
+      [routerLink]="'/order-history-empty'"
+    />
+    <app-profile-menu-item
+      [icon]="svg.gift"
+      [title]="'My promocodes'"
+      [routerLink]="'/my-promocodes'"
+    />
+    <app-profile-menu-item
+      [icon]="svg.gift"
+      [title]="'My promocodes empty'"
+      [routerLink]="'/my-promocodes-empty'"
+    />
+    <app-profile-menu-item
+      [icon]="isPhoneVerified ? svg.smartphoneGray : svg.smartphoneOrange"
+      [title]="isPhoneVerified ? 'Phone verified' : 'Verify phone number'"
+      [routerLink]="'/verify-your-phone-number'"
+      [titleStyle]="{
+        color: isPhoneVerified ? 'var(--gray-color)' : 'var(--main-orange)'
+      }"
+    />
+    <app-profile-menu-item
+      [icon]="isEmailVerified ? svg.mailGray : svg.mailOrange"
+      [title]="isEmailVerified ? 'Email verified' : 'Verify email'"
+      [routerLink]="'/verify-your-email'"
+      [titleStyle]="{
+        color: isEmailVerified ? 'var(--gray-color)' : 'var(--main-orange)'
+      }"
+    />
+    <app-profile-menu-item
+      [icon]="svg.gift"
+      [title]="'Sign out'"
+      [routerLink]="'/sign-in'"
+    />
+    <app-profile-menu-item
+      [icon]="svg.cross"
+      [title]="'Delete account'"
+      [routerLink]="'/sign-in'"
+      [titleStyle]="{color: 'var(--main-orange)'}"
+    />
   </ul>
 </main>
 

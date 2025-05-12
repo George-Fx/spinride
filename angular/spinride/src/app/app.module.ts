@@ -36,7 +36,11 @@ import {SingleStarComponent} from './components/single-star/single-star.componen
 import {CategoriesComponent} from './screens/categories/categories.component';
 import {ShopItemComponent} from './items/shop-item/shop-item.component';
 import {BikeComponent} from './screens/bike/bike.component';
-import { DescriptionComponent } from './screens/description/description.component';
+import {DescriptionComponent} from './screens/description/description.component';
+import {VerifyYourPhoneNumberComponent} from './screens/verify-your-phone-number/verify-your-phone-number.component';
+import {PhoneNumberHasBeenVerifiedComponent} from './screens/phone-number-has-been-verified/phone-number-has-been-verified.component';
+import {VerifyYourEmailComponent} from './screens/verify-your-email/verify-your-email.component';
+import { EmailHasBeenVerifiedComponent } from './screens/email-has-been-verified/email-has-been-verified.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +56,10 @@ import { DescriptionComponent } from './screens/description/description.componen
     ShopItemComponent,
     BikeComponent,
     DescriptionComponent,
+    VerifyYourPhoneNumberComponent,
+    PhoneNumberHasBeenVerifiedComponent,
+    VerifyYourEmailComponent,
+    EmailHasBeenVerifiedComponent,
   ],
   imports: [
     BrowserModule,

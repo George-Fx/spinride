@@ -10,10 +10,8 @@ import {svg} from '@svg/index';
 })
 export class InputFieldComponent {
   svg = svg;
-  // value: string = '';
 
   @Input() label: string = '';
-  @Input() placeholder: string = '';
   @Input() type: string = 'text';
   @Input() eyeOff: boolean = false;
   @Input() check: boolean = false;

@@ -1,7 +1,28 @@
-<li class="profile-menu-item" [routerLink]="['/', 'profile']">
+<!-- <li class="profile-menu-item" [routerLink]="['/', 'profile']">
   <a href="" class="profile-menu-item__link" [routerLink]="routerLink">
     <img [src]="icon" alt="icon" />
     <h5 [ngStyle]="titleStyle">
+      {{ title }}
+    </h5>
+    <img [src]="svg.rightArrow" alt="icon" *ngIf="routerLink !== '/sign-in'" />
+  </a>
+</li> -->
+
+<li style="border-top: 1px solid #e2e2e2">
+  <a
+    href=""
+    style="
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 14px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    "
+    [routerLink]="routerLink"
+  >
+    <img [src]="icon" />
+    <h5 style="margin-right: auto" [ngStyle]="titleStyle">
       {{ title }}
     </h5>
     <img [src]="svg.rightArrow" alt="icon" *ngIf="routerLink !== '/sign-in'" />

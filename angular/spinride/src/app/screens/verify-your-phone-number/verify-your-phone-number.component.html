@@ -1,0 +1,13 @@
+<app-header [showGoBack]="true" [title]="'Verify phone number'" />
+
+<main class="verify-phone-main">
+  <p class="verify-phone-text">
+    We have sent you an SMS with a code to number +17 0123456789.
+  </p>
+  <app-input-field
+    [check]="true"
+    [value]="' +17123456789'"
+    [containerStyle]="{'margin-bottom': '14px'}"
+  />
+  <app-button [text]="'confirm'" [routerLink]="'/verification-phone'" />
+</main>

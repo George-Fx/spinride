@@ -69,10 +69,11 @@
           padding-right: 20px;
           margin-bottom: 14px;
         "
+        (click)="setValue()"
       >
-        <span>Promocode2024</span>
+        <span>{{ value === '' ? 'Get promocodes' : value }}</span>
       </div>
-      <app-button [text]="'done'" [routerLink]="'/sign-in'" />
+      <app-button [text]="'done'" [routerLink]="'/my-promocodes'" />
     </div>
   </section>
 </main>

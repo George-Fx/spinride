@@ -1,29 +1,25 @@
-<app-header [title]="'Verify phone'" [showGoBack]="true" />
+<app-header [showGoBack]="true" [title]="'Verification'" />
 
-<main
-  style="
-    height: 100%;
-    padding-top: 13px;
-    padding-bottom: 20px;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    user-select: none;
-  "
->
+<main style="margin-left: 20px; margin-right: 20px">
   <section
     style="
-      background-color: var(--white-color);
-      border-radius: 10px;
-      margin-left: 20px;
-      margin-right: 20px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      border-radius: 20px;
+      background-image: url(/assets/bg/05.png);
+      background-size: cover;
+      background-position: center;
       padding-top: 30px;
       padding-bottom: 30px;
       padding-left: 20px;
       padding-right: 20px;
     "
   >
-    <p class="t16" style="margin-bottom: 32px">Enter your OTP code here.</p>
+    <p class="t18" style="text-align: center; margin-bottom: 32px">
+      Enter your OTP code here.
+    </p>
 
     <div
       style="
@@ -41,8 +37,8 @@
           height: 50px;
           text-align: center;
           font-size: 18px;
-          border: 1px solid var(--main-turquoise);
-          border-radius: 0px;
+          border: 1px solid #ccc;
+          border-radius: 10px;
         "
       />
       <input
@@ -53,8 +49,8 @@
           height: 50px;
           text-align: center;
           font-size: 18px;
-          border: 1px solid var(--main-turquoise);
-          border-radius: 0px;
+          border: 1px solid #ccc;
+          border-radius: 10px;
         "
       />
       <input
@@ -65,8 +61,8 @@
           height: 50px;
           text-align: center;
           font-size: 18px;
-          border: 1px solid var(--main-turquoise);
-          border-radius: 0px;
+          border: 1px solid #ccc;
+          border-radius: 10px;
         "
       />
       <input
@@ -77,8 +73,8 @@
           height: 50px;
           text-align: center;
           font-size: 18px;
-          border: 1px solid var(--main-turquoise);
-          border-radius: 0px;
+          border: 1px solid #ccc;
+          border-radius: 10px;
         "
       />
       <input
@@ -89,25 +85,15 @@
           height: 50px;
           text-align: center;
           font-size: 18px;
-          border: 1px solid var(--main-turquoise);
-          border-radius: 0px;
+          border: 1px solid #ccc;
+          border-radius: 10px;
         "
       />
     </div>
-    <div
-      style="
-        margin-bottom: 20px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 5px;
-      "
-    >
-      <span class="t16">Didn’t receive the OTP?</span>
-      <button>
-        <span class="t16" style="color: var(--main-turquoise)"> Resend. </span>
-      </button>
-    </div>
-    <app-button [text]="'verify'" [routerLink]="['/sign-up-account-created']" />
+    <app-button
+      [text]="'Confirm'"
+      [routerLink]="'/phone-number-has-been-verified'"
+      [containerStyle]="{width: '100%'}"
+    />
   </section>
 </main>

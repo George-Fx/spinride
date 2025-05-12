@@ -1,0 +1,13 @@
+<app-header [showGoBack]="true" [title]="'Verify your email'" />
+
+<main class="verify-phone-main">
+  <p class="verify-phone-text">
+    We have sent you an email with a verification code.
+  </p>
+  <app-input-field
+    [check]="true"
+    [value]="'darronbanks@mail.com'"
+    [containerStyle]="{'margin-bottom': '14px'}"
+  />
+  <app-button [text]="'confirm'" [routerLink]="'/verification-email'" />
+</main>

@@ -14,6 +14,8 @@ export class MyPromocodesEmptyComponent implements OnInit {
   svg = svg;
   URLS = URLS;
 
+  value = '';
+
   constructor(private metaService: MetaService) {}
 
   ngOnInit(): void {
@@ -23,5 +25,12 @@ export class MyPromocodesEmptyComponent implements OnInit {
   setMeta(): void {
     this.metaService.setThemeColor('#161E2F');
     this.metaService.setBackgroundColor('#161E2F');
+  }
+
+  setValue(): void {
+    const result = prompt('Enter text:', this.value);
+    if (result !== null) {
+      this.value = result;
+    }
   }
 }

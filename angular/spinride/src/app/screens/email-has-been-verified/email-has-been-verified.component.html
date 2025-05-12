@@ -1,0 +1,55 @@
+<img
+  src="./assets/bg/01.png"
+  alt="Add to cart"
+  style="position: absolute; width: 100%; height: auto; z-index: -1"
+/>
+
+<main
+  style="
+    height: 100%;
+    overflow-y: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    user-select: none;
+  "
+>
+  <section
+    style="
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding-bottom: 20%;
+    "
+  >
+    <img
+      [alt]="'phone number verified'"
+      [src]="svg.atSign"
+      style="width: 180px; margin: 0 auto; margin-bottom: 20px"
+    />
+    <h2
+      style="
+        text-align: center;
+        margin-bottom: 14px;
+        text-transform: capitalize;
+        color: var(--white-color);
+        text-transform: capitalize;
+      "
+    >
+      Your email has been <br />
+      successfully verified!
+    </h2>
+    <p
+      class="t16"
+      style="text-align: center; color: #c3cde0; margin-bottom: 30px"
+    >
+      You can now use the app <br />
+      and enjoy all the features.
+    </p>
+    <div style="max-width: 170px; margin: 0 auto; width: 100%">
+      <app-button [text]="'done'" [routerLink]="'/profile'" />
+    </div>
+  </section>
+</main>

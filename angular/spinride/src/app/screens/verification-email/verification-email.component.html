@@ -1,0 +1,99 @@
+<app-header [showGoBack]="true" [title]="'Verification'" />
+
+<main style="margin-left: 20px; margin-right: 20px">
+  <section
+    style="
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      border-radius: 20px;
+      background-image: url(/assets/bg/05.png);
+      background-size: cover;
+      background-position: center;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      padding-left: 20px;
+      padding-right: 20px;
+    "
+  >
+    <p class="t18" style="text-align: center; margin-bottom: 32px">
+      Enter your OTP code here.
+    </p>
+
+    <div
+      style="
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        margin-bottom: 28px;
+      "
+    >
+      <input
+        type="text"
+        maxlength="1"
+        style="
+          width: 100%;
+          height: 50px;
+          text-align: center;
+          font-size: 18px;
+          border: 1px solid #ccc;
+          border-radius: 10px;
+        "
+      />
+      <input
+        type="text"
+        maxlength="1"
+        style="
+          width: 100%;
+          height: 50px;
+          text-align: center;
+          font-size: 18px;
+          border: 1px solid #ccc;
+          border-radius: 10px;
+        "
+      />
+      <input
+        type="text"
+        maxlength="1"
+        style="
+          width: 100%;
+          height: 50px;
+          text-align: center;
+          font-size: 18px;
+          border: 1px solid #ccc;
+          border-radius: 10px;
+        "
+      />
+      <input
+        type="text"
+        maxlength="1"
+        style="
+          width: 100%;
+          height: 50px;
+          text-align: center;
+          font-size: 18px;
+          border: 1px solid #ccc;
+          border-radius: 10px;
+        "
+      />
+      <input
+        type="text"
+        maxlength="1"
+        style="
+          width: 100%;
+          height: 50px;
+          text-align: center;
+          font-size: 18px;
+          border: 1px solid #ccc;
+          border-radius: 10px;
+        "
+      />
+    </div>
+    <app-button
+      [text]="'Confirm'"
+      [routerLink]="'/email-has-been-verified'"
+      [containerStyle]="{width: '100%'}"
+    />
+  </section>
+</main>

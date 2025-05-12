@@ -1,10 +1,12 @@
+import {Subject} from 'rxjs';
 import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
+import {takeUntil} from 'rxjs/operators';
 import {Component, OnInit} from '@angular/core';
 
 import {svg} from '@svg/index';
 import {BikeModel} from '../../models/bike.model';
-import {CartState} from '../../services/cart.service';
+import {CartState} from '@services/cart.service';
 import {MetaService} from '@services/meta.service';
 import {CartService} from '../../services/cart.service';
 import {ModalService} from '../../services/modal.service';
@@ -24,6 +26,9 @@ export class OrderComponent implements OnInit {
   delivery = 0;
   isOpen = false;
   promocodeApplied = false;
+
+  modalIsOpen = false;
+  private destroy$ = new Subject<void>();
 
   cartState$!: Observable<CartState>;
 
@@ -45,13 +50,6 @@ export class OrderComponent implements OnInit {
     });
   }
 
-  private setMeta(): void {
-    if (this.isOpen) {
-      this.metaService.setThemeColor('#F3F3F3');
-      this.metaService.setBackgroundColor('#F3F3F3');
-    }
-  }
-
   private initializeCartState(): void {
     this.cartState$.subscribe(state => {
       this.list = state.list || [];
@@ -71,5 +69,21 @@ export class OrderComponent implements OnInit {
     event.preventDefault();
     event.stopPropagation();
     this.promocodeApplied = true;
+  }
+
+  private setMeta(): void {
+    this.modalService.isOpen$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(state => {
+        this.modalIsOpen = state;
+
+        if (this.modalIsOpen) {
+          this.metaService.setThemeColor('#161E2F');
+          this.metaService.setBackgroundColor('#F3F3F3');
+        } else {
+          this.metaService.setThemeColor('#F3F3F3');
+          this.metaService.setBackgroundColor('#F3F3F3');
+        }
+      });
   }
 }

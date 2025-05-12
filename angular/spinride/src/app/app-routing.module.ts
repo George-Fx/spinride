@@ -22,20 +22,24 @@ import {LeaveAReviewComponent} from './screens/leave-a-review/leave-a-review.com
 import {WishlistEmptyComponent} from './screens/wishlist-empty/wishlist-empty.component';
 import {ForgotPasswordComponent} from './screens/forgot-password/forgot-password.component';
 import {OrderSuccessfulComponent} from './screens/order-successful/order-successful.component';
-import {VerifyYourPhoneComponent} from './screens/verify-your-phone/verify-your-phone.component';
-import {ConfirmationCodeComponent} from './screens/confirmation-code/confirmation-code.component';
+import {VerifyYourEmailComponent} from './screens/verify-your-email/verify-your-email.component';
+import {VerificationPhoneComponent} from './screens/verification-phone/verification-phone.component';
+import {VerificationEmailComponent} from './screens/verification-email/verification-email.component';
 import {MyPromocodesEmptyComponent} from './screens/my-promocodes-empty/my-promocodes-empty.component';
 import {OrderHistoryEmptyComponent} from './screens/order-history-empty/order-history-empty.component';
+import {EmailHasBeenVerifiedComponent} from './screens/email-has-been-verified/email-has-been-verified.component';
+import {VerifyYourPhoneNumberComponent} from './screens/verify-your-phone-number/verify-your-phone-number.component';
 import {SignUpAccountCreateddComponent} from './screens/sign-up-account-createdd/sign-up-account-createdd.component';
 import {ForgotPasswordSentEmailComponent} from './screens/forgot-password-sent-email/forgot-password-sent-email.component';
+import {PhoneNumberHasBeenVerifiedComponent} from './screens/phone-number-has-been-verified/phone-number-has-been-verified.component';
 
 // tab components
 import {HomeComponent} from './screens/home/home.component';
 import {MenuComponent} from './screens/menu/menu.component';
+import {BikeComponent} from './screens/bike/bike.component';
 import {OrderComponent} from './screens/order/order.component';
 import {WishlistComponent} from './screens/wishlist/wishlist.component';
 import {OrderEmptyComponent} from './screens/order-empty/order-empty.component';
-import {BikeComponent} from './screens/bike/bike.component';
 
 export const routes: Routes = [
   {
@@ -70,6 +74,11 @@ export const routes: Routes = [
     data: {animation: 'DescriptionPage'},
   },
   {
+    path: 'email-has-been-verified',
+    component: EmailHasBeenVerifiedComponent,
+    data: {animation: 'EmailHasBeenVerifiedPage'},
+  },
+  {
     path: 'categories',
     component: CategoriesComponent,
   },
@@ -78,9 +87,24 @@ export const routes: Routes = [
     component: WishlistEmptyComponent,
   },
   {
-    path: 'verify-your-phone',
-    component: VerifyYourPhoneComponent,
-    data: {animation: 'VerifyYourPhonePage'},
+    path: 'verify-your-phone-number',
+    component: VerifyYourPhoneNumberComponent,
+    data: {animation: 'VerifyYourPhoneNumberPage'},
+  },
+  {
+    path: 'verification-email',
+    component: VerificationEmailComponent,
+    data: {animation: 'VerificationEmailPage'},
+  },
+  {
+    path: 'verification-phone',
+    component: VerificationPhoneComponent,
+    data: {animation: 'VerificationPhonePage'},
+  },
+  {
+    path: 'verify-your-email',
+    component: VerifyYourEmailComponent,
+    data: {animation: 'VerifyYourEmailPage'},
   },
   {
     path: 'bike/:id',
@@ -91,6 +115,11 @@ export const routes: Routes = [
     path: 'sign-out',
     component: SignOutComponent,
     data: {animation: 'SignOutPage'},
+  },
+  {
+    path: 'phone-number-has-been-verified',
+    component: PhoneNumberHasBeenVerifiedComponent,
+    data: {animation: 'PhoneNumberHasBeenVerifiedPage'},
   },
   {
     path: 'wishlist',
@@ -124,11 +153,6 @@ export const routes: Routes = [
     path: 'leave-a-review',
     component: LeaveAReviewComponent,
     data: {animation: 'LeaveAReviewsPage'},
-  },
-  {
-    path: 'confirmation-code',
-    component: ConfirmationCodeComponent,
-    data: {animation: 'ConfirmationCodePage'},
   },
   {
     path: 'order-successful',
