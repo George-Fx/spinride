@@ -1,47 +1,26 @@
 <app-header />
 
-<main
-  style="
-    height: 100%;
-    overflow-y: auto;
-    margin-left: 20px;
-    margin-right: 20px;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    user-select: none;
-  "
->
-  <section
-    style="
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      border-radius: 10px;
-      background-color: var(--white-color);
-    "
-  >
+<img
+  src="./assets/bg/01.png"
+  alt="Add to cart"
+  style="position: absolute; width: 100%; height: auto; z-index: -1"
+/>
+
+<main class="main-container">
+  <section class="section-container">
     <img
       [alt]="'info saved'"
       [className]="'status-image'"
-      [src]="URLS.MAIN_URL + '/assets/images/12.jpg'"
+      [src]="svg.briefcase"
+      class="status-image"
     />
-    <h2
-      style="
-        text-align: center;
-        margin-bottom: 14px;
-        text-transform: capitalize;
-      "
-    >
-      Account Created!
-    </h2>
-    <p [className]="'t16'" style="text-align: center">
+    <h2 class="account-created-title">Account Created!</h2>
+    <p class="account-created-message">
       Your account had beed created <br />
       successfully.
     </p>
+    <div class="button-container">
+      <app-button [text]="'shop now'" [routerLink]="'/home'" />
+    </div>
   </section>
 </main>
-
-<section style="padding: 20px">
-  <app-button [text]="'Get started'" [routerLink]="'/home'" />
-</section>

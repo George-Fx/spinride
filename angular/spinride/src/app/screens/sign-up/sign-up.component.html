@@ -1,117 +1,47 @@
 <app-header [showGoBack]="true" />
 
-<main
-  style="
-    margin-left: 20px;
-    margin-right: 20px;
-    height: 100%;
-    overflow-y: auto;
-    margin-top: 10px;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    user-select: none;
-  "
->
-  <section
-    style="
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      padding-left: 20px;
-      padding-right: 20px;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      background-color: var(--white-color);
-    "
-  >
-    <h1 style="margin-bottom: 30px; text-transform: capitalize">Sign up</h1>
+<main class="main-container">
+  <section class="section-container">
+    <h1 class="sign-up-title">Sign up</h1>
     <app-input-field
       [type]="'username'"
+      [value]="'Darron Banks'"
+      [check]="true"
       [className]="'main__input'"
-      [ngStyle]="{'margin-bottom': '16px'}"
+      [containerStyle]="{'margin-bottom': '14px'}"
     />
     <app-input-field
       [className]="'main__input'"
       [type]="'email'"
-      [ngStyle]="{'margin-bottom': '16px'}"
+      [check]="true"
+      [value]="'darronbanks@mail.com'"
+      [containerStyle]="{'margin-bottom': '14px'}"
     />
     <app-input-field
       [className]="'main__input'"
       [type]="'password'"
       [eyeOff]="true"
-      [ngStyle]="{'margin-bottom': '16px'}"
+      [value]="'••••••••'"
+      [containerStyle]="{'margin-bottom': '14px'}"
     />
     <app-input-field
       [className]="'main__input'"
       [type]="'password'"
       [eyeOff]="true"
-      [ngStyle]="{'margin-bottom': '16px'}"
+      [value]="'••••••••'"
+      [containerStyle]="{'margin-bottom': '14px'}"
     />
     <app-button
       [className]="'main__button'"
       [text]="'Sign up'"
-      [ngStyle]="{'margin-bottom': '24px'}"
-      [routerLink]="'/verify-your-phone'"
-      >Sign Up</app-button
+      [containerStyle]="{'margin-bottom': '20px'}"
+      [routerLink]="'/sign-up-account-created'"
     >
-    <div
-      style="
-        display: flex;
-        flex-direction: row;
-        gap: 5px;
-        justify-content: center;
-      "
-    >
-      <span [className]="'t16'">No account?</span>
-      <a
-        [routerLink]="'/sign-in'"
-        [className]="'t16'"
-        [ngStyle]="{color: 'var(--main-turquoise)'}"
-      >
-        Sign in.
-      </a>
+      Sign Up
+    </app-button>
+    <div class="sign-up-footer">
+      <span class="footer-text">Already have an account?</span>
+      <a [routerLink]="'/sign-in'" class="footer-link"> Sign in. </a>
     </div>
   </section>
 </main>
-
-<footer
-  style="
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  "
->
-  <button
-    style="
-      background-color: var(--white-color);
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-      height: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    "
-    (click)="$event.preventDefault()"
-  >
-    <img alt="" [src]="svg.facebook" style="margin-right: 10px" />
-  </button>
-  <button
-    style="
-      background-color: var(--white-color);
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-      height: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    "
-    (click)="$event.preventDefault()"
-  >
-    <img alt="" [src]="svg.google" style="margin-right: 10px" />
-  </button>
-</footer>

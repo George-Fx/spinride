@@ -41,6 +41,7 @@ export const svg = {
   readMore: 'assets/svg/read-more.svg',
   inputMap: 'assets/svg/input-map.svg',
   delivered: 'assets/svg/delivered.svg',
+  briefcase: 'assets/svg/briefcase.svg',
   onItSWay: 'assets/svg/on-it-s-way.svg',
   phoneCall: 'assets/svg/phone-call.svg',
   sortingBy: 'assets/svg/sorting-by.svg',

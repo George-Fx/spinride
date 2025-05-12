@@ -3,4 +3,45 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
+
+  .main-container {
+    height: 100%;
+    overflow-y: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    user-select: none;
+  }
+
+  .section-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 20%;
+  }
+
+  .status-image {
+    width: 180px;
+  }
+
+  .account-created-title {
+    text-align: center;
+    margin-bottom: 14px;
+    text-transform: capitalize;
+    color: var(--white-color);
+  }
+
+  .account-created-message {
+    text-align: center;
+    color: #c3cde0;
+    margin-bottom: 30px;
+  }
+
+  .button-container {
+    max-width: 170px;
+    margin: 0 auto;
+    width: 100%;
+  }
 }

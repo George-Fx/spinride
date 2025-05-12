@@ -11,8 +11,8 @@ import {MetaService} from '@services/meta.service';
   standalone: false,
 })
 export class ForgotPasswordSentEmailComponent {
-  public svg = svg;
-  public URLS = URLS;
+  svg = svg;
+  URLS = URLS;
 
   constructor(private metaService: MetaService) {}
 

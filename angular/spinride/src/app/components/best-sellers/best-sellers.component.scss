@@ -10,4 +10,117 @@
       margin-right: 20px;
     }
   }
+
+  .best-sellers-section {
+    margin-bottom: 30px;
+  }
+
+  .best-sellers-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 12px;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .bike-card {
+    overflow: hidden;
+    max-width: 200px;
+    width: 100%;
+  }
+
+  .bike-image-container {
+    background-color: var(--white-color);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 6px;
+    display: flex;
+  }
+
+  .bike-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0px;
+    border-radius: 12px;
+  }
+
+  .sale-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #66a97d;
+    border-radius: 6px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .sale-text {
+    font-size: 8px;
+    text-transform: uppercase;
+    font-family: var(--mulish);
+    font-weight: 700;
+    color: var(--white-color);
+    line-height: 1;
+  }
+
+  .wishlist-button,
+  .cart-button {
+    padding: 10px;
+    position: absolute;
+    right: 0;
+  }
+
+  .wishlist-button {
+    top: 0;
+  }
+
+  .cart-button {
+    top: 40px;
+  }
+
+  .bike-content {
+    padding-bottom: 14px;
+  }
+
+  .rating-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 7px;
+  }
+
+  .rating-item {
+    margin-right: 4px;
+  }
+
+  .bike-name {
+    margin-bottom: 3px;
+  }
+
+  .bike-price-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .old-price {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 12px;
+    font-family: var(--mulish);
+    text-decoration: line-through;
+    text-decoration-color: var(--text-color);
+  }
+
+  .current-price {
+    color: var(--main-color);
+    font-weight: 600;
+  }
 }

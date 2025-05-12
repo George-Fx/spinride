@@ -1,142 +1,42 @@
 <app-header [showGoBack]="true" [title]="'Sign in'" />
 
-<main
-  style="
-    margin-left: 20px;
-    margin-right: 20px;
-    overflow-y: auto;
-    height: 100%;
-    margin-top: 10px;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    user-select: none;
-  "
->
-  <section
-    style="
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-    "
-  >
-    <h1 style="margin-bottom: 14px; text-align: center">Welcome Back!</h1>
-    <span
-      style="
-        margin-bottom: 30px;
-        text-align: center;
-        font-family: var(--mulish);
-        font-weight: 400;
-        color: var(--text-color);
-        font-size: 16px;
-        line-height: 1.7;
-      "
-    >
-      Sign in to continue
-    </span>
+<main class="main-container">
+  <section class="section-container">
+    <h1 class="welcome-title">Welcome Back!</h1>
+    <span class="welcome-subtitle">Sign in to continue</span>
     <app-input-field
       [check]="true"
       [type]="'email'"
       [value]="'darronbanks@mail.com'"
-      [ngStyle]="{'margin-bottom': '14px'}"
-    />
+      class="input-field"
+    ></app-input-field>
     <app-input-field
       [type]="'password'"
       [eyeOff]="true"
       [value]="'••••••••'"
-      [ngStyle]="{'margin-bottom': '16px'}"
-    />
-    <div
-      style="
-        margin-bottom: 32px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-      "
-    >
-      <div
-        style="
-          display: flex;
-          flex-direction: row;
-          gap: 10px;
-          align-items: center;
-          cursor: pointer;
-        "
-        (click)="rememberMe = !rememberMe"
-      >
-        <div
-          style="
-            width: 18px;
-            height: 18px;
-            background-color: var(--white-color);
-            border-radius: 5px;
-            background-color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid #eeeeee;
-          "
-        >
-          <img
-            [src]="svg.check"
-            alt=""
-            style="width: 10px"
-            *ngIf="rememberMe"
-          />
+      class="input-field"
+    ></app-input-field>
+    <div class="remember-me-container">
+      <div class="remember-me" (click)="rememberMe = !rememberMe">
+        <div class="checkbox">
+          <img [src]="svg.check" alt="" *ngIf="rememberMe" />
         </div>
-        <span
-          style="
-            font-size: 16;
-            font-weight: 400;
-            font-family: var(--mulish);
-            color: var(--text-color);
-          "
-        >
-          Remember me
-        </span>
+        <span class="remember-me-text">Remember me</span>
       </div>
 
-      <a href="" [routerLink]="'/forgot-password'">
-        <span
-          style="
-            font-size: 16;
-            font-family: var(--mulish);
-            font-weight: 400;
-            color: var(--main-color);
-          "
-        >
-          Forgot password?
-        </span>
+      <a href="" [routerLink]="'/forgot-password'" class="forgot-password-link">
+        <span>Forgot password?</span>
       </a>
     </div>
     <app-button
       [text]="'Sign in'"
       [routerLink]="'/home'"
-      [ngStyle]="{'margin-bottom': '20px'}"
-    />
+      class="sign-in-button"
+    ></app-button>
 
-    <div
-      style="display: flex; flex-direction: row; gap: 5px; align-self: center"
-    >
-      <span
-        style="
-          font-family: var(--mulish);
-          font-size: 16;
-          color: var(--text-color);
-        "
-      >
-        Don’t have an account?
-      </span>
-      <a
-        [routerLink]="'/sign-up'"
-        style="
-          font-family: var(--mulish);
-          font-size: 16;
-          color: var(--main-color);
-        "
-      >
-        Sign up.
-      </a>
+    <div class="sign-up-container">
+      <span class="sign-up-text">Don’t have an account?</span>
+      <a [routerLink]="'/sign-up'" class="sign-up-link">Sign up.</a>
     </div>
   </section>
 </main>
