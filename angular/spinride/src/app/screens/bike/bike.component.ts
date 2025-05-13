@@ -145,7 +145,11 @@ export class BikeComponent {
   }
 
   addToCart(bike: BikeModel): void {
-    this.cartService.addToCart(bike);
+    const bikeWithColor = {
+      ...bike,
+      color: this.selectedColor() ?? undefined,
+    };
+    this.cartService.addToCart(bikeWithColor);
   }
 
   removeFromCart(bike: BikeModel): void {

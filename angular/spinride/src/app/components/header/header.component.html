@@ -1,29 +1,6 @@
-<header
-  [ngStyle]="combinedStyles"
-  style="
-    width: 100%;
-    z-index: 8;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    height: var(--header-height);
-    justify-content: space-between;
-    /* border: 1px solid red; */
-  "
->
+<header [ngStyle]="combinedStyles" class="header-container">
   <!-- GO BACK -->
-  <button
-    (click)="goBack()"
-    *ngIf="showGoBack"
-    style="
-      padding-left: 20px;
-      padding-right: 20px;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    "
-  >
+  <button (click)="goBack()" *ngIf="showGoBack" class="go-back-button">
     <img [src]="svg.goBack" alt="go back icon" *ngIf="goBackColor === 'main'" />
     <img
       [src]="svg.goBackWhite"
@@ -33,88 +10,27 @@
   </button>
 
   <!-- BURGER -->
-  <button *ngIf="showBurger" (click)="openModal()">
+  <button *ngIf="showBurger" (click)="openModal()" class="burger-button">
     <img
       [src]="burgerColor === 'white' ? svg.burgerWhite : svg.burger"
       alt="burger icon"
-      style="
-        padding-left: 20px;
-        padding-right: 20px;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      "
     />
   </button>
 
   <!-- TITLE -->
-  <h4
-    *ngIf="title"
-    style="
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      color: var(--main-color);
-    "
-    [ngStyle]="titleStyle"
-  >
+  <h4 *ngIf="title" class="header-title" [ngStyle]="titleStyle">
     {{ title }}
   </h4>
 
   <!-- SEARCH -->
-  <button
-    *ngIf="showSearch"
-    style="position: absolute; right: 50%; transform: translateX(50%)"
-  >
+  <button *ngIf="showSearch" class="search-button">
     <img [src]="svg.categorySearch" alt="logo" />
   </button>
 
   <!-- BASKET -->
-  <a
-    *ngIf="showBasket"
-    [routerLink]="['/order']"
-    style="
-      display: flex;
-      padding: 0 20px;
-      position: absolute;
-      right: 0;
-      align-items: center;
-      justify-content: center;
-      height: var(--header-height);
-      position: absolute;
-    "
-  >
-    <div
-      style="
-        /* height: 20px; */
-        border-radius: 30px;
-        padding: 5px 4px 3px 4px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        right: 34px;
-        bottom: 8px;
-        background-color: var(--main-orange);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      "
-    >
-      <span
-        style="
-          font-size: 10px;
-          font-weight: 400;
-          display: block;
-          margin-bottom: 2px;
-          line-height: 1;
-          color: var(--white-color);
-          font-weight: 700;
-          font-family: var(--mulish);
-        "
-      >
+  <a *ngIf="showBasket" [routerLink]="['/order']" class="basket-link">
+    <div class="basket-indicator">
+      <span class="basket-total">
         ${{
           total.toFixed(2) === '0.00'
             ? '0'

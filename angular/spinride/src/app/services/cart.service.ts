@@ -33,13 +33,15 @@ export class CartService {
     const currentState = this.cartState.value;
     const existingBike = currentState.list.find(item => item.id === bike.id);
 
+    const bikePrice = Number(bike.price);
+
     if (existingBike) {
       existingBike.quantity = (existingBike.quantity || 0) + 1;
     } else {
       currentState.list.push({...bike, quantity: 1});
     }
 
-    currentState.subtotal += Number(bike.price);
+    currentState.subtotal += bikePrice;
     currentState.total =
       currentState.subtotal * (1 - currentState.discount / 100);
     currentState.discountAmount = currentState.subtotal - currentState.total;
@@ -51,6 +53,8 @@ export class CartService {
     const currentState = this.cartState.value;
     const existingBike = currentState.list.find(item => item.id === bike.id);
 
+    const bikePrice = Number(bike.price);
+
     if (existingBike) {
       if (existingBike.quantity && existingBike.quantity > 1) {
         existingBike.quantity -= 1;
@@ -60,7 +64,7 @@ export class CartService {
         );
       }
 
-      currentState.subtotal -= Number(bike.price);
+      currentState.subtotal -= bikePrice;
       currentState.total =
         currentState.subtotal * (1 - currentState.discount / 100);
       currentState.discountAmount = currentState.subtotal - currentState.total;

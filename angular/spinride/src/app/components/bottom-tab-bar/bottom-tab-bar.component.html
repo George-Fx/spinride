@@ -1,33 +1,11 @@
 <div [style]="containerStyle">
   <footer
     [ngStyle]="{'max-width': isMobile ? '100%' : 'var(--screen-width)'}"
-    style="
-      background-color: var(--main-color);
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      padding-left: 10px;
-      padding-right: 10px;
-      /* grid-template-columns: repeat(5, 1fr); */
-      border-radius: 70px;
-      height: var(--tab-bar-height);
-    "
+    class="tab-bar-footer"
     [style]="footerStyle"
   >
     <!-- HOME -->
-    <a
-      [routerLink]="'/home'"
-      style="
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-top: 15px;
-        padding-bottom: 15px;
-      "
-    >
+    <a [routerLink]="'/home'" class="tab-bar-link">
       <img
         alt=""
         [src]="
@@ -39,18 +17,7 @@
     </a>
 
     <!-- CATEGORIES -->
-    <a
-      [routerLink]="'/categories'"
-      style="
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-top: 15px;
-        padding-bottom: 15px;
-      "
-    >
+    <a [routerLink]="'/categories'" class="tab-bar-link">
       <img
         alt=""
         [src]="
@@ -64,15 +31,7 @@
     <!-- ORDER -->
     <a
       [routerLink]="list.length === 0 ? '/order-empty' : '/order'"
-      style="
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-top: 15px;
-        padding-bottom: 15px;
-      "
+      class="tab-bar-link"
     >
       <img
         alt=""
@@ -87,15 +46,7 @@
     <!-- FAVORITE -->
     <a
       [routerLink]="wishlist.length === 0 ? '/wishlist-empty' : '/wishlist'"
-      style="
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-top: 15px;
-        padding-bottom: 15px;
-      "
+      class="tab-bar-link"
     >
       <img
         alt=""
@@ -108,18 +59,7 @@
     </a>
 
     <!-- PROFILE -->
-    <a
-      [routerLink]="'/profile'"
-      style="
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-top: 15px;
-        padding-bottom: 15px;
-      "
-    >
+    <a [routerLink]="'/profile'" class="tab-bar-link">
       <img
         alt=""
         [src]="

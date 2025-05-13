@@ -277,6 +277,9 @@
       [containerStyle]="{
         marginBottom: '14px',
       }"
+      (click)="
+        $event.stopPropagation(); $event.preventDefault(); addToCart(bike)
+      "
     />
     <app-button
       [text]="'Leave a Review'"

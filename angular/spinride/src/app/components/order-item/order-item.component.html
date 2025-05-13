@@ -1,12 +1,5 @@
 <div
   style="
-    /* border-radius: 10px;
-    position: relative;
-    height: 111px;
-    display: grid;
-    
-    align-items: center;
-    column-gap: 10px; */
     display: grid;
     column-gap: 14px;
     position: relative;
@@ -82,12 +75,39 @@
     <span class="number-of-lines-1 t14" style="margin-bottom: 4px">
       {{ bike?.name }}
     </span>
-    <span
-      class="t14"
-      style="color: var(--main-color); font-weight: 500; margin-bottom: auto"
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: auto;
+      "
     >
-      ${{ bike?.price }}
-    </span>
+      <span
+        *ngIf="bike?.oldPrice"
+        style="
+          color: var(--text-color);
+          font-weight: 500;
+          font-size: 12px;
+          font-family: var(--mulish);
+          text-decoration: line-through;
+          text-decoration-color: var(--text-color);
+        "
+      >
+        ${{ bike?.oldPrice }}
+      </span>
+      <span
+        style="color: var(--main-color); font-weight: 600"
+        [ngStyle]="
+          bike?.oldPrice
+            ? {color: 'var(--main-orange)'}
+            : {color: 'var(--main-color)'}
+        "
+      >
+        ${{ bike?.price }}
+      </span>
+    </div>
     <span
       style="
         font-size: 14px;
@@ -113,25 +133,22 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
+      /* background-color: red; */
     "
   >
-    <button
-      style="padding: 14px; padding-bottom: 0"
-      (click)="bike && removeFromCart(bike, $event)"
-    >
+    <button (click)="bike && addToCart(bike, $event)">
       <img
-        src="{{ svg.counterMinus }}"
+        src="{{ svg.orderItemPlus }}"
         alt="Remove from cart"
-        style="width: 21px; height: 21px; cursor: pointer"
+        style="cursor: pointer"
       />
     </button>
     <span class="t12">{{ bike?.quantity }}</span>
-    <button style="padding: 14px; padding-top: 0">
+    <button (click)="bike && removeFromCart(bike, $event)">
       <img
-        src="{{ svg.counterPlus }}"
+        src="{{ svg.orderItemMinus }}"
         alt="Remove from cart"
-        style="width: 21px; height: 21px; cursor: pointer"
-        (click)="bike && addToCart(bike, $event)"
+        style="cursor: pointer"
       />
     </button>
   </div>

@@ -1,4 +1,26 @@
 :host {
   display: flex;
   flex-direction: column;
+
+  .tab-bar-footer {
+    background-color: var(--main-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 70px;
+    height: var(--tab-bar-height);
+  }
+
+  .tab-bar-link {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
 }
