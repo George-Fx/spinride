@@ -3,10 +3,10 @@ import {Component} from '@angular/core';
 import {takeUntil} from 'rxjs/operators';
 
 import {Banner} from '@models/banner.model';
-import {ApiService} from '@services/api.service';
-import {ReviewModel} from '@models/review.model';
-import {MetaService} from '@services/meta.service';
 import {BikeModel} from '@models/bike.model';
+import {ApiService} from '@services/api.service';
+import {MetaService} from '@services/meta.service';
+import {CarouselModel} from '@models/carousel.model';
 import {ModalService} from '@services/modal.service';
 
 @Component({
@@ -17,18 +17,14 @@ import {ModalService} from '@services/modal.service';
 })
 export class HomeComponent {
   banners: Banner[] = [];
-  reviews: ReviewModel[] = [];
-  categories: any[] = [];
+  carousel: CarouselModel[] = [];
+
+  carouselIsLoading = true;
+  carouselError = '';
 
   bikes: BikeModel[] = [];
   bikesIsLoading = true;
   bikesError = '';
-
-  categoriesIsLoading = true;
-  categoriesError = '';
-
-  reviewsIsLoading = true;
-  reviewsError = '';
 
   modalIsOpen = false;
   private destroy$ = new Subject<void>();
@@ -42,6 +38,7 @@ export class HomeComponent {
   ngOnInit(): void {
     this.setMeta();
     this.getBikes();
+    this.getCarousel();
   }
 
   private setMeta(): void {
@@ -68,12 +65,20 @@ export class HomeComponent {
     });
   }
 
+  private getCarousel(): void {
+    this.apiService.getCarousel().subscribe({
+      next: data => (this.carousel = data.carousel),
+      error: err => (this.carouselError = err),
+      complete: () => (this.carouselIsLoading = false),
+    });
+  }
+
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
   }
 
   get isLoading(): boolean {
-    return this.bikesIsLoading;
+    return this.bikesIsLoading || this.carouselIsLoading;
   }
 }

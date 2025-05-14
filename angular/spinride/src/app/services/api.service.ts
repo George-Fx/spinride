@@ -6,6 +6,7 @@ import {URLS} from '@config/index';
 import {BikesResponse} from '@models/bike.model';
 import {OrdersResponse} from '@models/order.model';
 import {ReviewsResponse} from '@models/review.model';
+import {CarouselResponse} from '@models/carousel.model';
 import {CategoriesResponse} from '@models/category.model';
 import {PromocodesResponse} from '@models/promocode.model';
 
@@ -35,5 +36,9 @@ export class ApiService {
 
   getCategories(): Observable<CategoriesResponse> {
     return this.http.get<CategoriesResponse>(this.URLS.GET_CATEGORIES);
+  }
+
+  getCarousel(): Observable<CarouselResponse> {
+    return this.http.get<CarouselResponse>(this.URLS.GET_CAROUSEL);
   }
 }
