@@ -1,3 +1,35 @@
 :host {
   width: 100%;
 }
+
+/* Extracted styles from input-field.component.html */
+
+.container {
+  display: flex;
+  width: 100%;
+  border-radius: 50px;
+  background-color: #fff;
+  height: 50px;
+  align-items: center;
+  padding-left: 20px;
+  border: 1px solid #eeeeee;
+}
+
+.flex-container {
+  display: flex;
+  flex: 1;
+}
+
+.text-span {
+  font-family: var(--mulish);
+  font-size: 16px;
+  color: var(--text-color);
+  margin-bottom: 3px;
+}
+
+.icon {
+  margin-right: 20px;
+  margin-left: 20px;
+  width: 16px;
+  height: 16px;
+}

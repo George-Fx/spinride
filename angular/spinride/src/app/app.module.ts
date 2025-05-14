@@ -23,14 +23,11 @@ import {AppRoutingModule} from './app-routing.module';
 import {ServiceWorkerModule} from '@angular/service-worker';
 
 // standalone components
-import {HomeReviewsComponent} from './components/home-reviews/home-reviews.component';
-import {HomeCategoriesComponent} from './components/home-categories/home-categories.component';
 import {BestSellersComponent} from './components/best-sellers/best-sellers.component';
 import {HomeFeaturedComponent} from './components/home-featured/home-featured.component';
 import {ProfileComponent} from './screens/profile/profile.component';
 import {WishlistEmptyComponent} from './screens/wishlist-empty/wishlist-empty.component';
 import {ShopComponent} from './screens/shop/shop.component';
-import {SignOutComponent} from './screens/sign-out/sign-out.component';
 import {StarComponent} from './components/star/star.component';
 import {SingleStarComponent} from './components/single-star/single-star.component';
 import {CategoriesComponent} from './screens/categories/categories.component';
@@ -40,7 +37,7 @@ import {DescriptionComponent} from './screens/description/description.component'
 import {VerifyYourPhoneNumberComponent} from './screens/verify-your-phone-number/verify-your-phone-number.component';
 import {PhoneNumberHasBeenVerifiedComponent} from './screens/phone-number-has-been-verified/phone-number-has-been-verified.component';
 import {VerifyYourEmailComponent} from './screens/verify-your-email/verify-your-email.component';
-import { EmailHasBeenVerifiedComponent } from './screens/email-has-been-verified/email-has-been-verified.component';
+import {EmailHasBeenVerifiedComponent} from './screens/email-has-been-verified/email-has-been-verified.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +46,6 @@ import { EmailHasBeenVerifiedComponent } from './screens/email-has-been-verified
     ProfileComponent,
     WishlistEmptyComponent,
     ShopComponent,
-    SignOutComponent,
     StarComponent,
     SingleStarComponent,
     CategoriesComponent,
@@ -72,8 +68,6 @@ import { EmailHasBeenVerifiedComponent } from './screens/email-has-been-verified
       enabled: !isDevMode(),
       registrationStrategy: 'registerWhenStable:30000',
     }),
-    HomeCategoriesComponent,
-    HomeReviewsComponent,
     BestSellersComponent,
     HomeFeaturedComponent,
   ],

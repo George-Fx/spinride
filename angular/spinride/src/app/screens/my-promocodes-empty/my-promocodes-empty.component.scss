@@ -2,4 +2,67 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  background-color: #161e2f;
+
+  .background-image {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+  }
+
+  .main-container {
+    height: 100%;
+    overflow-y: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    user-select: none;
+    z-index: 2;
+  }
+
+  .content-section {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 20%;
+  }
+
+  .promocode-image {
+    width: 180px;
+    margin: 0 auto;
+    margin-bottom: 14px;
+  }
+
+  .promocode-title {
+    text-align: center;
+    margin-bottom: 14px;
+    text-transform: capitalize;
+    color: var(--white-color);
+  }
+
+  .promocode-description {
+    text-align: center;
+    color: #c3cde0;
+    margin-bottom: 30px;
+  }
+
+  .button-container {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .get-promocode-button {
+    background-color: var(--white-color);
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 14px;
+  }
 }

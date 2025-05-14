@@ -3,4 +3,70 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
+
+  .main-container {
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 100%;
+    overflow-y: auto;
+    padding-top: 20px;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    user-select: none;
+  }
+
+  .bike-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e2e2;
+    margin-bottom: 20px;
+  }
+
+  .apply-promocode,
+  .promocode-applied {
+    margin-bottom: 16%;
+  }
+
+  .summary {
+    margin-bottom: 20px;
+  }
+
+  .summary-container {
+    border-radius: 12px;
+    padding: 20px;
+    background-color: var(--white-color);
+  }
+
+  .summary-row {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 10px;
+  }
+
+  .delivery-row {
+    padding-bottom: 14px;
+    border-bottom: 1px solid #dbe9f5;
+    margin-bottom: 20px;
+  }
+
+  .total-row {
+    margin-bottom: 0;
+  }
+
+  .subtotal-title,
+  .discount-title,
+  .delivery-title,
+  .total-title {
+    color: var(--main-color);
+    font-weight: 500;
+  }
+
+  .subtotal-value,
+  .discount-value,
+  .total-value {
+    color: var(--main-color);
+  }
 }

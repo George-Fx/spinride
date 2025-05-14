@@ -1,55 +1,25 @@
-<app-loader *ngIf="isLoading" [style]="'background-color: #F5FAFB;'" />
+<app-loader *ngIf="isLoading" class="loader" />
 
 <app-header [title]="'My promocodes'" [showGoBack]="true" *ngIf="!isLoading" />
 
-<div style="height: 10px"></div>
+<div class="spacer"></div>
 
-<main
-  *ngIf="!isLoading"
-  style="
-    height: 100%;
-    overflow-y: auto;
-    margin-left: 20px;
-    margin-right: 20px;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    user-select: none;
-    padding-bottom: 20px;
-  "
->
-  <ul
-    style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px"
-  >
+<main *ngIf="!isLoading" class="main-container">
+  <ul class="promocode-list">
     <app-promocode-item
       [promocode]="promocode"
       *ngFor="let promocode of promocodes"
     />
   </ul>
-  <div
-    style="
-      display: grid;
-      grid-template-columns: 1fr 30%;
-      gap: 14px;
-      height: 50px;
-    "
-  >
+  <div class="promocode-input-container">
     <app-input-field [value]="'Add promocode'" [type]="'promocode-enter'" />
     <button
-      style="
-        background-color: var(--main-orange);
-        height: 100%;
-        border-radius: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      "
+      class="add-promocode-button"
       (click)="
         $event.stopPropagation(); $event.preventDefault(); addPromocode()
       "
     >
-      <span class="t14" style="color: var(--white-color); font-weight: 700">
-        + Add
-      </span>
+      <span class="add-promocode-text t14"> + Add </span>
     </button>
   </div>
 </main>

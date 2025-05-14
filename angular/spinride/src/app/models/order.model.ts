@@ -1,4 +1,4 @@
-import {BikeModel} from '../models/bike.model';
+import {BikeModel} from '@models/bike.model';
 
 export interface OrderModel {
   id: number;

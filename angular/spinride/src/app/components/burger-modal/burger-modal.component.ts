@@ -2,9 +2,9 @@ import {Router} from '@angular/router';
 import {Component, ChangeDetectorRef} from '@angular/core';
 import {trigger, state, style, transition, animate} from '@angular/animations';
 
-import {URLS} from '@config/index';
 import {svg} from '@svg/index';
-import {ModalService} from '../../services/modal.service';
+import {URLS} from '@config/index';
+import {ModalService} from '@services/modal.service';
 
 @Component({
   selector: 'app-burger-modal',
@@ -24,53 +24,6 @@ export class BurgerModalComponent {
   svg = svg;
   URLS = URLS;
   isOpen = false;
-
-  data = [
-    {
-      id: 1,
-      title: 'Personal information',
-      route: '/edit-profile',
-    },
-    {
-      id: 2,
-      title: 'My orders',
-      route: '/order-history',
-    },
-    {
-      id: 3,
-      title: 'My orders empty',
-      route: '/order-history-empty',
-    },
-    {
-      id: 4,
-      title: 'Promocodes & gift cards',
-      route: '/my-promocodes',
-    },
-    {
-      id: 5,
-      title: 'Promocodes Empty',
-      route: '/my-promocodes-empty',
-    },
-    {
-      id: 6,
-      title: 'Onboarding',
-      route: '/',
-    },
-    {
-      id: 8,
-      title: 'Face ID',
-      hasSwitch: true,
-    },
-    {
-      id: 9,
-      title: 'Support center',
-    },
-    {
-      id: 10,
-      title: 'Sign out',
-      route: '/sign-in',
-    },
-  ];
 
   constructor(
     private modalService: ModalService,

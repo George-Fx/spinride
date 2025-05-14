@@ -3,4 +3,77 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
+
+  main {
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 100%;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    user-select: none;
+  }
+
+  .my-order {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 14px;
+  }
+
+  .order-section {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: var(--white-color);
+    margin-bottom: 32px;
+  }
+
+  .bikes-list {
+    margin-bottom: 6px;
+  }
+
+  .bike-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .bike-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .discount-delivery {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+
+  .delivery-free {
+    color: #51ba74;
+  }
+
+  .shipping-info {
+    margin-bottom: 14px;
+  }
+
+  .shipping-details {
+    background-color: var(--white-color);
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .shipping-details span {
+    margin-bottom: 6px;
+  }
+
+  .confirm-button {
+    padding: 20px;
+  }
 }

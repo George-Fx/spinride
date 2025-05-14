@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
 
-import {BikeModel} from '../models/bike.model';
+import {BikeModel} from '@models/bike.model';
 
 export interface WishlistState {
   list: BikeModel[];

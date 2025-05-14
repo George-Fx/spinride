@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import {svg} from '@svg/index';
-import {OrderModel} from '../../models/order.model';
+import {OrderModel} from '@models/order.model';
 import {ApiService} from '@services/api.service';
 import {MetaService} from '@services/meta.service';
 
@@ -11,7 +11,7 @@ import {MetaService} from '@services/meta.service';
   styleUrl: './order-history.component.scss',
   standalone: false,
 })
-export class OrderHistoryComponent {
+export class OrderHistoryComponent implements OnInit {
   svg = svg;
   ordersIsLoading = true;
   orders: OrderModel[] = [];

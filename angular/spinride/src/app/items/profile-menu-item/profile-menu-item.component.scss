@@ -14,4 +14,21 @@
       margin-right: auto;
     }
   }
+
+  .profile-menu-item {
+    border-top: 1px solid #e2e2e2;
+  }
+
+  .profile-menu-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .profile-menu-title {
+    margin-right: auto;
+  }
 }

@@ -1,8 +1,6 @@
 import {svg} from '@svg/index';
 import {URLS} from '@config/index';
-import {filter} from 'rxjs/operators';
 import {Component, OnInit} from '@angular/core';
-import {Router, NavigationEnd} from '@angular/router';
 import {MetaService} from '@services/meta.service';
 
 @Component({
@@ -11,7 +9,7 @@ import {MetaService} from '@services/meta.service';
   styleUrl: './order-history-empty.component.scss',
   standalone: false,
 })
-export class OrderHistoryEmptyComponent {
+export class OrderHistoryEmptyComponent implements OnInit {
   svg = svg;
   URLS = URLS;
 

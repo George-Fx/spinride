@@ -3,4 +3,66 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
+
+  .background-image {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+  }
+
+  .main-container {
+    overflow-y: auto;
+    height: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 10px;
+    padding-top: 10%;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    user-select: none;
+  }
+
+  .review-image {
+    width: 180px;
+  }
+
+  .review-title {
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .rating-container {
+    margin-bottom: 20px;
+  }
+
+  .review-description {
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    color: #c3cde0;
+  }
+
+  .input-container {
+    height: 127px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 16px;
+    font-family: 'League Spartan';
+    color: var(--main-color);
+    margin-bottom: 16px;
+    background-color: var(--white-color);
+    border: none;
+    font-family: var(--dm-sans);
+    font-size: 16px;
+  }
+
+  .input-text {
+    font-size: 16px;
+    color: var(--text-color);
+  }
 }

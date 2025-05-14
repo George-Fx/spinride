@@ -3,4 +3,238 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
+
+  .main-container {
+    height: 100%;
+    overflow-y: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 10px;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    user-select: none;
+  }
+
+  .status-section {
+    margin-bottom: 30px;
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .status-item {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      user-select: none;
+      cursor: pointer;
+    }
+
+    .status-box {
+      width: 18px;
+      height: 18px;
+      border: 1px solid #eeeeee;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--white-color);
+    }
+
+    .status-label {
+      height: 19px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1px 6px;
+      border-radius: 6px;
+    }
+
+    .status-label.sale {
+      background-color: #66a97d;
+    }
+
+    .status-label.new {
+      background-color: #ff7557;
+    }
+
+    .status-label.top {
+      background-color: #ff6262;
+    }
+
+    .status-label span {
+      text-transform: uppercase;
+      font-size: 10px;
+      color: var(--white-color);
+      font-weight: 700;
+    }
+  }
+
+  .color-section {
+    margin-bottom: 34px;
+
+    h5 {
+      margin-bottom: 14px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .color-item {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .color-item img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .bike-type-section {
+    margin-bottom: 30px;
+
+    h5 {
+      margin-bottom: 14px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .bike-item {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      user-select: none;
+      cursor: pointer;
+      border: 1px solid #eeeeee;
+      background-color: var(--white-color);
+      padding: 5px 20px 7px 20px;
+      border-radius: 30px;
+    }
+
+    .bike-item.selected {
+      background-color: var(--main-orange);
+    }
+
+    .bike-item span {
+      font-family: var(--mulish);
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .bike-item span.selected {
+      color: var(--white-color);
+    }
+
+    .bike-item span.unselected {
+      color: var(--main-color);
+    }
+  }
+
+  .suspension-type-section {
+    margin-bottom: 30px;
+
+    h5 {
+      margin-bottom: 14px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .suspension-item {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      user-select: none;
+      cursor: pointer;
+      border: 1px solid #eeeeee;
+      background-color: var(--white-color);
+      padding: 5px 20px 7px 20px;
+      border-radius: 30px;
+    }
+
+    .suspension-item.selected {
+      background-color: var(--main-orange);
+    }
+
+    .suspension-item span {
+      font-family: var(--mulish);
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .suspension-item span.selected {
+      color: var(--white-color);
+    }
+
+    .suspension-item span.unselected {
+      color: var(--main-color);
+    }
+  }
+
+  .drivetrain-type-section {
+    h5 {
+      margin-bottom: 14px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .drivetrain-item {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      user-select: none;
+      cursor: pointer;
+      border: 1px solid #eeeeee;
+      background-color: var(--white-color);
+      padding: 5px 20px 7px 20px;
+      border-radius: 30px;
+    }
+
+    .drivetrain-item.selected {
+      background-color: var(--main-orange);
+    }
+
+    .drivetrain-item span {
+      font-family: var(--mulish);
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .drivetrain-item span.selected {
+      color: var(--white-color);
+    }
+
+    .drivetrain-item span.unselected {
+      color: var(--main-color);
+    }
+  }
+
+  .filter-buttons {
+    padding: 20px;
+  }
 }

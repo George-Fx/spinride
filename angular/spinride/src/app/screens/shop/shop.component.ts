@@ -1,13 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {trigger, style, transition, animate} from '@angular/animations';
-import {isMobile} from 'react-device-detect';
 
 import {svg} from '@svg/index';
 import {BikeModel} from '@models/bike.model';
 import {ApiService} from '@services/api.service';
 import {MetaService} from '@services/meta.service';
-import {CartService} from '@services/cart.service';
-import {WishlistService} from '@services/wishlist.service';
 
 @Component({
   selector: 'app-shop',
@@ -45,8 +42,6 @@ export class ShopComponent implements OnInit {
   constructor(
     private metaService: MetaService,
     private apiService: ApiService,
-    private cartService: CartService,
-    private wishlistService: WishlistService,
   ) {}
 
   selectCategory(category: string): void {

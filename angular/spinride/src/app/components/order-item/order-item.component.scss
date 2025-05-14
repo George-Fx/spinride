@@ -1,0 +1,107 @@
+/* Extracted styles from order-item.component.html */
+
+.order-item-container {
+  display: grid;
+  column-gap: 14px;
+  position: relative;
+  grid-template-columns: 100px 1fr 30px;
+}
+
+.order-item-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.order-item-link {
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.order-item-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.sale-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #66a97d;
+  border-radius: 6px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.sale-text {
+  font-size: 8px;
+  text-transform: uppercase;
+  font-family: var(--mulish);
+  font-weight: 700;
+  color: var(--white-color);
+  line-height: 1;
+}
+
+.order-item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-item-name {
+  margin-bottom: 4px;
+}
+
+.order-item-prices {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: auto;
+}
+
+.old-price {
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 12px;
+  font-family: var(--mulish);
+  text-decoration: line-through;
+  text-decoration-color: var(--text-color);
+}
+
+.new-price {
+  color: var(--main-color);
+  font-weight: 600;
+}
+
+.order-item-color {
+  font-size: 14px;
+  color: var(--text-color);
+  line-height: 1.5;
+  margin-bottom: 3px;
+}
+
+.order-item-buttons {
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-item-button img {
+  cursor: pointer;
+}

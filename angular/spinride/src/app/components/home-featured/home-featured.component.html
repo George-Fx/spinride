@@ -1,15 +1,5 @@
-<section style="margin-bottom: 30px">
-  <div
-    style="
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-bottom: 12px;
-      justify-content: space-between;
-      margin-left: 20px;
-      margin-right: 20px;
-    "
-  >
+<section class="home-featured-section">
+  <div class="home-featured-header">
     <h3>Featured products</h3>
     <a [routerLink]="['/shop']">
       <img [src]="svg.viewAll" alt="line" />
@@ -17,65 +7,16 @@
   </div>
   <swiper-container slides-per-view="auto" space-between="14">
     <!-- item -->
-    <swiper-slide
-      class="swiper-slide"
-      style="width: auto"
-      *ngFor="let bike of bikes"
-    >
-      <div style="overflow: hidden; max-width: 138px; width: 100%">
+    <swiper-slide class="swiper-slide" *ngFor="let bike of bikes">
+      <div class="bike-card">
         <!-- image -->
-        <a
-          [routerLink]="['/bike', bike.id]"
-          style="
-            background-color: var(--white-color);
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 6px;
-            display: flex;
-            position: relative;
-          "
-        >
-          <img
-            [src]="bike.image"
-            style="
-              width: 100%;
-              height: 170px;
-              margin-bottom: 0px;
-              border-radius: 12px;
-              object-fit: contain;
-            "
-          />
-          <div
-            style="
-              position: absolute;
-              top: 10px;
-              left: 10px;
-              background-color: #66a97d;
-              border-radius: 6px;
-              height: 16px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              padding-left: 6px;
-              padding-right: 6px;
-            "
-            *ngIf="bike?.oldPrice"
-          >
-            <span
-              style="
-                font-size: 8px;
-                text-transform: uppercase;
-                font-family: var(--mulish);
-                font-weight: 700;
-                color: var(--white-color);
-                line-height: 1;
-              "
-            >
-              sale
-            </span>
+        <a [routerLink]="['/bike', bike.id]" class="bike-image-container">
+          <img [src]="bike.image" class="bike-image" />
+          <div class="sale-badge" *ngIf="bike?.oldPrice">
+            <span class="sale-text"> sale </span>
           </div>
           <button
-            style="padding: 10px; position: absolute; right: 0; top: 0"
+            class="wishlist-button"
             (click)="
               $event.stopPropagation();
               $event.preventDefault();
@@ -86,7 +27,7 @@
             <img [src]="svg.adToWl" alt="right arrow" />
           </button>
           <button
-            style="padding: 10px; position: absolute; right: 0; top: 0"
+            class="wishlist-button"
             (click)="
               $event.stopPropagation();
               $event.preventDefault();
@@ -97,7 +38,7 @@
             <img [src]="svg.addedToWLHeart" alt="right arrow" />
           </button>
           <button
-            style="padding: 10px; position: absolute; right: 0; top: 36px"
+            class="cart-button"
             (click)="
               $event.stopPropagation(); $event.preventDefault(); addToCart(bike)
             "
@@ -107,36 +48,18 @@
         </a>
 
         <!-- content -->
-        <div style="padding-right: 14px; padding-bottom: 14px">
+        <div class="bike-content">
           <!-- name -->
-          <span class="t14 number-of-lines-1" style="margin-bottom: 3px">
+          <span class="bike-name">
             {{ bike.name }}
           </span>
           <!-- description -->
-          <div
-            style="
-              display: flex;
-              flex-direction: row;
-              align-items: center;
-              gap: 4px;
-            "
-          >
-            <span
-              *ngIf="bike?.oldPrice"
-              style="
-                color: var(--text-color);
-                font-weight: 500;
-                font-size: 12px;
-                font-family: var(--mulish);
-                text-decoration: line-through;
-                text-decoration-color: var(--text-color);
-              "
-            >
+          <div class="bike-price-container">
+            <span *ngIf="bike?.oldPrice" class="old-price">
               ${{ bike?.oldPrice }}
             </span>
             <span
-              class="t14"
-              style="color: var(--main-color); font-weight: 500"
+              class="current-price"
               [ngStyle]="
                 bike?.oldPrice
                   ? {color: 'var(--main-orange)'}

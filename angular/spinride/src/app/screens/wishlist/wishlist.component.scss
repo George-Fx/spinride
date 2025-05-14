@@ -3,4 +3,22 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
+
+  .main-container {
+    height: 100%;
+    overflow-y: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 16px;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    user-select: none;
+  }
+
+  .wishlist-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
 }

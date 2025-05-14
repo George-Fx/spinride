@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 
-import {ReviewModel} from '../../models/review.model';
+import {ReviewModel} from '@models/review.model';
 import {ApiService} from '@services/api.service';
 import {MetaService} from '@services/meta.service';
 

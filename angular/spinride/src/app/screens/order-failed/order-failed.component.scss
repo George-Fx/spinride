@@ -2,4 +2,52 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+
+  .background-image {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+  }
+
+  .main-container {
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    user-select: none;
+  }
+
+  .content-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .failed-image {
+    width: 180px;
+  }
+
+  .failed-title {
+    text-align: center;
+    margin-bottom: 4%;
+    text-transform: capitalize;
+  }
+
+  .failed-description {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #c3cde0;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .button-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
 }

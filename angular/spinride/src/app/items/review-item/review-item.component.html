@@ -1,25 +1,9 @@
-<li
-  style="
-    padding: 20px;
-    border-radius: 12px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    background-color: var(--white-color);
-  "
-  *ngIf="review"
->
-  <img
-    [src]="review.photo"
-    style="width: 30px; height: 30px; border-radius: 50%"
-  />
-  <div style="width: 100%">
-    <div
-      style="display: flex; flex-direction: row; justify-content: space-between"
-    >
+<li class="review-item" *ngIf="review">
+  <img [src]="review.photo" class="review-photo" />
+  <div class="review-content">
+    <div class="review-header">
       <h5>{{ review.name }}</h5>
-      <ul style="display: flex; flex-direction: row; gap: 4px; margin-top: 3px">
+      <ul class="review-stars">
         <li *ngFor="let item of [1, 2, 3, 4, 5]">
           <svg
             width="12"
@@ -48,10 +32,9 @@
         </li>
       </ul>
     </div>
-    <span
-      style="font-size: 10px; color: var(--text-color); margin-bottom: 10px"
-      >{{ review.date }}</span
-    >
+    <span class="review-date">
+      {{ review.date }}
+    </span>
     <p class="t14">
       {{ review.comment }}
     </p>

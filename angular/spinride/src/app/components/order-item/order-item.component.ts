@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 import {svg} from '@svg/index';
-import {BikeModel} from '../../models/bike.model';
-import {CartService} from '../../services/cart.service';
+import {BikeModel} from '@models/bike.model';
+import {CartService} from '@services/cart.service';
 
 @Component({
   selector: 'app-order-item',

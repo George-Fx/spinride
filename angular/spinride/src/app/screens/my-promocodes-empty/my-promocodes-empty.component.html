@@ -1,8 +1,4 @@
-<img
-  src="./assets/bg/01.png"
-  alt="Add to cart"
-  style="position: absolute; width: 100%; height: auto; z-index: -1"
-/>
+<img src="./assets/bg/01.png" alt="Add to cart" class="background-image" />
 
 <app-header
   [title]="'My promocodes'"
@@ -11,66 +7,23 @@
   [titleStyle]="{color: 'var(--white-color)'}"
 />
 
-<main
-  style="
-    height: 100%;
-    overflow-y: auto;
-    margin-left: 20px;
-    margin-right: 20px;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    user-select: none;
-  "
->
-  <section
-    style="
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      padding-bottom: 20%;
-    "
-  >
+<main class="main-container">
+  <section class="content-section">
     <img
       [alt]="'info saved'"
-      [className]="'status-image'"
       [src]="svg.promocodeGift"
-      style="width: 180px"
+      class="promocode-image"
     />
-    <h2
-      style="
-        text-align: center;
-        margin-bottom: 14px;
-        text-transform: capitalize;
-        color: var(--white-color);
-        text-transform: capitalize;
-      "
-    >
+    <h2 class="promocode-title">
       Your don’t have <br />
       promocodes yet!
     </h2>
-    <p
-      class="t16"
-      style="text-align: center; color: #c3cde0; margin-bottom: 30px"
-    >
+    <p class="promocode-description t16">
       Start using the app and <br />
       get your first promocode!
     </p>
-    <div style="margin: 0 auto; width: 100%">
-      <div
-        style="
-          background-color: var(--white-color);
-          height: 50px;
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          border-radius: 50px;
-          padding-left: 20px;
-          padding-right: 20px;
-          margin-bottom: 14px;
-        "
-        (click)="setValue()"
-      >
+    <div class="button-container">
+      <div class="get-promocode-button" (click)="setValue()">
         <span>{{ value === '' ? 'Get promocodes' : value }}</span>
       </div>
       <app-button [text]="'done'" [routerLink]="'/my-promocodes'" />

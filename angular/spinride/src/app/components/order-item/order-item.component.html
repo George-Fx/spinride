@@ -1,104 +1,34 @@
-<div
-  style="
-    display: grid;
-    column-gap: 14px;
-    position: relative;
-    grid-template-columns: 100px 1fr 30px;
-  "
->
+<div class="order-item-container">
   <!-- image -->
-  <div
-    style="
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    "
-  >
+  <div class="order-item-image">
     <a
       [routerLink]="['/bike', bike?.id]"
       [ngStyle]="{'background-image': 'url(' + bike?.image + ')'}"
-      style="
-        border-radius: 12px;
-        overflow: hidden;
-        display: flex;
-        width: 100px;
-        height: 100px;
-        position: relative;
-      "
+      class="order-item-link"
     >
       <img
         src="{{ bike?.image }}"
         alt="{{ bike?.name }}"
-        style="
-          width: 100%;
-          height: 100%;
-          border-radius: 12px;
-          object-fit: contain;
-        "
+        class="order-item-img"
         [src]="bike?.image"
       />
-      <div
-        style="
-          position: absolute;
-          top: 10px;
-          left: 10px;
-          background-color: #66a97d;
-          border-radius: 6px;
-          height: 16px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding-left: 6px;
-          padding-right: 6px;
-        "
-        *ngIf="bike?.oldPrice"
-      >
-        <span
-          style="
-            font-size: 8px;
-            text-transform: uppercase;
-            font-family: var(--mulish);
-            font-weight: 700;
-            color: var(--white-color);
-            line-height: 1;
-          "
-        >
-          sale
-        </span>
+      <div class="sale-badge" *ngIf="bike?.oldPrice">
+        <span class="sale-text"> sale </span>
       </div>
     </a>
   </div>
 
   <!-- info -->
-  <div style="display: flex; flex-direction: column">
-    <span class="number-of-lines-1 t14" style="margin-bottom: 4px">
+  <div class="order-item-info">
+    <span class="number-of-lines-1 t14 order-item-name">
       {{ bike?.name }}
     </span>
-    <div
-      style="
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 8px;
-        margin-bottom: auto;
-      "
-    >
-      <span
-        *ngIf="bike?.oldPrice"
-        style="
-          color: var(--text-color);
-          font-weight: 500;
-          font-size: 12px;
-          font-family: var(--mulish);
-          text-decoration: line-through;
-          text-decoration-color: var(--text-color);
-        "
-      >
+    <div class="order-item-prices">
+      <span *ngIf="bike?.oldPrice" class="old-price">
         ${{ bike?.oldPrice }}
       </span>
       <span
-        style="color: var(--main-color); font-weight: 600"
+        class="new-price"
         [ngStyle]="
           bike?.oldPrice
             ? {color: 'var(--main-orange)'}
@@ -108,48 +38,22 @@
         ${{ bike?.price }}
       </span>
     </div>
-    <span
-      style="
-        font-size: 14px;
-        color: var(--text-color);
-        line-height: 1.5;
-        margin-bottom: 3px;
-      "
-    >
+    <span class="order-item-color">
       Color: {{ bike?.color ? bike?.color : 'N/A' }}
     </span>
   </div>
 
   <!-- buttons -->
-  <div
-    style="
-      height: 100%;
-      position: absolute;
-      right: 0px;
-      top: 0px;
-      display: flex;
-      flex-direction: column;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      /* background-color: red; */
-    "
-  >
-    <button (click)="bike && addToCart(bike, $event)">
-      <img
-        src="{{ svg.orderItemPlus }}"
-        alt="Remove from cart"
-        style="cursor: pointer"
-      />
+  <div class="order-item-buttons">
+    <button (click)="bike && addToCart(bike, $event)" class="order-item-button">
+      <img src="{{ svg.orderItemPlus }}" alt="Remove from cart" />
     </button>
     <span class="t12">{{ bike?.quantity }}</span>
-    <button (click)="bike && removeFromCart(bike, $event)">
-      <img
-        src="{{ svg.orderItemMinus }}"
-        alt="Remove from cart"
-        style="cursor: pointer"
-      />
+    <button
+      (click)="bike && removeFromCart(bike, $event)"
+      class="order-item-button"
+    >
+      <img src="{{ svg.orderItemMinus }}" alt="Remove from cart" />
     </button>
   </div>
 </div>

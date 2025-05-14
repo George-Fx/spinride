@@ -1,3 +1,47 @@
 :host {
   display: flex;
+
+  .promocode-item {
+    background-color: var(--white-color);
+    border-radius: 12px;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 17px;
+    position: relative;
+  }
+
+  .promocode-image {
+    width: 80px;
+    height: 90px;
+    border-radius: 12px;
+  }
+
+  .promocode-details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .promocode-code {
+    margin-bottom: 3px;
+  }
+
+  .promocode-discount {
+    font-family: var(--mulish);
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .promocode-expiry {
+    margin-top: 3px;
+  }
+
+  .promocode-copy {
+    padding: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }

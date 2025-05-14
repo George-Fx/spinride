@@ -5,9 +5,9 @@ import {Component, Input, OnInit} from '@angular/core';
 
 import {URLS} from '@config/index';
 import {svg} from '@svg/index';
-import {CartState} from '../../services/cart.service';
-import {CartService} from '../../services/cart.service';
-import {ModalService} from '../../services/modal.service';
+import {CartState} from '@services/cart.service';
+import {CartService} from '@services/cart.service';
+import {ModalService} from '@services/modal.service';
 
 @Component({
   selector: 'app-header',

@@ -7,58 +7,25 @@
   [goBackColor]="'white'"
 />
 
-<img
-  src="./assets/bg/01.png"
-  alt="Add to cart"
-  style="position: absolute; width: 100%; height: auto; z-index: -1"
-/>
+<img src="./assets/bg/01.png" alt="Add to cart" class="background-image" />
 
-<main
-  style="
-    height: 100%;
-    overflow-y: auto;
-    margin-left: 20px;
-    margin-right: 20px;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    user-select: none;
-  "
->
-  <section
-    style="
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      padding-bottom: 20%;
-    "
-  >
+<main class="main-container">
+  <section class="content-section">
     <img
       [alt]="'info saved'"
       [className]="'status-image'"
       [src]="svg.list"
-      style="width: 180px"
+      class="history-image"
     />
-    <h2
-      style="
-        text-align: center;
-        margin-bottom: 14px;
-        text-transform: capitalize;
-        color: var(--white-color);
-        text-transform: capitalize;
-      "
-    >
+    <h2 class="history-title">
       Your order history is <br />
       currently empty!
     </h2>
-    <p
-      class="t16"
-      style="text-align: center; color: #c3cde0; margin-bottom: 30px"
-    >
+    <p class="history-description t16">
       Start shopping now and fill your <br />
       order history with amazing products!<br />
     </p>
-    <div style="max-width: 170px; margin: 0 auto; width: 100%">
+    <div class="button-container">
       <app-button [text]="'shop now'" [routerLink]="'/shop'" />
     </div>
   </section>

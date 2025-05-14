@@ -9,32 +9,14 @@
   *ngIf="!isLoading"
 />
 
-<main
-  style="
-    overflow-y: auto;
-    height: 100%;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    user-select: none;
-  "
-  *ngIf="!isLoading"
->
+<main class="main-container" *ngIf="!isLoading">
   <!-- BANNER -->
-  <section
-    style="
-      margin-left: 20px;
-      margin-right: 20px;
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 40px;
-      margin-top: 4px;
-    "
-  >
+  <section class="banner-section">
     <a [routerLink]="['/bike', '1']">
       <img
         alt="banner"
         src="https://spinride-data.vercel.app/assets/banners/01.jpg"
-        style="width: 100%; height: auto; border-radius: 12px"
+        class="banner-image"
       />
     </a>
   </section>
@@ -43,21 +25,12 @@
   <app-best-sellers [bikes]="bikes" />
 
   <!-- BANNER -->
-  <section
-    style="
-      margin-left: 20px;
-      margin-right: 20px;
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 40px;
-      margin-top: 4px;
-    "
-  >
+  <section class="banner-section">
     <a [routerLink]="['/bike', '1']">
       <img
         alt="banner"
         src="https://spinride-data.vercel.app/assets/banners/02.jpg"
-        style="width: 100%; height: auto; border-radius: 12px"
+        class="banner-image"
       />
     </a>
   </section>

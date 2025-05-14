@@ -7,9 +7,9 @@ import {svg} from '@svg/index';
 import {ReviewModel} from '@models/review.model';
 import {ApiService} from '@services/api.service';
 import {MetaService} from '@services/meta.service';
-import {BikeModel} from '../../models/bike.model';
-import {CartState} from '../../services/cart.service';
-import {CartService} from '../../services/cart.service';
+import {BikeModel} from '@models/bike.model';
+import {CartState} from '@services/cart.service';
+import {CartService} from '@services/cart.service';
 import {WishlistService} from '@services/wishlist.service';
 
 @Component({
@@ -18,7 +18,7 @@ import {WishlistService} from '@services/wishlist.service';
   templateUrl: './bike.component.html',
   styleUrl: './bike.component.scss',
 })
-export class BikeComponent {
+export class BikeComponent implements OnInit {
   public svg = svg;
 
   cartState$: Observable<CartState>;
@@ -44,7 +44,6 @@ export class BikeComponent {
 
   bikes: BikeModel[] = [];
   isLoading = true;
-  // selectedColor: string = '';
   selectedColor = signal<string | null>(null);
 
   selectColor(color: string): void {

@@ -3,22 +3,12 @@
   [title]="'Order history'"
   *ngIf="!ordersIsLoading"
 />
-<div style="height: 10px" *ngIf="!ordersIsLoading"></div>
+<div class="spacer" *ngIf="!ordersIsLoading"></div>
 
 <app-loader *ngIf="ordersIsLoading" />
 
-<main
-  style="
-    margin-left: 20px;
-    margin-right: 20px;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    user-select: none;
-  "
-  *ngIf="!ordersIsLoading"
->
-  <ul style="margin-bottom: 20px">
+<main class="main-container" *ngIf="!ordersIsLoading">
+  <ul class="order-list">
     <li
       *ngFor="let order of orders; let last = last"
       class="order-history__item"
@@ -30,16 +20,11 @@
       <details
         [open]="openAccordions.has(order.id)"
         (toggle)="toggleAccordion(order.id)"
-        style="border-radius: 12px"
+        class="order-details"
       >
         <!-- header -->
         <summary
-          style="
-            padding: 20px;
-            background-color: var(--white-color);
-            border-top-left-radius: 12px;
-            border-top-right-radius: 12px;
-          "
+          class="order-summary"
           [ngStyle]="{
             'border-bottom': openAccordions.has(order.id)
               ? '1px solid #EEEEEE'
@@ -52,18 +37,8 @@
                 : '10px',
           }"
         >
-          <section
-            style="
-              margin-bottom: 7px;
-              display: flex;
-              flex-direction: row;
-              align-items: center;
-              justify-content: space-between;
-            "
-          >
-            <h5 style="color: var(--main-color); font-weight: 500">
-              #{{ order.id }}
-            </h5>
+          <section class="order-header">
+            <h5 class="order-id">#{{ order.id }}</h5>
             <img
               alt="delivered"
               [src]="svg.delivered"
@@ -80,57 +55,19 @@
               *ngIf="order.status === 'canceled'"
             />
           </section>
-          <section
-            style="
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-            "
-          >
-            <span
-              style="
-                font-size: 12px;
-                color: var(--text-color);
-                font-family: var(--mulish);
-                line-height: 1.5;
-              "
-            >
+          <section class="order-info">
+            <span class="order-date">
               {{ order.date }} at {{ order.time.toUpperCase() }}
             </span>
-            <span
-              style="
-                font-weight: 500;
-                color: var(--main-color);
-                line-height: 1.2;
-                font-family: var(--mulish);
-                font-weight: 700;
-              "
-            >
-              ${{ order.total }}
-            </span>
+            <span class="order-total"> ${{ order.total }} </span>
           </section>
         </summary>
         <!-- Order details -->
-        <section
-          style="
-            padding: 20px;
-            margin-bottom: 10px;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            background-color: var(--white-color);
-          "
-        >
-          <ul style="display: flex; flex-direction: column; gap: 8px">
-            <li
-              *ngFor="let bike of order.products"
-              style="
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-              "
-            >
-              <span class="t14">{{ bike.name }}</span>
-              <span style="margin-left: auto" class="t14">
+        <section class="order-products">
+          <ul class="product-list">
+            <li *ngFor="let bike of order.products" class="product-item">
+              <span class="product-name t14">{{ bike.name }}</span>
+              <span class="product-quantity t14">
                 {{ bike.quantity }} x ${{ bike.price }}
               </span>
             </li>

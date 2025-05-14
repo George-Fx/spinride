@@ -5,21 +5,10 @@
   [showBorder]="true"
 />
 
-<main
-  style="
-    overflow-y: auto;
-    height: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    user-select: none;
-  "
->
-  <div style="margin-bottom: 29px; margin-top: 37px">
-    <h3 style="margin-bottom: 4px">Darron Banks</h3>
-    <span class="t14">{{ 'darronbanks@mail.com' }}</span>
+<main class="main-container">
+  <div class="profile-header">
+    <h3 class="profile-name">Darron Banks</h3>
+    <span class="profile-email t14">{{ 'darronbanks@mail.com' }}</span>
   </div>
 
   <ul>
@@ -67,12 +56,12 @@
     <app-profile-menu-item
       [icon]="svg.gift"
       [title]="'Sign out'"
-      [routerLink]="'/sign-in'"
+      [routerLink]="'/'"
     />
     <app-profile-menu-item
       [icon]="svg.cross"
       [title]="'Delete account'"
-      [routerLink]="'/sign-in'"
+      [routerLink]="'/'"
       [titleStyle]="{color: 'var(--main-orange)'}"
     />
   </ul>

@@ -2,4 +2,27 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+
+  .main-container {
+    overflow-y: auto;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    user-select: none;
+  }
+
+  .banner-section {
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    margin-top: 4px;
+  }
+
+  .banner-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
 }

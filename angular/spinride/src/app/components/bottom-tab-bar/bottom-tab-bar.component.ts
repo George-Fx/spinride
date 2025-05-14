@@ -1,6 +1,5 @@
 import {Subject} from 'rxjs';
 import {Observable} from 'rxjs';
-import {Router} from '@angular/router';
 import {takeUntil} from 'rxjs/operators';
 import {map} from 'rxjs/operators';
 import {isMobile} from 'react-device-detect';
@@ -8,10 +7,10 @@ import {ActivatedRoute} from '@angular/router';
 
 import {Component, OnInit, OnDestroy, Input} from '@angular/core';
 
-import {CartState} from '../../services/cart.service';
-import {CartService} from '../../services/cart.service';
-import {BikeModel} from '../../models/bike.model';
-import {WishlistState} from '../../services/wishlist.service';
+import {BikeModel} from '@models/bike.model';
+import {CartState} from '@services/cart.service';
+import {CartService} from '@services/cart.service';
+import {WishlistState} from '@services/wishlist.service';
 import {WishlistService} from '@services/wishlist.service';
 
 @Component({
@@ -35,14 +34,6 @@ export class BottomTabBarComponent implements OnInit, OnDestroy {
       ...this.style,
     };
   }
-
-  // get footerStyle() {
-  //   return {
-  //     ...this.footerStyle,
-  //   };
-  // }
-
-  // @Input() containerStyle: string = '';
 
   list: BikeModel[] = [];
   wishlist: BikeModel[] = [];

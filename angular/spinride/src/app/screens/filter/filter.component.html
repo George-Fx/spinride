@@ -1,79 +1,23 @@
 <app-header [showGoBack]="true" [title]="'Filter'" />
 
-<main
-  style="
-    height: 100%;
-    overflow-y: auto;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding-top: 10px;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    user-select: none;
-  "
->
+<main class="main-container">
   <!-- STATUS -->
-  <section style="margin-bottom: 30px">
-    <ul style="display: grid; grid-template-columns: repeat(3, 1fr)">
+  <section class="status-section">
+    <ul>
       <li *ngFor="let item of status; let i = index">
-        <div
-          style="
-            display: flex;
-            flex-direction: row;
-            gap: 8px;
-            user-select: none;
-            cursor: pointer;
-          "
-          (click)="
-            $event.stopPropagation();
-            $event.preventDefault();
-            selectStatus(item)
-          "
-        >
-          <div
-            style="
-              width: 18px;
-              height: 18px;
-              border: 1px solid #eeeeee;
-              border-radius: 5px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              background-color: var(--white-color);
-            "
-            (click)="selectStatus(item)"
-          >
+        <div class="status-item" (click)="selectStatus(item)">
+          <div class="status-box" (click)="selectStatus(item)">
             <img [src]="svg.statusSelect" *ngIf="selectedStatus === item" />
           </div>
           <div
-            [ngStyle]="{
-              backgroundColor:
-                item === 'sale'
-                  ? '#66A97D'
-                  : item === 'new'
-                  ? '#FF7557'
-                  : '#FF6262'
+            class="status-label"
+            [ngClass]="{
+              sale: item === 'sale',
+              new: item === 'new',
+              top: item === 'top'
             }"
-            style="
-              height: 19px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              padding: 1px 6px;
-              border-radius: 6px;
-            "
           >
-            <span
-              style="
-                text-transform: capitalize;
-                font-size: 10px;
-                text-transform: uppercase;
-                color: var(--white-color);
-                font-weight: 700;
-              "
-            >
-              {{ item }}
-            </span>
+            <span>{{ item }}</span>
           </div>
         </div>
       </li>
@@ -81,62 +25,34 @@
   </section>
 
   <!-- COLOR -->
-  <section style="margin-bottom: 34px">
-    <h5 style="margin-bottom: 14px">Color</h5>
-    <ul style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 14px">
+  <section class="color-section">
+    <h5>Color</h5>
+    <ul>
       <li
         *ngFor="let color of colors"
-        style="
-          display: inline-block;
-          width: 30px;
-          height: 30px;
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        "
+        class="color-item"
         (click)="
           $event.stopPropagation();
           $event.preventDefault();
           selectColor(color.code)
         "
         [ngStyle]="{
-          backgroundColor: color.code,
+          backgroundColor: color.code
         }"
       >
-        <img
-          *ngIf="selectedColor() === color.code"
-          [src]="svg.colorSelect"
-          style="width: 16px; height: 16px"
-        />
+        <img *ngIf="selectedColor() === color.code" [src]="svg.colorSelect" />
       </li>
     </ul>
   </section>
 
   <!-- BIKE TYPE -->
-  <section>
-    <h5 style="margin-bottom: 14px">Bike Type</h5>
-    <ul style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px">
+  <section class="bike-type-section">
+    <h5>Bike Type</h5>
+    <ul>
       <li
         *ngFor="let item of categories"
-        style="
-          display: flex;
-          flex-direction: row;
-          gap: 8px;
-          user-select: none;
-          cursor: pointer;
-          border: 1px solid #eeeeee;
-          background-color: var(--white-color);
-          padding: 5px 20px 7px 20px;
-          border-radius: 30px;
-        "
-        [ngStyle]="{
-          backgroundColor:
-            selectedCategory === item
-              ? 'var(--main-orange)'
-              : 'var(--white-color)',
-          
-        }"
+        class="bike-item"
+        [ngClass]="{selected: selectedCategory === item}"
         (click)="
           $event.stopPropagation();
           $event.preventDefault();
@@ -144,9 +60,61 @@
         "
       >
         <span
-          style="font-family: var(--mulish); font-weight: 700"
-          [ngStyle]="{
-            color: selectedCategory === item ? 'var(--white-color)' : 'var(--main-color)',
+          [ngClass]="{
+            selected: selectedCategory === item,
+            unselected: selectedCategory !== item
+          }"
+        >
+          {{ item }}
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- SYSPENSION TYPE -->
+  <section class="suspension-type-section">
+    <h5>Suspension Type</h5>
+    <ul>
+      <li
+        *ngFor="let item of suspensionTypes"
+        class="suspension-item"
+        [ngClass]="{selected: selectedSuspensionType === item}"
+        (click)="
+          $event.stopPropagation();
+          $event.preventDefault();
+          selectSuspensionType(item)
+        "
+      >
+        <span
+          [ngClass]="{
+            selected: selectedSuspensionType === item,
+            unselected: selectedSuspensionType !== item
+          }"
+        >
+          {{ item }}
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- DRIVETRAIN TYPE -->
+  <section class="drivetrain-type-section">
+    <h5>Drivetrain</h5>
+    <ul>
+      <li
+        *ngFor="let item of driveTrain"
+        class="drivetrain-item"
+        [ngClass]="{selected: selectedDriveTrain === item}"
+        (click)="
+          $event.stopPropagation();
+          $event.preventDefault();
+          selectDriveTrain(item)
+        "
+      >
+        <span
+          [ngClass]="{
+            selected: selectedDriveTrain === item,
+            unselected: selectedDriveTrain !== item
           }"
         >
           {{ item }}
@@ -157,7 +125,7 @@
 </main>
 
 <!-- buttons -->
-<section style="padding: 20px">
+<section class="filter-buttons">
   <app-button
     [text]="'apply filters'"
     [containerStyle]="{'margin-bottom': '6px'}"

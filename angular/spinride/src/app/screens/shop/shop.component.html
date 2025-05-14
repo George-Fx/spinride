@@ -1,10 +1,9 @@
 <app-header [showGoBack]="true" [showBasket]="true" [title]="'Shop'" />
+<app-loader *ngIf="isLoading" />
 
 <!-- Filters and Sorting -->
-<section style="margin-left: 20px; margin-right: 20px; margin-bottom: 20px">
-  <div
-    style="display: flex; flex-direction: row; justify-content: space-between"
-  >
+<section class="filters">
+  <div class="filters-container">
     <button
       [routerLink]="['/filter']"
       (click)="$event.stopPropagation(); $event.preventDefault()"
@@ -17,19 +16,8 @@
   </div>
 </section>
 
-<main
-  style="
-    margin-left: 20px;
-    margin-right: 20px;
-    padding-bottom: 20px;
-    height: 100%;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    user-select: none;
-  "
->
-  <ul style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px">
+<main class="main-container">
+  <ul class="shop-list">
     <app-shop-item *ngFor="let bike of bikes; let i = index" [bike]="bike" />
   </ul>
 </main>
@@ -41,60 +29,16 @@
   (click)="closeSortingPopup()"
 ></div>
 
-<ul
-  class="sorting-popup"
-  *ngIf="isSortingPopupOpen"
-  [@fadeInOut]
-  style="
-    width: 90%;
-    background-color: var(--white-color);
-    border-radius: 20px;
-    padding-top: 16px;
-    padding-left: 20px;
-    z-index: 1001;
-    position: fixed;
-    left: 0;
-    right: 0;
-    margin: auto;
-    top: 40%;
-  "
->
+<ul class="sorting-popup" *ngIf="isSortingPopupOpen" [@fadeInOut]>
   <li
     *ngFor="let item of modalData; let i = index; let last = last"
     [ngStyle]="{'border-bottom': !last ? '1px solid #C8CDD9' : ''}"
     (click)="selectCategory(item)"
-    class="clickable"
-    style="
-      padding-bottom: 10px;
-      margin-bottom: 10px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      padding-right: 20px;
-    "
+    class="sorting-popup-item"
   >
     <span class="t18">{{ item }}</span>
-    <div
-      style="
-        width: 16px;
-        height: 16px;
-        border: 1px solid #c8cdd9;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      "
-    >
-      <div
-        *ngIf="selectedCategory === item"
-        style="
-          width: 10px;
-          height: 10px;
-          background-color: var(--main-color);
-          border-radius: 50%;
-        "
-      ></div>
+    <div class="rounded">
+      <div *ngIf="selectedCategory === item" class="selected"></div>
     </div>
   </li>
 </ul>

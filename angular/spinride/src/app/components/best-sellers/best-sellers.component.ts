@@ -1,12 +1,11 @@
 import {Component, Input} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
-import {Subscription} from 'rxjs';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 import {svg} from '@svg/index';
-import {CartService} from '../../services/cart.service';
-import {BikeModel} from '../../models/bike.model';
+import {CartService} from '@services/cart.service';
+import {BikeModel} from '@models/bike.model';
 import {WishlistService} from '@services/wishlist.service';
 
 @Component({

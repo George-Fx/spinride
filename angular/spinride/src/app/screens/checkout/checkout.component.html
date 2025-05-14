@@ -1,153 +1,46 @@
-<app-header [title]="'Checkout'" [showGoBack]="true" />
-<div style="height: 10px"></div>
+<app-header [title]="'Checkout'" [showGoBack]="true" [showBorder]="true" />
 
-<main
-  style="
-    margin-left: 20px;
-    margin-right: 20px;
-    height: 100%;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    user-select: none;
-  "
->
-  <!-- my order -->
-  <section
-    style="
-      padding: 20px;
-      border-radius: 10px;
-      border: 1px solid var(--main-turquoise);
-      margin-bottom: 16px;
-    "
-  >
-    <!-- my order & price-->
-    <div
-      style="
-        display: flex;
-        flex-direction: row;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-bottom: 20px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid #dbe9f5;
-      "
-    >
-      <h4 style="text-transform: capitalize">My order</h4>
-      <h4>${{ total.toFixed(2) }}</h4>
-    </div>
-    <!-- bikes -->
-    <ul style="margin-bottom: 6px">
+<main class="main">
+  <div class="my-order">
+    <h4>My order</h4>
+    <h4>${{ total.toFixed(2).replace('.', ',') }}</h4>
+  </div>
+
+  <section class="order-section">
+    <ul class="bikes-list">
       <li
         *ngFor="let bike of list; let i = index; let last = last"
-        style="
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-        "
-        [ngStyle]="{
-          marginBottom: last ? '0px' : '10px',
-        }"
+        class="bike-item"
+        [ngClass]="{'last-child': last}"
       >
         <span class="t14">{{ bike.name }}</span>
-        <span class="t14">{{ bike.quantity }} x ${{ bike.price }}</span>
+        <span class="t14"
+          >{{ bike.quantity }} x ${{ bike.price.replace('.', ',') }}</span
+        >
       </li>
     </ul>
-    <!-- discount & delivery -->
-    <div
-      style="
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 10px;
-      "
-    >
+    <div class="discount-delivery">
       <span class="t14">Discount</span>
       <span class="t14">${{ discount }}</span>
     </div>
-    <div
-      style="
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-      "
-    >
+    <div class="discount-delivery">
       <span class="t14">Delivery</span>
-      <span class="t14">${{ delivery }}</span>
+      <span *ngIf="delivery === 0" class="delivery-free">Free</span>
+      <span *ngIf="delivery !== 0">${{ delivery }}</span>
     </div>
   </section>
 
-  <!-- Shipping details -->
-  <section>
-    <button
-      style="
-        background-color: var(--white-color);
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 16px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-      "
-      (click)="handleClick($event)"
-    >
-      <div style="display: flex; flex-direction: column; width: 100%">
-        <span
-          class="t14"
-          style="
-            margin-bottom: 10px;
-            color: var(--main-color);
-            font-weight: 500;
-          "
-        >
-          Shipping Details
-        </span>
-        <span class="t12"> 8000 S Kirkland Ave, Chicago, IL 6065... </span>
-      </div>
-      <img src="{{ svg.rightArrow }}" alt="Edit" />
-    </button>
-  </section>
+  <h5 class="shipping-info">Shipping & payment info</h5>
 
-  <!-- payment method -->
   <section>
-    <button
-      style="
-        background-color: var(--white-color);
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 16px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-      "
-      (click)="handleClick($event)"
-    >
-      <div style="display: flex; flex-direction: column; width: 100%">
-        <span
-          class="t14"
-          style="
-            margin-bottom: 10px;
-            color: var(--main-color);
-            font-weight: 500;
-          "
-        >
-          Payment Method
-        </span>
-        <span class="t12">4947 **** **** 3157</span>
-      </div>
-      <img src="{{ svg.rightArrow }}" alt="Edit" />
-    </button>
+    <div class="shipping-details">
+      <span class="t14">Darron Banks</span>
+      <span class="t14">8000 S Kirkland Ave, Chicago, IL 6065...</span>
+      <span class="t14">**** 4864</span>
+    </div>
   </section>
 </main>
 
-<!-- button -->
-<section style="padding: 20px">
+<section class="confirm-button">
   <app-button [routerLink]="'/order-successful'" [text]="'Confirm order'" />
 </section>

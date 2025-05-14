@@ -1,7 +1,7 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 import {svg} from '@svg/index';
-import {Promocode} from '../../models/promocode.model';
+import {Promocode} from '@models/promocode.model';
 
 @Component({
   selector: 'app-promocode-item',

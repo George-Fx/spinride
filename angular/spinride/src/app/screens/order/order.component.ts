@@ -5,11 +5,11 @@ import {takeUntil} from 'rxjs/operators';
 import {Component, OnInit} from '@angular/core';
 
 import {svg} from '@svg/index';
-import {BikeModel} from '../../models/bike.model';
+import {BikeModel} from '@models/bike.model';
 import {CartState} from '@services/cart.service';
 import {MetaService} from '@services/meta.service';
-import {CartService} from '../../services/cart.service';
-import {ModalService} from '../../services/modal.service';
+import {CartService} from '@services/cart.service';
+import {ModalService} from '@services/modal.service';
 
 @Component({
   selector: 'app-order',

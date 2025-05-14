@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 
-import {BikeModel} from '../../models/bike.model';
+import {BikeModel} from '@models/bike.model';
 
 @Component({
   selector: 'app-rating',

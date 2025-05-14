@@ -6,36 +6,16 @@
   [showBorder]="true"
 />
 
-<main
-  style="
-    margin-left: 20px;
-    margin-right: 20px;
-    height: 100%;
-    overflow-y: auto;
-    padding-top: 20px;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    user-select: none;
-  "
->
+<main class="main-container">
   <!-- bikes -->
   <section>
-    <ul
-      style="
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid #e2e2e2;
-        margin-bottom: 20px;
-      "
-    >
+    <ul class="bike-list">
       <app-order-item *ngFor="let bike of list" [bike]="bike" />
     </ul>
   </section>
 
   <!-- Apply promocode -->
-  <section style="margin-bottom: 16%" *ngIf="!promocodeApplied">
+  <section class="apply-promocode" *ngIf="!promocodeApplied">
     <button>
       <img
         src="{{ svg.applyPromocode }}"
@@ -46,72 +26,37 @@
   </section>
 
   <!-- promocode applied -->
-  <section style="margin-bottom: 16%" *ngIf="promocodeApplied">
+  <section class="promocode-applied" *ngIf="promocodeApplied">
     <button>
       <img src="{{ svg.promocodeApplied }}" alt="Promocode applied" />
     </button>
   </section>
 
   <!-- summary -->
-  <section style="margin-bottom: 20px">
-    <div
-      style="
-        border-radius: 12px;
-        padding: 20px;
-        background-color: var(--white-color);
-      "
-    >
+  <section class="summary">
+    <div class="summary-container">
       <!-- subtotal -->
-      <div
-        style="
-          display: flex;
-          justify-content: space-between;
-          flex-direction: row;
-          margin-bottom: 10px;
-        "
-      >
-        <h5 style="color: var(--main-color); font-weight: 500">Subtotal</h5>
-        <h5 style="color: var(--main-color)">
+      <div class="summary-row">
+        <h5 class="subtotal-title">Subtotal</h5>
+        <h5 class="subtotal-value">
           ${{ subtotal.toFixed(2).replace('.', ',') }}
         </h5>
       </div>
       <!-- discount -->
-      <div
-        style="
-          display: flex;
-          justify-content: space-between;
-          flex-direction: row;
-          margin-bottom: 10px;
-        "
-      >
-        <span class="t14" style="color: var(--text-color)">Discount</span>
-        <span class="t14">${{ discount }}</span>
+      <div class="summary-row">
+        <span class="discount-title t14">Discount</span>
+        <span class="discount-value t14">${{ discount }}</span>
       </div>
       <!-- delivery -->
-      <div
-        style="
-          display: flex;
-          justify-content: space-between;
-          flex-direction: row;
-          padding-bottom: 14px;
-          border-bottom: 1px solid #dbe9f5;
-          margin-bottom: 20px;
-        "
-      >
-        <span class="t14">Delivery</span>
+      <div class="summary-row delivery-row">
+        <span class="delivery-title t14">Delivery</span>
         <span *ngIf="delivery === 0">Free</span>
         <span *ngIf="delivery !== 0">${{ delivery }}</span>
       </div>
       <!-- total -->
-      <div
-        style="
-          display: flex;
-          justify-content: space-between;
-          flex-direction: row;
-        "
-      >
-        <h4>Total</h4>
-        <h4>${{ total.toFixed(2) }}</h4>
+      <div class="summary-row total-row">
+        <h4 class="total-title">Total</h4>
+        <h4 class="total-value">${{ total.toFixed(2) }}</h4>
       </div>
     </div>
   </section>

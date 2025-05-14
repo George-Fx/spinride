@@ -44,9 +44,14 @@ export class FilterComponent implements OnInit {
     'Organic',
   ];
 
+  suspensionTypes = ['No Suspension', 'Front Suspension', 'Full Suspension'];
+  driveTrain = ['Single-speed', 'Electronic shifting', 'Multiple gears '];
+
   selectedStatus: string = this.status[1];
   selectedCategory: string = this.categories[1];
   selectedPreference: string = this.dietaryPreferences[1];
+  selectedSuspensionType: string = this.suspensionType[1];
+  selectedDriveTrain: string = this.driveTrain[1];
 
   selectedColor = signal<string | null>(null);
 
@@ -58,8 +63,12 @@ export class FilterComponent implements OnInit {
     this.selectedCategory = category;
   }
 
-  selectPreference(preference: string): void {
-    this.selectedPreference = preference;
+  selectSuspensionType(suspensionType: string): void {
+    this.selectedSuspensionType = suspensionType;
+  }
+
+  selectDriveTrain(driveTrain: string): void {
+    this.selectedDriveTrain = driveTrain;
   }
 
   selectStatus(status: string): void {
@@ -76,8 +85,11 @@ export class FilterComponent implements OnInit {
   }
 
   resetFilters(): void {
-    this.selectedStatus = this.status[0];
-    // this.selectedCategory = this.categories[0];
-    this.selectedPreference = this.dietaryPreferences[0];
+    this.selectedStatus = this.status[1];
+    this.selectedCategory = this.categories[1];
+    this.selectedPreference = this.dietaryPreferences[1];
+    this.selectedSuspensionType = this.suspensionType[1];
+    this.selectedDriveTrain = this.driveTrain[1];
+    this.selectedColor.set(null);
   }
 }

@@ -1,8 +1,4 @@
-<img
-  src="./assets/bg/01.png"
-  alt="Add to cart"
-  style="position: absolute; width: 100%; height: auto; z-index: -1"
-/>
+<img src="./assets/bg/01.png" alt="Add to cart" class="background-image" />
 
 <app-header
   [burgerColor]="'white'"
@@ -22,47 +18,15 @@
   }"
 />
 
-<main
-  style="
-    height: 100%;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    user-select: none;
-  "
->
-  <section
-    style="
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-    "
-  >
-    <img
-      [alt]="'info saved'"
-      [src]="svg.shoppingBag"
-      style="width: 180px; margin: 0 auto; margin-bottom: 20px"
-    />
-    <h2
-      style="
-        text-align: center;
-        margin-bottom: 14px;
-        text-transform: capitalize;
-        color: var(--white-color);
-        text-transform: capitalize;
-      "
-    >
-      Your cart is empty!
-    </h2>
-    <p
-      class="t16"
-      style="text-align: center; color: #c3cde0; margin-bottom: 30px"
-    >
+<main class="main-container">
+  <section class="content-section">
+    <img [alt]="'info saved'" [src]="svg.shoppingBag" class="cart-image" />
+    <h2 class="cart-title">Your cart is empty!</h2>
+    <p class="cart-description t16">
       Looks like you haven't made <br />
       your order yet.
     </p>
-    <div style="max-width: 170px; margin: 0 auto; width: 100%">
+    <div class="button-container">
       <app-button [text]="'shop now'" [routerLink]="'/shop'" />
     </div>
   </section>

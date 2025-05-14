@@ -2,4 +2,51 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+
+  .loader {
+    background-color: #f5fafb;
+  }
+
+  .spacer {
+    height: 10px;
+  }
+
+  .main-container {
+    height: 100%;
+    overflow-y: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    user-select: none;
+    padding-bottom: 20px;
+  }
+
+  .promocode-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .promocode-input-container {
+    display: grid;
+    grid-template-columns: 1fr 30%;
+    gap: 14px;
+    height: 50px;
+  }
+
+  .add-promocode-button {
+    background-color: var(--main-orange);
+    height: 100%;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .add-promocode-text {
+    color: var(--white-color);
+    font-weight: 700;
+  }
 }

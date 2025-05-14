@@ -23,8 +23,8 @@ export class MyPromocodesEmptyComponent implements OnInit {
   }
 
   setMeta(): void {
-    this.metaService.setThemeColor('#161E2F');
-    this.metaService.setBackgroundColor('#161E2F');
+    this.metaService.setThemeColor('#161e2f');
+    this.metaService.setBackgroundColor('#F3F3F3');
   }
 
   setValue(): void {

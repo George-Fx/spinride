@@ -1,40 +1,9 @@
-<div
-  style="
-    display: flex;
-    width: 100%;
-    border-radius: 50px;
-    background-color: #fff;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    padding-left: 20px;
-    border: 1px solid #eeeeee;
-  "
-  [ngStyle]="containerStyle"
-  (click)="setValue()"
->
-  <div style="display: flex; flex: 1">
-    <span
-      style="
-        font-family: var(--mulish);
-        font-size: 16px;
-        color: var(--text-color);
-        margin-bottom: 3px;
-      "
-    >
+<div class="container" [ngStyle]="containerStyle" (click)="setValue()">
+  <div class="flex-container">
+    <span class="text-span">
       {{ value }}
     </span>
   </div>
-  <img
-    *ngIf="eyeOff"
-    alt="icon"
-    [src]="svg.eyeOff"
-    style="margin-right: 20px; margin-left: 20px; width: 16px; height: 16px"
-  />
-  <img
-    *ngIf="check"
-    alt="icon"
-    [src]="svg.check"
-    style="margin-right: 20px; margin-left: 20px"
-  />
+  <img *ngIf="eyeOff" alt="icon" [src]="svg.eyeOff" class="icon" />
+  <img *ngIf="check" alt="icon" [src]="svg.check" class="icon" />
 </div>

@@ -7,11 +7,9 @@ import {SignInComponent} from './screens/sign-in/sign-in.component';
 import {SignUpComponent} from './screens/sign-up/sign-up.component';
 import {ProfileComponent} from './screens/profile/profile.component';
 import {ReviewsComponent} from './screens/reviews/reviews.component';
-import {SignOutComponent} from './screens/sign-out/sign-out.component';
 import {CheckoutComponent} from './screens/checkout/checkout.component';
 import {InfoSavedComponent} from './screens/info-saved/info-saved.component';
 import {CategoriesComponent} from './screens/categories/categories.component';
-import {OnboardingComponent} from './screens/onboarding/onboarding.component';
 import {DescriptionComponent} from './screens/description/description.component';
 import {NewPasswordComponent} from './screens/new-password/new-password.component';
 import {OrderFailedComponent} from './screens/order-failed/order-failed.component';
@@ -35,7 +33,6 @@ import {PhoneNumberHasBeenVerifiedComponent} from './screens/phone-number-has-be
 
 // tab components
 import {HomeComponent} from './screens/home/home.component';
-import {MenuComponent} from './screens/menu/menu.component';
 import {BikeComponent} from './screens/bike/bike.component';
 import {OrderComponent} from './screens/order/order.component';
 import {WishlistComponent} from './screens/wishlist/wishlist.component';
@@ -49,10 +46,6 @@ export const routes: Routes = [
   {
     path: 'order',
     component: OrderComponent,
-  },
-  {
-    path: 'menu',
-    component: MenuComponent,
   },
   {
     path: 'shop',
@@ -112,11 +105,6 @@ export const routes: Routes = [
     data: {animation: 'BikePage'},
   },
   {
-    path: 'sign-out',
-    component: SignOutComponent,
-    data: {animation: 'SignOutPage'},
-  },
-  {
     path: 'phone-number-has-been-verified',
     component: PhoneNumberHasBeenVerifiedComponent,
     data: {animation: 'PhoneNumberHasBeenVerifiedPage'},
@@ -131,11 +119,6 @@ export const routes: Routes = [
   },
   {
     path: '',
-    component: OnboardingComponent,
-    data: {animation: 'OnboardingPage'},
-  },
-  {
-    path: 'sign-in',
     component: SignInComponent,
     data: {animation: 'SignInPage'},
   },

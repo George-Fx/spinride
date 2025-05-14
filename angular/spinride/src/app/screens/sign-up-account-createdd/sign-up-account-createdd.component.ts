@@ -17,6 +17,6 @@ export class SignUpAccountCreateddComponent implements OnInit {
 
   ngOnInit(): void {
     this.metaService.setThemeColor('#161E2F');
-    this.metaService.setBackgroundColor('#161E2F');
+    this.metaService.setBackgroundColor('#F3F3F3');
   }
 }

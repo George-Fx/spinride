@@ -1,6 +1,5 @@
 import {Component, Input} from '@angular/core';
 
-import {BikeModel} from '@models/bike.model';
 import {ReviewModel} from '@models/review.model';
 
 @Component({

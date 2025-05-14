@@ -3,6 +3,14 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
+  background-color: var(--main-color);
+
+  .background {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+  }
 
   .main-container {
     height: 100%;
@@ -12,6 +20,7 @@
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     user-select: none;
+    z-index: 2;
   }
 
   .section-container {
@@ -23,7 +32,10 @@
   }
 
   .status-image {
-    width: 180px;
+    max-width: 180px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 14px;
   }
 
   .account-created-title {
@@ -37,6 +49,7 @@
     text-align: center;
     color: #c3cde0;
     margin-bottom: 30px;
+    line-height: 1.7;
   }
 
   .button-container {

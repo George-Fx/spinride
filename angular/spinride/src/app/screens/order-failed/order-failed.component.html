@@ -1,54 +1,19 @@
-<img
-  alt="bg"
-  src="./assets/bg/01.png"
-  style="position: absolute; width: 100%; height: auto; z-index: -1"
-/>
+<img alt="bg" src="./assets/bg/01.png" class="background-image" />
 
-<main
-  style="
-    height: 100%;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    user-select: none;
-  "
->
-  <section
-    style="
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      height: 100%;
-      padding-left: 20px;
-      padding-right: 20px;
-    "
-  >
+<main class="main-container">
+  <section class="content-section">
     <img
       [alt]="'info saved'"
       [className]="'status-image'"
       [src]="svg.failedCross"
-      style="width: 180px"
+      class="failed-image"
     />
-    <h2
-      style="text-align: center; margin-bottom: 4%; text-transform: capitalize"
-    >
-      Your order has failed!
-    </h2>
-    <p
-      style="
-        text-align: center;
-        margin-bottom: 30px;
-        color: #c3cde0;
-        font-size: 16px;
-        line-height: 1.7;
-      "
-    >
+    <h2 class="failed-title">Your order has failed!</h2>
+    <p class="failed-description">
       Something went wrong. Please try <br />
       again to continue your order.
     </p>
-    <div
-      style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px"
-    >
+    <div class="button-grid">
       <app-button
         [text]="'my profile'"
         [colorScheme]="'secondary'"

@@ -4,6 +4,35 @@
   width: 100%;
   flex-direction: column;
 
+  .main-container {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 20px;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    user-select: none;
+  }
+
+  .shop-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .filters {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  .filters-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   .shop__search {
     height: var(--shop-search-height);
     position: fixed;
@@ -18,7 +47,7 @@
   }
 
   .sorting-popup-backdrop {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -27,8 +56,48 @@
     z-index: 1000;
     opacity: 0;
     animation: fadeIn 300ms ease-in forwards;
-    max-width: var(--screen-width);
     margin: 0 auto;
+  }
+
+  .sorting-popup {
+    width: 90%;
+    background-color: var(--white-color);
+    border-radius: 20px;
+    padding-top: 16px;
+    padding-left: 20px;
+    z-index: 1001;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 40%;
+  }
+
+  .rounded {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #c8cdd9;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .selected {
+    width: 10px;
+    height: 10px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+  }
+
+  .sorting-popup-item {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 20px;
   }
 
   @keyframes fadeIn {

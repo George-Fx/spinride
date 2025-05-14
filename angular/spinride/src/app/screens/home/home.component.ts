@@ -2,14 +2,12 @@ import {Subject} from 'rxjs';
 import {Component} from '@angular/core';
 import {takeUntil} from 'rxjs/operators';
 
-import {Banner} from '../../models/banner.model';
-import {MenuModel} from '../../models/menu.model';
+import {Banner} from '@models/banner.model';
 import {ApiService} from '@services/api.service';
-import {ReviewModel} from '../../models/review.model';
+import {ReviewModel} from '@models/review.model';
 import {MetaService} from '@services/meta.service';
-import {BikeModel} from '../../models/bike.model';
-import {ModalService} from '../../services/modal.service';
-import {CarouselModel} from '../../models/carousel.model';
+import {BikeModel} from '@models/bike.model';
+import {ModalService} from '@services/modal.service';
 
 @Component({
   selector: 'app-home',
@@ -20,15 +18,11 @@ import {CarouselModel} from '../../models/carousel.model';
 export class HomeComponent {
   banners: Banner[] = [];
   reviews: ReviewModel[] = [];
-  carousel: CarouselModel[] = [];
-  categories: MenuModel[] = [];
+  categories: any[] = [];
 
   bikes: BikeModel[] = [];
   bikesIsLoading = true;
   bikesError = '';
-
-  carouselIsLoading = true;
-  carouselError = '';
 
   categoriesIsLoading = true;
   categoriesError = '';
@@ -50,24 +44,20 @@ export class HomeComponent {
     this.getBikes();
   }
 
-  private modalSubscribe(): void {
+  private setMeta(): void {
     this.modalService.isOpen$
       .pipe(takeUntil(this.destroy$))
       .subscribe(state => {
         this.modalIsOpen = state;
+
         if (this.modalIsOpen) {
-          this.metaService.setThemeColor('#fff');
+          this.metaService.setThemeColor('#161E2F');
           this.metaService.setBackgroundColor('#F3F3F3');
         } else {
           this.metaService.setThemeColor('#F3F3F3');
           this.metaService.setBackgroundColor('#F3F3F3');
         }
       });
-  }
-
-  private setMeta(): void {
-    this.metaService.setThemeColor('#F3F3F3');
-    this.metaService.setBackgroundColor('#F3F3F3');
   }
 
   private getBikes(): void {

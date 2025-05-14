@@ -1,31 +1,17 @@
 <li
   *ngIf="promocode"
-  style="
-    background-color: var(--white-color);
-    border-radius: 12px;
-    width: 100%;
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 17px;
-    position: relative;
-  "
+  class="promocode-item"
   (click)="
     $event.stopPropagation();
     $event.preventDefault();
     copyToClipboard(promocode.code || '')
   "
 >
-  <img
-    [src]="promocode.image"
-    alt="promocode"
-    style="width: 80px; height: 90px; border-radius: 12px"
-  />
-  <div style="display: flex; flex-direction: column">
-    <h5 style="margin-bottom: 3px">{{ promocode.code }}</h5>
+  <img [src]="promocode.image" alt="promocode" class="promocode-image" />
+  <div class="promocode-details">
+    <h5 class="promocode-code">{{ promocode.code }}</h5>
     <span
-      style="font-family: var(--mulish); font-weight: 600; font-size: 16px"
+      class="promocode-discount"
       [ngStyle]="{
         color:
           promocode.discount >= 50
@@ -36,9 +22,9 @@
       }"
       >{{ promocode.discount }}% off
     </span>
-    <span class="t14" style="margin-top: 3px">{{ promocode.expires_at }}</span>
+    <span class="t14 promocode-expiry">{{ promocode.expires_at }}</span>
   </div>
-  <div style="padding: 20px; position: absolute; right: 0; top: 0">
+  <div class="promocode-copy">
     <img [src]="svg.copy" />
   </div>
 </li>
