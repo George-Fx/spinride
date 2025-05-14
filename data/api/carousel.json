@@ -1,0 +1,16 @@
+{
+  "carousel": [
+    {
+      "id": 1,
+      "image": "https://spinride-data.vercel.app/assets/banners/01.jpg"
+    },
+    {
+      "id": 2,
+      "image": "https://spinride-data.vercel.app/assets/banners/01.jpg"
+    },
+    {
+      "id": 3,
+      "image": "https://spinride-data.vercel.app/assets/banners/01.jpg"
+    }
+  ]
+}

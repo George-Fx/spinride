@@ -38,6 +38,7 @@ import {VerifyYourPhoneNumberComponent} from './screens/verify-your-phone-number
 import {PhoneNumberHasBeenVerifiedComponent} from './screens/phone-number-has-been-verified/phone-number-has-been-verified.component';
 import {VerifyYourEmailComponent} from './screens/verify-your-email/verify-your-email.component';
 import {EmailHasBeenVerifiedComponent} from './screens/email-has-been-verified/email-has-been-verified.component';
+import { HomeCarouselComponent } from './components/home-carousel/home-carousel.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import {EmailHasBeenVerifiedComponent} from './screens/email-has-been-verified/e
     PhoneNumberHasBeenVerifiedComponent,
     VerifyYourEmailComponent,
     EmailHasBeenVerifiedComponent,
+    HomeCarouselComponent,
   ],
   imports: [
     BrowserModule,

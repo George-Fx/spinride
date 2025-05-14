@@ -10,6 +10,9 @@
 />
 
 <main class="main-container" *ngIf="!isLoading">
+  <!-- CAROUSEL -->
+  <app-home-carousel />
+
   <!-- BANNER -->
   <section class="banner-section">
     <a [routerLink]="['/bike', '1']">
