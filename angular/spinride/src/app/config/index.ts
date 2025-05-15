@@ -1,4 +1,4 @@
-const MAIN_URL = 'https://spinride-data.vercel.app';
+const MAIN_URL = 'https://spinride-data2.vercel.app';
 
 const GET_BIKES = `${MAIN_URL}/api/bikes.json`;
 const GET_ORDERS = `${MAIN_URL}/api/orders.json`;
