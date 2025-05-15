@@ -35,14 +35,13 @@
   <a *ngIf="showBasket" [routerLink]="['/order']" class="basket-link">
     <div class="basket-indicator">
       <span class="basket-total">
-        <!-- ${{
+        ${{
           total.toFixed(2) === '0.00'
             ? '0'
             : total.toFixed(2) === '-0.00'
             ? '0'
             : total.toFixed(2)
-        }} -->
-        {{ total }}
+        }}
       </span>
     </div>
     <img alt="basket" src="assets/svg/basket.svg" />
