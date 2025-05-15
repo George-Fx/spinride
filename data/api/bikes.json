@@ -27,7 +27,7 @@
       "isNew": true,
       "isTop": false,
       "ratingCount": 0,
-      "price": "2.200",
+      "price": 2200,
       "isFeatured": true,
       "isBestSeller": true
     },
@@ -58,7 +58,7 @@
       "isNew": true,
       "isTop": false,
       "ratingCount": 0,
-      "price": "450",
+      "price": 450,
       "isFeatured": true,
       "isBestSeller": true,
       "oldPrice": null
@@ -90,10 +90,10 @@
       "isNew": false,
       "isTop": true,
       "ratingCount": 0,
-      "price": "1.200",
+      "price": 1200,
       "isFeatured": true,
       "isBestSeller": true,
-      "oldPrice": "1.500"
+      "oldPrice": 1500
     },
     {
       "id": 4,
@@ -122,7 +122,7 @@
       "isNew": true,
       "isTop": false,
       "ratingCount": 0,
-      "price": "2.200",
+      "price": 2200,
       "isFeatured": true,
       "isBestSeller": true,
       "oldPrice": null
@@ -154,7 +154,7 @@
       "isNew": true,
       "isTop": false,
       "ratingCount": 2,
-      "price": "920",
+      "price": 920,
       "isFeatured": true,
       "isBestSeller": true,
       "oldPrice": null
@@ -186,7 +186,7 @@
       "isNew": true,
       "isTop": false,
       "ratingCount": 2,
-      "price": "1.200",
+      "price": 1200,
       "isFeatured": true,
       "isBestSeller": true,
       "oldPrice": null

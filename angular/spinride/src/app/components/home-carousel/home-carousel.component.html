@@ -1,1 +1,26 @@
-<p>home-carousel works!</p>
+<section class="carousel-section">
+  <owl-carousel-o
+    [options]="customOptions"
+    (translated)="onSlideChange($event)"
+  >
+    <ng-template
+      carouselSlide
+      *ngFor="let item of carousel; let i = index"
+      class="item"
+    >
+      <a [routerLink]="['/bike', '1']">
+        <img [src]="item.image" class="carousel-image" />
+      </a>
+    </ng-template>
+  </owl-carousel-o>
+  <ul class="carousel-indicators">
+    <li
+      *ngFor="let item of carousel; let i = index"
+      class="carousel-indicator-item"
+      [ngStyle]="{
+          backgroundColor:
+            i === activeSlide ? '#fff' :  'rgba(255, 255, 255, 0.5)',
+        }"
+    ></li>
+  </ul>
+</section>

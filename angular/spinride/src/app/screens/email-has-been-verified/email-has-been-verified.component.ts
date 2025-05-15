@@ -25,7 +25,7 @@ export class EmailHasBeenVerifiedComponent implements OnInit {
 
   setMeta(): void {
     this.metaService.setThemeColor('#161E2F');
-    this.metaService.setBackgroundColor('#161E2F');
+    this.metaService.setBackgroundColor('#F3F3F3');
   }
 
   setEmailVerification(): void {

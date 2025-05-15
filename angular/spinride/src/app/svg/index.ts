@@ -3,6 +3,7 @@ export const svg = {
   new: 'assets/svg/new.svg',
   key: 'assets/svg/key.svg',
   tag: 'assets/svg/tag.svg',
+  exit: 'assets/svg/exit.svg',
   copy: 'assets/svg/copy.svg',
   list: 'assets/svg/list.svg',
   user: 'assets/svg/user.svg',

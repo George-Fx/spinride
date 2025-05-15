@@ -27,6 +27,8 @@ export class OrderComponent implements OnInit {
   isOpen = false;
   promocodeApplied = false;
 
+  value = 'Code2024';
+
   modalIsOpen = false;
   private destroy$ = new Subject<void>();
 
@@ -85,5 +87,12 @@ export class OrderComponent implements OnInit {
           this.metaService.setBackgroundColor('#F3F3F3');
         }
       });
+  }
+
+  setValue(): void {
+    const result = prompt('Enter text:', this.value);
+    if (result !== null) {
+      this.value = result;
+    }
   }
 }

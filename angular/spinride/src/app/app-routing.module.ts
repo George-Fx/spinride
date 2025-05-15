@@ -7,6 +7,7 @@ import {SignInComponent} from './screens/sign-in/sign-in.component';
 import {SignUpComponent} from './screens/sign-up/sign-up.component';
 import {ProfileComponent} from './screens/profile/profile.component';
 import {ReviewsComponent} from './screens/reviews/reviews.component';
+import {SignOutComponent} from './screens/sign-out/sign-out.component';
 import {CheckoutComponent} from './screens/checkout/checkout.component';
 import {InfoSavedComponent} from './screens/info-saved/info-saved.component';
 import {CategoriesComponent} from './screens/categories/categories.component';
@@ -28,6 +29,7 @@ import {OrderHistoryEmptyComponent} from './screens/order-history-empty/order-hi
 import {EmailHasBeenVerifiedComponent} from './screens/email-has-been-verified/email-has-been-verified.component';
 import {VerifyYourPhoneNumberComponent} from './screens/verify-your-phone-number/verify-your-phone-number.component';
 import {SignUpAccountCreateddComponent} from './screens/sign-up-account-createdd/sign-up-account-createdd.component';
+import {ShippingAndPaymentInfoComponent} from './screens/shipping-and-payment-info/shipping-and-payment-info.component';
 import {ForgotPasswordSentEmailComponent} from './screens/forgot-password-sent-email/forgot-password-sent-email.component';
 import {PhoneNumberHasBeenVerifiedComponent} from './screens/phone-number-has-been-verified/phone-number-has-been-verified.component';
 
@@ -62,6 +64,11 @@ export const routes: Routes = [
     data: {animation: 'NewPasswordPage'},
   },
   {
+    path: 'sign-out',
+    component: SignOutComponent,
+    data: {animation: 'SignOutPage'},
+  },
+  {
     path: 'description/:id',
     component: DescriptionComponent,
     data: {animation: 'DescriptionPage'},
@@ -83,6 +90,11 @@ export const routes: Routes = [
     path: 'verify-your-phone-number',
     component: VerifyYourPhoneNumberComponent,
     data: {animation: 'VerifyYourPhoneNumberPage'},
+  },
+  {
+    path: 'shipping-and-payment-info',
+    component: ShippingAndPaymentInfoComponent,
+    data: {animation: 'ShippingAndPaymentInfoPage'},
   },
   {
     path: 'verification-email',

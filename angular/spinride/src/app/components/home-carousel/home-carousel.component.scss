@@ -1,0 +1,29 @@
+:host {
+  .carousel-section {
+    position: relative;
+    margin-bottom: 40px;
+    margin-top: 6px;
+  }
+
+  .carousel-image {
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    border-radius: 12px;
+  }
+
+  .carousel-indicators {
+    display: flex;
+    gap: 4px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+  }
+
+  .carousel-indicator-item {
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+  }
+}

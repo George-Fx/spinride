@@ -15,6 +15,8 @@ export class ShopItemComponent implements OnInit {
   @Input() bike!: BikeModel;
   svg = svg;
 
+  cart: BikeModel[] = [];
+
   randomNumber!: number;
 
   constructor(
@@ -25,8 +27,15 @@ export class ShopItemComponent implements OnInit {
   wishlist: BikeModel[] = [];
 
   ngOnInit(): void {
+    this.setCart();
     this.getWishlist();
     this.randomNumber = this.getRandomNumber();
+  }
+
+  setCart(): void {
+    this.cartService.cartState$.subscribe(bikes => {
+      this.cart = bikes.list;
+    });
   }
 
   getRandomNumber(): number {
@@ -49,5 +58,9 @@ export class ShopItemComponent implements OnInit {
 
   ifInWishlist(bike: BikeModel): boolean {
     return this.wishlist.some(item => item.id === bike.id);
+  }
+
+  ifInCart(bike: BikeModel): boolean {
+    return this.cart.some(item => item.id === bike.id);
   }
 }

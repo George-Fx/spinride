@@ -1,0 +1,47 @@
+<app-header [showGoBack]="true" [title]="'Shipping info'" />
+
+<main class="main-container">
+  <app-input-field
+    [check]="true"
+    [type]="'email'"
+    [value]="'Darron Banks'"
+    class="input-field"
+    [containerStyle]="{'margin-bottom': '14px'}"
+  />
+  <app-input-field
+    [type]="'email'"
+    [value]="'+17123456789'"
+    class="input-field"
+    [containerStyle]="{'margin-bottom': '14px'}"
+  />
+  <app-input-field
+    [type]="'email'"
+    [value]="'darronbanks@mail.com'"
+    class="input-field"
+    [containerStyle]="{'margin-bottom': '14px'}"
+  />
+  <app-input-field
+    [type]="'email'"
+    [value]="'Enter your address'"
+    class="input-field"
+    [containerStyle]="{'margin-bottom': '14px'}"
+  />
+  <app-input-field
+    [type]="'email'"
+    [value]="'7741 9532 1234 5678'"
+    class="input-field"
+    [containerStyle]="{'margin-bottom': '14px'}"
+  />
+  <div class="grid-container">
+    <button (click)="setCvv()">
+      <span class="t16">{{ cvv }}</span>
+    </button>
+    <button (click)="setExpiryDate()">
+      <span class="t16">{{ expiryDate }}</span>
+    </button>
+  </div>
+</main>
+
+<section>
+  <app-button [text]="'proceed to checkout'" [routerLink]="'/checkout'" />
+</section>

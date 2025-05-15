@@ -2,8 +2,10 @@
   <a
     (onClick)="$event.stopPropagation(); $event.preventDefault()"
     [routerLink]="['/bike', bike.id]"
+    class="bike-image-container"
   >
     <img [src]="bike.image" alt="bike" />
+
     <button
       class="wishlist"
       (click)="
@@ -27,8 +29,18 @@
       (click)="
         $event.stopPropagation(); $event.preventDefault(); addToCart(bike)
       "
+      *ngIf="!ifInCart(bike)"
     >
-      <img [src]="svg.bag" alt="right arrow" />
+      <img [src]="svg.bag" alt="right arrow" class="cart-icon" />
+    </button>
+    <button
+      class="cart"
+      (click)="
+        $event.stopPropagation(); $event.preventDefault(); addToCart(bike)
+      "
+      *ngIf="ifInCart(bike)"
+    >
+      <img [src]="svg.addedToCart" alt="right arrow" class="cart-icon" />
     </button>
     <div class="sale-badge" *ngIf="bike?.oldPrice">
       <span>sale</span>

@@ -1,0 +1,20 @@
+<img alt="bg" src="./assets/bg/01.png" class="background-image" />
+
+<main class="main-container">
+  <section class="content-section">
+    <img [alt]="'info saved'" [src]="svg.signOut" class="sign-out-image" />
+    <h2 class="sign-out-title">Are you sure?</h2>
+    <p class="sign-out-description">
+      You will need to enter your email and <br />
+      password again.
+    </p>
+    <div class="button-grid">
+      <app-button
+        [text]="'Sure'"
+        [colorScheme]="'secondary'"
+        [routerLink]="['/']"
+      />
+      <app-button [text]="'Cancel'" [routerLink]="['/profile']" />
+    </div>
+  </section>
+</main>

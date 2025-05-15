@@ -90,13 +90,22 @@
 
   .rating-list {
     display: flex;
+    flex-direction: row;
+    align-items: center;
     list-style: none;
     padding: 0;
     margin-bottom: 7px;
   }
 
   .rating-item {
+    margin-top: 2px;
     margin-right: 4px;
+  }
+
+  .rating-text {
+    font-size: 12px;
+    line-height: 1.7px;
+    color: var(--text-color);
   }
 
   .bike-name {

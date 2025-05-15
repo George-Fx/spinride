@@ -20,6 +20,7 @@ export interface BikeModel {
   isFeatured: boolean;
   isBestSeller: boolean;
   oldPrice: string;
+  randomRating?: number;
 }
 
 export interface BikesResponse {

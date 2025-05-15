@@ -29,6 +29,40 @@
     margin-bottom: 16%;
   }
 
+  .apply-promocode {
+    gap: 16px;
+    display: grid;
+    grid-template-columns: 1fr 100px;
+  }
+
+  .apply-promocode-button {
+    height: 50px;
+    width: 100px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-orange);
+  }
+
+  .apply-promocode-text {
+    color: var(--white-color);
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .apply-promocode-container {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid #eeeeee;
+    border-radius: 50px;
+    background-color: var(--white-color);
+  }
+
   .summary {
     margin-bottom: 20px;
   }
@@ -68,5 +102,21 @@
   .discount-value,
   .total-value {
     color: var(--main-color);
+  }
+
+  .delivery-free-text {
+    color: #51ba74;
+  }
+
+  .delivery-title {
+    color: var(--text-color);
+  }
+
+  .discount-title {
+    color: var(--text-color);
+  }
+
+  .discount-value {
+    color: var(--text-color);
   }
 }

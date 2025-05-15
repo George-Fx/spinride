@@ -22,6 +22,6 @@ export class InfoSavedComponent {
 
   private setMeta(): void {
     this.metaService.setThemeColor('#161E2F');
-    this.metaService.setBackgroundColor('#161E2F');
+    this.metaService.setBackgroundColor('#F3F3F3');
   }
 }

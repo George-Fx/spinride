@@ -1,9 +1,12 @@
+import {Subject} from 'rxjs';
 import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
+import {takeUntil} from 'rxjs/operators';
 import {Component, OnInit} from '@angular/core';
 
 import {BikeModel} from '@models/bike.model';
 import {MetaService} from '@services/meta.service';
+import {ModalService} from '@services/modal.service';
 import {WishlistState} from '@services/wishlist.service';
 import {WishlistService} from '@services/wishlist.service';
 
@@ -17,14 +20,18 @@ export class WishlistComponent implements OnInit {
   wishlist: BikeModel[] = [];
   wishlistState$!: Observable<WishlistState>;
 
+  private destroy$ = new Subject<void>();
+  modalIsOpen = false;
+
   constructor(
     private router: Router,
     private metaService: MetaService,
+    private modalService: ModalService,
     private wishlistService: WishlistService,
   ) {}
 
   ngOnInit(): void {
-    this.initializeMeta();
+    this.setMeta();
     this.initializeSubscription();
   }
 
@@ -41,8 +48,19 @@ export class WishlistComponent implements OnInit {
     });
   }
 
-  private initializeMeta(): void {
-    this.metaService.setThemeColor('#F3F3F3');
-    this.metaService.setBackgroundColor('#F3F3F3');
+  private setMeta(): void {
+    this.modalService.isOpen$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(state => {
+        this.modalIsOpen = state;
+
+        if (this.modalIsOpen) {
+          this.metaService.setThemeColor('#161E2F');
+          this.metaService.setBackgroundColor('#F3F3F3');
+        } else {
+          this.metaService.setThemeColor('#F3F3F3');
+          this.metaService.setBackgroundColor('#F3F3F3');
+        }
+      });
   }
 }

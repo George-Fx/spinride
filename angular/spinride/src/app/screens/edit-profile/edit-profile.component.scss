@@ -3,23 +3,23 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
-}
 
-main {
-  margin-left: 20px;
-  margin-right: 20px;
-  height: 100%;
-  overflow-y: auto;
-  padding-top: 30px;
-  padding-bottom: 20px;
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
-  user-select: none;
-}
+  main {
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 100%;
+    overflow-y: auto;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    user-select: none;
+  }
 
-section {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-bottom: 14px;
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
 }

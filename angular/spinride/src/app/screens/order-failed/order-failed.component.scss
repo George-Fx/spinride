@@ -2,12 +2,13 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  background-color: var(--main-color);
 
   .background-image {
     position: absolute;
     width: 100%;
     height: auto;
-    z-index: -1;
+    z-index: 1;
   }
 
   .main-container {
@@ -16,6 +17,7 @@
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     user-select: none;
+    z-index: 2;
   }
 
   .content-section {
@@ -29,6 +31,8 @@
 
   .failed-image {
     width: 180px;
+    margin: 0 auto;
+    margin-bottom: 14px;
   }
 
   .failed-title {

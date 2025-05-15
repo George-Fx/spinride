@@ -92,7 +92,10 @@
   }
 
   .bike-name {
+    font-size: 14px;
     margin-bottom: 3px;
+    line-height: 1.5;
+    color: var(--text-color);
   }
 
   .bike-price-container {
@@ -106,14 +109,18 @@
     color: var(--text-color);
     font-weight: 500;
     font-size: 12px;
+    line-height: 1.5;
     font-family: var(--mulish);
     text-decoration: line-through;
+    margin-top: 2px;
     text-decoration-color: var(--text-color);
   }
 
   .current-price {
+    font-size: 14px;
     color: var(--main-color);
     font-weight: 500;
+    line-height: 1.5;
   }
 
   /* Extracted styles from home-featured.component.html */

@@ -38,6 +38,7 @@
 .search-button {
   position: absolute;
   right: 50%;
+  user-select: none;
   transform: translateX(50%);
 }
 

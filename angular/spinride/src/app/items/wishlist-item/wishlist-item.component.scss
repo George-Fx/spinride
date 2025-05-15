@@ -7,6 +7,7 @@ li {
     width: 100%;
     height: 100px;
     display: grid;
+    border: none;
     grid-template-columns: 100px 1fr 33px;
     gap: 14px;
     position: relative;
@@ -76,7 +77,6 @@ li {
           flex-direction: row;
           align-items: center;
           gap: 4px;
-          margin-top: 3px;
         }
 
         span {
@@ -97,5 +97,38 @@ li {
       bottom: 0;
       right: 0;
     }
+  }
+
+  .rating-item {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .rating-list {
+    margin-top: 2px;
+  }
+
+  .sale-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #66a97d;
+    border-radius: 6px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .sale-text {
+    font-size: 8px;
+    text-transform: uppercase;
+    font-family: var(--mulish);
+    font-weight: 700;
+    color: var(--white-color);
+    line-height: 1;
   }
 }

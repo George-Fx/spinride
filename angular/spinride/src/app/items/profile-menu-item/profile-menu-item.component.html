@@ -4,6 +4,10 @@
     <h5 class="profile-menu-title" [ngStyle]="titleStyle">
       {{ title }}
     </h5>
-    <img [src]="svg.rightArrow" alt="icon" *ngIf="routerLink !== '/'" />
+    <img
+      [src]="svg.rightArrow"
+      alt="icon"
+      *ngIf="routerLink !== '/' && routerLink !== '#'"
+    />
   </a>
 </li>

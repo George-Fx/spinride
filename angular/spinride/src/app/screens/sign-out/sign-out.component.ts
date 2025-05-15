@@ -1,16 +1,18 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 import {svg} from '@svg/index';
+import {URLS} from '@config/index';
 import {MetaService} from '@services/meta.service';
 
 @Component({
-  selector: 'app-wishlist-empty',
+  selector: 'app-sign-out',
   standalone: false,
-  templateUrl: './wishlist-empty.component.html',
-  styleUrl: './wishlist-empty.component.scss',
+  templateUrl: './sign-out.component.html',
+  styleUrl: './sign-out.component.scss',
 })
-export class WishlistEmptyComponent implements OnInit {
-  public svg = svg;
+export class SignOutComponent {
+  svg = svg;
+  URLS = URLS;
 
   constructor(private metaService: MetaService) {}
 

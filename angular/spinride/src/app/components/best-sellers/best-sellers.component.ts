@@ -30,6 +30,10 @@ export class BestSellersComponent {
   ngOnInit(): void {
     this.setCart();
     this.setWishlist();
+    this.bikes = this.bikes.map(bike => ({
+      ...bike,
+      randomRating: this.getRandomRating(),
+    }));
   }
 
   setWishlist(): void {
@@ -62,5 +66,9 @@ export class BestSellersComponent {
 
   ifInCart(bike: BikeModel): boolean {
     return this.cart.some(item => item.id === bike.id);
+  }
+
+  getRandomRating(): number {
+    return Math.floor(Math.random() * (99 - 10 + 1)) + 10;
   }
 }

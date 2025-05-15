@@ -40,7 +40,7 @@
     <app-profile-menu-item
       [icon]="isPhoneVerified ? svg.smartphoneGray : svg.smartphoneOrange"
       [title]="isPhoneVerified ? 'Phone verified' : 'Verify phone number'"
-      [routerLink]="'/verify-your-phone-number'"
+      [routerLink]="isPhoneVerified ? '#' : '/verify-your-phone-number'"
       [titleStyle]="{
         color: isPhoneVerified ? 'var(--gray-color)' : 'var(--main-orange)'
       }"
@@ -48,15 +48,15 @@
     <app-profile-menu-item
       [icon]="isEmailVerified ? svg.mailGray : svg.mailOrange"
       [title]="isEmailVerified ? 'Email verified' : 'Verify email'"
-      [routerLink]="'/verify-your-email'"
+      [routerLink]="isEmailVerified ? '#' : '/verify-your-email'"
       [titleStyle]="{
         color: isEmailVerified ? 'var(--gray-color)' : 'var(--main-orange)'
       }"
     />
     <app-profile-menu-item
-      [icon]="svg.gift"
+      [icon]="svg.exit"
       [title]="'Sign out'"
-      [routerLink]="'/'"
+      [routerLink]="'/sign-out'"
     />
     <app-profile-menu-item
       [icon]="svg.cross"

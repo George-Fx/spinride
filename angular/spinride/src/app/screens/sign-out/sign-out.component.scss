@@ -22,34 +22,37 @@
   }
 
   .content-section {
-    height: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
-  .cart-image {
+  .sign-out-image {
     width: 180px;
     margin: 0 auto;
-    margin-bottom: 20px;
-  }
-
-  .cart-title {
-    text-align: center;
     margin-bottom: 14px;
-    text-transform: capitalize;
-    color: var(--white-color);
   }
 
-  .cart-description {
+  .sign-out-title {
     text-align: center;
-    color: #c3cde0;
-    margin-bottom: 30px;
+    margin-bottom: 4%;
+    text-transform: capitalize;
   }
 
-  .button-container {
-    max-width: 170px;
-    margin: 0 auto;
-    width: 100%;
+  .sign-out-description {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #c3cde0;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .button-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
 }

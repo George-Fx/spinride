@@ -3,7 +3,7 @@
 <main class="main">
   <div class="my-order">
     <h4>My order</h4>
-    <h4>${{ total.toFixed(2).replace('.', ',') }}</h4>
+    <h4>${{ total.toFixed(3) }}</h4>
   </div>
 
   <section class="order-section">
@@ -14,9 +14,7 @@
         [ngClass]="{'last-child': last}"
       >
         <span class="t14">{{ bike.name }}</span>
-        <span class="t14"
-          >{{ bike.quantity }} x ${{ bike.price.replace('.', ',') }}</span
-        >
+        <span class="t14">{{ bike.quantity }} x ${{ bike.price }}</span>
       </li>
     </ul>
     <div class="discount-delivery">

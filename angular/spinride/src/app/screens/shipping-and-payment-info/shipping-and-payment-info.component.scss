@@ -1,0 +1,42 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  main {
+    margin-left: 20px;
+    margin-right: 20px;
+    overflow-y: auto;
+    height: 100%;
+    margin-top: 30px;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    user-select: none;
+  }
+
+  .input-field {
+    margin-bottom: 14px;
+  }
+
+  div.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+  }
+
+  button {
+    height: 50px;
+    border-radius: 50px;
+    background-color: var(--white-color);
+    border: 1px solid #eeeeee;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  section {
+    padding: 20px;
+  }
+}
