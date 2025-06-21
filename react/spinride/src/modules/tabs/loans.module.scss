@@ -1,0 +1,80 @@
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.sectionLabel {
+  margin-bottom: 12px;
+  display: block;
+}
+
+.loansList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.loanCard {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--white-color);
+}
+
+.loanTop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row;
+  border-bottom: 1px solid #ced6e1;
+  padding-bottom: 20px;
+  margin-bottom: 14px;
+}
+
+.loanAmount {
+  margin-right: auto;
+  font-size: 20px;
+}
+
+.loanAmountFraction {
+  font-size: 14px;
+}
+
+.loanAmountCurrency {
+  font-size: 14px;
+  font-weight: 700;
+  margin-left: 4px;
+}
+
+.loanActionBtn {
+  background-color: #3eb290;
+  height: 30px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.loanActionText {
+  font-size: 12px;
+  color: var(--white-color);
+  font-weight: 600;
+}
+
+.loanGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+}
+
+.loanGridMb {
+  margin-bottom: 16px;
+}

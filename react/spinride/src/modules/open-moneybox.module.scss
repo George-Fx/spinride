@@ -1,0 +1,128 @@
+.openMoneyboxMain {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.openMoneyboxSection {
+  margin-bottom: 14px;
+}
+.openMoneyboxSectionCard {
+  margin-bottom: 30px;
+}
+.openMoneyboxSectionPeriod {
+  margin-bottom: 20px;
+}
+
+.openMoneyboxLabel {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.openMoneyboxAmountBtn {
+  background-color: var(--white-color);
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  align-self: flex-start;
+}
+.openMoneyboxAmount {
+  font-size: 28px;
+  font-weight: 500;
+}
+.openMoneyboxAmountFrac {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.openMoneyboxCardsList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.openMoneyboxCardBtn {
+  padding: 12px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  border: 1px solid var(--white-color);
+}
+.openMoneyboxCardBtnSelected {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.openMoneyboxCardImg {
+  background: linear-gradient(
+    110.75deg,
+    #c285ab 0%,
+    #7aa1ce 49.34%,
+    #1b1f6a 100.78%
+  );
+  width: 72px;
+  height: 46px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.openMoneyboxCardImgText {
+  color: var(--white-color);
+  font-size: 12px;
+  margin: 10px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.openMoneyboxCardDetails {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.openMoneyboxPeriodList {
+  display: flex;
+  flex-direction: column;
+}
+.openMoneyboxPeriodItem {
+  margin-bottom: 10px;
+}
+.openMoneyboxPeriodBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.openMoneyboxPeriodRadio {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ced6e1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.openMoneyboxPeriodRadioDot {
+  width: 10px;
+  height: 10px;
+  background-color: #3eb290;
+  border-radius: 50%;
+}
+.openMoneyboxPeriodValue {
+  background-color: var(--white-color);
+  padding: 14px 16px;
+  border-radius: 10px;
+}
+.openMoneyboxPeriodValueText {
+  font-size: 14px;
+}
+
+.openMoneyboxButtonSection {
+  position: fixed;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background-color: var(--anti-flash-white);
+}

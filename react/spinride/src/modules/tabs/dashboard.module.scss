@@ -1,0 +1,72 @@
+.dashboardMain {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.dashboardActionsList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ced6e1;
+  margin-bottom: 30px;
+}
+
+.dashboardActionButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dashboardActionTitle {
+  display: block;
+  text-align: center;
+  margin-top: 6px;
+}
+
+.dashboardCardsSection {
+  margin-bottom: 30px;
+}
+
+.dashboardCardsLabel {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.dashboardCardsList {
+  display: flex;
+  gap: 6px;
+  flex-direction: column;
+}
+
+.dashboardTransactionsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.dashboardViewAllButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dashboardViewAllText {
+  color: var(--link-color);
+  font-weight: 500;
+}
+
+.dashboardTransactionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}

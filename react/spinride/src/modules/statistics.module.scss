@@ -1,0 +1,267 @@
+.statisticsBg {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  max-width: var(--screen-width);
+  margin: 0 auto;
+}
+
+.statisticsMain {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  overflow-y: auto;
+  z-index: 2;
+}
+
+.statisticsStatuses {
+  background-color: var(--white-color);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: 5px;
+  padding: 2px;
+  margin-bottom: 30px;
+}
+
+.statisticsStatusBtn {
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.statisticsStatusBtnActive {
+  background: linear-gradient(91.28deg, #97daff 0%, #16579d 100%);
+}
+
+.statisticsStatusBtnInactive {
+  background: var(--white-color);
+}
+
+.statisticsStatusText {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.statisticsStatusTextActive {
+  color: var(--white-color);
+}
+
+.statisticsStatusTextInactive {
+  color: var(--main-dark-color);
+}
+
+.statisticsDateCardSection {
+  margin-bottom: 30px;
+}
+
+.statisticsDateRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.statisticsCardBtn {
+  padding: 12px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.statisticsCardImg {
+  background: linear-gradient(
+    110.75deg,
+    #c285ab 0%,
+    #7aa1ce 49.34%,
+    #1b1f6a 100.78%
+  );
+  width: 72px;
+  height: 46px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.statisticsCardImgText {
+  color: var(--white-color);
+  font-size: 12px;
+  margin: 10px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.statisticsCardDetails {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.statisticsChartSection {
+  margin-bottom: 13px;
+}
+
+.statisticsChartRow {
+  display: flex;
+  justify-content: center;
+}
+
+.statisticsTotalSection {
+  text-align: center;
+  margin-bottom: 19px;
+}
+
+.statisticsTotal {
+  font-size: 32px;
+  font-weight: 600;
+  display: block;
+}
+
+.statisticsTotalFrac {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.statisticsTransactionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.statisticsTransactionBtn {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--white-color);
+  border-radius: 10px;
+  width: 100%;
+  gap: 14px;
+}
+
+.statisticsTransactionDetails {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.statisticsTransactionRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.statisticsTransactionCategory {
+  line-height: 1.2;
+}
+
+.statisticsTransactionSubRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.statisticsTransactionPercent {
+  text-align: right;
+}
+
+.statisticsOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9000;
+}
+
+.statisticsBottomModal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: var(--anti-flash-white);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: var(--screen-width);
+  margin: 0 auto;
+}
+
+.statisticsBottomModalList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 30px;
+}
+
+.statisticsBottomModalCardBtn {
+  padding: 12px;
+  background-color: var(--white-color);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.statisticsBottomModalCardImg {
+  background: linear-gradient(
+    110.75deg,
+    #c285ab 0%,
+    #7aa1ce 49.34%,
+    #1b1f6a 100.78%
+  );
+  width: 72px;
+  height: 46px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.statisticsBottomModalCardImgText {
+  color: var(--white-color);
+  font-size: 12px;
+  margin: 10px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.statisticsBottomModalCardDetails {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.statisticsBottomModalCardRadio {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ced6e1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.statisticsBottomModalCardRadioDot {
+  background-color: #3eb290;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}

@@ -1,0 +1,40 @@
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+  overflow-y: auto;
+  margin-top: calc(var(--header-height) + 20px);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.inputField {
+  margin-bottom: 14px;
+}
+
+.signUpBtn {
+  margin-bottom: 30px;
+}
+
+.bottomRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 10%;
+}
+
+.signInLink {
+  color: var(--link-color) !important;
+}
+
+.socialRow {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}

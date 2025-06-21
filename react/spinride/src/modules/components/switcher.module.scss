@@ -1,0 +1,27 @@
+.switcher {
+  width: 39.49px;
+  border-radius: 20.9px;
+  padding: 1.55px;
+  display: flex;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, justify-content 0.2s;
+}
+
+.switcherActive {
+  background-color: #3eb290;
+  justify-content: flex-end;
+}
+
+.switcherInactive {
+  background-color: lightgrey;
+  justify-content: flex-start;
+}
+
+.switcherCircle {
+  background-color: var(--white-color);
+  width: 20.9px;
+  height: 20.9px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}

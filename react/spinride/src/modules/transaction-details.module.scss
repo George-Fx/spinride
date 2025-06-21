@@ -1,0 +1,50 @@
+.transactionDetailsMain {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.transactionDetailsDate {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.transactionDetailsAmount {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.transactionDetailsSentTo {
+  margin-bottom: 9px;
+}
+
+.transactionDetailsInfoBlock {
+  width: 100%;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 30px;
+}
+
+.transactionDetailsInfoRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 17px 0;
+  border-bottom: 1px solid #e0e0e0;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.transactionDetailsButtonSection {
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  max-width: var(--screen-width);
+  left: 0;
+  right: 0;
+  z-index: 2;
+  margin: 0 auto;
+  background-color: #fff;
+}

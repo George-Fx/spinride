@@ -1,0 +1,87 @@
+.container {
+  padding-top: var(--header-height, 80px);
+  padding-bottom: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  overflow-y: auto;
+}
+
+.section {
+  margin-bottom: 14px;
+}
+
+.sectionTitle {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.cardList {
+  display: flex;
+  gap: 6px;
+  flex-direction: column;
+}
+
+.cardBtn,
+.accountBtn,
+.creditBtn {
+  padding: 12px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.cardImage,
+.creditImage {
+  background: linear-gradient(
+    110.75deg,
+    #c285ab 0%,
+    #7aa1ce 49.34%,
+    #1b1f6a 100.78%
+  );
+  width: 72px;
+  height: 46px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.cardImageText {
+  color: var(--white-color);
+  font-size: 12px;
+  margin: 10px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.cardDetails,
+.accountDetails,
+.creditDetails {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.creditAmount {
+  color: var(--link-color);
+}
+
+.buttonSection {
+  bottom: 0;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  position: fixed;
+  margin: 0 auto;
+  flex-direction: column;
+  display: flex;
+  max-width: var(--screen-width);
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  background-color: var(--anti-flash-white);
+}

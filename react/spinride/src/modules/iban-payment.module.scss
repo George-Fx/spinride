@@ -1,0 +1,91 @@
+.cardImage {
+  background: linear-gradient(
+    110.75deg,
+    #c285ab 0%,
+    #7aa1ce 49.34%,
+    #1b1f6a 100.78%
+  );
+  width: 72px;
+  height: 46px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.cardItemBtn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--white-color);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid var(--anti-flash-white);
+  transition: border 0.2s;
+}
+
+.cardItemBtn.selected {
+  border: 1px solid rgba(120, 157, 203, 1);
+}
+
+.cardImageText {
+  color: var(--white-color);
+  font-size: 12px;
+  margin: 10px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.cardList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cardSectionLabel {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.cardSection {
+  margin-bottom: 14px;
+}
+
+.container {
+  padding-top: var(--header-height, 80px);
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding-bottom: 90px;
+}
+
+.inputField {
+  margin-bottom: 14px;
+}
+
+.inputFieldComment {
+  min-height: 100px;
+  align-items: flex-start;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  margin-bottom: 0;
+}
+
+.buttonSection {
+  bottom: 0;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  position: fixed;
+  margin: 0 auto;
+  flex-direction: column;
+  display: flex;
+  max-width: var(--screen-width);
+  background-color: var(--anti-flash-white);
+  z-index: 2;
+  padding-bottom: 30px;
+}

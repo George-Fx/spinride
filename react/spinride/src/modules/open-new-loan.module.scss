@@ -1,0 +1,149 @@
+.openNewLoanMain {
+  overflow-y: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.openNewLoanSection {
+  margin-bottom: 14px;
+}
+
+.openNewLoanSectionLarge {
+  margin-bottom: 30px;
+}
+
+.openNewLoanLabel {
+  margin-bottom: 6px;
+  display: block;
+}
+
+.openNewLoanCurrencyList,
+.openNewLoanPeriodList {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.openNewLoanPeriodList {
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.openNewLoanCurrencyButton,
+.openNewLoanPeriodButton {
+  padding: 8px 20px;
+  border-radius: 10px;
+  background-color: var(--white-color);
+  border: none;
+  cursor: pointer;
+}
+
+.openNewLoanCurrencyButton.selected,
+.openNewLoanPeriodButton.selected {
+  background-color: var(--main-dark-color);
+}
+
+.openNewLoanCurrencyButton h5,
+.openNewLoanPeriodButton h5 {
+  color: var(--main-dark-color);
+}
+
+.openNewLoanCurrencyButton.selected h5,
+.openNewLoanPeriodButton.selected h5 {
+  color: var(--white-color);
+}
+
+.openNewLoanAmountRow {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.openNewLoanAmountButton {
+  background-color: var(--white-color);
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  align-self: flex-start;
+  border: none;
+  cursor: pointer;
+}
+
+.openNewLoanAmountValue {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.openNewLoanAmountDecimal {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.openNewLoanCardList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.openNewLoanCardButton {
+  padding: 12px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  border: 1px solid var(--white-color);
+  cursor: pointer;
+}
+
+.openNewLoanCardButton.selected {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.openNewLoanCardImage {
+  background: linear-gradient(
+    110.75deg,
+    #c285ab 0%,
+    #7aa1ce 49.34%,
+    #1b1f6a 100.78%
+  );
+  width: 72px;
+  height: 46px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.openNewLoanCardImageText {
+  color: var(--white-color);
+  font-size: 12px;
+  margin: 10px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.openNewLoanCardDetails {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.openNewLoanEarlyRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ced6e1;
+  padding-bottom: 18px;
+}
+
+.openNewLoanButtonSection {
+  position: fixed;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background-color: var(--anti-flash-white);
+}

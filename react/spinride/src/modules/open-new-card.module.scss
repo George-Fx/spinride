@@ -1,0 +1,74 @@
+.openNewCardSection {
+  margin-bottom: 14px;
+}
+.openNewCardSectionCard {
+  margin-bottom: 30px;
+}
+
+.openNewCardLabel {
+  font-size: 12px;
+  line-height: 1.6;
+  margin-bottom: 6px;
+  display: block;
+}
+.openNewCardLabelCurrency {
+  color: var(--body-text-color);
+}
+
+.openNewCardCard {
+  width: 100%;
+  height: 213px;
+  background: linear-gradient(
+    69.78deg,
+    rgba(27, 29, 77, 0.3) 36.98%,
+    rgba(232, 138, 164, 0.3) 73.96%,
+    rgba(32, 141, 224, 0.3) 95.83%
+  );
+  backdrop-filter: blur(11.2414px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0px 12px 16px rgba(27, 29, 77, 0.15);
+  margin: 0 auto;
+}
+.openNewCardCardTitle {
+  font-size: 14px;
+  color: var(--white-color);
+  letter-spacing: 0.2em;
+  margin-bottom: 17px;
+}
+.openNewCardCardRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.openNewCardCardRowNumber {
+  margin-bottom: auto;
+}
+.openNewCardCardRowLabels {
+  margin-bottom: 7px;
+}
+.openNewCardCardNumber {
+  font-size: 12px;
+  color: var(--white-color);
+  line-height: 1.6;
+}
+.openNewCardCardLabel {
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.openNewCardCardBalance {
+  color: var(--white-color);
+  font-weight: 700;
+  font-size: 24px;
+}
+.openNewCardCardExpire {
+  color: var(--white-color);
+  font-size: 12px;
+  font-weight: 500;
+}

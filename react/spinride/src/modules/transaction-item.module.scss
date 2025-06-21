@@ -1,0 +1,32 @@
+.transactionItemButton {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--white-color);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.transactionItemIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 14px;
+}
+
+.transactionItemDetails {
+  flex-grow: 1;
+}
+
+.transactionItemName {
+  line-height: 1.2;
+}
+
+.transactionItemAmount {
+  color: var(--main-dark-color);
+}
+
+.transactionItemAmount.income {
+  color: #3eb290;
+}

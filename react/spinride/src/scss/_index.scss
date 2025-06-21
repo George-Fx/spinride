@@ -1,0 +1,11 @@
+@use '_ids.scss';
+@use '_text.scss';
+@use '_fonts.scss';
+@use '_embla.scss';
+@use '_reset.scss';
+@use '_global.scss';
+@use '_variables.scss';
+
+.swiper-button-disabled {
+  display: none;
+}

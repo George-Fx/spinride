@@ -1,0 +1,41 @@
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card {
+  background-color: var(--white-color);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cardDescription {
+  margin-top: 14px;
+}
+
+.cardDivider {
+  height: 1px;
+  background-color: #ced6e1;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
