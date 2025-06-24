@@ -1,4 +1,5 @@
 import {useRouter} from './useRouter';
+import {useGetData} from './useGetData';
 import {useGetBike} from './useGetBike';
 import {useGetBikes} from './useGetBikes';
 import {useBodyColor} from './useBodyColor';
@@ -12,6 +13,7 @@ import {useGetPromocodes} from './useGetPromocodes';
 
 export const hooks = {
   useRouter,
+  useGetData,
   useGetBike,
   useGetBikes,
   useGetOrders,

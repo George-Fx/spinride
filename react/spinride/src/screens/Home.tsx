@@ -7,6 +7,10 @@ import {components} from '../components';
 
 export const Home: React.FC = () => {
   const {navigate} = hooks.useRouter();
+  const {data, loading, error} = hooks.useGetData();
+
+  if (loading) return <components.Loader />;
+  console.log('Data fetched:', data.banners);
 
   // const bikeId = bikes.find((bike) => bike.id === 3)?.id;
 
@@ -27,40 +31,40 @@ export const Home: React.FC = () => {
             navigate(constants.routes.SHOP);
           }}
         />
-        {/* <components.HomeBestSellers bikes={bikes} /> */}
+        <components.HomeBestSellers bikes={data.bikes} />
       </section>
     );
   };
 
-  // const renderBanners = () => {
-  //   const banner = banners[1];
-  //   return (
-  //     <section style={{paddingLeft: 20, paddingRight: 20, marginBottom: 40}}>
-  //       <img
-  //         src={banner.image}
-  //         style={{
-  //           width: '100%',
-  //           height: 'auto',
-  //           borderRadius: 12,
-  //         }}
-  //       />
-  //     </section>
-  //   );
-  // };
+  const renderBanners = () => {
+    const dataBanner = data.banners[1];
+    return (
+      <section style={{paddingLeft: 20, paddingRight: 20, marginBottom: 40}}>
+        <img
+          src={dataBanner.image}
+          style={{
+            width: '100%',
+            height: 'auto',
+            borderRadius: 12,
+          }}
+        />
+      </section>
+    );
+  };
 
-  // const renderFeatured = () => {
-  //   return (
-  //     <section>
-  //       <components.BlockHeading
-  //         title="Featured products"
-  //         viewAllOnClick={() => {
-  //           navigate(constants.routes.SHOP);
-  //         }}
-  //       />
-  //       <components.HomeFeatured bikes={bikes} />
-  //     </section>
-  //   );
-  // };
+  const renderFeatured = () => {
+    return (
+      <section>
+        <components.BlockHeading
+          title="Featured products"
+          viewAllOnClick={() => {
+            navigate(constants.routes.SHOP);
+          }}
+        />
+        <components.HomeFeatured bikes={data.bikes} />
+      </section>
+    );
+  };
 
   const renderBottomBar = () => {
     return <components.BottomTabBar />;
@@ -75,10 +79,10 @@ export const Home: React.FC = () => {
           paddingBottom: 'calc(var(--bottom-tabbar-height) + 40px)',
         }}
       >
-        {/* {renderCarousel()}
+        {/* {renderCarousel()} */}
         {renderBestSellers()}
-        {renderBanners()}
-        {renderFeatured()} */}
+        {/* {renderBanners()} */}
+        {renderFeatured()}
       </main>
     );
   };
