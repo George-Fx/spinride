@@ -69,8 +69,8 @@ function App() {
           element={<screens.VerifyYourPhoneNumber />}
         />
         <Route
-          path={constants.routes.CONFIRMATION_CODE}
-          element={<screens.ConfirmationCode />}
+          path={constants.routes.VERIFICATION}
+          element={<screens.Verification />}
         />
         <Route
           path={constants.routes.SIGN_UP_ACCOUNT_CREATED}
@@ -84,19 +84,39 @@ function App() {
           path={constants.routes.FORGOT_PASSWORD_SENT_EMAIL}
           element={<screens.ForgotPasswordSentEmail />}
         />
-        <Route path={constants.routes.PROFILE} element={<screens.Profile />} />
         <Route
           path={constants.routes.PAYMENTS}
           element={<screens.Payments />}
         />
         <Route path={constants.routes.FILTER} element={<screens.Filter />} />
-        <Route
-          path={constants.routes.TRANSACTION_HISTORY}
-          element={<screens.TransactionHistory />}
-        />
+        <Route path={constants.routes.PROFILE} element={<screens.Profile />} />
         <Route
           path={constants.routes.PAYMENT_SUCCESS}
           element={<screens.PaymentSuccess />}
+        />
+        <Route
+          path={constants.routes.LEAVE_A_REVIEW}
+          element={<screens.LeaveAReview />}
+        />
+        <Route
+          path={constants.routes.MY_PROMOCODES_EMPTY}
+          element={<screens.MyPromocodesEmpty />}
+        />
+        <Route
+          path={constants.routes.VERIFY_YOUR_EMAIL}
+          element={<screens.VerifyYourEmail />}
+        />
+        <Route
+          path={constants.routes.ORDER_HISTORY}
+          element={<screens.OrderHistory />}
+        />
+        <Route
+          path={constants.routes.EDIT_PROFILE}
+          element={<screens.EditProfile />}
+        />
+        <Route
+          path={constants.routes.MY_PROMOCODES}
+          element={<screens.MyPromocodes />}
         />
         <Route
           path={constants.routes.PAYMENT_FAILED}

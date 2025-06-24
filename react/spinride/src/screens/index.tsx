@@ -5,8 +5,8 @@ import {Order} from './Order';
 import {SignIn} from './SignIn';
 import {SignUp} from './SignUp';
 import {Filter} from './Filter';
-import {Reviews} from './Reviews';
 import {Profile} from './Profile';
+import {Reviews} from './Reviews';
 import {SignOut} from './SignOut';
 import {Payments} from './Payments';
 import {Wishlist} from './Wishlist';
@@ -14,15 +14,20 @@ import {InfoSaved} from './InfoSaved';
 import {CartEmpty} from './CartEmpty';
 import {Categories} from './Categories';
 import {OrderFailed} from './OrderFailed';
+import {EditProfile} from './EditProfile';
 import {NewPassword} from './NewPassword';
 import {Description} from './Description';
+import {Verification} from './Verification';
+import {MyPromocodes} from './MyPromocodes';
+import {OrderHistory} from './OrderHistory';
+import {LeaveAReview} from './LeaveAReview';
 import {WishlistEmpty} from './WishlistEmpty';
 import {PaymentFailed} from './PaymentFailed';
 import {ForgotPassword} from './ForgotPassword';
 import {PaymentSuccess} from './PaymentSuccess';
 import {OrderSuccessful} from './OrderSuccessful';
-import {ConfirmationCode} from './ConfirmationCode';
-import {TransactionHistory} from './TransactionHistory';
+import {VerifyYourEmail} from './VerifyYourEmail';
+import {MyPromocodesEmpty} from './MyPromocodesEmpty';
 import {SignUpAccountCreated} from './SignUpAccountCreated';
 import {EmailHasBeenVerified} from './EmailHasBeenVerified';
 import {VerifyYourPhoneNumber} from './VerifyYourPhoneNumber';
@@ -37,8 +42,8 @@ export const screens = {
   SignIn,
   SignUp,
   Filter,
-  Profile,
   SignOut,
+  Profile,
   Reviews,
   Wishlist,
   Payments,
@@ -48,13 +53,18 @@ export const screens = {
   OrderFailed,
   NewPassword,
   Description,
+  EditProfile,
+  MyPromocodes,
+  Verification,
+  OrderHistory,
+  LeaveAReview,
   PaymentFailed,
   WishlistEmpty,
   ForgotPassword,
   PaymentSuccess,
+  VerifyYourEmail,
   OrderSuccessful,
-  ConfirmationCode,
-  TransactionHistory,
+  MyPromocodesEmpty,
   SignUpAccountCreated,
   EmailHasBeenVerified,
   VerifyYourPhoneNumber,

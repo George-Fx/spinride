@@ -2,28 +2,16 @@ import React from 'react';
 
 export const LogOutSvg: React.FC = () => {
   return (
-    <svg
-      width={14}
-      height={14}
-      fill='none'
-    >
-      <g>
-        <path
-          stroke='var(--lavender-gray)'
-          strokeLinecap='round'
-          strokeLinejoin='round'
-          d='M9.5 10.5v2a1 1 0 0 1-1 1h-7a1 1 0 0 1-1-1v-11a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v2M6.5 7h7m0 0-2-2m2 2-2 2'
-        />
-      </g>
-      <defs>
-        <clipPath id='a'>
-          <rect
-            width={14}
-            height={14}
-            fill='var(--lavender-gray)'
-          />
-        </clipPath>
-      </defs>
+    <svg xmlns="http://www.w3.org/2000/svg" width={50} height={50} fill="none">
+      <rect width={49} height={49} x={0.5} y={0.5} fill="#fff" rx={24.5} />
+      <rect width={49} height={49} x={0.5} y={0.5} stroke="#EEE" rx={24.5} />
+      <path
+        stroke="#6B717D"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+        d="M22.5 32.5h-3.333a1.666 1.666 0 0 1-1.667-1.667V19.167a1.666 1.666 0 0 1 1.667-1.667H22.5M28.333 29.167 32.5 25l-4.167-4.167M32.5 25h-10"
+      />
     </svg>
   );
 };

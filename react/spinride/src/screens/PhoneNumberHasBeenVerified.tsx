@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useSetAtom, useAtomValue} from 'jotai';
 import {useNavigate} from 'react-router-dom';
 
+import {atoms} from '../atoms';
 import {hooks} from '../hooks';
 import {svg} from '../assets/svg';
-import bg from '../assets/bg/01.png';
+import {constants} from '../constants';
 import {components} from '../components';
 
 export const PhoneNumberHasBeenVerified: React.FC = () => {
@@ -11,11 +13,17 @@ export const PhoneNumberHasBeenVerified: React.FC = () => {
   hooks.useThemeColor('#161e2f');
   hooks.useBodyColor('#161e2f');
 
+  const setIsPhoneNumberVerified = useSetAtom(atoms.isPhoneNumberVerifiedAtom);
+
+  useEffect(() => {
+    setIsPhoneNumberVerified(true);
+  }, [setIsPhoneNumberVerified]);
+
   const renderBackground = () => {
     return (
       <img
-        src={bg}
-        alt='bg'
+        src={constants.images.bg01}
+        alt="bg"
         style={{
           position: 'fixed',
           width: '100%',
@@ -64,14 +72,14 @@ export const PhoneNumberHasBeenVerified: React.FC = () => {
             color: '#C3CDE0',
             marginBottom: 30,
           }}
-          className='t16'
+          className="t16"
         >
           Now that your account is fully set up, immerse yourself in the world
           of bikes.
         </p>
         <components.Button
-          title='Done'
-          onClick={() => navigate(-1)}
+          title="Done"
+          onClick={() => navigate(constants.routes.PROFILE)}
           containerStyle={{maxWidth: 170, width: '100%'}}
         />
       </main>

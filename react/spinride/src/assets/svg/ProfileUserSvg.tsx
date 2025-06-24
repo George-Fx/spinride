@@ -2,47 +2,16 @@ import * as React from 'react';
 
 export const ProfileUserSvg: React.FC = () => {
   return (
-    <svg
-      xmlns='http://www.w3.org/2000/svg'
-      width={22}
-      height={22}
-      fill='none'
-    >
-      <g>
-        <rect
-          width={22}
-          height={22}
-          fill='#B5D0FF'
-          rx={11}
-        />
-        <path
-          fill='#3B5999'
-          d='M18 18c0 2.761-3.134 5-7 5s-7-2.239-7-5 3.134-5 7-5 7 2.239 7 5Z'
-        />
-        <path
-          fill='#3B5999'
-          d='M15 9a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z'
-        />
-      </g>
-      <rect
-        width={21}
-        height={21}
-        x={0.5}
-        y={0.5}
-        stroke='#fff'
-        strokeOpacity={0.3}
-        rx={10.5}
+    <svg xmlns="http://www.w3.org/2000/svg" width={50} height={50} fill="none">
+      <rect width={49} height={49} x={0.5} y={0.5} fill="#fff" rx={24.5} />
+      <rect width={49} height={49} x={0.5} y={0.5} stroke="#EEE" rx={24.5} />
+      <path
+        stroke="#6B717D"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+        d="M31.667 32v-1.667A3.333 3.333 0 0 0 28.333 27h-6.666a3.334 3.334 0 0 0-3.334 3.333V32M25 23.667A3.333 3.333 0 1 0 25 17a3.333 3.333 0 0 0 0 6.667Z"
       />
-      <defs>
-        <clipPath id='a'>
-          <rect
-            width={22}
-            height={22}
-            fill='#fff'
-            rx={11}
-          />
-        </clipPath>
-      </defs>
     </svg>
   );
 };

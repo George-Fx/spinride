@@ -1,7 +1,8 @@
 import React from 'react';
-import {useAtomValue} from 'jotai';
+import {useAtomValue, useSetAtom} from 'jotai';
 
 import {hooks} from '../hooks';
+import {atoms} from '../atoms';
 import {svg} from '../assets/svg';
 import {constants} from '../constants';
 import {cartAtom} from '../atoms/cart.atom';
@@ -12,8 +13,11 @@ type Props = {
   showUser?: boolean;
   showBurger?: boolean;
   showBasket?: boolean;
+  goBackColor?: string;
   headerStyle?: React.CSSProperties;
   showBorder?: boolean;
+  containerStyle?: React.CSSProperties;
+  titleStyle?: React.CSSProperties;
 };
 
 export const Header: React.FC<Props> = ({
@@ -22,11 +26,16 @@ export const Header: React.FC<Props> = ({
   showBurger,
   showBasket,
   showBorder,
+  titleStyle,
+  goBackColor,
+  containerStyle,
 }) => {
   const {navigate} = hooks.useRouter();
   const cart = useAtomValue(cartAtom);
 
   const canGoBack = showGoBack && window.history.length > 1;
+
+  const setModalVisibleAtom = useSetAtom(atoms.setModalVisibleAtom);
 
   const renderGoBack = () => {
     if (!showGoBack && !canGoBack) return null;
@@ -38,7 +47,7 @@ export const Header: React.FC<Props> = ({
           navigate(-1);
         }}
       >
-        <svg.GoBackSvg />
+        <svg.GoBackSvg color={goBackColor} />
       </button>
     );
   };
@@ -47,7 +56,12 @@ export const Header: React.FC<Props> = ({
     if (!showBurger) return null;
 
     return (
-      <button style={{paddingLeft: 20, paddingRight: 20}}>
+      <button
+        style={{paddingLeft: 20, paddingRight: 20}}
+        onClick={() => {
+          setModalVisibleAtom(true);
+        }}
+      >
         <svg.BurgerSvg />
       </button>
     );
@@ -110,7 +124,7 @@ export const Header: React.FC<Props> = ({
           transform: 'translateX(-50%)',
         }}
       >
-        <h4>{title}</h4>
+        <h4 style={{...titleStyle}}>{title}</h4>
       </div>
     );
   };
@@ -136,6 +150,7 @@ export const Header: React.FC<Props> = ({
           ? '1px solid #E2E2E2'
           : '1px solid transparent',
         margin: '0 auto',
+        ...containerStyle,
       }}
     >
       {renderGoBack()}

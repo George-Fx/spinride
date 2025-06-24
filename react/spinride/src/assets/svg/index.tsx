@@ -3,6 +3,7 @@ import {CVVSvg} from './CVVSvg';
 import {KeySvg} from './KeySvg';
 import {ChfSvg} from './ChfSvg';
 import {BagSvg} from './BagSvg';
+import {GiftSvg} from './GiftSvg';
 import {EditSvg} from './EditSvg';
 import {UserSvg} from './UserSvg';
 import {CopySvg} from './CopySvg';
@@ -10,6 +11,7 @@ import {LinkSvg} from './LinkSvg';
 import {LockSvg} from './LockSvg';
 import {InfoSvg} from './InfoSvg';
 import {PlusSvg} from './PlusSvg';
+import {CrossSvg} from './CrossSvg';
 import {ChartSvg} from './ChartSvg';
 import {TrashSvg} from './TrashSvg';
 import {ErrorSvg} from './ErrorSvg';
@@ -58,6 +60,7 @@ import {SortingBySvg} from './SortingBySvg';
 import {OpenArrowSvg} from './OpenArrowSvg';
 import {PyggyBankSvg} from './PyggyBankSvg';
 import {BriefcaseSvg} from './BriefcaseSvg';
+import {SmartphoneSvg} from './SmartphoneSvg';
 import {ColorCheckSvg} from './ColorCheckSvg';
 import {AddToWLBigSvg} from './AddToWLBigSvg';
 import {CloseArrowSvg} from './CloseArrowSvg';
@@ -89,6 +92,8 @@ import {SuccessCheckSvg} from './SuccessCheckSvg';
 import {AddToWLHeartSvg} from './AddToWLHeartSvg';
 import {MobilePaymentSvg} from './MobilePaymentSvg';
 import {MoneyTransferSvg} from './MoneyTransferSvg';
+import {MessageCircleSvg} from './MessageCircleSvg';
+import {PromocodeGiftSvg} from './PromocodeGiftSvg';
 import {DetailsSuccessSvg} from './DetailsSuccessSvg';
 import {ProfileMenuUserSvg} from './ProfileMenuUserSvg';
 import {ProfileMenuFaceIDSvg} from './ProfileMenuFaceIDSvg';
@@ -113,6 +118,7 @@ export const svg = {
   LockSvg,
   InfoSvg,
   PlusSvg,
+  GiftSvg,
   TopUpSvg,
   ChartSvg,
   ErrorSvg,
@@ -121,6 +127,7 @@ export const svg = {
   GlobeSvg,
   TrashSvg,
   MinusSvg,
+  CrossSvg,
   BurgerSvg,
   PocketSvg,
   EyeOffSvg,
@@ -167,6 +174,7 @@ export const svg = {
   OpenArrowSvg,
   PyggyBankSvg,
   AddToWLBigSvg,
+  SmartphoneSvg,
   EmptyHeartSvg,
   ColorCheckSvg,
   DollarSignSvg,
@@ -196,7 +204,9 @@ export const svg = {
   ShoppingCartSvg,
   IsInWishlistSvg,
   MoneyTransferSvg,
+  PromocodeGiftSvg,
   MobilePaymentSvg,
+  MessageCircleSvg,
   DetailsSuccessSvg,
   ProfileMenuUserSvg,
   ProfileMenuFaceIDSvg,

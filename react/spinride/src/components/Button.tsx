@@ -16,10 +16,7 @@ export const Button: React.FC<ButtonProps> = ({
   containerStyle,
 }) => {
   return (
-    <div
-      className={styles.container}
-      style={containerStyle}
-    >
+    <div className={styles.container} style={containerStyle}>
       <button
         className={
           colorScheme === 'primary'

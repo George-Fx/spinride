@@ -5,11 +5,11 @@ import {constants} from '../constants';
 import {components} from '../components';
 import styles from '../modules/verify-your-phone-number.module.scss';
 
-export const VerifyYourPhoneNumber: React.FC = () => {
+export const VerifyYourEmail: React.FC = () => {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
-    phoneNumber: '+17123456789',
+    email: 'darronbanks@mail.com',
   });
 
   const handleChangeField = (field: keyof typeof form, label: string) => {
@@ -23,7 +23,7 @@ export const VerifyYourPhoneNumber: React.FC = () => {
     return (
       <components.Header
         showGoBack={true}
-        title="Verify phone number"
+        title="Verify your email"
         headerStyle={{backgroundColor: 'var(--anti-flash-white)'}}
       />
     );
@@ -32,20 +32,23 @@ export const VerifyYourPhoneNumber: React.FC = () => {
   const renderContent = () => {
     return (
       <main className={styles.container}>
-        <p className="t16" style={{marginBottom: 30, textAlign: 'center'}}>
-          We have sent you an SMS with a code to number +17 0123456789.
+        <p
+          className="t16"
+          style={{marginBottom: 30, textAlign: 'center', maxWidth: 335}}
+        >
+          We have sent you an email with a verification code.
         </p>
         <components.InputField
           className={styles.inputField}
           placeholder="+17 0123456789"
-          value={form.phoneNumber}
-          onClick={() => handleChangeField('phoneNumber', 'phone number')}
+          value={form.email}
+          onClick={() => handleChangeField('email', 'email address')}
         />
         <components.Button
           title="Confirm"
           onClick={() => {
             navigate(constants.routes.VERIFICATION, {
-              state: {phoneNumber: form.phoneNumber},
+              state: {email: form.email},
             });
           }}
         />

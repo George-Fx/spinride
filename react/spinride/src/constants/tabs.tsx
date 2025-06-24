@@ -1,5 +1,5 @@
-import {routes} from "./routes";
-import {svg} from "../assets/svg";
+import {routes} from './routes';
+import {svg} from '../assets/svg';
 
 export const tabs = [
   {

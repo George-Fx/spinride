@@ -1,13 +1,18 @@
 import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 
+import {hooks} from '../hooks';
 import {constants} from '../constants';
 import {components} from '../components';
 
 import styles from '../modules/confirmation-code.module.scss';
 
-export const ConfirmationCode: React.FC = () => {
-  const navigate = useNavigate();
+export const Verification: React.FC = () => {
+  const {navigate, location} = hooks.useRouter();
+  const state = location.state as
+    | {phoneNumber?: string}
+    | {email?: string}
+    | undefined;
 
   const [otpCode, setOtpCode] = useState(['', '', '', '', '']);
 
@@ -27,7 +32,7 @@ export const ConfirmationCode: React.FC = () => {
     return (
       <components.Header
         showGoBack={true}
-        title='Verify your phone number'
+        title="Verification"
         headerStyle={{backgroundColor: 'var(--anti-flash-white)'}}
       />
     );
@@ -36,6 +41,9 @@ export const ConfirmationCode: React.FC = () => {
   const renderContent = () => {
     return (
       <main className={styles.container}>
+        <span className="t16" style={{marginBottom: 30, textAlign: 'center'}}>
+          Enter your OTP code here.
+        </span>
         <div className={styles.otpGrid}>
           {otpCode.map((code, index) => {
             return (
@@ -49,8 +57,8 @@ export const ConfirmationCode: React.FC = () => {
             );
           })}
         </div>
-        <div>
-          <span className='t16'>
+        <div style={{textAlign: 'center'}}>
+          <span className="t16">
             Didn’t receive the OTP?{' '}
             <span
               className={styles.resend}
@@ -63,11 +71,14 @@ export const ConfirmationCode: React.FC = () => {
           </span>
         </div>
         <components.Button
-          title='Confirm'
+          title="Confirm"
           onClick={() => {
-            navigate(constants.routes.SIGN_UP_ACCOUNT_CREATED, {
-              replace: true,
-            });
+            if (state && 'phoneNumber' in state && state.phoneNumber) {
+              navigate(constants.routes.PHONE_NUMBER_HAS_BEEN_VERIFIED);
+            }
+            if (state && 'email' in state && state.email) {
+              navigate(constants.routes.EMAIL_HAS_BEEN_VERIFIED);
+            }
           }}
           containerStyle={{marginTop: 20}}
         />

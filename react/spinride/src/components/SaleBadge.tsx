@@ -2,9 +2,10 @@ import React from 'react';
 
 type Props = {
   isOnSale: number | null;
+  containerStyle?: React.CSSProperties;
 };
 
-export const SaleBadge: React.FC<Props> = ({isOnSale}) => {
+export const SaleBadge: React.FC<Props> = ({isOnSale, containerStyle}) => {
   if (!isOnSale) return null;
   return (
     <div
@@ -20,6 +21,7 @@ export const SaleBadge: React.FC<Props> = ({isOnSale}) => {
         paddingLeft: 6,
         paddingRight: 6,
         borderRadius: 6,
+        ...containerStyle,
       }}
     >
       <span

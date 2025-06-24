@@ -2,15 +2,17 @@ import React from 'react';
 import 'swiper/swiper-bundle.css';
 import {Swiper, SwiperSlide} from 'swiper/react';
 
+import {hooks} from '../hooks';
 import {items} from '../items';
-import type {BikeType} from '../types';
+import {BikeType} from '../types';
 
 type Props = {
   bikes: BikeType[];
 };
 
-export const HomeBestSellers: React.FC<Props> = ({bikes}) => {
-  const bestSellers = bikes.filter((bike) => bike.isBestSeller);
+export const HomeFeatured: React.FC<Props> = ({bikes}) => {
+  const {navigate} = hooks.useRouter();
+  const featured = bikes.filter((bike) => bike.isFeatured);
 
   return (
     <Swiper
@@ -20,10 +22,10 @@ export const HomeBestSellers: React.FC<Props> = ({bikes}) => {
       mousewheel={true}
       style={{paddingLeft: 20, paddingRight: 20}}
     >
-      {bestSellers.map((bike) => {
+      {featured.map((bike) => {
         return (
           <SwiperSlide style={{width: 'auto'}} key={bike.id}>
-            <items.BestSellerItem bike={bike} />
+            <items.FeaturedItem bike={bike} />
           </SwiperSlide>
         );
       })}

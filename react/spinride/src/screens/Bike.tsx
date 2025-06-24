@@ -176,7 +176,7 @@ export const Bike: React.FC = () => {
 
   const renderReviews = () => {
     return (
-      <section>
+      <section style={{marginBottom: 14}}>
         <components.BlockHeading
           title="Reviews (23)"
           viewAllOnClick={() => {
@@ -265,6 +265,20 @@ export const Bike: React.FC = () => {
     );
   };
 
+  const renderLeaveReviewBtn = () => {
+    return (
+      <section style={{paddingLeft: 20, paddingRight: 20}}>
+        <components.Button
+          title="Leave a Review"
+          colorScheme="secondary"
+          onClick={() => {
+            navigate(constants.routes.LEAVE_A_REVIEW);
+          }}
+        />
+      </section>
+    );
+  };
+
   const renderContent = () => {
     return (
       <main
@@ -280,7 +294,7 @@ export const Bike: React.FC = () => {
         {renderPriceWithCounter()}
         {renderDescription()}
         {renderReviews()}
-        {renderButton()}
+        {renderLeaveReviewBtn()}
       </main>
     );
   };
@@ -290,6 +304,7 @@ export const Bike: React.FC = () => {
       <components.SafeAreaView>
         {renderHeader()}
         {renderContent()}
+        {renderButton()}
         {renderFlashMessage()}
       </components.SafeAreaView>
     </components.MotionWrapper>

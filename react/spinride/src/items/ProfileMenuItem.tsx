@@ -1,60 +1,36 @@
 import React from 'react';
 
-import {components} from '../components';
-import styles from '../modules/profile-menu-item.module.scss';
-
 type Props = {
   title: string;
   onClick?: () => void;
-  checked?: boolean;
-  onToggle?: (newValue: boolean) => void;
   leftSideIcon: React.ReactNode;
   rightSideIcon?: React.ReactNode;
+  titleStyle?: React.CSSProperties;
 };
 
 export const ProfileMenuItem: React.FC<Props> = ({
   onClick,
   title,
+  titleStyle,
   leftSideIcon,
   rightSideIcon,
-  checked,
-  onToggle,
 }) => {
-  const handleClick = () => {
-    if (onToggle && typeof checked === 'boolean') {
-      onToggle(!checked);
-    }
-    if (onClick) {
-      onClick();
-    }
-  };
-
   return (
     <button
-      className={styles.profileMenuItemButton}
-      onClick={handleClick}
-      type='button'
+      onClick={onClick}
+      type="button"
+      style={{
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        gap: 14,
+        borderTop: '1px solid #E2E2E2',
+        paddingTop: 10,
+      }}
     >
       {leftSideIcon}
-      <h5
-        className={
-          styles.profileMenuItemTitle +
-          (title === 'Log Out' ? ' ' + styles.logout : '')
-        }
-      >
-        {title}
-      </h5>
-      {title !== 'Log Out' && rightSideIcon}
-      {onToggle && typeof checked === 'boolean' && (
-        <components.Switcher
-          onClick={() => {
-            if (onToggle) {
-              onToggle(!checked);
-            }
-          }}
-          isActive={checked}
-        />
-      )}
+      <h5 style={{marginRight: 'auto', ...titleStyle}}>{title}</h5>
+      {rightSideIcon}
     </button>
   );
 };

@@ -6,23 +6,17 @@ import {constants} from '../constants';
 import {components} from '../components';
 
 export const Home: React.FC = () => {
-  const {carousel, loading, error} = hooks.useGetCarousel();
-  const {loading: bikesLoading, error: bikesError, bikes} = hooks.useGetBikes();
-  const {
-    loading: bannersLoading,
-    error: bannersError,
-    banners,
-  } = hooks.useGetBanners();
-
   const {navigate} = hooks.useRouter();
+
+  // const bikeId = bikes.find((bike) => bike.id === 3)?.id;
 
   const renderHeader = () => {
     return <components.Header showBurger={true} showBasket={true} />;
   };
 
-  const renderCarousel = () => {
-    return <components.HomeCarousel carousel={carousel} />;
-  };
+  // const renderCarousel = () => {
+  //   return <components.HomeCarousel carousel={carouselData} bikeId={bikeId} />;
+  // };
 
   const renderBestSellers = () => {
     return (
@@ -33,36 +27,40 @@ export const Home: React.FC = () => {
             navigate(constants.routes.SHOP);
           }}
         />
-        <components.HomeBestSellers bikes={bikes} />
+        {/* <components.HomeBestSellers bikes={bikes} /> */}
       </section>
     );
   };
 
-  const renderBanners = () => {
-    if (bannersLoading) return null;
-    const banner = banners[1];
-    return (
-      <section style={{paddingLeft: 20, paddingRight: 20}}>
-        <img
-          src={banner.image}
-          style={{
-            width: '100%',
-            height: 150,
-            objectFit: 'cover',
-            borderRadius: 12,
-          }}
-        />
-      </section>
-    );
-  };
+  // const renderBanners = () => {
+  //   const banner = banners[1];
+  //   return (
+  //     <section style={{paddingLeft: 20, paddingRight: 20, marginBottom: 40}}>
+  //       <img
+  //         src={banner.image}
+  //         style={{
+  //           width: '100%',
+  //           height: 'auto',
+  //           borderRadius: 12,
+  //         }}
+  //       />
+  //     </section>
+  //   );
+  // };
 
-  const renderFeatured = () => {
-    return (
-      <section>
-        <span>11</span>
-      </section>
-    );
-  };
+  // const renderFeatured = () => {
+  //   return (
+  //     <section>
+  //       <components.BlockHeading
+  //         title="Featured products"
+  //         viewAllOnClick={() => {
+  //           navigate(constants.routes.SHOP);
+  //         }}
+  //       />
+  //       <components.HomeFeatured bikes={bikes} />
+  //     </section>
+  //   );
+  // };
 
   const renderBottomBar = () => {
     return <components.BottomTabBar />;
@@ -77,10 +75,10 @@ export const Home: React.FC = () => {
           paddingBottom: 'calc(var(--bottom-tabbar-height) + 40px)',
         }}
       >
-        {renderCarousel()}
+        {/* {renderCarousel()}
         {renderBestSellers()}
         {renderBanners()}
-        {renderFeatured()}
+        {renderFeatured()} */}
       </main>
     );
   };

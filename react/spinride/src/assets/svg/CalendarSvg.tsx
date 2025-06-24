@@ -2,18 +2,15 @@ import * as React from 'react';
 
 export const CalendarSvg: React.FC = () => {
   return (
-    <svg
-      xmlns='http://www.w3.org/2000/svg'
-      width={16}
-      height={16}
-      fill='none'
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" width={50} height={50} fill="none">
+      <rect width={49} height={49} x={0.5} y={0.5} fill="#fff" rx={24.5} />
+      <rect width={49} height={49} x={0.5} y={0.5} stroke="#EEE" rx={24.5} />
       <path
-        stroke='#161E2F'
-        strokeLinecap='round'
-        strokeLinejoin='round'
+        stroke="#6B717D"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         strokeWidth={1.5}
-        d='M12.667 2.667H3.333C2.597 2.667 2 3.264 2 4v9.333c0 .737.597 1.334 1.333 1.334h9.334c.736 0 1.333-.597 1.333-1.334V4c0-.736-.597-1.333-1.333-1.333ZM2 6.667h12M10.667 1.333V4M5.333 1.333V4'
+        d="M30.833 18.333H19.167c-.92 0-1.667.746-1.667 1.667v11.667c0 .92.746 1.666 1.667 1.666h11.666c.92 0 1.667-.746 1.667-1.666V20c0-.92-.746-1.667-1.667-1.667ZM28.333 16.667V20M21.667 16.667V20M17.5 23.333h15"
       />
     </svg>
   );

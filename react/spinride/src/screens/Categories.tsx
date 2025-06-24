@@ -1,12 +1,36 @@
-import React from 'react';
+import {useAtom} from 'jotai';
+import React, {useEffect} from 'react';
 
 import {hooks} from '../hooks';
+import {atoms} from '../atoms';
 import {constants} from '../constants';
 import {components} from '../components';
 
 export const Categories: React.FC = () => {
   const {navigate} = hooks.useRouter();
   const {categories, loading, error} = hooks.useGetCategories();
+
+  const [isModalVisible, _] = useAtom(atoms.modalVisibleAtom);
+
+  useEffect(() => {
+    if (isModalVisible) {
+      let metaTag = document.querySelector('meta[name="theme-color"]');
+      if (!metaTag) {
+        metaTag = document.createElement('meta');
+        metaTag.setAttribute('name', 'theme-color');
+        document.head.appendChild(metaTag);
+      }
+      metaTag.setAttribute('content', '#161e2f');
+    } else {
+      let metaTag = document.querySelector('meta[name="theme-color"]');
+      if (!metaTag) {
+        metaTag = document.createElement('meta');
+        metaTag.setAttribute('name', 'theme-color');
+        document.head.appendChild(metaTag);
+      }
+      metaTag.setAttribute('content', '#F3F3F3');
+    }
+  }, [isModalVisible]);
 
   const renderHeader = () => {
     return (
@@ -85,12 +109,17 @@ export const Categories: React.FC = () => {
     );
   };
 
+  const renderContacts = () => {
+    return <components.BurgerContacts />;
+  };
+
   return (
     <components.MotionWrapper>
       <components.SafeAreaView>
         {renderHeader()}
         {renderContent()}
         {renderBottomBar()}
+        {renderContacts()}
       </components.SafeAreaView>
     </components.MotionWrapper>
   );
