@@ -1,11 +1,11 @@
 import React from 'react';
-import {useAtomValue, useSetAtom} from 'jotai';
 
 import {hooks} from '../hooks';
-import {atoms} from '../atoms';
 import {svg} from '../assets/svg';
 import {constants} from '../constants';
-import {cartAtom} from '../atoms/cart.atom';
+import {useAppSelector} from '../store';
+import {useAppDispatch} from '../store';
+import {modalActions} from '../store/slices/modalSlice';
 
 type Props = {
   title?: string;
@@ -30,12 +30,11 @@ export const Header: React.FC<Props> = ({
   goBackColor,
   containerStyle,
 }) => {
+  const dispatch = useAppDispatch();
   const {navigate} = hooks.useRouter();
-  const cart = useAtomValue(cartAtom);
+  const {list: cart, total} = useAppSelector((state) => state.cartSlice);
 
   const canGoBack = showGoBack && window.history.length > 1;
-
-  const setModalVisibleAtom = useSetAtom(atoms.setModalVisibleAtom);
 
   const renderGoBack = () => {
     if (!showGoBack && !canGoBack) return null;
@@ -59,7 +58,7 @@ export const Header: React.FC<Props> = ({
       <button
         style={{paddingLeft: 20, paddingRight: 20}}
         onClick={() => {
-          setModalVisibleAtom(true);
+          dispatch(modalActions.setVisible(true));
         }}
       >
         <svg.BurgerSvg />
@@ -108,7 +107,7 @@ export const Header: React.FC<Props> = ({
               fontWeight: 700,
             }}
           >
-            ${cart.total ? cart.total.toFixed(2) : '0'}
+            ${total ? total.toFixed(2) : '0'}
           </span>
         </div>
       </button>
@@ -138,7 +137,7 @@ export const Header: React.FC<Props> = ({
         left: '50%',
         transform: 'translateX(-50%)',
         width: '100%',
-        zIndex: 1000,
+        zIndex: 3,
         justifyContent: 'space-between',
         alignItems: 'center',
         backgroundColor: '#F3F3F3',

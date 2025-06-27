@@ -12,20 +12,7 @@ export const InfoSaved: React.FC = () => {
   hooks.useBodyColor('#161e2f');
 
   const renderBackground = () => {
-    return (
-      <img
-        src={constants.images.bg01}
-        alt='bg'
-        style={{
-          position: 'fixed',
-          width: '100%',
-          height: 'auto',
-          zIndex: 1,
-          maxWidth: 'var(--screen-width)',
-          margin: '0 auto',
-        }}
-      />
-    );
+    return <components.BackgroundImage />;
   };
 
   const renderContent = () => {
@@ -62,14 +49,14 @@ export const InfoSaved: React.FC = () => {
             color: '#C3CDE0',
             marginBottom: 30,
           }}
-          className='t16'
+          className="t16"
         >
           Your personal information has been securely stored.
         </p>
         <components.Button
-          title='Done'
-          onClick={() => navigate(-1)}
-          containerStyle={{maxWidth: 170}}
+          title="Done"
+          onClick={() => navigate(constants.routes.PROFILE)}
+          containerStyle={{minWidth: 170}}
         />
       </main>
     );

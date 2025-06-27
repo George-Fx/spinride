@@ -1,18 +1,38 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import 'swiper/swiper-bundle.css';
 
 import {hooks} from '../hooks';
 import {constants} from '../constants';
 import {components} from '../components';
+import {useAppSelector} from '../store';
 
 export const Home: React.FC = () => {
   const {navigate} = hooks.useRouter();
   const {data, loading, error} = hooks.useGetData();
 
-  if (loading) return <components.Loader />;
-  console.log('Data fetched:', data.banners);
+  const {visible: isModalVisible} = useAppSelector((state) => state.modalSlice);
 
-  // const bikeId = bikes.find((bike) => bike.id === 3)?.id;
+  useEffect(() => {
+    if (isModalVisible) {
+      let metaTag = document.querySelector('meta[name="theme-color"]');
+      if (!metaTag) {
+        metaTag = document.createElement('meta');
+        metaTag.setAttribute('name', 'theme-color');
+        document.head.appendChild(metaTag);
+      }
+      metaTag.setAttribute('content', '#161e2f');
+    } else {
+      let metaTag = document.querySelector('meta[name="theme-color"]');
+      if (!metaTag) {
+        metaTag = document.createElement('meta');
+        metaTag.setAttribute('name', 'theme-color');
+        document.head.appendChild(metaTag);
+      }
+      metaTag.setAttribute('content', '#F3F3F3');
+    }
+  }, [isModalVisible]);
+
+  if (loading) return <components.Loader />;
 
   const renderHeader = () => {
     return <components.Header showBurger={true} showBasket={true} />;
@@ -70,6 +90,10 @@ export const Home: React.FC = () => {
     return <components.BottomTabBar />;
   };
 
+  const renderContacts = () => {
+    return <components.BurgerContacts />;
+  };
+
   const renderContent = () => {
     return (
       <main
@@ -81,7 +105,7 @@ export const Home: React.FC = () => {
       >
         {/* {renderCarousel()} */}
         {renderBestSellers()}
-        {/* {renderBanners()} */}
+        {renderBanners()}
         {renderFeatured()}
       </main>
     );
@@ -93,6 +117,7 @@ export const Home: React.FC = () => {
         {renderHeader()}
         {renderContent()}
         {renderBottomBar()}
+        {renderContacts()}
       </components.SafeAreaView>
     </components.MotionWrapper>
   );

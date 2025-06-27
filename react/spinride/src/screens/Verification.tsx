@@ -5,8 +5,6 @@ import {hooks} from '../hooks';
 import {constants} from '../constants';
 import {components} from '../components';
 
-import styles from '../modules/confirmation-code.module.scss';
-
 export const Verification: React.FC = () => {
   const {navigate, location} = hooks.useRouter();
   const state = location.state as
@@ -40,17 +38,47 @@ export const Verification: React.FC = () => {
 
   const renderContent = () => {
     return (
-      <main className={styles.container}>
+      <main
+        style={{
+          overflowY: 'auto',
+          paddingTop: 'calc(var(--header-height) + 30px)',
+          paddingBottom: 20,
+          paddingLeft: 20,
+          paddingRight: 20,
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
         <span className="t16" style={{marginBottom: 30, textAlign: 'center'}}>
           Enter your OTP code here.
         </span>
-        <div className={styles.otpGrid}>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(5, 1fr)',
+            gap: '9px',
+            marginBottom: '30px',
+          }}
+        >
           {otpCode.map((code, index) => {
+            // const otpWidth = cal
             return (
               <button
                 key={index}
-                className={styles.otpBtn}
                 onClick={() => handleCodeChange(index, code)}
+                style={{
+                  backgroundColor: 'var(--white-color)',
+                  width: '100%',
+                  aspectRatio: '1 / 1',
+                  borderRadius: '50%',
+                  padding: '13px 20px',
+                  textAlign: 'center',
+                  fontSize: '22px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  border: '1px solid #EEEEEE',
+                }}
               >
                 {code || '_'}
               </button>
@@ -61,9 +89,11 @@ export const Verification: React.FC = () => {
           <span className="t16">
             Didn’t receive the OTP?{' '}
             <span
-              className={styles.resend}
               onClick={() => {
                 alert('Resend OTP logic goes here');
+              }}
+              style={{
+                color: 'var(--main-dark-color)',
               }}
             >
               Resend.

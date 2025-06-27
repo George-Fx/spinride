@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 
 import {svg} from '../assets/svg';
-import styles from '../modules/components/input-field.module.scss';
 
 type Props = {
   onClick?: () => void;
@@ -28,16 +27,33 @@ export const InputField: React.FC<Props> = ({
 
   return (
     <button
-      className={`${styles.inputFieldContainer} ${className || ''}`}
-      style={containerStyle}
+      style={{
+        backgroundColor: 'var(--white-color)',
+        width: '100%',
+        borderRadius: 50,
+        display: 'flex',
+        alignItems: 'center',
+        height: 50,
+        paddingLeft: 20,
+        border: '1px solid #EEEEEE',
+        cursor: 'pointer',
+        ...containerStyle,
+      }}
       onClick={onClick}
-      type='button'
+      type="button"
     >
       <span
-        className={
-          styles.inputFieldText +
-          (isPlaceholder ? ' ' + styles.placeholder : '')
-        }
+        style={{
+          fontSize: 14,
+          lineHeight: 1.6,
+          marginRight: 'auto',
+          paddingRight: 20,
+          color: isPlaceholder
+            ? 'var(--placeholder-color)'
+            : 'var(--main-dark-color)',
+          background: 'none',
+          border: 'none',
+        }}
       >
         {inputType === 'password' && !visible
           ? value
@@ -46,11 +62,23 @@ export const InputField: React.FC<Props> = ({
           : value || placeholder || 'Enter text...'}
       </span>
       <div
-        className={styles.inputFieldButton}
         onClick={(e) => {
           e.stopPropagation();
           e.preventDefault();
           setVisible((v) => !v);
+        }}
+        style={{
+          height: '100%',
+          width: 50,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: isPlaceholder
+            ? 'var(--placeholder-color)'
+            : 'var(--white-color)',
+          borderRadius: 50,
+          cursor: 'pointer',
+          padding: 0,
         }}
       >
         {inputType === 'password' && <svg.EyeOff />}

@@ -1,3 +1,4 @@
+import {Price} from './Price';
 import {Header} from './Header';
 import {Button} from './Button';
 import {Loader} from './Loader';
@@ -14,9 +15,11 @@ import {BikeCarousel} from './BikeCarousel';
 import {FlashMessage} from './FlashMessage';
 import {MotionWrapper} from './MotionWrapper';
 import {BurgerContacts} from './BurgerContacts';
+import {BackgroundImage} from './BackgroundImage';
 import {HomeBestSellers} from './HomeBestSellers';
 
 export const components = {
+  Price,
   Button,
   Header,
   Loader,
@@ -33,5 +36,6 @@ export const components = {
   HomeFeatured,
   MotionWrapper,
   BurgerContacts,
+  BackgroundImage,
   HomeBestSellers,
 };

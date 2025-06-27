@@ -4,7 +4,6 @@ import {useNavigate} from 'react-router-dom';
 import {hooks} from '../hooks';
 import {svg} from '../assets/svg';
 import {constants} from '../constants';
-import bg from '../assets/bg/01.png';
 import {components} from '../components';
 
 export const SignOut: React.FC = () => {
@@ -13,20 +12,7 @@ export const SignOut: React.FC = () => {
   hooks.useBodyColor('#161e2f');
 
   const renderBackground = () => {
-    return (
-      <img
-        src={bg}
-        alt='bg'
-        style={{
-          position: 'fixed',
-          width: '100%',
-          height: 'auto',
-          zIndex: 1,
-          maxWidth: 'var(--screen-width)',
-          margin: '0 auto',
-        }}
-      />
-    );
+    return <components.BackgroundImage />;
   };
 
   const renderContent = () => {
@@ -63,7 +49,7 @@ export const SignOut: React.FC = () => {
             color: '#C3CDE0',
             marginBottom: 30,
           }}
-          className='t16'
+          className="t16"
         >
           You will need to enter your email and password again.
         </p>
@@ -76,14 +62,11 @@ export const SignOut: React.FC = () => {
           }}
         >
           <components.Button
-            title='Sure'
-            colorScheme='secondary'
+            title="Sure"
+            colorScheme="secondary"
             onClick={() => navigate(constants.routes.SIGN_IN)}
           />
-          <components.Button
-            title='Cancel'
-            onClick={() => navigate(-1)}
-          />
+          <components.Button title="Cancel" onClick={() => navigate(-1)} />
         </div>
       </main>
     );

@@ -1,12 +1,13 @@
 import React from 'react';
-import {useAtom} from 'jotai';
 
 import {hooks} from '../hooks';
 import {svg} from '../assets/svg';
 import type {BikeType} from '../types';
 import {constants} from '../constants';
 import {components} from '../components';
-import {removeFromWishlistAtom} from '../atoms/wishlist.atom';
+import {useAppDispatch} from '../store';
+import {cartActions} from '../store/slices/cartSlice';
+import {wishlistActions} from '../store/slices/wishlistSlice';
 
 type Props = {
   bike: BikeType;
@@ -14,8 +15,8 @@ type Props = {
 };
 
 export const WishlistItem: React.FC<Props> = ({bike, isLast}) => {
+  const dispatch = useAppDispatch();
   const {navigate} = hooks.useRouter();
-  const [, removeFromWishlist] = useAtom(removeFromWishlistAtom);
 
   return (
     <li
@@ -77,10 +78,16 @@ export const WishlistItem: React.FC<Props> = ({bike, isLast}) => {
           justifyContent: 'space-between',
         }}
       >
-        <svg.AddToCartSvg />
         <button
           onClick={() => {
-            removeFromWishlist(bike);
+            dispatch(cartActions.addToCart(bike));
+          }}
+        >
+          <svg.AddToCartSvg />
+        </button>
+        <button
+          onClick={() => {
+            dispatch(wishlistActions.removeFromWishlist(bike));
           }}
         >
           <svg.IsInWishlistSvg />

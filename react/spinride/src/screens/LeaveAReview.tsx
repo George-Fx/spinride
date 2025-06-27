@@ -23,20 +23,7 @@ export const LeaveAReview: React.FC = () => {
   };
 
   const renderBackground = () => {
-    return (
-      <img
-        src={constants.images.bg01}
-        alt="bg"
-        style={{
-          position: 'fixed',
-          width: '100%',
-          height: 'auto',
-          zIndex: 1,
-          maxWidth: 'var(--screen-width)',
-          margin: '0 auto',
-        }}
-      />
-    );
+    return <components.BackgroundImage />;
   };
 
   const renderHeader = () => {
@@ -58,7 +45,6 @@ export const LeaveAReview: React.FC = () => {
       <main
         style={{
           overflowY: 'auto',
-          // height: '100%',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -109,12 +95,14 @@ export const LeaveAReview: React.FC = () => {
           value={form.comment}
           onClick={() => handleChangeField('comment', 'comment')}
         />
-        <components.Button
-          title="submit"
-          onClick={() => {
-            navigate(-1);
-          }}
-        />
+        <div style={{width: '100%'}}>
+          <components.Button
+            title="submit"
+            onClick={() => {
+              navigate(-1);
+            }}
+          />
+        </div>
       </main>
     );
   };

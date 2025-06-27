@@ -1,21 +1,30 @@
 import React from 'react';
 
+import {hooks} from '../hooks';
 import {svg} from '../assets/svg';
 import {constants} from '../constants';
-import {hooks} from '../hooks';
-
 import type {BikeType} from '../types';
+import {useAppSelector} from '../store';
+import {useAppDispatch} from '../store';
+import {cartActions} from '../store/slices/cartSlice';
+import {wishlistActions} from '../store/slices/wishlistSlice';
 
 type Props = {
   bike: BikeType;
 };
 
 export const BestSellerItem: React.FC<Props> = ({bike}) => {
+  const dispatch = useAppDispatch();
   const {navigate} = hooks.useRouter();
+  const {list: cart} = useAppSelector((state) => state.cartSlice);
+  const {list: wishlist} = useAppSelector((state) => state.wishlistSlice);
+  const ifInCart = cart.some((item) => item.id === bike.id);
+  const ifInWishlist = wishlist.some((item) => item.id === bike.id);
+
   return (
     <>
       {/* image */}
-      <button
+      <div
         style={{
           width: 200,
           borderRadius: 12,
@@ -49,6 +58,11 @@ export const BestSellerItem: React.FC<Props> = ({bike}) => {
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
+              if (!ifInWishlist) {
+                dispatch(wishlistActions.addToWishlist(bike));
+              } else {
+                alert('This bike is already in your wishlist');
+              }
             }}
             style={{
               paddingLeft: 10,
@@ -57,13 +71,22 @@ export const BestSellerItem: React.FC<Props> = ({bike}) => {
               paddingBottom: 8,
             }}
           >
-            <svg.AddToWLHeartSvg />
+            <svg.AddToWLHeartSvg
+              fillColor={ifInWishlist ? 'var(--main-orange-color)' : '#fff'}
+              strokeColor={
+                ifInWishlist ? 'var(--main-orange-color)' : 'var(--text-color)'
+              }
+            />
           </div>
           <div
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
-              // addToCart(bike);
+              if (!ifInCart) {
+                dispatch(cartActions.addToCart(bike));
+              } else {
+                alert('This bike is already in your cart');
+              }
             }}
             style={{
               paddingLeft: 10,
@@ -72,10 +95,14 @@ export const BestSellerItem: React.FC<Props> = ({bike}) => {
               paddingTop: 8,
             }}
           >
-            <svg.AddToCartBag />
+            <svg.AddToCartBag
+              color={
+                ifInCart ? 'var(--main-orange-color)' : 'var(--text-color)'
+              }
+            />
           </div>
         </div>
-      </button>
+      </div>
       {/* info */}
       <div
         style={{
@@ -97,7 +124,7 @@ export const BestSellerItem: React.FC<Props> = ({bike}) => {
         {bike.name}
       </span>
       <span style={{marginBottom: 9, fontSize: 14, fontWeight: 600}}>
-        ${bike.price.toLocaleString()}
+        ${bike.price.toLocaleString('en-US')}
       </span>
     </>
   );

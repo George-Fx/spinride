@@ -4,7 +4,6 @@ import {useNavigate} from 'react-router-dom';
 import {hooks} from '../hooks';
 import {svg} from '../assets/svg';
 import {constants} from '../constants';
-import bg from '../assets/bg/01.png';
 import {components} from '../components';
 
 export const OrderFailed: React.FC = () => {
@@ -13,20 +12,7 @@ export const OrderFailed: React.FC = () => {
   hooks.useBodyColor('#161e2f');
 
   const renderBackground = () => {
-    return (
-      <img
-        src={bg}
-        alt='bg'
-        style={{
-          position: 'fixed',
-          width: '100%',
-          height: 'auto',
-          zIndex: 1,
-          maxWidth: 'var(--screen-width)',
-          margin: '0 auto',
-        }}
-      />
-    );
+    return <components.BackgroundImage />;
   };
 
   const renderContent = () => {
@@ -63,7 +49,7 @@ export const OrderFailed: React.FC = () => {
             color: '#C3CDE0',
             marginBottom: 30,
           }}
-          className='t16'
+          className="t16"
         >
           Something went wrong. Please try again to continue your order.
         </p>
@@ -76,13 +62,13 @@ export const OrderFailed: React.FC = () => {
           }}
         >
           <components.Button
-            title='my profile'
-            colorScheme='secondary'
-            onClick={() => navigate(constants.routes.SIGN_IN)}
+            title="my profile"
+            colorScheme="secondary"
+            onClick={() => navigate(constants.routes.PROFILE)}
           />
           <components.Button
-            title='try again'
-            onClick={() => navigate(-1)}
+            title="try again"
+            onClick={() => navigate(constants.routes.ORDER)}
           />
         </div>
       </main>

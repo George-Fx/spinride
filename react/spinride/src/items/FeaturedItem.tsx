@@ -3,16 +3,25 @@ import React from 'react';
 import {hooks} from '../hooks';
 import {svg} from '../assets/svg';
 import {constants} from '../constants';
-import {components} from '../components';
-
 import type {BikeType} from '../types';
+import {useAppSelector} from '../store';
+import {useAppDispatch} from '../store';
+import {components} from '../components';
+import {cartActions} from '../store/slices/cartSlice';
+import {wishlistActions} from '../store/slices/wishlistSlice';
 
 type Props = {
   bike: BikeType;
 };
 
 export const FeaturedItem: React.FC<Props> = ({bike}) => {
+  const dispatch = useAppDispatch();
   const {navigate} = hooks.useRouter();
+  const {list: cart} = useAppSelector((state) => state.cartSlice);
+  const {list: wishlist} = useAppSelector((state) => state.wishlistSlice);
+  const ifInCart = cart.some((item) => item.id === bike.id);
+  const ifInWishlist = wishlist.some((item) => item.id === bike.id);
+
   return (
     <>
       {/* image */}
@@ -50,6 +59,11 @@ export const FeaturedItem: React.FC<Props> = ({bike}) => {
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
+              if (!ifInWishlist) {
+                dispatch(wishlistActions.addToWishlist(bike));
+              } else {
+                alert('Already in wishlist');
+              }
             }}
             style={{
               paddingLeft: 10,
@@ -58,13 +72,22 @@ export const FeaturedItem: React.FC<Props> = ({bike}) => {
               paddingBottom: 8,
             }}
           >
-            <svg.AddToWLHeartSvg />
+            <svg.AddToWLHeartSvg
+              fillColor={ifInWishlist ? 'var(--main-orange-color)' : '#fff'}
+              strokeColor={
+                ifInWishlist ? 'var(--main-orange-color)' : 'var(--text-color)'
+              }
+            />
           </div>
           <div
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
-              // addToCart(bike);
+              if (!ifInCart) {
+                dispatch(cartActions.addToCart(bike));
+              } else {
+                alert('Already in cart');
+              }
             }}
             style={{
               paddingLeft: 10,
@@ -73,7 +96,11 @@ export const FeaturedItem: React.FC<Props> = ({bike}) => {
               paddingTop: 8,
             }}
           >
-            <svg.AddToCartBag />
+            <svg.AddToCartBag
+              color={
+                ifInCart ? 'var(--main-orange-color)' : 'var(--text-color)'
+              }
+            />
           </div>
         </div>
         {/* badge */}

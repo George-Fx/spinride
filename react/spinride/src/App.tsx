@@ -1,6 +1,3 @@
-import {useEffect} from 'react';
-import {useAtom, useSetAtom} from 'jotai';
-import {appAtom} from './atoms/app.atom';
 import {AnimatePresence} from 'framer-motion';
 import {useLocation, Routes, Route} from 'react-router-dom';
 
@@ -19,10 +16,22 @@ function App() {
           path={constants.routes.CATEGORIES}
           element={<screens.Categories />}
         />
+        <Route
+          path={constants.routes.SHIPPING_AND_PAYMENT_INFO}
+          element={<screens.ShippingAndPaymentInfo />}
+        />
         <Route path={constants.routes.SIGN_OUT} element={<screens.SignOut />} />
         <Route
           path={constants.routes.ORDER_FAILED}
           element={<screens.OrderFailed />}
+        />
+        <Route
+          path={constants.routes.CHECKOUT}
+          element={<screens.Checkout />}
+        />
+        <Route
+          path={constants.routes.ORDER_HISTORY_EMPTY}
+          element={<screens.OrderHistoryEmpty />}
         />
         <Route path={constants.routes.BIKE} element={<screens.Bike />} />
         <Route
@@ -83,10 +92,6 @@ function App() {
         <Route
           path={constants.routes.FORGOT_PASSWORD_SENT_EMAIL}
           element={<screens.ForgotPasswordSentEmail />}
-        />
-        <Route
-          path={constants.routes.PAYMENTS}
-          element={<screens.Payments />}
         />
         <Route path={constants.routes.FILTER} element={<screens.Filter />} />
         <Route path={constants.routes.PROFILE} element={<screens.Profile />} />

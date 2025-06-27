@@ -7,9 +7,6 @@ import {svg} from '../assets/svg';
 import {constants} from '../constants';
 import {components} from '../components';
 
-import bg03 from '../assets/bg/03.png';
-import styles from '../modules/payment-success.module.scss';
-
 export const PaymentSuccess: React.FC = () => {
   hooks.useThemeColor('#fff');
   hooks.useBodyColor('#fff');
@@ -36,23 +33,14 @@ export const PaymentSuccess: React.FC = () => {
     }
   }, []);
 
-  const renderBackground = () => {
-    return (
-      <img
-        src={bg03}
-        alt='bg'
-        className={styles.paymentSuccessBg}
-      />
-    );
-  };
+  // const renderBackground = () => {
+  //   return <img src={bg03} alt="bg" />;
+  // };
 
   const renderContent = () => {
     return (
-      <main
-        className={styles.paymentSuccessMain}
-        style={{marginBottom: height + 20}}
-      >
-        <svg.SuccessCheckSvg />
+      <main style={{marginBottom: height + 20}}>
+        {/* <svg.SuccessCheckSvg />
         <h2 className={styles.paymentSuccessTitle}>Success!</h2>
         <div className={styles.paymentSuccessAmountBlock}>
           <span className={styles.paymentSuccessAmount}>
@@ -61,27 +49,24 @@ export const PaymentSuccess: React.FC = () => {
         </div>
         <p className={'t16 ' + styles.paymentSuccessText}>
           Your payment has been <br /> processed!
-        </p>
+        </p> */}
       </main>
     );
   };
 
   const renderButtons = () => {
     return (
-      <section
-        ref={buttonsRef}
-        className={styles.paymentSuccessButtons}
-      >
+      <section ref={buttonsRef}>
         <components.Button
-          title='Send Receipt'
-          colorScheme='secondary'
+          title="Send Receipt"
+          colorScheme="secondary"
           containerStyle={{marginBottom: 14}}
           onClick={() => {
             alert('Receipt sent to your email!');
           }}
         />
         <components.Button
-          title='Done'
+          title="Done"
           onClick={() => {
             navigate(constants.routes.TAB_NAVIGATOR, {
               replace: true,
@@ -95,7 +80,6 @@ export const PaymentSuccess: React.FC = () => {
   return (
     <components.MotionWrapper>
       <components.SafeAreaView>
-        {renderBackground()}
         {renderContent()}
         {renderButtons()}
       </components.SafeAreaView>

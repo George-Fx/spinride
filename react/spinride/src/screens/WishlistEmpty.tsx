@@ -12,20 +12,7 @@ export const WishlistEmpty: React.FC = () => {
   const {navigate} = hooks.useRouter();
 
   const renderBackground = () => {
-    return (
-      <img
-        src={constants.images.bg01}
-        alt="bg"
-        style={{
-          position: 'fixed',
-          width: '100%',
-          height: 'auto',
-          zIndex: 1,
-          maxWidth: 'var(--screen-width)',
-          margin: '0 auto',
-        }}
-      />
-    );
+    return <components.BackgroundImage />;
   };
 
   const renderContent = () => {

@@ -6,7 +6,7 @@ import {components} from '../components';
 export const Description: React.FC = () => {
   const {location} = hooks.useRouter();
   const {bikeId} = location.state || {bikeId: null};
-  const {bike} = hooks.useGetBike(bikeId);
+  const {bike, loading} = hooks.useGetBike(bikeId);
 
   const renderHeader = () => {
     return <components.Header showGoBack={true} title="Description" />;
@@ -26,6 +26,8 @@ export const Description: React.FC = () => {
       </main>
     );
   };
+
+  if (loading) return <components.Loader />;
 
   return (
     <components.MotionWrapper>

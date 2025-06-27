@@ -6,9 +6,6 @@ import {hooks} from '../hooks';
 import {svg} from '../assets/svg';
 import {constants} from '../constants';
 import {components} from '../components';
-import styles from '../modules/payment-failed.module.scss';
-
-import bg03 from '../assets/bg/03.png';
 
 export const PaymentFailed: React.FC = () => {
   hooks.useThemeColor('#fff');
@@ -37,22 +34,14 @@ export const PaymentFailed: React.FC = () => {
   }, []);
 
   const renderBackground = () => {
-    return (
-      <img
-        src={bg03}
-        alt='bg'
-        className={styles.paymentFailedBg}
-      />
-    );
+    return <></>;
+    // return <img src={bg03} alt="bg" className={styles.paymentFailedBg} />;
   };
 
   const renderContent = () => {
     return (
-      <main
-        className={styles.paymentFailedMain}
-        style={{marginBottom: height + 20}}
-      >
-        <svg.PaymentFailed />
+      <main style={{marginBottom: height + 20}}>
+        {/* <svg.PaymentFailed />
         <h2 className={styles.paymentFailedTitle}>Oops!</h2>
         <div className={styles.paymentFailedAmountBlock}>
           <span className={styles.paymentFailedAmount}>
@@ -62,20 +51,17 @@ export const PaymentFailed: React.FC = () => {
         <p className={'t16 ' + styles.paymentFailedText}>
           Something went wrong. Please try <br /> again or contact the support
           team.
-        </p>
+        </p> */}
       </main>
     );
   };
 
   const renderButtons = () => {
     return (
-      <section
-        ref={buttonsRef}
-        className={styles.paymentFailedButtons}
-      >
+      <section ref={buttonsRef}>
         <components.Button
-          title='Back to dashboard'
-          colorScheme='secondary'
+          title="Back to dashboard"
+          colorScheme="secondary"
           containerStyle={{marginBottom: 14}}
           onClick={() => {
             navigate(constants.routes.TAB_NAVIGATOR, {
@@ -84,7 +70,7 @@ export const PaymentFailed: React.FC = () => {
           }}
         />
         <components.Button
-          title='Try Again'
+          title="Try Again"
           onClick={() => {
             navigate(constants.routes.TAB_NAVIGATOR, {
               replace: true,

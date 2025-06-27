@@ -19,6 +19,7 @@ export type BikeType = {
   isFeatured: boolean;
   isBestSeller: boolean;
   oldPrice: number | null;
+  color?: string;
 };
 
 export interface Color {

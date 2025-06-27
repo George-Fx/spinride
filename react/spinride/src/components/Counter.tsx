@@ -1,9 +1,8 @@
-import React, {useEffect} from 'react';
-import {useSetAtom, useAtomValue} from 'jotai';
+import React from 'react';
 
-import {atoms} from '../atoms';
 import {svg} from '../assets/svg';
 import type {BikeType} from '../types';
+import {useAppSelector} from '../store';
 
 type Props = {
   bike: BikeType;
@@ -16,10 +15,8 @@ export const Counter: React.FC<Props> = ({
   minusBtnClicked,
   plusBtnClicked,
 }) => {
-  const cart = useAtomValue(atoms.cartAtom);
-  const addToCart = useSetAtom(atoms.addToCartAtom);
-  const removeFromCart = useSetAtom(atoms.removeFromCartAtom);
-  const qty = cart.list.find((item) => item.id === bike.id)?.quantity || 0;
+  const {list: cart} = useAppSelector((state) => state.cartSlice);
+  const qty = cart.find((item) => item.id === bike.id)?.quantity || 0;
 
   // useEffect(() => {
   //   if (!bikeInCart?.quantity) return;

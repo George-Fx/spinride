@@ -3,7 +3,6 @@ import {useNavigate} from 'react-router-dom';
 
 import {constants} from '../constants';
 import {components} from '../components';
-import styles from '../modules/verify-your-phone-number.module.scss';
 
 export const VerifyYourEmail: React.FC = () => {
   const navigate = useNavigate();
@@ -31,7 +30,17 @@ export const VerifyYourEmail: React.FC = () => {
 
   const renderContent = () => {
     return (
-      <main className={styles.container}>
+      <main
+        style={{
+          overflowY: 'auto',
+          paddingTop: 'calc(var(--header-height) + 30px)',
+          paddingBottom: 20,
+          paddingLeft: 20,
+          paddingRight: 20,
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
         <p
           className="t16"
           style={{marginBottom: 30, textAlign: 'center', maxWidth: 335}}
@@ -39,10 +48,10 @@ export const VerifyYourEmail: React.FC = () => {
           We have sent you an email with a verification code.
         </p>
         <components.InputField
-          className={styles.inputField}
           placeholder="+17 0123456789"
           value={form.email}
           onClick={() => handleChangeField('email', 'email address')}
+          containerStyle={{marginBottom: 14}}
         />
         <components.Button
           title="Confirm"

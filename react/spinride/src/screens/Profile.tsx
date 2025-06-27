@@ -1,12 +1,11 @@
 import React from 'react';
-import {useAtomValue} from 'jotai';
 
 import {hooks} from '../hooks';
 import {items} from '../items';
 import {svg} from '../assets/svg';
 import {constants} from '../constants';
+import {useAppSelector} from '../store';
 import {components} from '../components';
-import {appAtom} from '../atoms/app.atom';
 
 const SmartphoneGray: React.FC = () => {
   return (
@@ -86,8 +85,13 @@ const MailGray: React.FC = () => {
 
 export const Profile: React.FC = () => {
   const {navigate} = hooks.useRouter();
-  const isEmailVerified = useAtomValue(appAtom).isEmailVerified;
-  const isPhoneNumberVerified = useAtomValue(appAtom).isPhoneNumberVerified;
+
+  const {emailVerified, phoneVerified} = useAppSelector(
+    (state) => state.verificationSlice,
+  );
+
+  const isEmailVerified = emailVerified;
+  const isPhoneNumberVerified = phoneVerified;
 
   const renderHeader = () => {
     return (
@@ -134,6 +138,12 @@ export const Profile: React.FC = () => {
             onClick={() => navigate(constants.routes.ORDER_HISTORY)}
           />
           <items.ProfileMenuItem
+            title="Order history Empty"
+            leftSideIcon={<svg.CalendarSvg />}
+            rightSideIcon={<svg.RightArrowSvg />}
+            onClick={() => navigate(constants.routes.ORDER_HISTORY_EMPTY)}
+          />
+          <items.ProfileMenuItem
             title="My promocodes"
             leftSideIcon={<svg.GiftSvg />}
             rightSideIcon={<svg.RightArrowSvg />}
@@ -172,7 +182,7 @@ export const Profile: React.FC = () => {
           <items.ProfileMenuItem
             title="Sign out"
             leftSideIcon={<svg.LogOutSvg />}
-            onClick={() => navigate(constants.routes.SIGN_IN)}
+            onClick={() => navigate(constants.routes.SIGN_OUT)}
           />
           <items.ProfileMenuItem
             title="Delete account"

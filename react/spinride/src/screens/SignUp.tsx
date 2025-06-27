@@ -7,8 +7,6 @@ import {svg} from '../assets/svg';
 import {constants} from '../constants';
 import {components} from '../components';
 
-import styles from '../modules/sign-up.module.scss';
-
 export const SignUp: React.FC = () => {
   hooks.useThemeColor('#F3F3F3');
   hooks.useBodyColor('#F3F3F3');
@@ -33,7 +31,7 @@ export const SignUp: React.FC = () => {
     return (
       <components.Header
         showGoBack={true}
-        title='Sign up'
+        title="Sign up"
         headerStyle={{backgroundColor: 'var(--anti-flash-white)'}}
       />
     );
@@ -41,75 +39,74 @@ export const SignUp: React.FC = () => {
 
   const renderContent = () => {
     return (
-      <main className={styles.container}>
-        <h1 className={styles.title}>Sign up!</h1>
+      <main
+        style={{
+          overflowY: 'auto',
+          paddingTop: 'calc(var(--header-height) + 20px)',
+          paddingBottom: 20,
+          paddingLeft: 20,
+          paddingRight: 20,
+          display: 'flex',
+          flexDirection: 'column',
+          height: '100%',
+          justifyContent: 'center',
+        }}
+      >
+        <h1
+          style={{
+            textAlign: 'center',
+            marginBottom: 30,
+            textTransform: 'capitalize',
+          }}
+        >
+          Sign up!
+        </h1>
         <components.InputField
-          className={styles.inputField}
-          placeholder='Cristina Wolf'
+          placeholder="Cristina Wolf"
           value={form.name}
           onClick={() => handleChangeField('name', 'name')}
+          containerStyle={{marginBottom: 14}}
         />
         <components.InputField
-          className={styles.inputField}
-          placeholder='cristinawolf@gmail.com'
+          placeholder="cristinawolf@gmail.com"
           value={form.email}
           onClick={() => handleChangeField('email', 'email')}
           isValid={form.email.length > 0 && form.email.includes('@')}
+          containerStyle={{marginBottom: 14}}
         />
         <components.InputField
-          className={styles.inputField}
-          placeholder='••••••'
+          placeholder="••••••"
           value={form.password}
           onClick={() => handleChangeField('password', 'password')}
-          inputType='password'
+          inputType="password"
+          containerStyle={{marginBottom: 14}}
         />
         <components.InputField
-          className={styles.inputField}
-          placeholder='••••••'
+          placeholder="••••••"
           value={form.confirmPassword}
           onClick={() =>
             handleChangeField('confirmPassword', 'confirm password')
           }
-          inputType='password'
+          inputType="password"
+          containerStyle={{marginBottom: 14}}
         />
         <components.Button
-          title='Sign up'
+          title="Sign up"
           containerStyle={{marginBottom: 30}}
           onClick={() => {
             navigate(constants.routes.VERIFY_YOUR_PHONE_NUMBER);
           }}
         />
-        <div className={styles.bottomRow}>
-          <span className='t16'>Already have an account?</span>
-          <Link
-            className={`t16 ${styles.signInLink}`}
-            to={constants.routes.SIGN_IN}
-          >
-            Sign in.
-          </Link>
-        </div>
-        <div className={styles.socialRow}>
-          <button
-            onClick={() => {
-              alert('Facebook login logic goes here');
-            }}
-          >
-            <svg.FacebookSvg />
-          </button>
-          <button
-            onClick={() => {
-              alert('Twitter login logic goes here');
-            }}
-          >
-            <svg.TwitterSvg />
-          </button>
-          <button
-            onClick={() => {
-              alert('Google login logic goes here');
-            }}
-          >
-            <svg.GoogleSvg />
-          </button>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            gap: 4,
+            alignItems: 'center',
+          }}
+        >
+          <span className="t16">Already have an account?</span>
+          <Link to={constants.routes.SIGN_IN}>Sign in.</Link>
         </div>
       </main>
     );

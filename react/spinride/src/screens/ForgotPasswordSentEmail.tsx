@@ -11,20 +11,7 @@ export const ForgotPasswordSentEmail: React.FC = () => {
   hooks.useBodyColor('#161e2f');
 
   const renderBackground = () => {
-    return (
-      <img
-        src={constants.images.bg01}
-        alt='bg'
-        style={{
-          position: 'fixed',
-          width: '100%',
-          height: 'auto',
-          zIndex: 1,
-          maxWidth: 'var(--screen-width)',
-          margin: '0 auto',
-        }}
-      />
-    );
+    return <components.BackgroundImage />;
   };
 
   const renderContent = () => {
@@ -63,12 +50,12 @@ export const ForgotPasswordSentEmail: React.FC = () => {
             color: '#C3CDE0',
             marginBottom: 30,
           }}
-          className='t16'
+          className="t16"
         >
           Log in with your new credentials. Welcome back!
         </p>
         <components.Button
-          title='done'
+          title="done"
           onClick={() => navigate(constants.routes.SIGN_IN)}
           containerStyle={{maxWidth: 170, width: '100%'}}
         />

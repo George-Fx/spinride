@@ -1,16 +1,15 @@
-import {useAtom} from 'jotai';
 import React, {useEffect} from 'react';
 
 import {hooks} from '../hooks';
-import {atoms} from '../atoms';
 import {constants} from '../constants';
 import {components} from '../components';
+import {useAppSelector} from '../store';
 
 export const Categories: React.FC = () => {
   const {navigate} = hooks.useRouter();
   const {categories, loading, error} = hooks.useGetCategories();
 
-  const [isModalVisible, _] = useAtom(atoms.modalVisibleAtom);
+  const {visible: isModalVisible} = useAppSelector((state) => state.modalSlice);
 
   useEffect(() => {
     if (isModalVisible) {

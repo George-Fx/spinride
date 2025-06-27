@@ -12,6 +12,7 @@ export const routes = {
   SIGN_OUT: '/sign-out',
   WISHLIST: '/wishlist',
   PAYMENTS: '/payments',
+  CHECKOUT: '/checkout',
   CARD_MENU: '/card-menu',
   CATEGORIES: '/categories',
   STATISTICS: '/statistics',
@@ -48,18 +49,12 @@ export const routes = {
   VERIFY_YOUR_EMAIL: '/verify-your-email',
   EDIT_PERSONAL_INFO: '/edit-personal-info',
   MY_PROMOCODES_EMPTY: '/my-promocodes-empty',
+  ORDER_HISTORY_EMPTY: '/order-history-empty',
   STATISTICS_CHOOSE_CARD: '/statistics-choose-card',
   SIGN_UP_ACCOUNT_CREATED: '/sign-up-account-created',
   EMAIL_HAS_BEEN_VERIFIED: '/email-has-been-verified',
   VERIFY_YOUR_PHONE_NUMBER: '/verify-your-phone-number',
+  SHIPPING_AND_PAYMENT_INFO: '/shipping-and-payment-info',
   FORGOT_PASSWORD_SENT_EMAIL: '/forgot-password-sent-email',
   PHONE_NUMBER_HAS_BEEN_VERIFIED: '/phone-number-has-been-verified',
 };
-
-// export const tabRoutes = {
-//   HOME: '/tab-navigator/home',
-//   CATEGORIES: '/tab-navigator/categories',
-//   ORDER: '/tab-navigator/order',
-//   WISHLIST: '/tab-navigator/wishlist',
-//   PROFILE: '/tab-navigator/profile',
-// };

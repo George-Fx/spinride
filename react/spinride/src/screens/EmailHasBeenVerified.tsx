@@ -1,39 +1,26 @@
 import React, {useEffect} from 'react';
-import {useSetAtom} from 'jotai';
 import {useNavigate} from 'react-router-dom';
 
 import {hooks} from '../hooks';
-import {atoms} from '../atoms';
 import {svg} from '../assets/svg';
 import {constants} from '../constants';
+import {useAppDispatch} from '../store';
 import {components} from '../components';
+import {verificationActions} from '../store/slices/verificationSlice';
 
 export const EmailHasBeenVerified: React.FC = () => {
   const navigate = useNavigate();
   hooks.useThemeColor('#161e2f');
   hooks.useBodyColor('#161e2f');
 
-  const setIsEmailVerified = useSetAtom(atoms.isEmailVerifiedAtom);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    setIsEmailVerified(true);
-  }, [setIsEmailVerified]);
+    dispatch(verificationActions.setEmailVerified(true));
+  }, [dispatch]);
 
   const renderBackground = () => {
-    return (
-      <img
-        src={constants.images.bg01}
-        alt="bg"
-        style={{
-          position: 'fixed',
-          width: '100%',
-          height: 'auto',
-          zIndex: 1,
-          maxWidth: 'var(--screen-width)',
-          margin: '0 auto',
-        }}
-      />
-    );
+    return <components.BackgroundImage />;
   };
 
   const renderContent = () => {

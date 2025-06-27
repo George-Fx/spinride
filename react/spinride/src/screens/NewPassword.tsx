@@ -4,7 +4,6 @@ import {useNavigate} from 'react-router-dom';
 import {hooks} from '../hooks';
 import {constants} from '../constants';
 import {components} from '../components';
-import styles from '../modules/new-password.module.scss';
 
 export const NewPassword: React.FC = () => {
   hooks.useThemeColor('#F3F3F3');
@@ -28,7 +27,7 @@ export const NewPassword: React.FC = () => {
     return (
       <components.Header
         showGoBack={true}
-        title='New password'
+        title="New password"
         headerStyle={{backgroundColor: 'var(--anti-flash-white)'}}
       />
     );
@@ -36,20 +35,30 @@ export const NewPassword: React.FC = () => {
 
   const renderContent = () => {
     return (
-      <main className={styles.main}>
-        <p className={`t16 ${styles.description}`}>
+      <main
+        style={{
+          overflowY: 'auto',
+          paddingTop: 'calc(var(--header-height) + 20px)',
+          paddingBottom: 20,
+          paddingLeft: 20,
+          paddingRight: 20,
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
+        <p className="t16" style={{textAlign: 'center', marginBottom: 30}}>
           Enter new password and confirm.
         </p>
         <components.InputField
-          inputType='password'
-          placeholder='New Password'
+          inputType="password"
+          placeholder="New Password"
           containerStyle={{marginBottom: 10}}
           onClick={() => handleChangeField('newPassword', 'new password')}
           value={form.newPassword}
         />
         <components.InputField
-          inputType='password'
-          placeholder='Confirm Password'
+          inputType="password"
+          placeholder="Confirm Password"
           containerStyle={{marginBottom: 14}}
           onClick={() =>
             handleChangeField('confirmPassword', 'confirm password')
@@ -57,7 +66,7 @@ export const NewPassword: React.FC = () => {
           value={form.confirmPassword}
         />
         <components.Button
-          title='Change Password'
+          title="Change Password"
           onClick={() => {
             navigate(constants.routes.FORGOT_PASSWORD_SENT_EMAIL, {
               replace: true,

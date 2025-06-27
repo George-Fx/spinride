@@ -15,15 +15,7 @@ export const BikeCarousel: React.FC<Props> = ({images}) => {
 
   return (
     <section style={{position: 'relative', marginBottom: 20}}>
-      <Swiper
-        // spaceBetween={8}
-        // slidesPerView={'auto'}
-        // pagination={{clickable: true}}
-        // navigation={true}
-        // mousewheel={true}
-        // allowSlideNext={false}
-        onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-      >
+      <Swiper onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}>
         {images.map((image, index) => {
           return (
             <SwiperSlide
@@ -78,8 +70,6 @@ export const BikeCarousel: React.FC<Props> = ({images}) => {
             <li
               key={index}
               style={{
-                // position: 'absolute',
-                // left: 20 + index * 30,
                 width: 6,
                 height: 6,
                 borderRadius: '50%',

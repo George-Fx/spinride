@@ -1,21 +1,41 @@
-import React, {use, useEffect} from 'react';
-import {useAtom} from 'jotai';
+import React, {useEffect} from 'react';
 
 import {items} from '../items';
 import {hooks} from '../hooks';
 import {constants} from '../constants';
+import {useAppSelector} from '../store';
 import {components} from '../components';
-import {wishlistAtom} from '../atoms/wishlist.atom';
 
 export const Wishlist: React.FC = () => {
   const {navigate} = hooks.useRouter();
-  const [bikes] = useAtom(wishlistAtom);
+  const {list: wishlist} = useAppSelector((state) => state.wishlistSlice);
+  const {visible: isModalVisible} = useAppSelector((state) => state.modalSlice);
 
   useEffect(() => {
-    if (bikes.list.length === 0) {
+    if (wishlist.length === 0) {
       navigate(constants.routes.WISHLIST_EMPTY);
     }
-  }, [bikes.list.length, navigate]);
+  }, [wishlist.length, navigate]);
+
+  useEffect(() => {
+    if (isModalVisible) {
+      let metaTag = document.querySelector('meta[name="theme-color"]');
+      if (!metaTag) {
+        metaTag = document.createElement('meta');
+        metaTag.setAttribute('name', 'theme-color');
+        document.head.appendChild(metaTag);
+      }
+      metaTag.setAttribute('content', '#161e2f');
+    } else {
+      let metaTag = document.querySelector('meta[name="theme-color"]');
+      if (!metaTag) {
+        metaTag = document.createElement('meta');
+        metaTag.setAttribute('name', 'theme-color');
+        document.head.appendChild(metaTag);
+      }
+      metaTag.setAttribute('content', '#F3F3F3');
+    }
+  }, [isModalVisible]);
 
   const renderHeader = () => {
     return (
@@ -43,7 +63,7 @@ export const Wishlist: React.FC = () => {
             gap: 14,
           }}
         >
-          {bikes.list.map((bike, index, array) => {
+          {wishlist.map((bike, index, array) => {
             const isLast = index === array.length - 1;
             return <items.WishlistItem bike={bike} isLast={isLast} />;
           })}
@@ -52,12 +72,17 @@ export const Wishlist: React.FC = () => {
     );
   };
 
+  const renderContacts = () => {
+    return <components.BurgerContacts />;
+  };
+
   return (
     <components.MotionWrapper>
       <components.SafeAreaView>
         {renderHeader()}
         {renderContent()}
         {renderBottomBar()}
+        {renderContacts()}
       </components.SafeAreaView>
     </components.MotionWrapper>
   );

@@ -3,6 +3,7 @@ import {isMobile} from 'react-device-detect';
 
 import {hooks} from '../hooks';
 import {constants} from '../constants';
+import {useAppSelector} from '../store';
 
 type Props = {
   containerStyle?: React.CSSProperties;
@@ -14,6 +15,10 @@ export const BottomTabBar: React.FC<Props> = ({
   tabsContainerStyle,
 }) => {
   const {location, navigate} = hooks.useRouter();
+  const {list: wishlist} = useAppSelector((state) => state.wishlistSlice);
+  const {list: cart} = useAppSelector((state) => state.cartSlice);
+
+  console.log(cart);
 
   return (
     <div
@@ -63,6 +68,23 @@ export const BottomTabBar: React.FC<Props> = ({
             <button
               key={index}
               onClick={() => {
+                // navigate(tab.route);
+                if (
+                  tab.route === constants.routes.WISHLIST &&
+                  wishlist.length === 0
+                ) {
+                  navigate(constants.routes.WISHLIST_EMPTY);
+                  return;
+                }
+
+                console.log('cart.length', cart.length);
+                console.log('tab.route', tab.route);
+
+                if (tab.route === constants.routes.ORDER && cart.length === 0) {
+                  navigate(constants.routes.CART_EMPTY);
+                  return;
+                }
+
                 navigate(tab.route);
               }}
               type="button"

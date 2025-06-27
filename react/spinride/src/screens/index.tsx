@@ -8,7 +8,7 @@ import {Filter} from './Filter';
 import {Profile} from './Profile';
 import {Reviews} from './Reviews';
 import {SignOut} from './SignOut';
-import {Payments} from './Payments';
+import {Checkout} from './Checkout';
 import {Wishlist} from './Wishlist';
 import {InfoSaved} from './InfoSaved';
 import {CartEmpty} from './CartEmpty';
@@ -27,10 +27,14 @@ import {ForgotPassword} from './ForgotPassword';
 import {PaymentSuccess} from './PaymentSuccess';
 import {OrderSuccessful} from './OrderSuccessful';
 import {VerifyYourEmail} from './VerifyYourEmail';
+import {CanceledSvg} from '../assets/svg/CanceledSvg';
+import {ShippingSvg} from '../assets/svg/ShippingSvg';
+import {OrderHistoryEmpty} from './OrderHistoryEmpty';
 import {MyPromocodesEmpty} from './MyPromocodesEmpty';
 import {SignUpAccountCreated} from './SignUpAccountCreated';
 import {EmailHasBeenVerified} from './EmailHasBeenVerified';
 import {VerifyYourPhoneNumber} from './VerifyYourPhoneNumber';
+import {ShippingAndPaymentInfo} from './ShippingAndPaymentInfo';
 import {ForgotPasswordSentEmail} from './ForgotPasswordSentEmail';
 import {PhoneNumberHasBeenVerified} from './PhoneNumberHasBeenVerified';
 
@@ -46,7 +50,7 @@ export const screens = {
   Profile,
   Reviews,
   Wishlist,
-  Payments,
+  Checkout,
   InfoSaved,
   CartEmpty,
   Categories,
@@ -54,6 +58,8 @@ export const screens = {
   NewPassword,
   Description,
   EditProfile,
+  CanceledSvg,
+  ShippingSvg,
   MyPromocodes,
   Verification,
   OrderHistory,
@@ -64,10 +70,12 @@ export const screens = {
   PaymentSuccess,
   VerifyYourEmail,
   OrderSuccessful,
+  OrderHistoryEmpty,
   MyPromocodesEmpty,
   SignUpAccountCreated,
   EmailHasBeenVerified,
   VerifyYourPhoneNumber,
+  ShippingAndPaymentInfo,
   ForgotPasswordSentEmail,
   PhoneNumberHasBeenVerified,
 };

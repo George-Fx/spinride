@@ -4,7 +4,6 @@ import {useNavigate} from 'react-router-dom';
 import {hooks} from '../hooks';
 import {svg} from '../assets/svg';
 import {constants} from '../constants';
-import bg from '../assets/bg/01.png';
 import {components} from '../components';
 
 export const OrderSuccessful: React.FC = () => {
@@ -13,20 +12,7 @@ export const OrderSuccessful: React.FC = () => {
   hooks.useBodyColor('#161e2f');
 
   const renderBackground = () => {
-    return (
-      <img
-        src={bg}
-        alt='bg'
-        style={{
-          position: 'fixed',
-          width: '100%',
-          height: 'auto',
-          zIndex: 1,
-          maxWidth: 'var(--screen-width)',
-          margin: '0 auto',
-        }}
-      />
-    );
+    return <components.BackgroundImage />;
   };
 
   const renderContent = () => {
@@ -63,7 +49,7 @@ export const OrderSuccessful: React.FC = () => {
             color: '#C3CDE0',
             marginBottom: 30,
           }}
-          className='t16'
+          className="t16"
         >
           Your order will be delivered on time. Thank you!
         </p>
@@ -76,13 +62,13 @@ export const OrderSuccessful: React.FC = () => {
           }}
         >
           <components.Button
-            title='Go Shopping'
-            colorScheme='secondary'
-            onClick={() => navigate(constants.routes.SIGN_IN)}
+            title="Go Shopping"
+            colorScheme="secondary"
+            onClick={() => navigate(constants.routes.HOME)}
           />
           <components.Button
-            title='View orders'
-            onClick={() => navigate(-1)}
+            title="View orders"
+            onClick={() => navigate(constants.routes.ORDER_HISTORY)}
           />
         </div>
       </main>

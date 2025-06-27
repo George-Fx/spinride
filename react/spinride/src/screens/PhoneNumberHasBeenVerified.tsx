@@ -1,39 +1,26 @@
 import React, {useEffect} from 'react';
-import {useSetAtom, useAtomValue} from 'jotai';
 import {useNavigate} from 'react-router-dom';
 
-import {atoms} from '../atoms';
 import {hooks} from '../hooks';
 import {svg} from '../assets/svg';
 import {constants} from '../constants';
+import {useAppDispatch} from '../store';
 import {components} from '../components';
+import {verificationActions} from '../store/slices/verificationSlice';
 
 export const PhoneNumberHasBeenVerified: React.FC = () => {
   const navigate = useNavigate();
   hooks.useThemeColor('#161e2f');
   hooks.useBodyColor('#161e2f');
 
-  const setIsPhoneNumberVerified = useSetAtom(atoms.isPhoneNumberVerifiedAtom);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    setIsPhoneNumberVerified(true);
-  }, [setIsPhoneNumberVerified]);
+    dispatch(verificationActions.setPhoneVerified(true));
+  }, [dispatch]);
 
   const renderBackground = () => {
-    return (
-      <img
-        src={constants.images.bg01}
-        alt="bg"
-        style={{
-          position: 'fixed',
-          width: '100%',
-          height: 'auto',
-          zIndex: 1,
-          maxWidth: 'var(--screen-width)',
-          margin: '0 auto',
-        }}
-      />
-    );
+    return <components.BackgroundImage />;
   };
 
   const renderContent = () => {

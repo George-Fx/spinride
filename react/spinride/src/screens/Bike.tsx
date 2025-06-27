@@ -1,53 +1,38 @@
-import {useAtom, useAtomValue, useSetAtom} from 'jotai';
-import React, {useState, useEffect, use} from 'react';
+import React, {useState} from 'react';
 
-import {atoms} from '../atoms';
 import {items} from '../items';
 import {hooks} from '../hooks';
 import {svg} from '../assets/svg';
 import {constants} from '../constants';
+import {useAppSelector} from '../store';
+import {useAppDispatch} from '../store';
 import {components} from '../components';
-import {wishlistAtom} from '../atoms/wishlist.atom';
-import {addToWishlistAtom} from '../atoms/wishlist.atom';
+import {cartActions} from '../store/slices/cartSlice';
+import {wishlistActions} from '../store/slices/wishlistSlice';
 
 export const Bike: React.FC = () => {
   const {location} = hooks.useRouter();
   const {bikeId} = location.state || {bikeId: null};
-  const {bike} = hooks.useGetBike(bikeId);
+  const {bike, loading} = hooks.useGetBike(bikeId);
   const {reviews} = hooks.useGetReviews();
-  const cart = useAtomValue(atoms.cartAtom);
-  const bikeInCart = cart.list.find((item) => item.id === bikeId);
 
+  const dispatch = useAppDispatch();
   const {navigate} = hooks.useRouter();
 
-  const [wishlist] = useAtom(wishlistAtom);
-  const [, addToWishlist] = useAtom(addToWishlistAtom);
   const [visible, setVisible] = useState(false);
   const [message, setMessage] = useState<string>('');
-  const addToCart = useSetAtom(atoms.addToCartAtom);
-  const removeFromCart = useSetAtom(atoms.removeFromCartAtom);
+  const [selectedColor, setSelectedColor] = useState<string>('');
 
-  // useEffect(() => {
-  //   if (!bikeInCart?.quantity) return;
-  //   if (bikeInCart?.quantity === 1) {
-  //     setMessage(`"${bike?.name}" has been added to your cart.`);
-  //     setVisible(true);
-  //   } else if (bikeInCart?.quantity > 1) {
-  //     setMessage(
-  //       `"${bike?.name}" has been updated in your cart. Quantity: ${bikeInCart.quantity}`,
-  //     );
-  //     setVisible(true);
-  //   } else {
-  //     setMessage(`"${bike?.name}" has been removed from your cart.`);
-  //     setVisible(true);
-  //   }
-  // }, [bikeInCart?.quantity]);
+  const {list: cart} = useAppSelector((state) => state.cartSlice);
+  const {list: wishlist} = useAppSelector((state) => state.wishlistSlice);
+
+  const bikeInCart = cart.find((item) => item.id === bike?.id);
 
   if (!bike) return null;
-  const isInWishlist = wishlist.list.some((item) => item.id === bike.id);
+  const isInWishlist = wishlist.some((item) => item.id === bike.id);
 
   const handleAddToCart = () => {
-    addToCart(bike);
+    dispatch(cartActions.addToCart(bike));
     if (!bikeInCart?.quantity) return;
     if (bikeInCart?.quantity === 1) {
       setMessage(`"${bike?.name}" has been added to your cart.`);
@@ -61,7 +46,7 @@ export const Bike: React.FC = () => {
   };
 
   const handleRemoveFromCart = () => {
-    removeFromCart(bike);
+    dispatch(cartActions.removeFromCart(bike));
     // if (!bikeInCart?.quantity) return;
     // if (bikeInCart?.quantity === 0) {
     //   setMessage(`"${bike?.name}" has been removed from your cart.`);
@@ -107,7 +92,7 @@ export const Bike: React.FC = () => {
           <button
             onClick={() => {
               if (bike) {
-                addToWishlist(bike);
+                dispatch(wishlistActions.addToWishlist(bike));
                 setVisible(true);
                 setMessage(
                   isInWishlist
@@ -170,6 +155,40 @@ export const Bike: React.FC = () => {
             }}
           />
         </div>
+      </section>
+    );
+  };
+
+  const renderColors = () => {
+    return (
+      <section style={{paddingLeft: 20, paddingRight: 20, marginBottom: 34}}>
+        <ul style={{display: 'flex', alignItems: 'center', flexWrap: 'wrap'}}>
+          {bike.colors.map((color, index) => {
+            return (
+              <li
+                key={index}
+                style={{
+                  display: 'flex',
+                  width: 30,
+                  height: 30,
+                  borderRadius: '50%',
+                  backgroundColor: color.code,
+                  marginRight: 10,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                }}
+                onClick={() => {
+                  setSelectedColor(color.code);
+                }}
+              >
+                {selectedColor === color.code && (
+                  <svg.CheckSvg color={'white'} />
+                )}
+              </li>
+            );
+          })}
+        </ul>
       </section>
     );
   };
@@ -292,12 +311,15 @@ export const Bike: React.FC = () => {
         {renderNameAndBTN()}
         {renderRating()}
         {renderPriceWithCounter()}
+        {renderColors()}
         {renderDescription()}
         {renderReviews()}
         {renderLeaveReviewBtn()}
       </main>
     );
   };
+
+  if (loading) return <components.Loader />;
 
   return (
     <components.MotionWrapper>
