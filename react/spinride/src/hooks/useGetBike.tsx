@@ -21,7 +21,6 @@ export const useGetBike = (id: number) => {
           throw new Error('Bike not found');
         }
         setBike(bike);
-        console.log('Bike fetched:', bike);
       } catch (err) {
         setError('Failed to fetch bikes. Please try again later.');
       } finally {

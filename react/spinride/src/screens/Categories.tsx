@@ -7,7 +7,7 @@ import {useAppSelector} from '../store';
 
 export const Categories: React.FC = () => {
   const {navigate} = hooks.useRouter();
-  const {categories, loading, error} = hooks.useGetCategories();
+  const {categories, loading} = hooks.useGetCategories();
 
   const {visible: isModalVisible} = useAppSelector((state) => state.modalSlice);
 

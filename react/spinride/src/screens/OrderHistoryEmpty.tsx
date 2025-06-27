@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import {hooks} from '../hooks';
 import {svg} from '../assets/svg';

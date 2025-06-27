@@ -47,16 +47,6 @@ export const Bike: React.FC = () => {
 
   const handleRemoveFromCart = () => {
     dispatch(cartActions.removeFromCart(bike));
-    // if (!bikeInCart?.quantity) return;
-    // if (bikeInCart?.quantity === 0) {
-    //   setMessage(`"${bike?.name}" has been removed from your cart.`);
-    //   setVisible(true);
-    // } else if (bikeInCart?.quantity > 0) {
-    //   setMessage(
-    //     `"${bike?.name}" has been updated in your cart. Quantity: ${bikeInCart.quantity}`,
-    //   );
-    //   setVisible(true);
-    // }
   };
 
   const renderFlashMessage = () => {
@@ -93,12 +83,6 @@ export const Bike: React.FC = () => {
             onClick={() => {
               if (bike) {
                 dispatch(wishlistActions.addToWishlist(bike));
-                setVisible(true);
-                setMessage(
-                  isInWishlist
-                    ? `"${bike.name}" has been removed from your wishlist.`
-                    : `"${bike.name}" has been added to your wishlist.`,
-                );
               }
             }}
           >
@@ -230,31 +214,17 @@ export const Bike: React.FC = () => {
           bottom: 'env(safe-area-inset-bottom)',
           left: 0,
           right: 0,
-          backgroundColor: 'var(--anti-flash-white)',
+          backgroundColor: '#F3F3F3',
           paddingTop: 20,
           paddingBottom: 20,
+          maxWidth: 'var(--screen-width)',
+          margin: '0 auto',
         }}
       >
         <components.Button
           title="+ Add to cart"
           onClick={() => {
             handleAddToCart();
-            // addToCart(bike);
-            // if (!bikeInCart?.quantity) return;
-            // if (bikeInCart?.quantity === 1) {
-            //   setMessage(`"${bike?.name}" has been added to your cart.`);
-            //   setVisible(true);
-            // } else if (bikeInCart?.quantity > 1) {
-            //   setMessage(
-            //     `"${bike?.name}" has been updated in your cart. Quantity: ${bikeInCart.quantity}`,
-            //   );
-            //   setVisible(true);
-            // }
-
-            // else if (bikeInCart?.quantity === 0) {
-            //   setMessage(`"${bike?.name}" has been removed from your cart.`);
-            //   setVisible(true);
-            // }
           }}
         />
       </section>

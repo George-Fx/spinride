@@ -1,5 +1,5 @@
 import React from 'react';
-import {motion, AnimatePresence} from 'framer-motion';
+import {motion} from 'framer-motion';
 
 import {svg} from '../assets/svg';
 import {useAppSelector} from '../store';
@@ -53,7 +53,6 @@ export const BurgerContacts: React.FC = () => {
       <motion.div
         initial={{x: '-100%'}}
         animate={{x: -1}}
-        // exit={{x: '-100%'}}
         transition={{type: 'spring', stiffness: 300, damping: 30}}
         style={{
           maxWidth: 270,

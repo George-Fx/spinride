@@ -8,7 +8,7 @@ import {useAppSelector} from '../store';
 
 export const Home: React.FC = () => {
   const {navigate} = hooks.useRouter();
-  const {data, loading, error} = hooks.useGetData();
+  const {data, loading} = hooks.useGetData();
 
   const {visible: isModalVisible} = useAppSelector((state) => state.modalSlice);
 
@@ -37,10 +37,6 @@ export const Home: React.FC = () => {
   const renderHeader = () => {
     return <components.Header showBurger={true} showBasket={true} />;
   };
-
-  // const renderCarousel = () => {
-  //   return <components.HomeCarousel carousel={carouselData} bikeId={bikeId} />;
-  // };
 
   const renderBestSellers = () => {
     return (

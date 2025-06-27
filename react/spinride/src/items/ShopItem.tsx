@@ -21,8 +21,6 @@ export const ShopItem: React.FC<Props> = ({bike}) => {
   const ifInCart = cart.some((item) => item.id === bike.id);
   const ifInWishlist = wishlist.some((item) => item.id === bike.id);
 
-  // addToCart(dish);
-
   return (
     <li style={{width: '100%'}}>
       <div

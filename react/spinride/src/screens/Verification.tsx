@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {useNavigate} from 'react-router-dom';
 
 import {hooks} from '../hooks';
 import {constants} from '../constants';
@@ -61,7 +60,6 @@ export const Verification: React.FC = () => {
           }}
         >
           {otpCode.map((code, index) => {
-            // const otpWidth = cal
             return (
               <button
                 key={index}

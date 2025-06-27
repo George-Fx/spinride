@@ -3,7 +3,6 @@ import {Header} from './Header';
 import {Button} from './Button';
 import {Loader} from './Loader';
 import {Counter} from './Counter';
-import {Switcher} from './Switcher';
 import {SaleBadge} from './SaleBadge';
 import {InputField} from './InputField';
 import {HomeFeatured} from './HomeFeatured';
@@ -24,7 +23,6 @@ export const components = {
   Header,
   Loader,
   Counter,
-  Switcher,
   SaleBadge,
   InputField,
   HomeCarousel,

@@ -32,7 +32,7 @@ const sortingByOptions = [
 
 export const Shop: React.FC = () => {
   const {navigate} = hooks.useRouter();
-  const {bikes, loading, error} = hooks.useGetBikes();
+  const {bikes, loading} = hooks.useGetBikes();
 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedSortingOption, setSelectedSortingOption] = useState(
@@ -164,8 +164,6 @@ export const Shop: React.FC = () => {
                   onClick={() => {
                     setSelectedSortingOption(option);
                     setIsModalVisible(false);
-                    // Handle sorting logic here
-                    console.log(`Selected sorting option: ${option.name}`);
                   }}
                 >
                   <span className="t16">{option.name}</span>

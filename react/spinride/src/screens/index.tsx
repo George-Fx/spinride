@@ -22,9 +22,7 @@ import {MyPromocodes} from './MyPromocodes';
 import {OrderHistory} from './OrderHistory';
 import {LeaveAReview} from './LeaveAReview';
 import {WishlistEmpty} from './WishlistEmpty';
-import {PaymentFailed} from './PaymentFailed';
 import {ForgotPassword} from './ForgotPassword';
-import {PaymentSuccess} from './PaymentSuccess';
 import {OrderSuccessful} from './OrderSuccessful';
 import {VerifyYourEmail} from './VerifyYourEmail';
 import {CanceledSvg} from '../assets/svg/CanceledSvg';
@@ -64,10 +62,8 @@ export const screens = {
   Verification,
   OrderHistory,
   LeaveAReview,
-  PaymentFailed,
   WishlistEmpty,
   ForgotPassword,
-  PaymentSuccess,
   VerifyYourEmail,
   OrderSuccessful,
   OrderHistoryEmpty,

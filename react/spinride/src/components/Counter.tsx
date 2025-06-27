@@ -18,22 +18,6 @@ export const Counter: React.FC<Props> = ({
   const {list: cart} = useAppSelector((state) => state.cartSlice);
   const qty = cart.find((item) => item.id === bike.id)?.quantity || 0;
 
-  // useEffect(() => {
-  //   if (!bikeInCart?.quantity) return;
-  //   if (bikeInCart?.quantity === 1) {
-  //     setMessage(`"${bike?.name}" has been added to your cart.`);
-  //     setVisible(true);
-  //   } else if (bikeInCart?.quantity > 1) {
-  //     setMessage(
-  //       `"${bike?.name}" has been updated in your cart. Quantity: ${bikeInCart.quantity}`,
-  //     );
-  //     setVisible(true);
-  //   } else {
-  //     setMessage(`"${bike?.name}" has been removed from your cart.`);
-  //     setVisible(true);
-  //   }
-  // }, [bikeInCart?.quantity]);
-
   return (
     <div
       style={{
@@ -51,23 +35,11 @@ export const Counter: React.FC<Props> = ({
         userSelect: 'none',
       }}
     >
-      <button
-        // onClick={() => {
-        //   removeFromCart(bike);
-        // }}
-        onClick={minusBtnClicked}
-        style={{userSelect: 'none'}}
-      >
+      <button onClick={minusBtnClicked} style={{userSelect: 'none'}}>
         <svg.MinusSvg />
       </button>
       <span className="t14">{qty}</span>
-      <button
-        // onClick={() => {
-        //   addToCart(bike);
-        // }}
-        onClick={plusBtnClicked}
-        style={{userSelect: 'none'}}
-      >
+      <button onClick={plusBtnClicked} style={{userSelect: 'none'}}>
         <svg.PlusSvg />
       </button>
     </div>

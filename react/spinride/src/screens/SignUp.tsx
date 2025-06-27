@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
 
 import {hooks} from '../hooks';
-import {svg} from '../assets/svg';
 import {constants} from '../constants';
 import {components} from '../components';
 

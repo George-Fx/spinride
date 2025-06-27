@@ -4,8 +4,8 @@ import {items} from '../items';
 import {hooks} from '../hooks';
 import {svg} from '../assets/svg';
 import {constants} from '../constants';
-import {components} from '../components';
 import {useAppSelector} from '../store';
+import {components} from '../components';
 
 export const Order: React.FC = () => {
   const {navigate} = hooks.useRouter();
@@ -44,6 +44,12 @@ export const Order: React.FC = () => {
       metaTag.setAttribute('content', '#F3F3F3');
     }
   }, [isModalVisible]);
+
+  useEffect(() => {
+    if (cart.list.length === 0) {
+      navigate(constants.routes.CART_EMPTY);
+    }
+  }, [cart.list]);
 
   const renderHeader = () => {
     return (
@@ -84,7 +90,7 @@ export const Order: React.FC = () => {
             }}
           >
             {cart.list.map((bike) => {
-              return <items.OrderItem bike={bike} />;
+              return <items.OrderItem bike={bike} key={bike.id} />;
             })}
           </ul>
         </section>

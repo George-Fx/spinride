@@ -32,7 +32,7 @@ export const Header: React.FC<Props> = ({
 }) => {
   const dispatch = useAppDispatch();
   const {navigate} = hooks.useRouter();
-  const {list: cart, total} = useAppSelector((state) => state.cartSlice);
+  const {total} = useAppSelector((state) => state.cartSlice);
 
   const canGoBack = showGoBack && window.history.length > 1;
 
@@ -142,7 +142,6 @@ export const Header: React.FC<Props> = ({
         alignItems: 'center',
         backgroundColor: '#F3F3F3',
 
-        // backgroundColor: 'red',
         height: 'var(--header-height)',
         maxWidth: 'var(--screen-width)',
         borderBottom: showBorder

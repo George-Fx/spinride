@@ -142,6 +142,8 @@ export const Checkout: React.FC = () => {
           backgroundColor: 'var(--anti-flash-white)',
           paddingTop: 20,
           paddingBottom: 20,
+          maxWidth: 'var(--screen-width)',
+          margin: '0 auto',
         }}
       >
         <components.Button

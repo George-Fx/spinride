@@ -5,7 +5,7 @@ import {items} from '../items';
 import {components} from '../components';
 
 export const MyPromocodes: React.FC = () => {
-  const {promocodes, loading, error} = hooks.useGetPromocodes();
+  const {promocodes, loading} = hooks.useGetPromocodes();
 
   const [form, setForm] = useState({
     promocode: '',

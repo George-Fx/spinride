@@ -18,8 +18,6 @@ export const BottomTabBar: React.FC<Props> = ({
   const {list: wishlist} = useAppSelector((state) => state.wishlistSlice);
   const {list: cart} = useAppSelector((state) => state.cartSlice);
 
-  console.log(cart);
-
   return (
     <div
       style={{
@@ -68,7 +66,6 @@ export const BottomTabBar: React.FC<Props> = ({
             <button
               key={index}
               onClick={() => {
-                // navigate(tab.route);
                 if (
                   tab.route === constants.routes.WISHLIST &&
                   wishlist.length === 0
@@ -76,9 +73,6 @@ export const BottomTabBar: React.FC<Props> = ({
                   navigate(constants.routes.WISHLIST_EMPTY);
                   return;
                 }
-
-                console.log('cart.length', cart.length);
-                console.log('tab.route', tab.route);
 
                 if (tab.route === constants.routes.ORDER && cart.length === 0) {
                   navigate(constants.routes.CART_EMPTY);

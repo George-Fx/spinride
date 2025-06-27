@@ -89,8 +89,6 @@ export const EditProfile: React.FC = () => {
           title="Save Changes"
           onClick={() => {
             navigate(constants.routes.INFO_SAVED);
-            // Handle save changes logic here
-            console.log('Changes saved:', form);
           }}
         />
       </main>

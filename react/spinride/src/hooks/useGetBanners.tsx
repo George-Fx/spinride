@@ -16,7 +16,6 @@ export const useGetBanners = () => {
         setLoading(true);
         const response = await axios.get(URLS.GET_BANNERS);
         setBanners(response.data);
-        console.log('Banners fetched:', response.data);
       } catch (err) {
         setError('Failed to fetch banners');
       } finally {

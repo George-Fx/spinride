@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 
 import {hooks} from '../hooks';
 import {svg} from '../assets/svg';
-import {constants} from '../constants';
 import {components} from '../components';
 
 export const LeaveAReview: React.FC = () => {

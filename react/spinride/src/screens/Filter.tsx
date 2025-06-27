@@ -110,7 +110,7 @@ export const Filter: React.FC = () => {
         >
           {tags.map((tag) => {
             return (
-              <li>
+              <li key={tag.key}>
                 <button
                   style={{display: 'flex', alignItems: 'center', gap: 8}}
                   onClick={() => handleTagChange(tag.key)}
@@ -174,7 +174,7 @@ export const Filter: React.FC = () => {
         >
           {colors.map((color) => {
             return (
-              <li>
+              <li key={color.id}>
                 <button
                   style={{
                     width: 30,
@@ -211,7 +211,7 @@ export const Filter: React.FC = () => {
         >
           {bikeTypes.map((type) => {
             return (
-              <li>
+              <li key={type}>
                 <button
                   style={{
                     height: 27,
@@ -264,7 +264,7 @@ export const Filter: React.FC = () => {
         >
           {suspensionTypes.map((type) => {
             return (
-              <li>
+              <li key={type}>
                 <button
                   style={{
                     height: 27,
@@ -317,7 +317,7 @@ export const Filter: React.FC = () => {
         >
           {drivetrainOptions.map((type) => {
             return (
-              <li>
+              <li key={type}>
                 <button
                   style={{
                     height: 27,

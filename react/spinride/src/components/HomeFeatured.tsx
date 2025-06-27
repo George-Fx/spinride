@@ -2,7 +2,6 @@ import React from 'react';
 import 'swiper/swiper-bundle.css';
 import {Swiper, SwiperSlide} from 'swiper/react';
 
-import {hooks} from '../hooks';
 import {items} from '../items';
 import {BikeType} from '../types';
 
@@ -11,7 +10,6 @@ type Props = {
 };
 
 export const HomeFeatured: React.FC<Props> = ({bikes}) => {
-  const {navigate} = hooks.useRouter();
   const featured = bikes.filter((bike) => bike.isFeatured);
 
   return (

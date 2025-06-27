@@ -96,10 +96,6 @@ function App() {
         <Route path={constants.routes.FILTER} element={<screens.Filter />} />
         <Route path={constants.routes.PROFILE} element={<screens.Profile />} />
         <Route
-          path={constants.routes.PAYMENT_SUCCESS}
-          element={<screens.PaymentSuccess />}
-        />
-        <Route
           path={constants.routes.LEAVE_A_REVIEW}
           element={<screens.LeaveAReview />}
         />
@@ -122,10 +118,6 @@ function App() {
         <Route
           path={constants.routes.MY_PROMOCODES}
           element={<screens.MyPromocodes />}
-        />
-        <Route
-          path={constants.routes.PAYMENT_FAILED}
-          element={<screens.PaymentFailed />}
         />
         <Route path={constants.routes.ORDER} element={<screens.Order />} />
         <Route
