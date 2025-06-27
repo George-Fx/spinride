@@ -65,7 +65,9 @@ export const Wishlist: React.FC = () => {
         >
           {wishlist.map((bike, index, array) => {
             const isLast = index === array.length - 1;
-            return <items.WishlistItem bike={bike} isLast={isLast} />;
+            return (
+              <items.WishlistItem bike={bike} isLast={isLast} key={bike.id} />
+            );
           })}
         </ul>
       </main>
