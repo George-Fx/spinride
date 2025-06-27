@@ -49,13 +49,6 @@ export const FlashMessage: React.FC<Props> = ({
           <svg.ErrorSvg />
         </span>
       )}
-      {/* {type === 'success' && (
-        <span style={{marginTop: 5, zIndex: 1}}>
-          <div style={{width: 20, height: 20, display: 'flex'}}>
-            <svg.SuccessSvg />
-          </div>
-        </span>
-      )} */}
       <span
         style={{
           fontSize: 14,

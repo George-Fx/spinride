@@ -363,6 +363,8 @@ export const Filter: React.FC = () => {
           padding: 20,
           position: 'fixed',
           width: '100%',
+          maxWidth: 'var(--screen-width)',
+          margin: '0 auto',
           bottom: 'env(safe-area-inset-bottom)',
         }}
       >

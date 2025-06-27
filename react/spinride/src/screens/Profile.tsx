@@ -195,12 +195,17 @@ export const Profile: React.FC = () => {
     );
   };
 
+  const renderContacts = () => {
+    return <components.BurgerContacts />;
+  };
+
   return (
     <components.MotionWrapper>
       <components.SafeAreaView>
         {renderHeader()}
         {renderContent()}
         {renderBottomBar()}
+        {renderContacts()}
       </components.SafeAreaView>
     </components.MotionWrapper>
   );

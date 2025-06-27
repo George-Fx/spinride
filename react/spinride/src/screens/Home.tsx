@@ -63,6 +63,9 @@ export const Home: React.FC = () => {
             height: 'auto',
             borderRadius: 12,
           }}
+          onClick={() => {
+            navigate(constants.routes.SHOP);
+          }}
         />
       </section>
     );
@@ -99,7 +102,6 @@ export const Home: React.FC = () => {
           paddingBottom: 'calc(var(--bottom-tabbar-height) + 40px)',
         }}
       >
-        {/* {renderCarousel()} */}
         {renderBestSellers()}
         {renderBanners()}
         {renderFeatured()}

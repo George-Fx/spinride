@@ -144,6 +144,7 @@ export const Shop: React.FC = () => {
               width: 'calc(100% - 40px)',
               margin: '0 auto',
               zIndex: 4,
+              maxWidth: 'var(--screen-width)',
             }}
           >
             <ul style={{paddingTop: 7}}>
