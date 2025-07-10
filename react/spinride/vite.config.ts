@@ -17,7 +17,7 @@ export default defineConfig({
 
       manifest: {
         name: 'SpinRide - Bike Store',
-        short_name: 'TeofSpinRidein',
+        short_name: 'SpinRidein',
         description: 'SpinRide – React eCommerce App',
         theme_color: '#F3F3F3',
         background_color: '#F3F3F3',
